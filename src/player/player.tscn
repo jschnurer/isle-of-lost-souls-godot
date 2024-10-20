@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdhtoyqehrt80"]
+
+[ext_resource type="Texture2D" uid="uid://kkr38elv0h5g" path="res://art/actors/player.png" id="1_gdqck"]
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_i00hy"]
+[ext_resource type="Texture2D" uid="uid://cjucjbv51empc" path="res://art/actors/player_up.png" id="3_4clwk"]
+[ext_resource type="Texture2D" uid="uid://bs0onc7gn3hj0" path="res://art/actors/player_down.png" id="4_aabnl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xr0b"]
+size = Vector2(39, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnt5o"]
+size = Vector2(39, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e51k"]
+size = Vector2(28, 26.5)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_i00hy")
+normal_sprite = ExtResource("1_gdqck")
+up_sprite = ExtResource("3_4clwk")
+down_sprite = ExtResource("4_aabnl")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_gdqck")
+
+[node name="FeetCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 47)
+shape = SubResource("RectangleShape2D_4xr0b")
+
+[node name="FeetArea" type="Area2D" parent="."]
+position = Vector2(0, 47)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FeetArea"]
+shape = SubResource("RectangleShape2D_vnt5o")
+
+[node name="RightArea" type="Area2D" parent="."]
+position = Vector2(34, 45.5)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea"]
+shape = SubResource("RectangleShape2D_2e51k")
+
+[node name="LeftArea" type="Area2D" parent="."]
+position = Vector2(-34, 45.5)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea"]
+shape = SubResource("RectangleShape2D_2e51k")
+
+[node name="UpArea" type="Area2D" parent="."]
+position = Vector2(0, 27.5)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpArea"]
+shape = SubResource("RectangleShape2D_2e51k")
+
+[node name="DownArea" type="Area2D" parent="."]
+position = Vector2(0, 66.5)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownArea"]
+shape = SubResource("RectangleShape2D_2e51k")
