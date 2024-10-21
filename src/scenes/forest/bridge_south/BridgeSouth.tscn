@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://lroweyrypev2"]
+
+[ext_resource type="Texture2D" uid="uid://w5djnj5frudu" path="res://art/backgrounds/forest/Forest Broken Bridge South 1.png" id="1_ro3oe"]
+[ext_resource type="Texture2D" uid="uid://dre6gfqg0nhkg" path="res://art/backgrounds/forest/Forest Broken Bridge South Collision.png" id="2_gj6ie"]
+
+[node name="BridgeSouth" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ro3oe")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TextureRect"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect/StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 0, 624, 266, 624, 266, 577, 228, 577, 228, 466, 178, 466, 178, 349, 149, 349, 149, 270, 345, 270, 345, 289, 383, 289, 383, 185, 482, 185, 482, 289, 520, 289, 520, 287, 728, 287, 728, 364, 698, 364, 698, 377, 673, 377, 673, 394, 649, 394, 649, 431, 630, 431, 630, 481, 547, 481, 547, 512, 494, 512, 494, 573, 434, 573, 434, 624, 816, 624, 816, 0)
+
+[node name="BGCollision" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_gj6ie")
+centered = false

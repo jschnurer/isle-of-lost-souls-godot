@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://b7sih1cnrsrm6" path="res://art/backgrounds/forest/Forest Clearing Collision.png" id="1_qwro1"]
 [ext_resource type="PackedScene" uid="uid://o37b8xcqu61v" path="res://src/events/event_area.tscn" id="2_dmfhn"]
 [ext_resource type="PackedScene" uid="uid://8mjoj27rfb6j" path="res://src/ui/dialog_player/DialogPlayer.tscn" id="3_2yka5"]
-[ext_resource type="PackedScene" uid="uid://bdhtoyqehrt80" path="res://src/player/player.tscn" id="4_o26qx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1jwu"]
 size = Vector2(19, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oq6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jxi"]
+size = Vector2(174, 38)
 
 [node name="SceneRoot" type="Node2D"]
 
@@ -54,8 +56,17 @@ shape = SubResource("RectangleShape2D_8oq6m")
 [node name="DialogPlayer" parent="." instance=ExtResource("3_2yka5")]
 scene_text_file = "res://src/scenes/forest/clearing/text.json"
 
-[node name="Player" parent="." instance=ExtResource("4_o26qx")]
-position = Vector2(172, 316)
+[node name="ToBridge" parent="." instance=ExtResource("2_dmfhn")]
+position = Vector2(358, 10)
+event_type = 1
+teleport_to_scene = 1
+teleport_to_location = Vector2(360, 523)
+activation_mode = 1
+
+[node name="CollisionShape2D" parent="ToBridge" index="0"]
+position = Vector2(-6, 9)
+shape = SubResource("RectangleShape2D_m3jxi")
 
 [editable path="Hole"]
 [editable path="Dirt"]
+[editable path="ToBridge"]

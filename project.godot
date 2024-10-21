@@ -11,15 +11,16 @@ config_version=5
 [application]
 
 config/name="Isle of Lost Souls"
-run/main_scene="res://src/scenes/forest/clearing/Clearing.tscn"
+run/main_scene="res://src/scenes/world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-SignalBus="*res://src/singletons/SignalBus.gd"
-ControlsHint="*res://src/ui/controls_hint/controls_hint.tscn"
 Enums="*res://src/enums/enums.gd"
+SignalBus="*res://src/singletons/SignalBus.gd"
+SceneManager="*res://src/singletons/SceneManager.gd"
+ControlsHint="*res://src/ui/controls_hint/controls_hint.tscn"
 
 [display]
 

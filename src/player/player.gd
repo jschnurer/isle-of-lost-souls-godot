@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	update_sprite(velocity)
+	print(position)
 	
 func update_sprite(velocity):
 	if (velocity.x < 0):
