@@ -13,4 +13,3 @@ script = ExtResource("2_2hmeu")
 [node name="CollisionArea" type="StaticBody2D" parent="."]
 
 [node name="BgmPlayer" parent="." instance=ExtResource("2_d8xiw")]
-process_mode = 0

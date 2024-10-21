@@ -14,7 +14,7 @@ size = Vector2(200, 20)
 [node name="BridgeSouth" type="Node2D"]
 
 [node name="SceneBG" parent="." instance=ExtResource("1_thwdb")]
-texture = ExtResource("4_rum85")
+texture = ExtResource("3_typln")
 bg_images = Array[Texture2D]([ExtResource("1_ro3oe"), ExtResource("3_typln"), ExtResource("4_rum85")])
 collision_image = ExtResource("5_agcjw")
 bgm_stream = ExtResource("4_rxf6y")
@@ -22,9 +22,5 @@ bgm_stream = ExtResource("4_rxf6y")
 [node name="Teleporter" parent="." instance=ExtResource("5_1fosc")]
 position = Vector2(351, 614)
 event_area = SubResource("RectangleShape2D_50rri")
-to_north = false
 to_south = true
-to_east = false
-to_west = false
 preserve_x = true
-preserve_y = false

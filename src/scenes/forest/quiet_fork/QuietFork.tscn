@@ -42,3 +42,10 @@ to_scene = 5
 event_area = SubResource("RectangleShape2D_1b455")
 to_east = true
 preserve_y = true
+
+[node name="ToQuietPath" parent="." instance=ExtResource("3_ooo6e")]
+position = Vector2(480, 614)
+to_scene = 6
+event_area = SubResource("RectangleShape2D_pogto")
+to_south = true
+preserve_x = true

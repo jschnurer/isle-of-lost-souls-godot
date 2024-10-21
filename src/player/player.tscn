@@ -15,7 +15,7 @@ size = Vector2(39, 12)
 size = Vector2(28, 26.5)
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.66, 0.66)
 script = ExtResource("1_i00hy")
 normal_sprite = ExtResource("1_gdqck")
 up_sprite = ExtResource("3_4clwk")

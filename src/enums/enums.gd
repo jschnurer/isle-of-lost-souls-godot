@@ -18,6 +18,10 @@ enum EventType {
 	TELEPORT
 }
 
+enum Vars {
+	TOOK_STONE
+}
+
 enum Scenes {
 	FOREST_CLEARING,
 	FOREST_BRIDGE_SOUTH,

@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var down_sprite: Texture2D
 const SPEED = 250.0
 var facing_dir: Enums.Direction = Enums.Direction.RIGHT
+var game_event_in_range: GameEvent
 
 func _ready():
 	$Sprite.texture = normal_sprite
@@ -12,6 +13,12 @@ func _ready():
 	$DownArea/CollisionShape2D.disabled = true
 	$UpArea/CollisionShape2D.disabled = true
 	$LeftArea/CollisionShape2D.disabled = true
+	SignalBus.game_event_entered_range.connect(_on_game_event_entered_range)
+	SignalBus.game_event_exited_range.connect(_on_game_event_exited_range)
+
+func  _input(event):
+	if game_event_in_range and event.is_action_pressed("ui_accept"):
+		game_event_in_range.activate()
 
 func _physics_process(_delta: float) -> void:
 	var direction_x := Input.get_axis("ui_left", "ui_right")
@@ -25,7 +32,7 @@ func _physics_process(_delta: float) -> void:
 		velocity.y = direction_y * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-		
+	
 	move_and_slide()
 	update_sprite()
 	
@@ -54,3 +61,10 @@ func update_areas(direction):
 	$RightArea/CollisionShape2D.disabled = direction != Enums.Direction.RIGHT
 	$DownArea/CollisionShape2D.disabled = direction != Enums.Direction.DOWN
 	$LeftArea/CollisionShape2D.disabled = direction != Enums.Direction.LEFT
+
+func _on_game_event_entered_range(game_event: GameEvent):
+	game_event_in_range = game_event
+	
+func _on_game_event_exited_range(game_event: GameEvent):
+	if game_event_in_range == game_event:
+		game_event_in_range = null

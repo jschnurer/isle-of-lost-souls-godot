@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6cn4pks1qdra"]
+[gd_scene load_steps=8 format=3 uid="uid://6cn4pks1qdra"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_gxdse"]
 [ext_resource type="Texture2D" uid="uid://ugtkb05hfejn" path="res://art/backgrounds/forest/Forest Bend.png" id="2_y833y"]
@@ -8,6 +8,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ba3mn"]
 size = Vector2(20, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2re2h"]
+size = Vector2(200, 20)
 
 [node name="Bend" type="Node2D"]
 
@@ -23,3 +26,10 @@ to_scene = 5
 event_area = SubResource("RectangleShape2D_ba3mn")
 to_west = true
 preserve_y = true
+
+[node name="ToAbruptTurn" parent="." instance=ExtResource("5_gfw5t")]
+position = Vector2(459, 614)
+to_scene = 8
+event_area = SubResource("RectangleShape2D_2re2h")
+to_south = true
+preserve_x = true
