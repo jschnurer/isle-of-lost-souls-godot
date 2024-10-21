@@ -50,14 +50,16 @@ scene_text_file = "res://src/scenes/forest/clearing/text.json"
 [node name="ToBridge" parent="." instance=ExtResource("7_40jd8")]
 position = Vector2(350, 10)
 to_scene = 1
-to_location = Vector2(352, 574)
 event_area = SubResource("RectangleShape2D_64bcn")
+to_north = true
+preserve_x = true
 
 [node name="ToFork" parent="." instance=ExtResource("7_40jd8")]
 position = Vector2(806, 262)
 to_scene = 2
-to_location = Vector2(50, 284)
 event_area = SubResource("RectangleShape2D_6q2q4")
+to_east = true
+preserve_y = true
 
 [editable path="Hole"]
 [editable path="Dirt"]

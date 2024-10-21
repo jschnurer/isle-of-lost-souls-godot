@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://6cn4pks1qdra"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_gxdse"]
+[ext_resource type="Texture2D" uid="uid://ugtkb05hfejn" path="res://art/backgrounds/forest/Forest Bend.png" id="2_y833y"]
+[ext_resource type="Texture2D" uid="uid://c6dgd041hcbmt" path="res://art/backgrounds/forest/Forest Bend Collision.png" id="3_iybuy"]
+[ext_resource type="AudioStream" uid="uid://dew108n6x52bl" path="res://audio/bgm/birds-isaiah658.ogg" id="4_te51h"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="5_gfw5t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba3mn"]
+size = Vector2(20, 200)
+
+[node name="Bend" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_gxdse")]
+texture = ExtResource("2_y833y")
+bg_images = Array[Texture2D]([ExtResource("2_y833y")])
+collision_image = ExtResource("3_iybuy")
+bgm_stream = ExtResource("4_te51h")
+
+[node name="ToBend" parent="." instance=ExtResource("5_gfw5t")]
+position = Vector2(10, 345)
+to_scene = 5
+event_area = SubResource("RectangleShape2D_ba3mn")
+to_west = true
+preserve_y = true

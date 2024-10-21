@@ -22,14 +22,25 @@ bg_images = Array[Texture2D]([ExtResource("3_gfxqw"), ExtResource("2_53p15"), Ex
 collision_image = ExtResource("5_rs5ov")
 bgm_stream = ExtResource("8_hovmb")
 
-[node name="ToRiverBank" parent="." instance=ExtResource("6_pvv5m")]
+[node name="ToFork" parent="." instance=ExtResource("6_pvv5m")]
 position = Vector2(467, 614)
 to_scene = 2
-to_location = Vector2(472, 50)
 event_area = SubResource("RectangleShape2D_kaohx")
+to_north = false
+to_south = true
+to_east = false
+to_west = false
+preserve_x = true
+preserve_y = false
 
 [node name="ToHilltop" parent="." instance=ExtResource("6_pvv5m")]
 position = Vector2(806, 270)
 to_scene = 4
-to_location = Vector2(50, 314)
 event_area = SubResource("RectangleShape2D_gkyip")
+to_location = Vector2(0, 314)
+to_north = false
+to_south = false
+to_east = true
+to_west = false
+preserve_x = false
+preserve_y = false
