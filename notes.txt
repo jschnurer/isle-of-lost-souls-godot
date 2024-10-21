@@ -1,0 +1,5 @@
+Teleporters:
+	To East: x_destination = 50
+	To West: x_destination = 766
+	To North: y_destination = 574
+	To South: y_destination = 50

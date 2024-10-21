@@ -1,42 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://blws5b8wm1dyr"]
+[gd_scene load_steps=12 format=3 uid="uid://blws5b8wm1dyr"]
 
 [ext_resource type="Texture2D" uid="uid://bcl5i0l534pgp" path="res://art/backgrounds/forest/Forest Clearing.png" id="1_i6pxq"]
-[ext_resource type="Texture2D" uid="uid://b7sih1cnrsrm6" path="res://art/backgrounds/forest/Forest Clearing Collision.png" id="1_qwro1"]
 [ext_resource type="PackedScene" uid="uid://o37b8xcqu61v" path="res://src/events/event_area.tscn" id="2_dmfhn"]
 [ext_resource type="PackedScene" uid="uid://8mjoj27rfb6j" path="res://src/ui/dialog_player/DialogPlayer.tscn" id="3_2yka5"]
+[ext_resource type="Texture2D" uid="uid://b7sih1cnrsrm6" path="res://art/backgrounds/forest/Forest Clearing Collision.png" id="3_4p7yf"]
+[ext_resource type="AudioStream" uid="uid://dew108n6x52bl" path="res://audio/bgm/birds-isaiah658.ogg" id="5_m1kp8"]
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="5_mt6oq"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="7_40jd8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1jwu"]
 size = Vector2(19, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oq6m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jxi"]
-size = Vector2(174, 38)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64bcn"]
+size = Vector2(200, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q2q4"]
+size = Vector2(20, 200)
 
 [node name="SceneRoot" type="Node2D"]
 
-[node name="Background" type="TextureRect" parent="."]
-texture_filter = 1
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="SceneBG" parent="." instance=ExtResource("5_mt6oq")]
+offset_right = 816.0
+offset_bottom = 624.0
 texture = ExtResource("1_i6pxq")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
-polygon = PackedVector2Array(0, 0, 0, 624, 816, 624, 816, 321, 722, 321, 722, 398, 685, 398, 685, 512, 672, 512, 672, 583, 298, 583, 298, 560, 34, 560, 34, 413, 62, 413, 62, 241, 153, 241, 153, 206, 266, 206, 266, 0)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
-polygon = PackedVector2Array(437, 0, 437, 201, 816, 201, 816, 0)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
-polygon = PackedVector2Array(384, 391, 384, 425, 473, 425, 473, 391)
-
-[node name="CollisionImg" type="Sprite2D" parent="Background"]
-visible = false
-texture_filter = 1
-texture = ExtResource("1_qwro1")
-centered = false
+bg_images = Array[Texture2D]([ExtResource("1_i6pxq")])
+collision_image = ExtResource("3_4p7yf")
+bgm_stream = ExtResource("5_m1kp8")
 
 [node name="Hole" parent="." instance=ExtResource("2_dmfhn")]
 position = Vector2(410, 410)
@@ -56,17 +47,17 @@ shape = SubResource("RectangleShape2D_8oq6m")
 [node name="DialogPlayer" parent="." instance=ExtResource("3_2yka5")]
 scene_text_file = "res://src/scenes/forest/clearing/text.json"
 
-[node name="ToBridge" parent="." instance=ExtResource("2_dmfhn")]
-position = Vector2(358, 10)
-event_type = 1
-teleport_to_scene = 1
-teleport_to_location = Vector2(360, 523)
-activation_mode = 1
+[node name="ToBridge" parent="." instance=ExtResource("7_40jd8")]
+position = Vector2(350, 10)
+to_scene = 1
+to_location = Vector2(352, 574)
+event_area = SubResource("RectangleShape2D_64bcn")
 
-[node name="CollisionShape2D" parent="ToBridge" index="0"]
-position = Vector2(-6, 9)
-shape = SubResource("RectangleShape2D_m3jxi")
+[node name="ToFork" parent="." instance=ExtResource("7_40jd8")]
+position = Vector2(806, 262)
+to_scene = 2
+to_location = Vector2(50, 284)
+event_area = SubResource("RectangleShape2D_6q2q4")
 
 [editable path="Hole"]
 [editable path="Dirt"]
-[editable path="ToBridge"]

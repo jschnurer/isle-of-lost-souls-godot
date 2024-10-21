@@ -15,7 +15,6 @@ func _ready():
 	SignalBus.connect("display_dialog", on_display_dialog)
 
 func load_scene_text():
-	var file = FileAccess.open(scene_text_file, FileAccess.READ)
 	var json_as_text = FileAccess.get_file_as_string(scene_text_file)
 	return JSON.parse_string(json_as_text)
 

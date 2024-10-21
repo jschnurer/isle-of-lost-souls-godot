@@ -21,6 +21,7 @@ Enums="*res://src/enums/enums.gd"
 SignalBus="*res://src/singletons/SignalBus.gd"
 SceneManager="*res://src/singletons/SceneManager.gd"
 ControlsHint="*res://src/ui/controls_hint/controls_hint.tscn"
+AudioPlayer="*res://src/singletons/audio_player/AudioPlayer.tscn"
 
 [display]
 

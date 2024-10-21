@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://jq86y8xhq3cm"]
+
+[ext_resource type="Script" path="res://src/events/game_event/game_event.gd" id="1_lk5y5"]
+
+[node name="GameEvent" type="Area2D"]
+process_mode = 3
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_lk5y5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

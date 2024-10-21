@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://3htidhrfkm8j"]
+
+[ext_resource type="Script" path="res://src/events/teleporter/teleporter.gd" id="1_grrr8"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="2_y8xfl"]
+
+[node name="Teleporter" type="Node2D"]
+script = ExtResource("1_grrr8")
+
+[node name="GameEvent" parent="." instance=ExtResource("2_y8xfl")]
+activation_mode = 1

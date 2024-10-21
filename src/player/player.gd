@@ -13,7 +13,7 @@ func _ready():
 	$UpArea/CollisionShape2D.disabled = true
 	$LeftArea/CollisionShape2D.disabled = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction_x := Input.get_axis("ui_left", "ui_right")
 	if direction_x:
 		velocity.x = direction_x * SPEED
@@ -25,12 +25,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y = direction_y * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-	
+		
 	move_and_slide()
-	update_sprite(velocity)
-	print(position)
+	update_sprite()
 	
-func update_sprite(velocity):
+func update_sprite():
 	if (velocity.x < 0):
 		$Sprite.flip_h = true
 		facing_dir = Enums.Direction.LEFT

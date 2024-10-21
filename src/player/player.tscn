@@ -15,6 +15,7 @@ size = Vector2(39, 12)
 size = Vector2(28, 26.5)
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_i00hy")
 normal_sprite = ExtResource("1_gdqck")
 up_sprite = ExtResource("3_4clwk")
@@ -23,13 +24,12 @@ down_sprite = ExtResource("4_aabnl")
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_gdqck")
+offset = Vector2(0, -47)
 
 [node name="FeetCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 47)
 shape = SubResource("RectangleShape2D_4xr0b")
 
 [node name="FeetArea" type="Area2D" parent="."]
-position = Vector2(0, 47)
 collision_layer = 2
 collision_mask = 0
 
@@ -37,7 +37,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_vnt5o")
 
 [node name="RightArea" type="Area2D" parent="."]
-position = Vector2(34, 45.5)
+position = Vector2(34, 0)
 collision_layer = 2
 collision_mask = 0
 
@@ -45,7 +45,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_2e51k")
 
 [node name="LeftArea" type="Area2D" parent="."]
-position = Vector2(-34, 45.5)
+position = Vector2(-34, 0)
 collision_layer = 2
 collision_mask = 0
 
@@ -53,7 +53,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_2e51k")
 
 [node name="UpArea" type="Area2D" parent="."]
-position = Vector2(0, 27.5)
+position = Vector2(0, -20)
 collision_layer = 2
 collision_mask = 0
 
@@ -61,7 +61,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_2e51k")
 
 [node name="DownArea" type="Area2D" parent="."]
-position = Vector2(0, 66.5)
+position = Vector2(0, 20)
 collision_layer = 2
 collision_mask = 0
 
