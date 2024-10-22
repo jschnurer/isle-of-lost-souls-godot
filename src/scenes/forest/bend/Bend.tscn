@@ -18,18 +18,21 @@ size = Vector2(200, 20)
 texture = ExtResource("2_y833y")
 bg_images = Array[Texture2D]([ExtResource("2_y833y")])
 collision_image = ExtResource("3_iybuy")
+use_collision_frame = false
 bgm_stream = ExtResource("4_te51h")
 
-[node name="ToBend" parent="." instance=ExtResource("5_gfw5t")]
+[node name="ToLonelyPath" parent="." instance=ExtResource("5_gfw5t")]
 position = Vector2(10, 345)
-to_scene = 5
+to_scene = "FOREST_LONELY_PATH"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_ba3mn")
 to_west = true
 preserve_y = true
 
 [node name="ToAbruptTurn" parent="." instance=ExtResource("5_gfw5t")]
 position = Vector2(459, 614)
-to_scene = 8
+to_scene = "FOREST_ABRUPT_TURN"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_2re2h")
 to_south = true
 preserve_x = true

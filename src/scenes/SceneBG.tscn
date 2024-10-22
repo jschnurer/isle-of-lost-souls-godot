@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvkkaqn8jtrg4"]
+[gd_scene load_steps=5 format=3 uid="uid://bvkkaqn8jtrg4"]
 
 [ext_resource type="Script" path="res://src/scenes/scene_bg.gd" id="2_2hmeu"]
 [ext_resource type="PackedScene" uid="uid://q8utkk2fjnvn" path="res://src/events/bgm_player/BGMPlayer.tscn" id="2_d8xiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbprl"]
+size = Vector2(50, 625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv6e0"]
+size = Vector2(816, 50)
 
 [node name="SceneBG" type="TextureRect"]
 process_mode = 3
@@ -10,6 +16,24 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_2hmeu")
 
-[node name="CollisionArea" type="StaticBody2D" parent="."]
+[node name="CollisionFromImage" type="StaticBody2D" parent="."]
 
 [node name="BgmPlayer" parent="." instance=ExtResource("2_d8xiw")]
+
+[node name="CollisionFromFrame" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionFromFrame"]
+position = Vector2(25, 312.5)
+shape = SubResource("RectangleShape2D_kbprl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionFromFrame"]
+position = Vector2(791, 312.5)
+shape = SubResource("RectangleShape2D_kbprl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionFromFrame"]
+position = Vector2(408, 599)
+shape = SubResource("RectangleShape2D_xv6e0")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionFromFrame"]
+position = Vector2(408, 25)
+shape = SubResource("RectangleShape2D_xv6e0")

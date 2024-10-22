@@ -15,11 +15,13 @@ size = Vector2(200, 20)
 texture = ExtResource("2_t8nd3")
 bg_images = Array[Texture2D]([ExtResource("2_t8nd3")])
 collision_image = ExtResource("3_k0w46")
+use_collision_frame = false
 bgm_stream = ExtResource("4_vqcba")
 
 [node name="ToBend" parent="." instance=ExtResource("5_i3wtb")]
 position = Vector2(457, 10)
-to_scene = 7
+to_scene = "FOREST_BEND"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_fsv8x")
 to_north = true
 preserve_x = true

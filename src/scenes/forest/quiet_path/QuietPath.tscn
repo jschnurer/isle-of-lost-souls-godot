@@ -15,18 +15,21 @@ size = Vector2(200, 20)
 texture = ExtResource("2_408ep")
 bg_images = Array[Texture2D]([ExtResource("2_408ep")])
 collision_image = ExtResource("3_shrqp")
+use_collision_frame = false
 bgm_stream = ExtResource("4_si52o")
 
 [node name="ToQuietFork" parent="." instance=ExtResource("5_v8gei")]
 position = Vector2(481, 10)
-to_scene = 2
+to_scene = "FOREST_QUIET_FORK"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_tmti4")
 to_north = true
 preserve_x = true
 
 [node name="ToWellWornTrail" parent="." instance=ExtResource("5_v8gei")]
 position = Vector2(349, 614)
-to_scene = 10
+to_scene = "FOREST_WELL_WORN_TRAIL"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_tmti4")
 to_south = true
 preserve_x = true

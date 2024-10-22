@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b7sih1cnrsrm6" path="res://art/backgrounds/forest/Forest Clearing Collision.png" id="3_4p7yf"]
 [ext_resource type="AudioStream" uid="uid://dew108n6x52bl" path="res://audio/bgm/birds-isaiah658.ogg" id="5_m1kp8"]
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="5_mt6oq"]
-[ext_resource type="Script" path="res://src/scenes/forest/clearing/hole.gd" id="7_8soah"]
+[ext_resource type="Script" path="res://src/scenes/forest/clearing/interactables/hole.gd" id="7_8soah"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="7_40jd8"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="7_jp3rn"]
 
@@ -29,14 +29,16 @@ bgm_stream = ExtResource("5_m1kp8")
 
 [node name="ToBridge" parent="." instance=ExtResource("7_40jd8")]
 position = Vector2(350, 10)
-to_scene = 1
+to_scene = "FOREST_BRIDGE_SOUTH"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_64bcn")
 to_north = true
 preserve_x = true
 
 [node name="ToFork" parent="." instance=ExtResource("7_40jd8")]
 position = Vector2(806, 262)
-to_scene = 2
+to_scene = "FOREST_QUIET_FORK"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_6q2q4")
 to_east = true
 preserve_y = true

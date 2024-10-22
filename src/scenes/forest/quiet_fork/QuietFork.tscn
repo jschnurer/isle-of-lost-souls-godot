@@ -21,31 +21,37 @@ size = Vector2(20, 200)
 texture = ExtResource("2_4x3go")
 bg_images = Array[Texture2D]([ExtResource("2_4x3go")])
 collision_image = ExtResource("3_x6ijh")
+use_collision_frame = false
 bgm_stream = ExtResource("6_kqm22")
 
 [node name="ToClearing" parent="." instance=ExtResource("3_ooo6e")]
 position = Vector2(10, 268)
+to_scene = "FOREST_CLEARING"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_27w4b")
 to_west = true
 preserve_y = true
 
 [node name="ToRiverBank" parent="." instance=ExtResource("3_ooo6e")]
 position = Vector2(474, 10)
-to_scene = 3
+to_scene = "FOREST_RIVER_BANK"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_pogto")
 to_north = true
 preserve_x = true
 
 [node name="ToLonelyPath" parent="." instance=ExtResource("3_ooo6e")]
 position = Vector2(806, 332)
-to_scene = 5
+to_scene = "FOREST_LONELY_PATH"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_1b455")
 to_east = true
 preserve_y = true
 
 [node name="ToQuietPath" parent="." instance=ExtResource("3_ooo6e")]
 position = Vector2(480, 614)
-to_scene = 6
+to_scene = "FOREST_QUIET_PATH"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_pogto")
 to_south = true
 preserve_x = true

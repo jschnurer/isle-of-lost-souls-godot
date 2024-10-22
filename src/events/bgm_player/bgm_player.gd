@@ -4,4 +4,7 @@ extends Node2D
 @export var volume_db: float = 1
 
 func _ready():
-	SignalBus.emit_signal("play_bgm", stream, volume_db)
+	if (stream):
+		SignalBus.emit_signal("play_bgm", stream, volume_db)
+	else:
+		SignalBus.emit_signal("stop_bgm")

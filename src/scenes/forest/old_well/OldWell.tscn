@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://7ifixxupx2fk"]
+[gd_scene load_steps=8 format=3 uid="uid://7ifixxupx2fk"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_58h26"]
 [ext_resource type="Texture2D" uid="uid://bgsxgsru60sel" path="res://art/backgrounds/forest/Old Well.png" id="2_ptgum"]
@@ -8,6 +8,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7kt6"]
 size = Vector2(20, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqevo"]
+size = Vector2(200, 20)
 
 [node name="OldWell" type="Node2D"]
 
@@ -19,7 +22,16 @@ bgm_stream = ExtResource("4_4gmh3")
 
 [node name="ToWellWornTrail" parent="." instance=ExtResource("5_2ck6y")]
 position = Vector2(10, 374)
-to_scene = 10
+to_scene = "FOREST_WELL_WORN_TRAIL"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_j7kt6")
 to_west = true
 preserve_y = true
+
+[node name="ToHiveEntrance" parent="." instance=ExtResource("5_2ck6y")]
+position = Vector2(451, 10)
+to_scene = "FOREST_HIVE_ENTRANCE"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_jqevo")
+to_north = true
+preserve_x = true

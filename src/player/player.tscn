@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdhtoyqehrt80"]
+[gd_scene load_steps=11 format=3 uid="uid://bdhtoyqehrt80"]
 
 [ext_resource type="Texture2D" uid="uid://kkr38elv0h5g" path="res://art/actors/player.png" id="1_gdqck"]
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_i00hy"]
 [ext_resource type="Texture2D" uid="uid://cjucjbv51empc" path="res://art/actors/player_up.png" id="3_4clwk"]
 [ext_resource type="Texture2D" uid="uid://bs0onc7gn3hj0" path="res://art/actors/player_down.png" id="4_aabnl"]
+[ext_resource type="Texture2D" uid="uid://c4dh4ptjqjsrj" path="res://art/actors/pointer.png" id="5_40aju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xr0b"]
 size = Vector2(39, 12)
@@ -14,16 +15,21 @@ size = Vector2(39, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2e51k"]
 size = Vector2(28, 26.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7c387"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vjpk"]
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.66, 0.66)
 script = ExtResource("1_i00hy")
 normal_sprite = ExtResource("1_gdqck")
 up_sprite = ExtResource("3_4clwk")
 down_sprite = ExtResource("4_aabnl")
+pointer_sprite = ExtResource("5_40aju")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_gdqck")
+texture = ExtResource("5_40aju")
 offset = Vector2(0, -47)
 
 [node name="FeetCollision" type="CollisionShape2D" parent="."]
@@ -67,3 +73,17 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DownArea"]
 shape = SubResource("RectangleShape2D_2e51k")
+
+[node name="PointerArea" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PointerArea"]
+position = Vector2(-12.1212, -71.2121)
+shape = SubResource("RectangleShape2D_7c387")
+
+[node name="PointerCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-12.1212, -71.2121)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1vjpk")

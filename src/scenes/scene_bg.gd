@@ -6,6 +6,7 @@ var _bg_images: Array[Texture2D] = []
 var _bg_anim_frame_duration = .333
 var _bg_anim_elapsed = 0
 var _collision_image: Texture2D
+var _use_collision_frame: bool
 
 @export var bg_images: Array[Texture2D] :
 	set(value):
@@ -20,9 +21,16 @@ var _collision_image: Texture2D
 @export var collision_image: Texture2D :
 	set(value):
 		_collision_image = value
-		generate_collision_shapes(value)
+		generate_collision_shapes()
 	get:
 		return _collision_image
+
+@export var use_collision_frame: bool :
+	set(value):
+		_use_collision_frame = value
+		generate_collision_shapes()
+	get:
+		return _use_collision_frame
 
 @export var bgm_stream: AudioStream :
 	set(value):
@@ -42,20 +50,32 @@ func _process(delta):
 		_bg_anim_elapsed -= _bg_anim_frame_duration
 		on_bg_anim_timer_timeout()
 
-func generate_collision_shapes(collisionTexture: Texture2D):
-	for n in $CollisionArea.get_children():
-		$CollisionArea.remove_child(n)
-		n.queue_free()
-	
-	var bitmap = BitMap.new()
-	bitmap.create_from_image_alpha(collisionTexture.get_image())
+func generate_collision_shapes():	
+	if _use_collision_frame:
+		toggle_collision_shape_children($CollisionFromImage, true)
+		toggle_collision_shape_children($CollisionFromFrame, false)
+	elif (_collision_image):
+		toggle_collision_shape_children($CollisionFromImage, false)
+		toggle_collision_shape_children($CollisionFromFrame, true)
+		
+		for n in $CollisionFromImage.get_children():
+			$CollisionFromImage.remove_child(n)
+			n.queue_free()
+			
+		var bitmap = BitMap.new()
+		bitmap.create_from_image_alpha(_collision_image.get_image())
 
-	var polygons = bitmap.opaque_to_polygons(Rect2(Vector2(0, 0), bitmap.get_size()))
+		var polygons = bitmap.opaque_to_polygons(Rect2(Vector2(0, 0), bitmap.get_size()))
 
-	for polygon in polygons:
-		var collider = CollisionPolygon2D.new()
-		collider.polygon = polygon
-		$CollisionArea.add_child(collider)
+		for polygon in polygons:
+			var collider = CollisionPolygon2D.new()
+			collider.polygon = polygon
+			$CollisionFromImage.add_child(collider)
+
+func toggle_collision_shape_children(node: StaticBody2D, disabled: bool):
+	for n in node.get_children():
+		n.disabled = disabled
+	node.visible = !disabled
 
 func set_bg_texture(bg_texture: Texture2D):
 	if (bg_texture == null):

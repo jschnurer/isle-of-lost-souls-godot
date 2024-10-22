@@ -18,18 +18,21 @@ size = Vector2(20, 200)
 texture = ExtResource("2_8adka")
 bg_images = Array[Texture2D]([ExtResource("2_8adka")])
 collision_image = ExtResource("3_dhd1h")
+use_collision_frame = false
 bgm_stream = ExtResource("4_svv6j")
 
 [node name="ToQuietPath" parent="." instance=ExtResource("5_8ifiy")]
 position = Vector2(355, 10)
-to_scene = 6
+to_scene = "FOREST_QUIET_PATH"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_8wd1w")
 to_north = true
 preserve_x = true
 
 [node name="ToOldWell" parent="." instance=ExtResource("5_8ifiy")]
 position = Vector2(806, 389)
-to_scene = 11
+to_scene = "FOREST_OLD_WELL"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_qbmgv")
 to_east = true
 preserve_y = true

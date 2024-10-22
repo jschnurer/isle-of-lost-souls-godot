@@ -15,10 +15,12 @@ size = Vector2(20, 200)
 texture = ExtResource("2_nf6xs")
 bg_images = Array[Texture2D]([ExtResource("2_nf6xs")])
 collision_image = ExtResource("3_q03mi")
+use_collision_frame = false
 bgm_stream = ExtResource("4_t4h8y")
 
-[node name="Teleporter" parent="." instance=ExtResource("5_wu4hb")]
+[node name="ToRiverBank" parent="." instance=ExtResource("5_wu4hb")]
 position = Vector2(10, 308)
-to_scene = 3
-to_location = Vector2(766, 314)
+to_scene = "FOREST_RIVER_BANK"
+scene_name_valid = true
 event_area = SubResource("RectangleShape2D_o84b5")
+to_location = Vector2(766, 314)

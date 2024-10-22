@@ -2,7 +2,24 @@
 extends Node2D
 
 @export_category("Teleporter")
-@export var to_scene: Enums.Scenes
+var _to_scene_name: String
+var _to_scene_enum: Enums.Scenes
+@export var to_scene: String :
+	set(value):
+		_to_scene_name = value
+		var enum_val = Enums.Scenes.get(value)
+		if (enum_val):
+			_to_scene_enum = enum_val
+		else:
+			enum_val = 0
+	get:
+		return _to_scene_name
+@export var scene_name_valid: bool :
+	get:
+		if (_to_scene_enum):
+			return true
+		else:
+			return false
 @export var event_area: Shape2D :
 	get:
 		return $GameEvent/CollisionShape2D.shape
@@ -18,6 +35,10 @@ extends Node2D
 @export_group("Player Location")
 ## The exact location to send the player in the new scene.
 @export var to_location: Vector2
+## The player is moved to their previous position as defined in the game vars.
+@export var to_previous_position: bool = false
+## The player is moved to the exact center of the screen. This overrides [member to_location]'s value.
+@export var to_screen_center: bool = false
 
 @export_subgroup("Screen Transitions")
 ## The scene the player is moved to is north. This overrides [member to_location]'s y value.
@@ -39,13 +60,19 @@ func _ready():
 	$GameEvent.connect("on_activate", on_activate)
 
 func on_activate():
-	SignalBus.emit_signal("transfer_player_to_scene", {
-		"to_scene": to_scene,
-		"to_location": to_location,
-		"to_north": to_north,
-		"to_south": to_south,
-		"to_east": to_east,
-		"to_west": to_west,
-		"preserve_x": preserve_x,
-		"preserve_y": preserve_y,
-	})
+	var args = TeleportArgs.new()
+	args.to_scene = _to_scene_enum
+	args.to_location = to_location
+	args.to_screen_center = to_screen_center
+	args.to_previous_position = to_previous_position
+	args.to_north = to_north
+	args.to_south = to_south
+	args.to_east = to_east
+	args.to_west = to_west
+	args.preserve_x = preserve_x
+	args.preserve_y = preserve_y
+	
+	SignalBus.emit_signal("transfer_player_to_scene", args)
+	
+	if (args.to_previous_position):
+		SignalBus.emit_signal("restore_player_facing")
