@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://caswa4l3noyvo"]
+
+[ext_resource type="Texture2D" uid="uid://djohaew220edr" path="res://art/ui/icons_xbox_without_outline_colored.png" id="1_5nit3"]
+[ext_resource type="Texture2D" uid="uid://cndp1gj1ecjqc" path="res://art/ui/icons_pc.png" id="1_gma5x"]
+[ext_resource type="Script" path="res://src/ui/input_icon/input_icon.gd" id="2_xans8"]
+
+[node name="InputIcon" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_gma5x")
+region_enabled = true
+region_rect = Rect2(16, 64, 16, 16)
+script = ExtResource("2_xans8")
+xbox_sheet = ExtResource("1_5nit3")
+pc_sheet = ExtResource("1_gma5x")

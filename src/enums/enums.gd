@@ -1,23 +1,10 @@
 extends Node
 
-enum Direction {
-	UP,
-	DOWN,
-	LEFT,
-	RIGHT
-}
-
-enum ActivationMode {
-	ACTIVATE,
-	COLLIDE,
-	ON_SCENE_START
-}
-
-enum EventType {
-	DIALOG,
-	TELEPORT
-}
-
+enum InputMethod { PC, XBOX, }
+enum InputAction { INVESTIGATE, INTERACT, TAKE, USE_ITEM, }
+enum Direction { UP, DOWN, LEFT, RIGHT, }
+enum ActivationMode { ACTIVATE, COLLIDE, ON_SCENE_START }
+enum EventType { DIALOG, TELEPORT }
 enum Vars {
 	TOOK_STONE
 }
