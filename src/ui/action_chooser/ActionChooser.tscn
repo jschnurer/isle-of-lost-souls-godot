@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh21a833axk4g"]
+
+[ext_resource type="Script" path="res://src/ui/action_chooser/action_chooser.gd" id="1_ssibr"]
+
+[node name="ActionChooser" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ssibr")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.5
+offset_top = -73.0
+offset_right = 187.5
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopRow" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TopLeft" type="Control" parent="VBox/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Interact" type="Button" parent="VBox/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/icon_max_width = 16
+text = "Interact"
+expand_icon = true
+
+[node name="TopRight" type="Control" parent="VBox/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterRow" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="UseItem" type="Button" parent="VBox/CenterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/icon_max_width = 16
+text = "Use Item"
+expand_icon = true
+
+[node name="Investigate" type="Button" parent="VBox/CenterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/icon_max_width = 16
+text = "Investigate"
+expand_icon = true
+
+[node name="Take" type="Button" parent="VBox/CenterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/icon_max_width = 16
+text = "Take"
+expand_icon = true
+
+[node name="BottomRow" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TopLeft" type="Control" parent="VBox/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Cancel" type="Button" parent="VBox/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cancel"
+
+[node name="TopRight" type="Control" parent="VBox/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3

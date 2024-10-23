@@ -2,6 +2,7 @@ class_name GameEvent
 extends Area2D
 
 @export var activation_mode: Enums.ActivationMode = Enums.ActivationMode.ACTIVATE
+@export var use_action_chooser: bool = true
 signal on_activate
 
 func activate(input_action: Enums.InputAction):

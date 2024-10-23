@@ -23,22 +23,20 @@ func _ready():
 	$PointerCollision.disabled = true
 	SignalBus.game_event_entered_range.connect(_on_game_event_entered_range)
 	SignalBus.game_event_exited_range.connect(_on_game_event_exited_range)
-	SignalBus.connect("memorize_player_info", _on_memorize_player_info)
-	SignalBus.connect("restore_player_info", _on_restore_player_info)
-	SignalBus.connect("set_player_mode", _on_set_player_mode)
+	SignalBus.memorize_player_info.connect(_on_memorize_player_info)
+	SignalBus.restore_player_info.connect(_on_restore_player_info)
+	SignalBus.set_player_mode.connect(_on_set_player_mode)
+	SignalBus.action_chooser_closed.connect(_on_action_chooser_closed)
 
 func  _input(event):
 	if !game_event_in_range:
 		return
 	
-	if event.is_action_pressed("investigate"):
-		game_event_in_range.activate(Enums.InputAction.INVESTIGATE)
-	elif event.is_action_pressed("take"):
-		game_event_in_range.activate(Enums.InputAction.TAKE)
-	elif event.is_action_pressed("use_item"):
-		game_event_in_range.activate(Enums.InputAction.USE_ITEM)
-	elif event.is_action_pressed("interact"):
-		game_event_in_range.activate(Enums.InputAction.INTERACT)
+	if (event.is_action_pressed("ui_accept")):
+		if (game_event_in_range.use_action_chooser):
+			SignalBus.show_action_chooser.emit()
+		else:
+			game_event_in_range.activate(Enums.InputAction.INTERACT)
 
 func _physics_process(_delta: float) -> void:
 	var direction_x := Input.get_axis("ui_left", "ui_right")
@@ -141,3 +139,9 @@ func _on_set_player_mode(new_mode: Enums.PlayerMode):
 	$FeetCollision.disabled = is_pointer
 	$PointerArea/CollisionShape2D.disabled = !is_pointer
 	$PointerCollision.disabled = !is_pointer
+
+func _on_action_chooser_closed(action):
+	if !game_event_in_range or action == null:
+		return
+	
+	game_event_in_range.activate(action)

@@ -34,7 +34,7 @@ func toggle(is_on: bool):
 
 func finish():
 	toggle(false)
-	SignalBus.show_message_finished.emit()
+	SignalBus.message_closed.emit()
 
 func _on_show_message(message: String, has_more: bool):
 	text_label.text = message

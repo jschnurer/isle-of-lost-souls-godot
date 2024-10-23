@@ -8,3 +8,4 @@ script = ExtResource("1_grrr8")
 
 [node name="GameEvent" parent="." instance=ExtResource("2_y8xfl")]
 activation_mode = 1
+use_action_chooser = false

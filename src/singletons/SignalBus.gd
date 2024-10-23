@@ -4,7 +4,7 @@ extends Node
 signal show_message(message: String, has_more: bool)
 
 @warning_ignore("unused_signal")
-signal show_message_finished()
+signal message_closed()
 
 @warning_ignore("unused_signal")
 signal transfer_player_to_scene(transfer_args: TeleportArgs)
@@ -29,3 +29,15 @@ signal restore_player_info()
 
 @warning_ignore("unused_signal")
 signal set_player_mode(mode: Enums.PlayerMode)
+
+@warning_ignore("unused_signal")
+signal show_item_chooser()
+
+@warning_ignore("unused_signal")
+signal item_chooser_closed()
+
+@warning_ignore("unused_signal")
+signal show_action_chooser()
+
+@warning_ignore("unused_signal")
+signal action_chooser_closed(chosen_action)

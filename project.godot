@@ -25,6 +25,10 @@ ControlsHint="*res://src/ui/controls_hint/controls_hint.tscn"
 AudioPlayer="*res://src/singletons/audio_player/AudioPlayer.tscn"
 MessageBox="*res://src/ui/message_box/MessageBox.tscn"
 GameVars="*res://src/game_data/game_vars.gd"
+ItemDb="*res://src/game_data/item_db.gd"
+Inventory="*res://src/game_data/inventory.gd"
+ItemChooser="*res://src/ui/item_chooser/ItemChooser.tscn"
+ActionChooser="*res://src/ui/action_chooser/ActionChooser.tscn"
 
 [display]
 

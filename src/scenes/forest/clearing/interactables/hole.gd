@@ -2,7 +2,7 @@ extends "res://src/events/game_event/base_event.gd"
 
 func investigate():
 	SignalBus.show_message.emit(GameScript.Forest_Clearing_Hole_Look, false)
-	await SignalBus.show_message_finished
+	await SignalBus.message_closed
 	
 	SignalBus.memorize_player_info.emit()
 	SignalBus.set_player_mode.emit(Enums.PlayerMode.POINTER)
