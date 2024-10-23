@@ -106,19 +106,19 @@ func _on_memorize_player_info():
 	var info = PlayerInfo.new()
 	info.position = position
 	info.facing_dir = facing_dir
-	if $Sprite.texture != pointer_sprite:
-		info.mode = Enums.PlayerMode.PERSON
-	else:
-		info.mode = Enums.PlayerMode.POINTER
-	SignalBus.set_game_var.emit(Enums.Vars.PLAYER_INFO, info)
+	info.is_sprite_flip_h = $Sprite.flip_h
+	info.mode = mode
+	GameVars.set_var(Enums.Vars.PLAYER_INFO, info)
 
 func _on_restore_player_info():
-	var saved_info: PlayerInfo = GameDb.get_var(Enums.Vars.PLAYER_INFO)
+	var saved_info: PlayerInfo = GameVars.get_var(Enums.Vars.PLAYER_INFO)
 	facing_dir = saved_info.facing_dir
 	_on_set_player_mode(saved_info.mode)
 	
 	update_areas()
 	update_sprite()
+	
+	$Sprite.flip_h = saved_info.is_sprite_flip_h
 
 func _on_set_player_mode(new_mode: Enums.PlayerMode):
 	mode = new_mode

@@ -60,7 +60,7 @@ var _to_scene_enum: Enums.Scenes
 func _ready():
 	$GameEvent.connect("on_activate", on_activate)
 
-func on_activate():
+func on_activate(_action: Enums.InputAction):
 	var args = TeleportArgs.new()
 	args.to_scene = _to_scene_enum
 	args.to_location = to_location

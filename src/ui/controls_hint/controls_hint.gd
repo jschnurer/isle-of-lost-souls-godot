@@ -1,4 +1,3 @@
-@tool
 extends CanvasLayer
 
 var _input_method: Enums.InputMethod = Enums.InputMethod.PC
