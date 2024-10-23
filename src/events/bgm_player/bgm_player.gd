@@ -5,6 +5,6 @@ extends Node2D
 
 func _ready():
 	if (stream):
-		SignalBus.emit_signal("play_bgm", stream, volume_db)
+		SignalBus.play_bgm.emit(stream, volume_db)
 	else:
-		SignalBus.emit_signal("stop_bgm")
+		SignalBus.stop_bgm.emit()

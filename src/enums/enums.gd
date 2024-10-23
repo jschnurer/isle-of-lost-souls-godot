@@ -1,13 +1,13 @@
 extends Node
 
 enum InputMethod { PC, XBOX, }
-enum InputAction { INVESTIGATE, INTERACT, TAKE, USE_ITEM, }
+enum InputAction { COLLIDE, INVESTIGATE, INTERACT, TAKE, USE_ITEM, }
 enum Direction { UP, DOWN, LEFT, RIGHT, }
+enum PlayerMode { PERSON, POINTER }
 enum ActivationMode { ACTIVATE, COLLIDE, ON_SCENE_START }
 enum EventType { DIALOG, TELEPORT }
 enum Vars {
-	PREVIOUS_PLAYER_POSITION,
-	PREVIOUS_PLAYER_FACING,
+	PLAYER_INFO,
 	TOOK_STONE,
 }
 

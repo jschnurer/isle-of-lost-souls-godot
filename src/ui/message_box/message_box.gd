@@ -15,8 +15,12 @@ func _process(delta):
 	if (background.visible and appearance_time < time_before_can_close):
 		appearance_time += delta
 		
-	if appearance_time >= time_before_can_close and Input.is_action_just_pressed("ui_accept"):
-		if background.visible:
+	if (appearance_time >= time_before_can_close and background.visible):
+		if (Input.is_action_just_pressed("ui_accept")
+			or Input.is_action_just_pressed("investigate")
+			or Input.is_action_just_pressed("use_item")
+			or Input.is_action_just_pressed("interact")
+			or Input.is_action_just_pressed("take")):
 			finish()
 
 func toggle(is_on: bool):

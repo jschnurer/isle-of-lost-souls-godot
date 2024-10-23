@@ -3,6 +3,7 @@ extends Node2D
 
 @export_category("Teleporter")
 var _to_scene_name: String
+@warning_ignore("enum_variable_without_default")
 var _to_scene_enum: Enums.Scenes
 @export var to_scene: String :
 	set(value):
@@ -72,7 +73,7 @@ func on_activate():
 	args.preserve_x = preserve_x
 	args.preserve_y = preserve_y
 	
-	SignalBus.emit_signal("transfer_player_to_scene", args)
+	SignalBus.transfer_player_to_scene.emit(args)
 	
 	if (args.to_previous_position):
-		SignalBus.emit_signal("restore_player_facing")
+		SignalBus.restore_player_info.emit()

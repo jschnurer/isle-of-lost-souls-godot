@@ -75,7 +75,6 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_2e51k")
 
 [node name="PointerArea" type="Area2D" parent="."]
-scale = Vector2(1, 1)
 collision_layer = 2
 collision_mask = 0
 
@@ -85,5 +84,4 @@ shape = SubResource("RectangleShape2D_7c387")
 
 [node name="PointerCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-12.1212, -71.2121)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1vjpk")

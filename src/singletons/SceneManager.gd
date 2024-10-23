@@ -14,9 +14,8 @@ func _on_transfer_player_to_scene(args: TeleportArgs):
 	var location = args.to_location
 	
 	if (args.to_previous_position):
-		var prev_loc = GameDb.get_var(Enums.Vars.PREVIOUS_PLAYER_POSITION)
-		print(prev_loc)
-		location = prev_loc
+		var prev_position = GameDb.get_var(Enums.Vars.PLAYER_INFO).position
+		location = prev_position
 	elif (args.to_screen_center == true):
 		location.x = 408
 		location.y = 312

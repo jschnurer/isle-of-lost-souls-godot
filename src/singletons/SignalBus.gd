@@ -25,13 +25,10 @@ signal game_event_entered_range(game_event: GameEvent)
 signal game_event_exited_range(game_event: GameEvent)
 
 @warning_ignore("unused_signal")
-signal remember_player_location()
+signal memorize_player_info()
 
 @warning_ignore("unused_signal")
-signal remember_player_facing()
+signal restore_player_info()
 
 @warning_ignore("unused_signal")
-signal restore_player_facing()
-
-@warning_ignore("unused_signal")
-signal toggle_pointer_mode(is_pointer: bool)
+signal set_player_mode(mode: Enums.PlayerMode)

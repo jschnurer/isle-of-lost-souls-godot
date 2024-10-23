@@ -11,7 +11,7 @@ const POINTER_SPEED = 400.0
 var SPEED = PERSON_SPEED
 var facing_dir: Enums.Direction = Enums.Direction.RIGHT
 var game_event_in_range: GameEvent
-var pointer_mode = false
+var mode: Enums.PlayerMode = Enums.PlayerMode.PERSON
 
 func _ready():
 	$Sprite.texture = normal_sprite
@@ -23,14 +23,22 @@ func _ready():
 	$PointerCollision.disabled = true
 	SignalBus.game_event_entered_range.connect(_on_game_event_entered_range)
 	SignalBus.game_event_exited_range.connect(_on_game_event_exited_range)
-	SignalBus.connect("remember_player_location", _on_remember_player_location)
-	SignalBus.connect("remember_player_facing", _on_remember_player_facing)
-	SignalBus.connect("restore_player_facing", _on_restore_player_facing)
-	SignalBus.connect("toggle_pointer_mode", _on_toggle_pointer_mode)
+	SignalBus.connect("memorize_player_info", _on_memorize_player_info)
+	SignalBus.connect("restore_player_info", _on_restore_player_info)
+	SignalBus.connect("set_player_mode", _on_set_player_mode)
 
 func  _input(event):
-	if game_event_in_range and event.is_action_pressed("ui_accept"):
-		game_event_in_range.activate()
+	if !game_event_in_range:
+		return
+	
+	if event.is_action_pressed("investigate"):
+		game_event_in_range.activate(Enums.InputAction.INVESTIGATE)
+	elif event.is_action_pressed("take"):
+		game_event_in_range.activate(Enums.InputAction.TAKE)
+	elif event.is_action_pressed("use_item"):
+		game_event_in_range.activate(Enums.InputAction.USE_ITEM)
+	elif event.is_action_pressed("interact"):
+		game_event_in_range.activate(Enums.InputAction.INTERACT)
 
 func _physics_process(_delta: float) -> void:
 	var direction_x := Input.get_axis("ui_left", "ui_right")
@@ -49,11 +57,11 @@ func _physics_process(_delta: float) -> void:
 	
 	if (velocity.x < 0):
 		facing_dir = Enums.Direction.LEFT
-		if (!pointer_mode):
+		if (mode == Enums.PlayerMode.PERSON):
 			$Sprite.flip_h = true
 	elif (velocity.x > 0):
 		facing_dir = Enums.Direction.RIGHT
-		if (!pointer_mode):
+		if (mode == Enums.PlayerMode.PERSON):
 			$Sprite.flip_h = false
 	
 	if (velocity.y < 0):
@@ -65,7 +73,7 @@ func _physics_process(_delta: float) -> void:
 	update_sprite()
 	
 func update_sprite():
-	if (pointer_mode):
+	if (mode != Enums.PlayerMode.PERSON):
 		return
 		
 	if (facing_dir == Enums.Direction.LEFT):
@@ -81,7 +89,7 @@ func update_sprite():
 		$Sprite.texture = down_sprite
 
 func update_areas():
-	if (!pointer_mode):
+	if (mode == Enums.PlayerMode.PERSON):
 		$UpArea/CollisionShape2D.disabled = facing_dir != Enums.Direction.UP
 		$RightArea/CollisionShape2D.disabled = facing_dir != Enums.Direction.RIGHT
 		$DownArea/CollisionShape2D.disabled = facing_dir != Enums.Direction.DOWN
@@ -94,27 +102,36 @@ func _on_game_event_exited_range(game_event: GameEvent):
 	if game_event_in_range == game_event:
 		game_event_in_range = null
 
-func _on_remember_player_location():
-	SignalBus.set_game_var.emit(Enums.Vars.PREVIOUS_PLAYER_POSITION, position)
+func _on_memorize_player_info():
+	var info = PlayerInfo.new()
+	info.position = position
+	info.facing_dir = facing_dir
+	if $Sprite.texture != pointer_sprite:
+		info.mode = Enums.PlayerMode.PERSON
+	else:
+		info.mode = Enums.PlayerMode.POINTER
+	SignalBus.set_game_var.emit(Enums.Vars.PLAYER_INFO, info)
 
-func _on_remember_player_facing():
-	SignalBus.set_game_var.emit(Enums.Vars.PREVIOUS_PLAYER_FACING, facing_dir)
-
-func _on_restore_player_facing():
-	facing_dir = GameDb.get_var(Enums.Vars.PREVIOUS_PLAYER_FACING)
+func _on_restore_player_info():
+	var saved_info: PlayerInfo = GameDb.get_var(Enums.Vars.PLAYER_INFO)
+	facing_dir = saved_info.facing_dir
+	_on_set_player_mode(saved_info.mode)
+	
 	update_areas()
 	update_sprite()
 
-func _on_toggle_pointer_mode(is_pointer: bool):
-	pointer_mode = is_pointer
+func _on_set_player_mode(new_mode: Enums.PlayerMode):
+	mode = new_mode
 	
-	if (is_pointer):
+	if (mode == Enums.PlayerMode.POINTER):
 		$Sprite.texture = pointer_sprite
 		$Sprite.flip_h = false
 		SPEED = POINTER_SPEED
 	else:
 		SPEED = PERSON_SPEED
 		update_sprite()
+	
+	var is_pointer = mode == Enums.PlayerMode.POINTER
 	
 	$DownArea/CollisionShape2D.disabled = is_pointer
 	$UpArea/CollisionShape2D.disabled = is_pointer
