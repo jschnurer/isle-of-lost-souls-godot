@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://d22v6nqpurs0k"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_vwh6d"]
+[ext_resource type="Texture2D" uid="uid://cvv7dwr2rcbpb" path="res://art/backgrounds/game_over/game_over.png" id="2_hdl4j"]
+[ext_resource type="AudioStream" uid="uid://c24ddpye4f68b" path="res://audio/bgm/game_over.mp3" id="3_5ufg2"]
+[ext_resource type="Script" path="res://src/scenes/game_overs/fish/fish_game_over.gd" id="3_e8ua6"]
+
+[node name="FishGameOver" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_vwh6d")]
+texture = ExtResource("2_hdl4j")
+bg_images = Array[Texture2D]([ExtResource("2_hdl4j")])
+use_collision_frame = true
+bgm_stream = ExtResource("3_5ufg2")
+
+[node name="FishGameOver" type="Node2D" parent="."]
+script = ExtResource("3_e8ua6")

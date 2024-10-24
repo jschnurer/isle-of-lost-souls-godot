@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3cfjh46j1dm1"
-path="res://.godot/imported/game_over.png-573c5b4155085d527e90cd5495eb5ebe.ctex"
+uid="uid://dn4v442wa583y"
+path="res://.godot/imported/rusty_rod.png-ac6b458e685795abff4b203a8d8e20af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/game_over/game_over.png"
-dest_files=["res://.godot/imported/game_over.png-573c5b4155085d527e90cd5495eb5ebe.ctex"]
+source_file="res://art/actors/rusty_rod.png"
+dest_files=["res://.godot/imported/rusty_rod.png-ac6b458e685795abff4b203a8d8e20af.ctex"]
 
 [params]
 

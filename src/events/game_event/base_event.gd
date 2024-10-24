@@ -1,5 +1,7 @@
+class_name BaseEvent
 extends Node2D
 
+var is_base_event = true
 @export var auto_connect_child_game_event = true
 
 func _ready():

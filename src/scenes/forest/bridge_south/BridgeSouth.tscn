@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://lroweyrypev2"]
+[gd_scene load_steps=19 format=3 uid="uid://lroweyrypev2"]
 
 [ext_resource type="Texture2D" uid="uid://w5djnj5frudu" path="res://art/backgrounds/forest/Forest Broken Bridge South 1.png" id="1_ro3oe"]
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_thwdb"]
@@ -10,14 +10,48 @@
 [ext_resource type="Script" path="res://src/scenes/forest/bridge_south/interactables/river.gd" id="8_7be8q"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="9_eghx8"]
 [ext_resource type="Script" path="res://src/scenes/forest/bridge_south/interactables/bridge.gd" id="10_8cs06"]
+[ext_resource type="Script" path="res://src/scenes/forest/bridge_south/interactables/rusty_rod.gd" id="11_02ueu"]
+[ext_resource type="Texture2D" uid="uid://dn4v442wa583y" path="res://art/actors/rusty_rod.png" id="11_i57cd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50rri"]
 size = Vector2(200, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpcq3"]
+size = Vector2(39, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwubx"]
+atlas = ExtResource("11_i57cd")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuf51"]
+atlas = ExtResource("11_i57cd")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm1ov"]
+atlas = ExtResource("11_i57cd")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8g8cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwubx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuf51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm1ov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
 [node name="BridgeSouth" type="Node2D"]
 
 [node name="SceneBG" parent="." instance=ExtResource("1_thwdb")]
-texture = ExtResource("4_rum85")
+texture = ExtResource("3_typln")
 bg_images = Array[Texture2D]([ExtResource("1_ro3oe"), ExtResource("3_typln"), ExtResource("4_rum85")])
 collision_image = ExtResource("5_agcjw")
 bgm_stream = ExtResource("4_rxf6y")
@@ -49,3 +83,21 @@ polygon = PackedVector2Array(345, 289, 345, 237, 349, 157, 372, 160, 371, 207, 3
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Bridge/GameEvent"]
 polygon = PackedVector2Array(494, 172, 515, 158, 520, 289, 489, 289, 483, 234, 482, 207, 496, 208)
+
+[node name="RustyRod" type="Node2D" parent="."]
+position = Vector2(586, 229)
+script = ExtResource("11_02ueu")
+
+[node name="GameEvent" parent="RustyRod" instance=ExtResource("9_eghx8")]
+
+[node name="CollisionShape2D" parent="RustyRod/GameEvent" index="0"]
+position = Vector2(-0.5, 12.5)
+shape = SubResource("RectangleShape2D_bpcq3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RustyRod"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_8g8cw")
+autoplay = "default"
+frame_progress = 0.42061
+
+[editable path="RustyRod/GameEvent"]

@@ -28,6 +28,7 @@ ItemDb="*res://src/game_data/item_db.gd"
 Inventory="*res://src/game_data/inventory.gd"
 ItemChooser="*res://src/ui/item_chooser/ItemChooser.tscn"
 ActionChooser="*res://src/ui/action_chooser/ActionChooser.tscn"
+ScreenFader="*res://src/ui/screen_fader/ScreenFader.tscn"
 
 [display]
 

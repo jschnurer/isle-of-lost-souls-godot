@@ -12,6 +12,7 @@ var SPEED = PERSON_SPEED
 var facing_dir: Enums.Direction = Enums.Direction.RIGHT
 var game_event_in_range: GameEvent
 var mode: Enums.PlayerMode = Enums.PlayerMode.PERSON
+var is_controllable: bool = true
 
 func _ready():
 	$Sprite.texture = normal_sprite
@@ -27,9 +28,10 @@ func _ready():
 	SignalBus.restore_player_info.connect(_on_restore_player_info)
 	SignalBus.set_player_mode.connect(_on_set_player_mode)
 	SignalBus.action_chooser_closed.connect(_on_action_chooser_closed)
+	SignalBus.toggle_player.connect(_on_toggle_player)
 
 func  _input(event):
-	if !game_event_in_range:
+	if (!is_controllable or !game_event_in_range):
 		return
 	
 	if (event.is_action_pressed("ui_accept")):
@@ -39,6 +41,9 @@ func  _input(event):
 			game_event_in_range.activate(Enums.InputAction.INTERACT)
 
 func _physics_process(_delta: float) -> void:
+	if (!is_controllable):
+		return
+		
 	var direction_x := Input.get_axis("ui_left", "ui_right")
 	if direction_x:
 		velocity.x = direction_x * SPEED
@@ -94,7 +99,11 @@ func update_areas():
 		$LeftArea/CollisionShape2D.disabled = facing_dir != Enums.Direction.LEFT
 
 func _on_game_event_entered_range(game_event: GameEvent):
-	game_event_in_range = game_event
+	if (game_event_in_range == null):
+		game_event_in_range = game_event
+	else:
+		if (game_event.parent_node_index > game_event_in_range.parent_node_index):
+			game_event_in_range = game_event
 	
 func _on_game_event_exited_range(game_event: GameEvent):
 	if game_event_in_range == game_event:
@@ -145,3 +154,7 @@ func _on_action_chooser_closed(action):
 		return
 	
 	game_event_in_range.activate(action)
+
+func _on_toggle_player(args: TogglePlayerArgs):
+	visible = args.is_visible
+	is_controllable = args.is_controllable

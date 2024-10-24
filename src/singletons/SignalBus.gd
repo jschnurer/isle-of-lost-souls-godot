@@ -7,6 +7,9 @@ signal show_message(message: String, has_more: bool)
 signal message_closed()
 
 @warning_ignore("unused_signal")
+signal toggle_player(toggle_args: TogglePlayerArgs)
+
+@warning_ignore("unused_signal")
 signal transfer_player_to_scene(transfer_args: TeleportArgs)
 
 @warning_ignore("unused_signal")
@@ -41,3 +44,18 @@ signal show_action_chooser()
 
 @warning_ignore("unused_signal")
 signal action_chooser_closed(chosen_action)
+
+@warning_ignore("unused_signal")
+signal fade_out_screen(fade_args: ScreenFadeArgs)
+
+@warning_ignore("unused_signal")
+signal fade_out_screen_finished()
+
+@warning_ignore("unused_signal")
+signal fade_in_screen(fade_args: ScreenFadeArgs)
+
+@warning_ignore("unused_signal")
+signal fade_in_screen_finished()
+
+@warning_ignore("unused_signal")
+signal return_to_title_screen()

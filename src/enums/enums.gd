@@ -4,11 +4,12 @@ enum InputMethod { PC, XBOX, }
 enum InputAction { COLLIDE, INVESTIGATE, INTERACT, TAKE, USE_ITEM, }
 enum Direction { UP, DOWN, LEFT, RIGHT, }
 enum PlayerMode { PERSON, POINTER }
-enum ActivationMode { ACTIVATE, COLLIDE, ON_SCENE_START }
+enum ActivationMode { ACTIVATE, COLLIDE, }
 enum EventType { DIALOG, TELEPORT }
 enum Vars {
 	PLAYER_INFO,
 	TOOK_STONE,
+	DISTRACTED_FISH
 }
 enum EngineEvents {
 	SHOW_MESSAGE,
@@ -49,7 +50,7 @@ enum ItemSlugs {
 	TARNROOT,
 }
 
-# max is 90
+# max is 91
 enum Scenes {
 	CAVES_BAT_DEN = 13,
 	CAVES_BOTTOM_OF_SHAFT = 14,
@@ -147,6 +148,8 @@ enum Scenes {
 	SWAMP_STANDING_WATER = 88,
 	SWAMP_STATUE = 89,
 	SWAMP_TOPPLED_LOG = 90,
+	
+	GAME_OVER_FISH = 91
 }
 
 var ScenePaths = {
@@ -246,4 +249,6 @@ var ScenePaths = {
 	Scenes.SWAMP_STANDING_WATER: "res://src/scenes/swamp/",
 	Scenes.SWAMP_STATUE: "res://src/scenes/swamp/",
 	Scenes.SWAMP_TOPPLED_LOG: "res://src/scenes/swamp/",
+	
+	Scenes.GAME_OVER_FISH: "res://src/scenes/game_overs/fish/fish_game_over.tscn",
 }
