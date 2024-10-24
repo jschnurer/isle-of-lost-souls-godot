@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbg5lrchiq5v2"]
 
-[ext_resource type="Texture2D" uid="uid://byjiqp0gx11pg" path="res://art/ui/dialog_background.png" id="1_2gyal"]
 [ext_resource type="Script" path="res://src/ui/message_box/message_box.gd" id="1_u5epf"]
+[ext_resource type="Theme" uid="uid://v1piyp7jwkvp" path="res://src/ui/base_theme.tres" id="2_ejo7c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ovuoe"]
 font_size = 30
@@ -11,39 +11,42 @@ font_color = Color(0.703808, 0.703808, 0.703808, 1)
 process_mode = 3
 script = ExtResource("1_u5epf")
 
-[node name="Background" type="TextureRect" parent="."]
-texture_filter = 1
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -240.0
-offset_right = 816.0
+offset_left = 3.0
+offset_top = -237.0
+offset_right = 813.0
+offset_bottom = -3.0
 grow_vertical = 0
-texture = ExtResource("1_2gyal")
+theme = ExtResource("2_ejo7c")
 
-[node name="Text" type="Label" parent="."]
+[node name="Text" type="Label" parent="Panel"]
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 23.0
-offset_top = -219.0
-offset_right = -23.0
-offset_bottom = -31.0
+offset_left = 20.0
+offset_top = -216.0
+offset_right = -26.0
+offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 0
 label_settings = SubResource("LabelSettings_ovuoe")
 autowrap_mode = 2
 
-[node name="OK" type="Label" parent="."]
+[node name="OK" type="Label" parent="Panel"]
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 764.0
-offset_top = -55.0
-offset_right = -23.0
-offset_bottom = -13.0
+offset_left = 761.0
+offset_top = -52.0
+offset_right = -26.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
 label_settings = SubResource("LabelSettings_ovuoe")

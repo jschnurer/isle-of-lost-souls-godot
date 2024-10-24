@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var background = $Background
-@onready var text_label = $Text
-@onready var ok_label = $OK
+@onready var background = $Panel
+@onready var text_label = $Panel/Text
+@onready var ok_label = $Panel/OK
 
 var appearance_time = 0
 var time_before_can_close = .25
