@@ -49,11 +49,11 @@ theme_override_constants/icon_max_width = 16
 text = "Use Item"
 expand_icon = true
 
-[node name="Investigate" type="Button" parent="VBox/CenterRow"]
+[node name="Cancel" type="Button" parent="VBox/CenterRow"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/icon_max_width = 16
-text = "Investigate"
+text = "Cancel"
 expand_icon = true
 
 [node name="Take" type="Button" parent="VBox/CenterRow"]
@@ -71,10 +71,10 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Cancel" type="Button" parent="VBox/BottomRow"]
+[node name="Investigate" type="Button" parent="VBox/BottomRow"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Cancel"
+text = "Investigate"
 
 [node name="TopRight" type="Control" parent="VBox/BottomRow"]
 layout_mode = 2

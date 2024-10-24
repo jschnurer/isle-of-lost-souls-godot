@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://lroweyrypev2"]
+[gd_scene load_steps=12 format=3 uid="uid://lroweyrypev2"]
 
 [ext_resource type="Texture2D" uid="uid://w5djnj5frudu" path="res://art/backgrounds/forest/Forest Broken Bridge South 1.png" id="1_ro3oe"]
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_thwdb"]
@@ -7,6 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://c3sqse2538nvn" path="res://audio/bgm/river-flow_nature-sound-151039.mp3" id="4_rxf6y"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="5_1fosc"]
 [ext_resource type="Texture2D" uid="uid://dre6gfqg0nhkg" path="res://art/backgrounds/forest/Forest Broken Bridge South Collision.png" id="5_agcjw"]
+[ext_resource type="Script" path="res://src/scenes/forest/bridge_south/interactables/river.gd" id="8_7be8q"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="9_eghx8"]
+[ext_resource type="Script" path="res://src/scenes/forest/bridge_south/interactables/bridge.gd" id="10_8cs06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50rri"]
 size = Vector2(200, 20)
@@ -14,11 +17,11 @@ size = Vector2(200, 20)
 [node name="BridgeSouth" type="Node2D"]
 
 [node name="SceneBG" parent="." instance=ExtResource("1_thwdb")]
-texture = ExtResource("1_ro3oe")
+texture = ExtResource("4_rum85")
 bg_images = Array[Texture2D]([ExtResource("1_ro3oe"), ExtResource("3_typln"), ExtResource("4_rum85")])
 collision_image = ExtResource("5_agcjw")
-use_collision_frame = false
 bgm_stream = ExtResource("4_rxf6y")
+metadata/_edit_lock_ = true
 
 [node name="ToClearing" parent="." instance=ExtResource("5_1fosc")]
 position = Vector2(351, 614)
@@ -27,3 +30,22 @@ scene_name_valid = true
 event_area = SubResource("RectangleShape2D_50rri")
 to_south = true
 preserve_x = true
+
+[node name="River" type="Node2D" parent="."]
+script = ExtResource("8_7be8q")
+
+[node name="GameEvent" parent="River" instance=ExtResource("9_eghx8")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/GameEvent"]
+polygon = PackedVector2Array(40, 245, 368, 52, 529, 49, 779, 256, 773, 292, 736, 280, 678, 274, 541, 274, 545, 208, 517, 142, 488, 145, 481, 188, 384, 188, 375, 150, 343, 145, 313, 206, 322, 263, 280, 251, 218, 252, 132, 265, 66, 272)
+
+[node name="Bridge" type="Node2D" parent="."]
+script = ExtResource("10_8cs06")
+
+[node name="GameEvent" parent="Bridge" instance=ExtResource("9_eghx8")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bridge/GameEvent"]
+polygon = PackedVector2Array(345, 289, 345, 237, 349, 157, 372, 160, 371, 207, 382, 207, 377, 288)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Bridge/GameEvent"]
+polygon = PackedVector2Array(494, 172, 515, 158, 520, 289, 489, 289, 483, 234, 482, 207, 496, 208)

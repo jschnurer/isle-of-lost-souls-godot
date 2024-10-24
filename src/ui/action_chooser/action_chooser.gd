@@ -3,9 +3,9 @@ extends CanvasLayer
 @onready var vbox = $VBox
 @onready var btn_interact = $VBox/TopRow/Interact
 @onready var btn_use_item = $VBox/CenterRow/UseItem
-@onready var btn_investigate = $VBox/CenterRow/Investigate
+@onready var btn_investigate = $VBox/BottomRow/Investigate
 @onready var btn_take = $VBox/CenterRow/Take
-@onready var btn_cancel = $VBox/BottomRow/Cancel
+@onready var btn_cancel = $VBox/CenterRow/Cancel
 
 var btn_focused
 var appearance_time = 0
@@ -41,11 +41,11 @@ func _process(delta):
 	elif (direction_x == 1):
 		focus_button(btn_take)
 	elif (direction_y == 1):
-		focus_button(btn_cancel)
+		focus_button(btn_investigate)
 	elif (direction_y == -1):
 		focus_button(btn_interact)
 	else:
-		focus_button(btn_investigate)
+		focus_button(btn_cancel)
 		
 	if (appearance_time >= time_before_can_close
 		and btn_focused

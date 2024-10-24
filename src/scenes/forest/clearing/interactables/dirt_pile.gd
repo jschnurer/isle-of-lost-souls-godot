@@ -1,7 +1,7 @@
 extends "res://src/events/game_event/base_event.gd"
 
 func investigate():
-	SignalBus.show_message.emit(GameScript.Forest_Clearing_Hole_Look, false)
+	SignalBus.show_message.emit(GameScript.Forest_Clearing_Dirt_Look, false)
 	await SignalBus.message_closed
 	
 	SignalBus.memorize_player_info.emit()
@@ -13,7 +13,7 @@ func investigate():
 	SignalBus.transfer_player_to_scene.emit(tele_args)
 
 func take():
-	SignalBus.show_message.emit(GameScript.Forest_Clearing_Hole_Take, false)
+	SignalBus.show_message.emit(GameScript.Forest_Clearing_Dirt_Take, false)
 
 func interact():
 	SignalBus.show_message.emit(GameScript.Global_No_Mechanism_To_Interact, false)

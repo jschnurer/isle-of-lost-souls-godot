@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://blws5b8wm1dyr"]
+[gd_scene load_steps=13 format=3 uid="uid://blws5b8wm1dyr"]
 
 [ext_resource type="Texture2D" uid="uid://bcl5i0l534pgp" path="res://art/backgrounds/forest/Forest Clearing.png" id="1_i6pxq"]
 [ext_resource type="Texture2D" uid="uid://b7sih1cnrsrm6" path="res://art/backgrounds/forest/Forest Clearing Collision.png" id="3_4p7yf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://src/scenes/forest/clearing/interactables/hole.gd" id="7_8soah"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="7_40jd8"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="7_jp3rn"]
+[ext_resource type="Script" path="res://src/scenes/forest/clearing/interactables/dirt_pile.gd" id="8_kyqw8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64bcn"]
 size = Vector2(200, 20)
@@ -17,6 +18,9 @@ size = Vector2(20, 200)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vvn8"]
 size = Vector2(39, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7k7k"]
+size = Vector2(25, 20)
+
 [node name="SceneRoot" type="Node2D"]
 
 [node name="SceneBG" parent="." instance=ExtResource("5_mt6oq")]
@@ -26,6 +30,7 @@ texture = ExtResource("1_i6pxq")
 bg_images = Array[Texture2D]([ExtResource("1_i6pxq")])
 collision_image = ExtResource("3_4p7yf")
 bgm_stream = ExtResource("5_m1kp8")
+metadata/_edit_lock_ = true
 
 [node name="ToBridge" parent="." instance=ExtResource("7_40jd8")]
 position = Vector2(350, 10)
@@ -53,4 +58,14 @@ script = ExtResource("7_8soah")
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_6vvn8")
 
+[node name="DirtPile" type="Node2D" parent="."]
+script = ExtResource("8_kyqw8")
+
+[node name="GameEvent" parent="DirtPile" instance=ExtResource("7_jp3rn")]
+
+[node name="CollisionShape2D" parent="DirtPile/GameEvent" index="0"]
+position = Vector2(457, 407)
+shape = SubResource("RectangleShape2D_h7k7k")
+
 [editable path="Hole/GameEvent"]
+[editable path="DirtPile/GameEvent"]
