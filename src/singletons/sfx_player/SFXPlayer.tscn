@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://khlku2xiaswt"]
+
+[ext_resource type="Script" path="res://src/singletons/sfx_player/sfx_player.gd" id="1_tqesr"]
+[ext_resource type="PackedScene" uid="uid://olcrt035btw1" path="res://src/singletons/sfx_player/sfx_emitter/SFXEmitter.tscn" id="2_b2fok"]
+
+[node name="SfxPlayer" type="Node2D"]
+script = ExtResource("1_tqesr")
+sfx_emitter_scene = ExtResource("2_b2fok")

@@ -21,7 +21,7 @@ GameScript="*res://src/text/game_script.gd"
 Enums="*res://src/enums/enums.gd"
 SignalBus="*res://src/singletons/SignalBus.gd"
 SceneManager="*res://src/singletons/SceneManager.gd"
-AudioPlayer="*res://src/singletons/audio_player/AudioPlayer.tscn"
+AudioPlayer="*res://src/singletons/audio_player/BGMPlayer.tscn"
 MessageBox="*res://src/ui/message_box/MessageBox.tscn"
 GameVars="*res://src/game_data/game_vars.gd"
 ItemDb="*res://src/game_data/item_db.gd"
@@ -29,6 +29,8 @@ Inventory="*res://src/game_data/inventory.gd"
 ItemChooser="*res://src/ui/item_chooser/ItemChooser.tscn"
 ActionChooser="*res://src/ui/action_chooser/ActionChooser.tscn"
 ScreenFader="*res://src/ui/screen_fader/ScreenFader.tscn"
+SfxPlayer="*res://src/singletons/sfx_player/SFXPlayer.tscn"
+Utility="*res://src/singletons/Utility.gd"
 
 [display]
 

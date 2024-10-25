@@ -33,6 +33,7 @@ var Game_Over_Fish_1 = "You wade out into the river and grab the metal rod. You 
 var Game_Over_Fish_2 = "You start working it back and forth to free it when you feel a stabbing pain in your leg! It's quickly followed by another and another and another!"
 var Game_Over_Fish_3 = "The murky water begins to roil as the river reddens with your blood. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky river."
 var Game_Over_Fish_4 = "You flee back to the bank of the river but it's too late."
-var Game_Over_Fish_5 = "Your head begins spinning. As everything fades to black, you have one, final thought... If only you had done something to distract the fish..."
+var Game_Over_Fish_5 = "Your head begins spinning. As everything fades to black, you have one, final thought..."
+var Game_Over_Fish_6 = "If only you had done something to distract the fish..."
 
 ######################

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://olcrt035btw1"]
+
+[ext_resource type="Script" path="res://src/singletons/sfx_player/sfx_emitter/sfx_emitter.gd" id="1_fmbgd"]
+
+[node name="SfxEmitter" type="AudioStreamPlayer2D"]
+script = ExtResource("1_fmbgd")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

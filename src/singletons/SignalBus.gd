@@ -19,6 +19,9 @@ signal play_bgm(stream: AudioStream, volume: float)
 signal stop_bgm()
 
 @warning_ignore("unused_signal")
+signal play_sfx(play_sfx_args: PlaySfxArgs)
+
+@warning_ignore("unused_signal")
 signal game_event_entered_range(game_event: GameEvent)
 
 @warning_ignore("unused_signal")
