@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3oqcmtd837nj"]
+
+[ext_resource type="Texture2D" uid="uid://bihemioh2o3hm" path="res://art/actors/gold arrow.png" id="1_foemj"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="2_o08gh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wv6d4"]
+size = Vector2(75, 47.015)
+
+[node name="BackArrow" type="Sprite2D"]
+position = Vector2(50, 50)
+texture = ExtResource("1_foemj")
+centered = false
+
+[node name="Teleporter" parent="." instance=ExtResource("2_o08gh")]
+position = Vector2(37, 24)
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_wv6d4")
+activation_mode = 0
+to_previous_position = true

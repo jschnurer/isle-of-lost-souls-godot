@@ -1,7 +1,13 @@
 extends Node
 
 var Global_You_Cant = "You can't do that."
+var Global_No_Effect = "No effect."
+var Global_Uninteresting = "It's not very interesting."
+var Global_Dont_Take = "Take it would be pointless. You decide to leave it."
 var Global_No_Mechanism_To_Interact = "It has no mechanism to interact with."
+var Global_Cairn_Take = "Somehow, like a half-remembered memory, you feel that moving the cairn would be detrimental to your progress."
+var Global_Cairn_Look = "The cairn stands about 3 feet fall. The stones are covered in runic markings."
+var Global_Cairn_Interact = "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK. A new runic symbol slowly etches itself onto one of the stones."
 
 ######################
 ###### Forest
@@ -26,6 +32,14 @@ var Forest_Bridge_South_River_Take = "Holding an entire river in your hands seem
 # Rusty Rod
 var Forest_Bridge_South_Rod_Look = "A cylindrical, rusty metal rod sticks out of the water about 5 feet from the shore."
 var Forest_Bridge_South_Rod_Take_Successful = "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You work it back and forth until it's free and then make your way back to the bank."
+
+## Quiet Fork
+# Signpost
+var Forest_Quiet_Fork_Signpost_Look_With_Nail = "A rotting chunk of wood that must have once been a signpost decays in the long grass. It's been rotting away for a long, long time. The single nail that holds it together is rusty but still doing its job."
+var Forest_Quiet_Fork_Signpost_Look_Without_Nail = "A rotting chunk of wood that must have once been a signpost decays in the long grass. It's been rotting away for a long, long time."
+var Forest_Quiet_Fork_Signpost_Take = "You have no need of an armload of rotten planks."
+var Forest_Quiet_Fork_Nail_Look = "It's a rusty old nail. The hole it's in is rotting away and it looks quite loose."
+var Forest_Quiet_Fork_Nail_Take = "You get your fingernails under the head of the nail and give it a good couple tugs. Eventually, you work it out of the signpost and take it with you."
 
 ###### Game Overs
 ## Fish Game Over

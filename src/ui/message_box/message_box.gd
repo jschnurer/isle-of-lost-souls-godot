@@ -7,7 +7,6 @@ enum MessageBoxState { OPENING, TYPING, SHOWN, CLOSING, CLOSED }
 @onready var ok_label = $Panel/OK
 
 var appearance_time = 0
-var time_before_can_close = .25
 var state = MessageBoxState.CLOSED
 var characters_per_second = 40
 var typing_time_elapsed = 0
@@ -64,7 +63,6 @@ func process_closable():
 			$AnimationPlayer.play("closing")
 
 func _opening_anim_done():
-	print ("opening done")
 	state = MessageBoxState.TYPING
 	
 func _closing_anim_done():
@@ -81,4 +79,3 @@ func finish_message():
 	appearance_time = 0
 	get_tree().paused = false
 	SignalBus.message_closed.emit()
-	

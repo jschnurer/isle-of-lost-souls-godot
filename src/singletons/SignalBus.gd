@@ -62,3 +62,6 @@ signal fade_in_screen_finished()
 
 @warning_ignore("unused_signal")
 signal return_to_title_screen()
+
+@warning_ignore("unused_signal")
+signal on_game_var_set(var_name: Enums.Vars, value)

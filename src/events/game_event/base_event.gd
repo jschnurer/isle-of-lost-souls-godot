@@ -19,16 +19,17 @@ func activate(input_action: Enums.InputAction):
 	elif (input_action == Enums.InputAction.TAKE):
 		take()
 	elif (input_action == Enums.InputAction.USE_ITEM):
-		use_item()
+		# TODO: Implement item chooser. Then send chosen item to use_item(item) or just cancel the event.
+		use_item(null)
 	
 func investigate():
-	pass
+	SignalBus.show_message.emit(GameScript.Global_Uninteresting, false)
 	
 func take():
-	pass
+	SignalBus.show_message.emit(GameScript.Global_Dont_Take, false)
 	
 func interact():
-	pass
+	SignalBus.show_message.emit(GameScript.Global_No_Mechanism_To_Interact, false)
 	
-func use_item():
-	pass
+func use_item(_item: Item):
+	SignalBus.show_message.emit(GameScript.Global_No_Effect, false)

@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://drd16cul8qeeq"]
+
+[ext_resource type="Script" path="res://src/interactables/cairn/cairn.gd" id="1_bo1in"]
+[ext_resource type="Texture2D" uid="uid://dyo24t6cji0t0" path="res://art/actors/cairn1.png" id="2_fbl81"]
+[ext_resource type="Texture2D" uid="uid://dulovkd4npjkb" path="res://art/actors/cairn2.png" id="3_y582g"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="4_1xe31"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iom2f"]
+size = Vector2(31, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_em0ra"]
+size = Vector2(25, 20)
+
+[node name="Cairn" type="Node2D"]
+script = ExtResource("1_bo1in")
+sprites = Array[Texture2D]([ExtResource("2_fbl81"), ExtResource("3_y582g")])
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_fbl81")
+
+[node name="GameEvent" parent="." instance=ExtResource("4_1xe31")]
+
+[node name="CollisionShape2D" parent="GameEvent" index="0"]
+visible = false
+position = Vector2(-0.5, 0)
+
+[node name="NormalCollisionShape" type="CollisionShape2D" parent="GameEvent"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_iom2f")
+
+[node name="ShortCollisionShape" type="CollisionShape2D" parent="GameEvent"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_em0ra")
+disabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="NormalCollisionShape" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_iom2f")
+
+[node name="ShortCollisionShape" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_em0ra")
+disabled = true
+
+[editable path="GameEvent"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8u2knfx7n77p"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_taccj"]
+[ext_resource type="Script" path="res://src/scenes/forest/quiet_fork/interactables/forest_quiet_fork_signpost.gd" id="1_xrgqt"]
+[ext_resource type="Texture2D" uid="uid://cme0brkkwcj57" path="res://art/backgrounds/forest/Quiet Fork Sign With Nail.png" id="2_dxss3"]
+[ext_resource type="AudioStream" uid="uid://dew108n6x52bl" path="res://audio/bgm/birds-isaiah658.ogg" id="3_10drn"]
+[ext_resource type="PackedScene" uid="uid://d3oqcmtd837nj" path="res://src/interactables/back_arrow.tscn" id="4_8snen"]
+[ext_resource type="Texture2D" uid="uid://dp5ccm4v3sv46" path="res://art/actors/nail_head.png" id="5_22pp7"]
+[ext_resource type="Script" path="res://src/scenes/forest/quiet_fork/interactables/nail.gd" id="5_4808r"]
+[ext_resource type="Texture2D" uid="uid://ceqdmb1ey2uti" path="res://art/backgrounds/forest/Quiet Fork Sign Without Nail.png" id="6_hfrsp"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="6_jxu2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_laovk"]
+size = Vector2(45, 37)
+
+[node name="ForestQuietForkSignpost" type="Node2D"]
+script = ExtResource("1_xrgqt")
+nail_missing_texture = ExtResource("6_hfrsp")
+
+[node name="SceneBG" parent="." instance=ExtResource("1_taccj")]
+texture = ExtResource("2_dxss3")
+bg_images = Array[Texture2D]([ExtResource("2_dxss3")])
+use_collision_frame = true
+bgm_stream = ExtResource("3_10drn")
+
+[node name="BackArrow" parent="." instance=ExtResource("4_8snen")]
+
+[node name="Nail" type="Node2D" parent="."]
+script = ExtResource("5_4808r")
+nail_missing_texture = ExtResource("6_hfrsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nail"]
+texture_filter = 1
+position = Vector2(393, 188)
+texture = ExtResource("5_22pp7")
+
+[node name="GameEvent" parent="Nail" instance=ExtResource("6_jxu2f")]
+position = Vector2(390, 188)
+
+[node name="CollisionShape2D" parent="Nail/GameEvent" index="0"]
+position = Vector2(2.5, 0.5)
+shape = SubResource("RectangleShape2D_laovk")
+
+[editable path="Nail/GameEvent"]

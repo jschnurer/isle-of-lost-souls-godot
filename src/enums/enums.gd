@@ -9,7 +9,8 @@ enum EventType { DIALOG, TELEPORT }
 enum Vars {
 	PLAYER_INFO,
 	TOOK_STONE,
-	DISTRACTED_FISH
+	DISTRACTED_FISH,
+	TOOK_NAIL
 }
 enum EngineEvents {
 	SHOW_MESSAGE,
@@ -50,7 +51,7 @@ enum ItemSlugs {
 	TARNROOT,
 }
 
-# max is 91
+# max is 92
 enum Scenes {
 	CAVES_BAT_DEN = 13,
 	CAVES_BOTTOM_OF_SHAFT = 14,
@@ -149,7 +150,8 @@ enum Scenes {
 	SWAMP_STATUE = 89,
 	SWAMP_TOPPLED_LOG = 90,
 	
-	GAME_OVER_FISH = 91
+	GAME_OVER_FISH = 91,
+	FOREST_QUIET_FORK_SIGNPOST = 92,
 }
 
 var ScenePaths = {
@@ -200,6 +202,7 @@ var ScenePaths = {
 	Scenes.FOREST_LONELY_PATH: "res://src/scenes/forest/lonely_path/LonelyPath.tscn",
 	Scenes.FOREST_OLD_WELL: "res://src/scenes/forest/old_well/OldWell.tscn",
 	Scenes.FOREST_QUIET_FORK: "res://src/scenes/forest/quiet_fork/QuietFork.tscn",
+	Scenes.FOREST_QUIET_FORK_SIGNPOST: "res://src/scenes/forest/quiet_fork/interactables/forest_quiet_fork_signpost.tscn",
 	Scenes.FOREST_QUIET_PATH: "res://src/scenes/forest/quiet_path/QuietPath.tscn",
 	Scenes.FOREST_RIVER_BANK: "res://src/scenes/forest/river_bank/RiverBank.tscn",
 	Scenes.FOREST_RUINS_ENTRANCE: "res://src/scenes/forest/ruins_entrance/RuinsEntrance.tscn",

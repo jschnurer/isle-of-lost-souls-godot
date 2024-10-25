@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnvkmpgtpx0wm"]
+[gd_scene load_steps=9 format=3 uid="uid://cnvkmpgtpx0wm"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_1rqwr"]
 [ext_resource type="Texture2D" uid="uid://0bxyd16uttnx" path="res://art/backgrounds/forest/Forest Clearing Hole.png" id="2_btsef"]
@@ -6,11 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c3kvu20f3uibd" path="res://art/actors/stone.png" id="3_vvi4b"]
 [ext_resource type="Script" path="res://src/scenes/forest/clearing/sub_areas/hole/stone.gd" id="4_ba0as"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="4_s471m"]
-[ext_resource type="Texture2D" uid="uid://bihemioh2o3hm" path="res://art/actors/gold arrow.png" id="5_4xvtj"]
-[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="6_p7x43"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wv6d4"]
-size = Vector2(75, 47.015)
+[ext_resource type="PackedScene" uid="uid://d3oqcmtd837nj" path="res://src/interactables/back_arrow.tscn" id="4_vm3p6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jtqcg"]
 radius = 25.4884
@@ -24,18 +20,7 @@ bg_images = Array[Texture2D]([ExtResource("2_btsef")])
 use_collision_frame = true
 bgm_stream = ExtResource("3_clega")
 
-[node name="BackArrow" type="Sprite2D" parent="."]
-position = Vector2(50, 50)
-texture = ExtResource("5_4xvtj")
-centered = false
-
-[node name="Teleporter" parent="BackArrow" instance=ExtResource("6_p7x43")]
-position = Vector2(37, 24)
-to_scene = "FOREST_CLEARING"
-scene_name_valid = true
-event_area = SubResource("RectangleShape2D_wv6d4")
-activation_mode = 0
-to_previous_position = true
+[node name="BackArrow" parent="." instance=ExtResource("4_vm3p6")]
 
 [node name="Stone" type="Sprite2D" parent="."]
 texture_filter = 1

@@ -27,7 +27,6 @@ func _ready():
 	SignalBus.memorize_player_info.connect(_on_memorize_player_info)
 	SignalBus.restore_player_info.connect(_on_restore_player_info)
 	SignalBus.set_player_mode.connect(_on_set_player_mode)
-	SignalBus.action_chooser_closed.connect(_on_action_chooser_closed)
 	SignalBus.toggle_player.connect(_on_toggle_player)
 
 func  _input(event):
@@ -36,7 +35,7 @@ func  _input(event):
 	
 	if (event.is_action_pressed("ui_accept")):
 		if (game_event_in_range.use_action_chooser):
-			SignalBus.show_action_chooser.emit()
+			show_item_chooser()
 		else:
 			game_event_in_range.activate(Enums.InputAction.INTERACT)
 
@@ -115,6 +114,7 @@ func _on_memorize_player_info():
 	info.facing_dir = facing_dir
 	info.is_sprite_flip_h = $Sprite.flip_h
 	info.mode = mode
+	info.scene = SceneManager.current_scene
 	GameVars.set_var(Enums.Vars.PLAYER_INFO, info)
 
 func _on_restore_player_info():
@@ -149,7 +149,10 @@ func _on_set_player_mode(new_mode: Enums.PlayerMode):
 	$PointerArea/CollisionShape2D.disabled = !is_pointer
 	$PointerCollision.disabled = !is_pointer
 
-func _on_action_chooser_closed(action):
+func show_item_chooser():
+	SignalBus.show_action_chooser.emit()
+	var action = await SignalBus.action_chooser_closed
+	
 	if !game_event_in_range or action == null:
 		return
 	
