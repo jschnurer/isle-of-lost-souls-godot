@@ -16,7 +16,6 @@ func take():
 		SignalBus.fade_out_screen.emit(fade_out_args)
 		await SignalBus.fade_out_screen_finished
 		
-		print ("fade complete.")
 		toggle_args.is_visible = false
 		SignalBus.toggle_player.emit(toggle_args)
 		

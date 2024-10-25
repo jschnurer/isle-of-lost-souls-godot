@@ -16,5 +16,4 @@ func _on_fade_in_screen(args: ScreenFadeArgs):
 	$AnimationPlayer.play("fade_in", -1, args.speed_scale)
 
 func _on_fade_in_complete():
-	print ("fade in complete")
 	SignalBus.fade_in_screen_finished.emit()
