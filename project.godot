@@ -31,6 +31,8 @@ ActionChooser="*res://src/ui/action_chooser/ActionChooser.tscn"
 ScreenFader="*res://src/ui/screen_fader/ScreenFader.tscn"
 SfxPlayer="*res://src/singletons/sfx_player/SFXPlayer.tscn"
 Utility="*res://src/singletons/Utility.gd"
+DialogTopics="*res://src/game_data/dialog_topics.gd"
+DialogManager="*res://src/ui/dialog/DialogManager.tscn"
 
 [display]
 
@@ -104,5 +106,6 @@ interact={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

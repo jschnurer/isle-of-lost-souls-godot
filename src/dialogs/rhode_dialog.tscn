@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dei2bio0otr6d"]
+
+[ext_resource type="Script" path="res://src/dialogs/rhode_dialog.gd" id="1_i18ed"]
+
+[node name="RhodeDialog" type="Node2D"]
+script = ExtResource("1_i18ed")

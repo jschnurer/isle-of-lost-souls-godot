@@ -50,6 +50,16 @@ enum ItemSlugs {
 	SLEDGE,
 	TARNROOT,
 }
+enum TopicGroups {
+	GLOBAL = 1,
+	ARDEN = 2,
+	RHODE = 3,
+}
+enum Topics {
+	WHO_ARE_YOU = 1,
+	GOODBYE = 2,
+	MY_PAST = 3,
+}
 
 # max is 92
 enum Scenes {

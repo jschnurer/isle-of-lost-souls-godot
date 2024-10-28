@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://blws5b8wm1dyr"]
+[gd_scene load_steps=18 format=3 uid="uid://blws5b8wm1dyr"]
 
 [ext_resource type="Texture2D" uid="uid://bcl5i0l534pgp" path="res://art/backgrounds/forest/Forest Clearing.png" id="1_i6pxq"]
 [ext_resource type="Texture2D" uid="uid://b7sih1cnrsrm6" path="res://art/backgrounds/forest/Forest Clearing Collision.png" id="3_4p7yf"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="7_40jd8"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="7_jp3rn"]
 [ext_resource type="Script" path="res://src/scenes/forest/clearing/interactables/dirt_pile.gd" id="8_kyqw8"]
+[ext_resource type="Script" path="res://src/scenes/forest/clearing/interactables/test_conversation.gd" id="9_1d6oh"]
+[ext_resource type="Texture2D" uid="uid://dyo24t6cji0t0" path="res://art/actors/cairn1.png" id="9_shaxa"]
+[ext_resource type="Script" path="res://src/dialogs/rhode_dialog.gd" id="11_xa8b3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64bcn"]
 size = Vector2(200, 20)
@@ -20,6 +23,12 @@ size = Vector2(39, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7k7k"]
 size = Vector2(25, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2tmu"]
+size = Vector2(34, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1suax"]
+size = Vector2(33, 39)
 
 [node name="SceneRoot" type="Node2D"]
 
@@ -67,5 +76,29 @@ script = ExtResource("8_kyqw8")
 position = Vector2(457, 407)
 shape = SubResource("RectangleShape2D_h7k7k")
 
+[node name="TestConversation" type="Node2D" parent="."]
+position = Vector2(128, 288)
+script = ExtResource("9_1d6oh")
+
+[node name="Sprite2D" type="Sprite2D" parent="TestConversation"]
+texture_filter = 1
+texture = ExtResource("9_shaxa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TestConversation"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestConversation/StaticBody2D"]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_h2tmu")
+
+[node name="GameEvent" parent="TestConversation" instance=ExtResource("7_jp3rn")]
+
+[node name="CollisionShape2D" parent="TestConversation/GameEvent" index="0"]
+position = Vector2(-2.5, -0.5)
+shape = SubResource("RectangleShape2D_1suax")
+
+[node name="Dialog" type="Node2D" parent="TestConversation"]
+script = ExtResource("11_xa8b3")
+
 [editable path="Hole/GameEvent"]
 [editable path="DirtPile/GameEvent"]
+[editable path="TestConversation/GameEvent"]

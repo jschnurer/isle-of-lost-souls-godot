@@ -1,5 +1,7 @@
 extends Node
 
+############ GLOBAL TEXTS ############
+
 var Global_You_Cant = "You can't do that."
 var Global_No_Effect = "No effect."
 var Global_Uninteresting = "It's not very interesting."
@@ -9,7 +11,7 @@ var Global_Cairn_Take = "Somehow, like a half-remembered memory, you feel that m
 var Global_Cairn_Look = "The cairn stands about 3 feet fall. The stones are covered in runic markings."
 var Global_Cairn_Interact = "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK. A new runic symbol slowly etches itself onto one of the stones."
 
-######################
+############ SCENE-SPECIFIC TEXTS ############
 ###### Forest
 ## Clearing
 # Hole
@@ -50,4 +52,9 @@ var Game_Over_Fish_4 = "You flee back to the bank of the river but it's too late
 var Game_Over_Fish_5 = "Your head begins spinning. As everything fades to black, you have one, final thought..."
 var Game_Over_Fish_6 = "If only you had done something to distract the fish..."
 
-######################
+############ DIALOGS ############
+
+###### Topics
+var Who_Are_You = "Who are you?"
+var My_Past = "my past"
+var Goodbye = "goodbye"

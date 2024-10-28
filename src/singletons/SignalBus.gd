@@ -65,3 +65,21 @@ signal return_to_title_screen()
 
 @warning_ignore("unused_signal")
 signal on_game_var_set(var_name: Enums.Vars, value)
+
+@warning_ignore("unused_signal")
+signal open_dialog_manager(dialog: BaseDialog)
+
+@warning_ignore("unused_signal")
+signal close_dialog_manager(dialog: BaseDialog)
+
+@warning_ignore("unused_signal")
+signal show_dialog_message(message: String, has_more: bool)
+
+@warning_ignore("unused_signal")
+signal dialog_message_closed()
+
+@warning_ignore("unused_signal")
+signal learn_topic(topic_group: Enums.TopicGroups, topic: Enums.Topics)
+
+@warning_ignore("unused_signal")
+signal on_topic_learned(topic_group: Enums.TopicGroups, topic: Enums.Topics)
