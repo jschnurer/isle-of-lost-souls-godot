@@ -6,6 +6,8 @@ enum FocusedArea {MESSAGE,TOPICS}
 @onready var ok_label = $MessageBox/OK
 @onready var topic_list = $Topics/ItemList
 
+@export var active_panel_stylebox: StyleBoxFlat
+
 var is_open = false
 var loaded_dialog: BaseDialog = null
 var focused_area = FocusedArea.TOPICS
@@ -58,10 +60,18 @@ func _on_close_dialog_manager():
 func set_focus(new_focus: FocusedArea):
 	focused_area = new_focus
 	if (focused_area == FocusedArea.TOPICS):
-		topic_list.visible = true
+		for ix in topic_list.item_count:
+			topic_list.set_item_disabled(ix, false)
 		topic_list.grab_focus()
+		topic_list.select(0, true)
+		$Topics.add_theme_stylebox_override("panel", active_panel_stylebox)
+		$MessageBox.remove_theme_stylebox_override("panel")
 	else:
 		topic_list.release_focus()
+		for ix in topic_list.item_count:
+			topic_list.set_item_disabled(ix, true)
+		$Topics.remove_theme_stylebox_override("panel")
+		$MessageBox.add_theme_stylebox_override("panel", active_panel_stylebox)
 
 func _on_show_dialog_message(message: String, has_more: bool):
 	message_text.text = message
@@ -82,7 +92,19 @@ func load_topics():
 	for dialog_topic in available_topics:
 		topic_list.add_item(dialog_topic.text)
 
-func _on_topic_learned(topic_group: Enums.TopicGroups, topic: Enums.Topics):
+func _on_topic_learned(topic_group: Enums.TopicGroups, _topic: Enums.Topics):
 	if (is_open
 	and loaded_dialog.topic_group == topic_group):
+		var chosen_topics = topic_list.get_selected_items()
+		var sel_topic_text = ""
+		if (chosen_topics.size() > 0):
+			sel_topic_text = topic_list.get_item_text(chosen_topics[0])
 		load_topics()
+		set_focus(FocusedArea.TOPICS)
+		
+		if (sel_topic_text != ""):
+			# Reselect the item the player had selected previously.
+			for ix in topic_list.item_count:
+				if (topic_list.get_item_text(ix) == sel_topic_text):
+					topic_list.select(ix, true)
+					break
