@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://src/scenes/forest/clearing/interactables/dirt_pile.gd" id="8_kyqw8"]
 [ext_resource type="Script" path="res://src/scenes/forest/clearing/interactables/test_conversation.gd" id="9_1d6oh"]
 [ext_resource type="Texture2D" uid="uid://dyo24t6cji0t0" path="res://art/actors/cairn1.png" id="9_shaxa"]
-[ext_resource type="Script" path="res://src/dialogs/rhode_dialog.gd" id="11_xa8b3"]
+[ext_resource type="PackedScene" uid="uid://dei2bio0otr6d" path="res://src/dialogs/rhode_dialog.tscn" id="11_3gt23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64bcn"]
 size = Vector2(200, 20)
@@ -96,8 +96,7 @@ shape = SubResource("RectangleShape2D_h2tmu")
 position = Vector2(-2.5, -0.5)
 shape = SubResource("RectangleShape2D_1suax")
 
-[node name="Dialog" type="Node2D" parent="TestConversation"]
-script = ExtResource("11_xa8b3")
+[node name="Dialog" parent="TestConversation" instance=ExtResource("11_3gt23")]
 
 [editable path="Hole/GameEvent"]
 [editable path="DirtPile/GameEvent"]

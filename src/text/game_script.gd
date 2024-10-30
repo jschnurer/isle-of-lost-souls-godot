@@ -55,6 +55,10 @@ var Game_Over_Fish_6 = "If only you had done something to distract the fish..."
 ############ DIALOGS ############
 
 ###### Topics
-var Who_Are_You = "Who are you?"
-var My_Past = "my past"
-var Goodbye = "goodbye"
+var Topic_Who_Are_You = "Who are you?"
+var Topic_Goodbye = "goodbye"
+var Topic_My_Past = "my past"
+var Topic_Island_Arrival = "island arrival"
+var Topic_Merek = "Merek"
+var Topic_Totems = "totems"
+var Topic_Fair_Haired_Woman = "fair-haired woman"

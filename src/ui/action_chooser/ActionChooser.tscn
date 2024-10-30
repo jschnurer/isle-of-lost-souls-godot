@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dh21a833axk4g"]
 
 [ext_resource type="Script" path="res://src/ui/action_chooser/action_chooser.gd" id="1_ssibr"]
-[ext_resource type="Theme" uid="uid://v1piyp7jwkvp" path="res://src/ui/base_theme.tres" id="2_bp67c"]
+[ext_resource type="Theme" uid="uid://v1piyp7jwkvp" path="res://styles/base_theme.tres" id="2_bp67c"]
 
 [node name="ActionChooser" type="CanvasLayer"]
 process_mode = 3

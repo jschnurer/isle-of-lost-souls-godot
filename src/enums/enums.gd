@@ -56,9 +56,14 @@ enum TopicGroups {
 	RHODE = 3,
 }
 enum Topics {
+	UNSET = 0,
 	WHO_ARE_YOU = 1,
 	GOODBYE = 2,
 	MY_PAST = 3,
+	ISLAND_ARRIVAL = 4,
+	MEREK = 5,
+	TOTEMS = 6,
+	FAIR_HAIRED_WOMAN = 7,
 }
 
 # max is 92

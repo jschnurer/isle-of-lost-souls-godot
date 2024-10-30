@@ -3,13 +3,17 @@ extends Node
 var known_topics: Dictionary = {
 	Enums.TopicGroups.GLOBAL: [Enums.Topics.WHO_ARE_YOU, Enums.Topics.GOODBYE],
 	Enums.TopicGroups.ARDEN: [],
-	Enums.TopicGroups.RHODE: [],
+	Enums.TopicGroups.RHODE: [Enums.Topics.TOTEMS],
 }
 
 var topic_texts: Dictionary = {
-	Enums.Topics.WHO_ARE_YOU: GameScript.Who_Are_You,
-	Enums.Topics.GOODBYE: GameScript.Goodbye,
-	Enums.Topics.MY_PAST: GameScript.My_Past,
+	Enums.Topics.WHO_ARE_YOU: GameScript.Topic_Who_Are_You,
+	Enums.Topics.GOODBYE: GameScript.Topic_Goodbye,
+	Enums.Topics.MY_PAST: GameScript.Topic_My_Past,
+	Enums.Topics.ISLAND_ARRIVAL: GameScript.Topic_Island_Arrival,
+	Enums.Topics.MEREK: GameScript.Topic_Merek,
+	Enums.Topics.TOTEMS: GameScript.Topic_Totems,
+	Enums.Topics.FAIR_HAIRED_WOMAN: GameScript.Topic_Fair_Haired_Woman,
 }
 
 func _ready():
@@ -68,4 +72,4 @@ func get_available_topics(group: Enums.TopicGroups, include_global = true) -> Ar
 	return topic_data
 
 func sort_dialog_topics(a: DialogTopic, b: DialogTopic):
-	return a.text < b.text
+	return a.text.to_lower() < b.text.to_lower()

@@ -27,9 +27,11 @@ func ask_about(topic: Enums.Topics):
 		await SignalBus.dialog_message_closed
 		SignalBus.show_dialog_message.emit("\"He said to me 'Thy soul shalt be condemned to that faraway place, the island of the lost'.\"", true)
 		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("She takes a deep breath before continuing her story.", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"Then, I recall waking on this island with naught but vague memories of before and no worse for wear. I wandered for a bit, searching for others.\"", true)
+		SignalBus.show_dialog_message.emit("She takes a deep breath.\n\n\"And then I woke up on this island.\"", false)
+		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.ISLAND_ARRIVAL)
+		
+	elif (topic == Enums.Topics.ISLAND_ARRIVAL):
+		SignalBus.show_dialog_message.emit("\"I recall waking on this island with naught but vague memories of before and no worse for wear. I wandered for a bit, searching for others.\"", true)
 		await SignalBus.dialog_message_closed
 		SignalBus.show_dialog_message.emit("\"Wouldst thou believe it? The first person I met was none other than the man who had tried to slay me! He took up his arms against me but he had not the will to slay me.\"", true)
 		await SignalBus.dialog_message_closed
@@ -40,6 +42,22 @@ func ask_about(topic: Enums.Topics):
 		SignalBus.show_dialog_message.emit("\"Eventually we met another. A woman of fair hair and stoic demeanor.\" She pauses again, scrunching her brow, trying to recall distant memories.", true)
 		await SignalBus.dialog_message_closed
 		SignalBus.show_dialog_message.emit("\"I'm sorry. This story of mine is at its end, for I can recall no more.\"", false)
+		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.MEREK)
+		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.FAIR_HAIRED_WOMAN)
+	
+	elif (topic == Enums.Topics.TOTEMS):
+		SignalBus.show_dialog_message.emit("\"Those are creations of mine. They take the required shape to house various enchantments and charms. Mostly they doth protect and enhance my memories. Mostly.\" She narrows her eyes at you briefly.", false)
+	
+	elif (topic == Enums.Topics.MEREK):
+		SignalBus.show_dialog_message.emit("\"Merek...\" She trails off before she even begins her sentence.", true)
+		await SignalBus.dialog_message_closed
+		SignalBus.show_dialog_message.emit("\"I can recall... some things,\" she says as a smirk slowly spreads across her face. She dismisses it quickly. She returns from her reverie.", true)
+		await SignalBus.dialog_message_closed
+		SignalBus.show_dialog_message.emit("\"We were... acquainted before we came here. He was a witch hunter. Clearly not a good one, as thou canst tell.\"", false)
+	
+	elif (topic == Enums.Topics.FAIR_HAIRED_WOMAN):
+		SignalBus.show_dialog_message.emit("\"Merek and I met her while exploring the island. I recall naught but her stoic demeanor.\"", false)
+		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.MEREK)
 	
 	else:
 		super.ask_about(topic)

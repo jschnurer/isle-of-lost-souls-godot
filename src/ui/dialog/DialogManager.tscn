@@ -1,8 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://c1fw38kdlonb0"]
 
 [ext_resource type="Script" path="res://src/ui/dialog/dialog_manager.gd" id="1_lraor"]
-[ext_resource type="Theme" uid="uid://v1piyp7jwkvp" path="res://src/ui/base_theme.tres" id="2_puva5"]
-[ext_resource type="StyleBox" uid="uid://b0vidb5wti5wg" path="res://src/ui/active_panel_styleboxflat.tres" id="3_flj40"]
+[ext_resource type="Theme" uid="uid://v1piyp7jwkvp" path="res://styles/base_theme.tres" id="2_puva5"]
+[ext_resource type="StyleBox" uid="uid://b0vidb5wti5wg" path="res://styles/active_panel_styleboxflat.tres" id="3_flj40"]
+[ext_resource type="LabelSettings" uid="uid://4wsvigqxxrfw" path="res://styles/message_box_font_settings.tres" id="4_63r58"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhai6"]
 bg_color = Color(0.368627, 0.305882, 0, 0.784314)
@@ -59,10 +60,6 @@ Button/styles/normal = SubResource("StyleBoxFlat_hgn2q")
 ItemList/styles/focus = SubResource("StyleBoxEmpty_c2466")
 Panel/styles/panel = SubResource("StyleBoxFlat_pytrn")
 
-[sub_resource type="LabelSettings" id="LabelSettings_sq1ck"]
-font_size = 30
-font_color = Color(0.703808, 0.703808, 0.703808, 1)
-
 [node name="DialogManager" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_lraor")
@@ -74,7 +71,7 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 198.0
+offset_left = -9.0
 offset_top = -621.0
 offset_right = 405.0
 offset_bottom = -237.0
@@ -83,18 +80,21 @@ grow_vertical = 0
 pivot_offset = Vector2(405, 117)
 theme = ExtResource("2_puva5")
 
-[node name="ItemList" type="ItemList" parent="Topics"]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 14.0
-offset_right = 193.0
-offset_bottom = 370.0
-theme = SubResource("Theme_srw1r")
-item_count = 4
-item_0/text = "Who are you?"
-item_1/text = "my past"
-item_2/text = "swamp"
-item_3/text = "trapdoor"
+[node name="MarginContainer" type="MarginContainer" parent="Topics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GridContainer" type="GridContainer" parent="Topics/MarginContainer"]
+layout_mode = 2
+columns = 2
 
 [node name="MessageBox" type="Panel" parent="."]
 anchors_preset = 7
@@ -122,7 +122,7 @@ offset_right = -26.0
 offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 0
-label_settings = SubResource("LabelSettings_sq1ck")
+label_settings = ExtResource("4_63r58")
 autowrap_mode = 2
 
 [node name="OK" type="Label" parent="MessageBox"]
@@ -137,7 +137,13 @@ offset_right = -26.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
-label_settings = SubResource("LabelSettings_sq1ck")
+label_settings = ExtResource("4_63r58")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Portrait" type="TextureRect" parent="."]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 396.0
+offset_bottom = 387.0

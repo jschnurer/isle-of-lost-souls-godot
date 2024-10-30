@@ -1,26 +1,9 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://v1piyp7jwkvp"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhai6"]
-bg_color = Color(0.368627, 0.305882, 0, 0.784314)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.498039, 0.415686, 0, 0.784314)
-border_blend = true
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[ext_resource type="StyleBox" uid="uid://d3l14ehrle3o1" path="res://styles/button_active.tres" id="1_x563t"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3vea"]
-bg_color = Color(0.498039, 0.415686, 0, 0.784314)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.498039, 0.415686, 0, 0.784314)
-border_blend = true
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rr168"]
+bg_color = Color(0, 0, 0, 0.784314)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -47,7 +30,9 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [resource]
-Button/styles/focus = SubResource("StyleBoxFlat_fhai6")
-Button/styles/hover = SubResource("StyleBoxFlat_o3vea")
+Button/styles/disabled = SubResource("StyleBoxFlat_rr168")
+Button/styles/focus = ExtResource("1_x563t")
+Button/styles/hover = ExtResource("1_x563t")
 Button/styles/normal = SubResource("StyleBoxFlat_hgn2q")
+Button/styles/pressed = ExtResource("1_x563t")
 Panel/styles/panel = SubResource("StyleBoxFlat_pytrn")
