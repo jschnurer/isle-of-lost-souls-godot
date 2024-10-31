@@ -21,7 +21,10 @@ func toggle(is_on: bool):
 		pass
 	
 	item_list.visible = is_on
-	get_tree().paused = is_on
+	if (is_on):
+		Utility.pause()
+	else:
+		Utility.unpause()
 	appearance_time = 0
 	
 func _process(delta):

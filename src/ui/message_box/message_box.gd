@@ -17,7 +17,7 @@ func _ready():
 	SignalBus.connect("show_message", _on_show_message)
 	
 func _on_show_message(message: String, has_more: bool):
-	get_tree().paused = true
+	Utility.pause()
 	text_label.text = message
 	text_label.visible_characters = 0
 	stay_open = has_more
@@ -77,5 +77,5 @@ func finish_message():
 	text_label.text = ""
 	typing_time_elapsed = 0
 	appearance_time = 0
-	get_tree().paused = false
+	Utility.unpause()
 	SignalBus.message_closed.emit()

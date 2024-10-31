@@ -1,10 +1,10 @@
 extends "res://src/events/game_event/base_event.gd"
 
 func investigate():
-	SignalBus.show_message.emit(GameScript.Forest_Bridge_South_River_Look, false)
+	Utility.show_message(GameScript.Forest_Bridge_South_River_Look)
 
 func take():
-	SignalBus.show_message.emit(GameScript.Forest_Bridge_South_River_Take, false)
+	Utility.show_message(GameScript.Forest_Bridge_South_River_Take)
 
 func interact():
-	SignalBus.show_message.emit(GameScript.Global_No_Mechanism_To_Interact, false)
+	Utility.show_message(GameScript.Global_No_Mechanism_To_Interact)

@@ -41,7 +41,7 @@ func _on_open_dialog_manager(dialog: BaseDialog):
 	load_portrait()
 	load_topics()
 	message_text.text = ""
-	get_tree().paused = true
+	Utility.pause()
 	self.visible = true
 	is_open = true
 	set_focus(FocusedArea.TOPICS)
@@ -55,7 +55,7 @@ func _on_close_dialog_manager():
 	message_text.text = ""
 	self.visible = false
 	is_open = false
-	get_tree().paused = false
+	Utility.unpause()
 	
 func set_focus(new_focus: FocusedArea):
 	focused_area = new_focus

@@ -9,18 +9,11 @@ func _ready():
 		super._ready()
 
 func investigate():
-	SignalBus.show_message.emit(GameScript.Forest_Quiet_Fork_Nail_Look, false)
+	Utility.show_message(GameScript.Forest_Quiet_Fork_Nail_Look)
 
 func take():
-	SignalBus.show_message.emit(GameScript.Forest_Quiet_Fork_Nail_Take, false)
 	Inventory.add_item(Enums.ItemSlugs.NAIL)
 	GameVars.set_var(Enums.Vars.TOOK_NAIL, true)
-	await SignalBus.message_closed
 	$"../SceneBG".set_bg_texture(nail_missing_texture)
+	await Utility.show_message(GameScript.Forest_Quiet_Fork_Nail_Take)
 	queue_free()
-
-func interact():
-	SignalBus.show_message.emit(GameScript.Global_No_Mechanism_To_Interact, false)
-
-func use_item(_item: Item):
-	SignalBus.show_message.emit(GameScript.Global_No_Effect, false)

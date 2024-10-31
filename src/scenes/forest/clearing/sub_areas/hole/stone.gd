@@ -7,15 +7,10 @@ func _ready():
 		super._ready()
 
 func investigate():
-	SignalBus.show_message.emit(GameScript.Forest_Clearing_Hole_Stone_Look, false)
+	Utility.show_message(GameScript.Forest_Clearing_Hole_Stone_Look)
 
 func take():
 	Inventory.add_item(Enums.ItemSlugs.FISH_STONE)
-	SignalBus.show_message.emit(GameScript.Forest_Clearing_Hole_Stone_Take, false)
-	await SignalBus.message_closed
+	await Utility.show_message(GameScript.Forest_Clearing_Hole_Stone_Take)
 	GameVars.set_var(Enums.Vars.TOOK_STONE, true)
 	call_deferred("queue_free")
-
-func interact():
-	var message = "If you wanted to use it, you'd have to take it first."
-	SignalBus.show_message.emit(message, false)

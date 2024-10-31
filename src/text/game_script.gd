@@ -10,6 +10,8 @@ var Global_No_Mechanism_To_Interact = "It has no mechanism to interact with."
 var Global_Cairn_Take = "Somehow, like a half-remembered memory, you feel that moving the cairn would be detrimental to your progress."
 var Global_Cairn_Look = "The cairn stands about 3 feet fall. The stones are covered in runic markings."
 var Global_Cairn_Interact = "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK. A new runic symbol slowly etches itself onto one of the stones."
+var Global_Yes = "Yes"
+var Global_No = "No"
 
 ############ SCENE-SPECIFIC TEXTS ############
 ###### Forest
@@ -47,9 +49,18 @@ var Forest_Quiet_Fork_Nail_Take = "You get your fingernails under the head of th
 # Garden
 var Forest_Cabin_Exterior_Garden_Look = "The garden is well kept and has lots of different things growing in it. You can see carrots, cabbage, peas, tomatoes, and some others you don't recognize."
 var Forest_Cabin_Exterior_Garden_Take = "You're not hungry enough to steal someone else's crops."
+# Cabin
 var Forest_Cabin_Exterior_Cabin_Look = "It's a roughly built log cabin but it seems sturdy enough. There's a door and some shuttered windows around the side."
+# Door
 var Forest_Cabin_Exterior_Door_Look = "It's a sturdy door constructed of rough lumber."
+# Fence
 var Forest_Cabin_Exterior_Fence_Look = "It's a simple wooden fence. It completely surrounds the cabin, yard, and garden."
+# Arden
+var Forest_Cabin_Exterior_Arden_Look = "He's an older man with graying hair and a crudely trimmed gray beard. He's wearing a ratty old brown jacket. With one hand he's holding a new board up to the fence and in the other he's holding a hammer."
+var Forest_Cabin_Exterior_Arden_Look_2 = "The new board is only attached to the fence on one end. He's grumbling to himself. \"How does this sort of thing always happen? One single nail short of finishing the job.\""
+var Forest_Cabin_Exterior_Arden_Take = "T-that would be kidnapping!"
+var Forest_Cabin_Exterior_Arden_Interact = "The man turns toward you. \"Oh, hello there! The name's Arden. We haven't seen any new arrivals in a long, long time. Sorry, but I can't talk now, I have to finish mending this fence. You wouldn't happen to have any nails on you, would you?\""
+var Forest_Cabin_Exterior_Arden_No_Nail = "\"Well that's a shame. If you find any, I'd really appreciate one.\""
 
 ###### Game Overs
 ## Fish Game Over

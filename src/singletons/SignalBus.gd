@@ -83,3 +83,9 @@ signal learn_topic(topic_group: Enums.TopicGroups, topic: Enums.Topics)
 
 @warning_ignore("unused_signal")
 signal on_topic_learned(topic_group: Enums.TopicGroups, topic: Enums.Topics)
+
+@warning_ignore("unused_signal")
+signal show_choice(choices: Array[String], cancel_index: int)
+
+@warning_ignore("unused_signal")
+signal choice_chosen(choice: Choice)

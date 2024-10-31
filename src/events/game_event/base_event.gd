@@ -25,16 +25,16 @@ func activate(input_action: Enums.InputAction):
 		collide()
 	
 func investigate():
-	SignalBus.show_message.emit(GameScript.Global_Uninteresting, false)
+	Utility.show_message(GameScript.Global_Uninteresting)
 	
 func take():
-	SignalBus.show_message.emit(GameScript.Global_Dont_Take, false)
+	Utility.show_message(GameScript.Global_Dont_Take)
 	
 func interact():
-	SignalBus.show_message.emit(GameScript.Global_No_Mechanism_To_Interact, false)
+	Utility.show_message(GameScript.Global_No_Mechanism_To_Interact)
 	
 func use_item(_item: Item):
-	SignalBus.show_message.emit(GameScript.Global_No_Effect, false)
+	Utility.show_message(GameScript.Global_No_Effect)
 
 func collide():
 	pass

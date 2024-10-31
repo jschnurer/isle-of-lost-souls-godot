@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://brjchcrfmitq8"]
+
+[ext_resource type="Script" path="res://src/ui/choice_manager/choice_manager.gd" id="1_napia"]
+[ext_resource type="Theme" uid="uid://v1piyp7jwkvp" path="res://styles/base_theme.tres" id="1_uodof"]
+
+[node name="ChoiceManager" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_napia")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_uodof")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1

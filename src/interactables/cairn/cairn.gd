@@ -26,14 +26,11 @@ func variant_changed():
 	$StaticBody2D/ShortCollisionShape.disabled = _variant != SpriteVariant.SHORT
 
 func investigate():
-	SignalBus.show_message.emit(GameScript.get(investigate_game_script_key) as String, false)
+	Utility.show_message(GameScript.get(investigate_game_script_key))
 
 func take():
-	SignalBus.show_message.emit(GameScript.Global_Cairn_Take, false)
+	Utility.show_message(GameScript.GameScript.Global_Cairn_Take)
 
 func interact():
-	SignalBus.show_message.emit(GameScript.Global_Cairn_Interact, false)
+	Utility.show_message(GameScript.GameScript.Global_Cairn_Interact)
 	# TODO: Implement saving the game.
-
-func use_item(_item: Item):
-	SignalBus.show_message.emit(GameScript.Global_No_Effect, false)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://byw2yuc82270"]
+[gd_scene load_steps=18 format=3 uid="uid://byw2yuc82270"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_fxomf"]
 [ext_resource type="Texture2D" uid="uid://cdwraytbp4kes" path="res://art/backgrounds/forest/Cabin Exterior.png" id="2_g1w4a"]
@@ -10,12 +10,20 @@
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="6_icmh1"]
 [ext_resource type="Script" path="res://src/scenes/forest/cabin_exterior/interactables/door.gd" id="8_23km4"]
 [ext_resource type="Script" path="res://src/scenes/forest/cabin_exterior/interactables/fence.gd" id="8_kowou"]
+[ext_resource type="Script" path="res://src/scenes/forest/cabin_exterior/interactables/arden.gd" id="10_2x22y"]
+[ext_resource type="Texture2D" uid="uid://ba3u3v2dbe0bo" path="res://art/actors/Arden_By_Fence.png" id="10_3iain"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bw47"]
 size = Vector2(170, 125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1df"]
 size = Vector2(39, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h66dt"]
+size = Vector2(42, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3q1e"]
+size = Vector2(52.7879, 110.606)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lf1g1"]
 size = Vector2(20, 200)
@@ -76,7 +84,31 @@ position = Vector2(2.5, 4)
 shape = SubResource("RectangleShape2D_jw1df")
 
 [node name="Arden" type="Node2D" parent="."]
-position = Vector2(609, 271)
+position = Vector2(614, 240)
+scale = Vector2(0.66, 0.66)
+script = ExtResource("10_2x22y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Arden"]
+texture = ExtResource("10_3iain")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Arden"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arden/StaticBody2D"]
+position = Vector2(3, 2)
+shape = SubResource("RectangleShape2D_h66dt")
+metadata/_edit_lock_ = true
+
+[node name="GameEvent" parent="Arden" instance=ExtResource("4_05enc")]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Arden/GameEvent" index="0"]
+position = Vector2(-2.39404, 2.27274)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_p3q1e")
+metadata/_edit_lock_ = true
 
 [node name="ToWellWornTrail" parent="." instance=ExtResource("6_icmh1")]
 position = Vector2(806, 421)
@@ -88,3 +120,4 @@ preserve_y = true
 
 [editable path="Garden/GameEvent"]
 [editable path="Door/GameEvent"]
+[editable path="Arden/GameEvent"]

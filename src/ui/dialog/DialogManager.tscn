@@ -5,7 +5,7 @@
 [ext_resource type="StyleBox" uid="uid://b0vidb5wti5wg" path="res://styles/active_panel_styleboxflat.tres" id="3_flj40"]
 [ext_resource type="LabelSettings" uid="uid://4wsvigqxxrfw" path="res://styles/message_box_font_settings.tres" id="4_63r58"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhai6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnemh"]
 bg_color = Color(0.368627, 0.305882, 0, 0.784314)
 border_width_left = 10
 border_width_top = 10
@@ -18,7 +18,7 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3vea"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_giv88"]
 bg_color = Color(0.498039, 0.415686, 0, 0.784314)
 border_width_left = 10
 border_width_top = 10
@@ -31,16 +31,16 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgn2q"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0mn2"]
 bg_color = Color(0, 0, 0, 0.784314)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2466"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ii4e"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pytrn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdnt8"]
 bg_color = Color(0, 0, 0, 0.784314)
 border_width_left = 10
 border_width_top = 10
@@ -54,11 +54,11 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [sub_resource type="Theme" id="Theme_srw1r"]
-Button/styles/focus = SubResource("StyleBoxFlat_fhai6")
-Button/styles/hover = SubResource("StyleBoxFlat_o3vea")
-Button/styles/normal = SubResource("StyleBoxFlat_hgn2q")
-ItemList/styles/focus = SubResource("StyleBoxEmpty_c2466")
-Panel/styles/panel = SubResource("StyleBoxFlat_pytrn")
+Button/styles/focus = SubResource("StyleBoxFlat_wnemh")
+Button/styles/hover = SubResource("StyleBoxFlat_giv88")
+Button/styles/normal = SubResource("StyleBoxFlat_a0mn2")
+ItemList/styles/focus = SubResource("StyleBoxEmpty_8ii4e")
+Panel/styles/panel = SubResource("StyleBoxFlat_sdnt8")
 
 [node name="DialogManager" type="CanvasLayer"]
 process_mode = 3

@@ -1,7 +1,7 @@
 extends "res://src/events/game_event/base_event.gd"
 
 func investigate():
-	SignalBus.show_message.emit("Try interacting instead to see the test dialog system.", false)
+	Utility.show_message("Try interacting instead to see the test dialog system.")
 	await SignalBus.message_closed
 
 func interact():

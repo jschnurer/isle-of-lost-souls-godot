@@ -33,6 +33,7 @@ SfxPlayer="*res://src/singletons/sfx_player/SFXPlayer.tscn"
 Utility="*res://src/singletons/Utility.gd"
 DialogTopics="*res://src/game_data/dialog_topics.gd"
 DialogManager="*res://src/ui/dialog/DialogManager.tscn"
+ChoiceManager="*res://src/ui/choice_manager/choice_manager.tscn"
 
 [display]
 
