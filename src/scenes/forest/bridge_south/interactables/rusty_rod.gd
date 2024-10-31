@@ -1,5 +1,7 @@
 extends "res://src/events/game_event/base_event.gd"
 
+@export var death_sound: AudioStream
+
 func investigate():
 	SignalBus.show_message.emit(GameScript.Forest_Bridge_South_Rod_Look, false)
 
@@ -13,7 +15,7 @@ func take():
 		
 		# Play the death sound effect.
 		var sfx_args = PlaySfxArgs.new()
-		sfx_args.stream = preload("res://audio/effects/impactcrunch03.ogg")
+		sfx_args.stream = death_sound
 		SignalBus.play_sfx.emit(sfx_args)
 		
 		# Fade out the screen quickly.

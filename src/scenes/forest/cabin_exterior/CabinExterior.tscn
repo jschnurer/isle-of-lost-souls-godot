@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://byw2yuc82270"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_fxomf"]
+[ext_resource type="Texture2D" uid="uid://cdwraytbp4kes" path="res://art/backgrounds/forest/Cabin Exterior.png" id="2_g1w4a"]
+[ext_resource type="Texture2D" uid="uid://bpaqhrhm12lt5" path="res://art/backgrounds/forest/Cabin Exterior Collision.png" id="3_ni0c6"]
+[ext_resource type="AudioStream" uid="uid://dew108n6x52bl" path="res://audio/bgm/birds-isaiah658.ogg" id="4_5ec57"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="4_05enc"]
+[ext_resource type="Script" path="res://src/scenes/forest/cabin_exterior/interactables/garden.gd" id="4_7ifgk"]
+[ext_resource type="Script" path="res://src/scenes/forest/cabin_exterior/interactables/cabin.gd" id="5_taswr"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="6_icmh1"]
+[ext_resource type="Script" path="res://src/scenes/forest/cabin_exterior/interactables/door.gd" id="8_23km4"]
+[ext_resource type="Script" path="res://src/scenes/forest/cabin_exterior/interactables/fence.gd" id="8_kowou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bw47"]
+size = Vector2(170, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1df"]
+size = Vector2(39, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lf1g1"]
+size = Vector2(20, 200)
+
+[node name="CabinExterior" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_fxomf")]
+texture = ExtResource("2_g1w4a")
+bg_images = Array[Texture2D]([ExtResource("2_g1w4a")])
+collision_image = ExtResource("3_ni0c6")
+bgm_stream = ExtResource("4_5ec57")
+metadata/_edit_lock_ = true
+
+[node name="Cabin" type="Node2D" parent="."]
+position = Vector2(245, 143)
+script = ExtResource("5_taswr")
+
+[node name="GameEvent" parent="Cabin" instance=ExtResource("4_05enc")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cabin/GameEvent"]
+polygon = PackedVector2Array(-172, 71, -142, 71, -142, 149, -18, 149, 138, 151, 143, 140, 144, 67, 166, 67, 163, -120, -163, -118)
+
+[node name="Garden" type="Node2D" parent="."]
+position = Vector2(255, 422)
+script = ExtResource("4_7ifgk")
+
+[node name="GameEvent" parent="Garden" instance=ExtResource("4_05enc")]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Garden/GameEvent" index="0"]
+position = Vector2(-1.27126, 2.5)
+shape = SubResource("RectangleShape2D_8bw47")
+metadata/_edit_lock_ = true
+
+[node name="Fence" type="Node2D" parent="."]
+position = Vector2(509, 95)
+script = ExtResource("8_kowou")
+
+[node name="GameEvent" parent="Fence" instance=ExtResource("4_05enc")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fence/GameEvent"]
+polygon = PackedVector2Array(-100, -25, 80, -28, 129, 56, 128, 309, 76, 339, 74, 290, 117, 267, 117, 88, 76, 21, -100, 18)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Fence/GameEvent"]
+polygon = PackedVector2Array(-462, -27, -428, -25, -431, 9, -451, 9, -451, 289, -463, 287)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Fence/GameEvent"]
+polygon = PackedVector2Array(-379, 388, -321, 423, -153, 423, -15, 342, -15, 300, -4, 300, -5, 310, 23, 329, 23, 321, 33, 321, 34, 364, -131, 454, -270, 465, -386, 430)
+
+[node name="Door" type="Node2D" parent="."]
+position = Vector2(243, 261)
+script = ExtResource("8_23km4")
+
+[node name="GameEvent" parent="Door" instance=ExtResource("4_05enc")]
+
+[node name="CollisionShape2D" parent="Door/GameEvent" index="0"]
+position = Vector2(2.5, 4)
+shape = SubResource("RectangleShape2D_jw1df")
+
+[node name="Arden" type="Node2D" parent="."]
+position = Vector2(609, 271)
+
+[node name="ToWellWornTrail" parent="." instance=ExtResource("6_icmh1")]
+position = Vector2(806, 421)
+to_scene = "FOREST_WELL_WORN_TRAIL"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_lf1g1")
+to_east = true
+preserve_y = true
+
+[editable path="Garden/GameEvent"]
+[editable path="Door/GameEvent"]

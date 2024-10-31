@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://drnvdcvxy2onw"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_2rxdi"]
+[ext_resource type="Texture2D" uid="uid://btr0fskbs1k1t" path="res://art/backgrounds/forest/Cave of Bones (Dark).png" id="2_3oc6w"]
+[ext_resource type="Texture2D" uid="uid://csyveb7ay1mn7" path="res://art/backgrounds/forest/Cave of Bones Collision.png" id="3_ifw3q"]
+[ext_resource type="Script" path="res://src/scenes/forest/cave_of_bones/interactables/dark_death.gd" id="4_bn3mj"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="4_loavs"]
+[ext_resource type="AudioStream" uid="uid://bnebhmtpm8jpa" path="res://audio/effects/cave.ogg" id="4_uiwm7"]
+[ext_resource type="AudioStream" uid="uid://1mwbm2jcx5gu" path="res://audio/effects/grue.ogg" id="6_a3v4j"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="6_l61fp"]
+[ext_resource type="PackedScene" uid="uid://d08ryhtjgu1tq" path="res://src/scenes/shared/dark_scene/DarkScene.tscn" id="8_s1ps2"]
+[ext_resource type="Texture2D" uid="uid://bp5bpyr8mh0x5" path="res://art/backgrounds/forest/Cave of Bones (Light).png" id="9_e3bki"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fshgv"]
+size = Vector2(200, 20)
+
+[node name="CaveOfBones" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_2rxdi")]
+texture = ExtResource("9_e3bki")
+bg_images = Array[Texture2D]([ExtResource("9_e3bki")])
+collision_image = ExtResource("3_ifw3q")
+bgm_stream = ExtResource("4_uiwm7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SceneBG/CollisionFromImage" index="1"]
+polygon = PackedVector2Array(445, 358, 447, 349, 826, 341, 829, 381)
+
+[node name="BgmPlayer" parent="SceneBG" index="1"]
+position = Vector2(-27, 21)
+stream = ExtResource("4_uiwm7")
+
+[node name="CollisionFromFrame" parent="SceneBG" index="2"]
+visible = false
+
+[node name="CollisionShape2D" parent="SceneBG/CollisionFromFrame" index="0"]
+disabled = true
+
+[node name="CollisionShape2D2" parent="SceneBG/CollisionFromFrame" index="1"]
+disabled = true
+
+[node name="CollisionShape2D3" parent="SceneBG/CollisionFromFrame" index="2"]
+disabled = true
+
+[node name="CollisionShape2D4" parent="SceneBG/CollisionFromFrame" index="3"]
+disabled = true
+
+[node name="ToOldWell" parent="." instance=ExtResource("6_l61fp")]
+position = Vector2(267, 572)
+to_scene = "FOREST_OLD_WELL"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_fshgv")
+to_location = Vector2(737, 402)
+
+[node name="DarkScene" parent="." node_paths=PackedStringArray("scene_bg") instance=ExtResource("8_s1ps2")]
+visible = false
+scene_bg = NodePath("../SceneBG")
+dark_scene_bg = ExtResource("2_3oc6w")
+light_scene_bg = ExtResource("9_e3bki")
+
+[node name="DarkDeath" type="Node2D" parent="DarkScene"]
+script = ExtResource("4_bn3mj")
+grue_sound = ExtResource("6_a3v4j")
+
+[node name="GameEvent" parent="DarkScene/DarkDeath" instance=ExtResource("4_loavs")]
+activation_mode = 1
+use_action_chooser = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DarkScene/DarkDeath/GameEvent"]
+polygon = PackedVector2Array(149, 480, 176, 431, 221, 401, 293, 396, 327, 407, 353, 442, 369, 501, 515, 467, 518, 237, 300, 189, 120, 197, 80, 414)
+
+[editable path="SceneBG"]

@@ -66,7 +66,7 @@ enum Topics {
 	FAIR_HAIRED_WOMAN = 7,
 }
 
-# max is 92
+# max is 93
 enum Scenes {
 	CAVES_BAT_DEN = 13,
 	CAVES_BOTTOM_OF_SHAFT = 14,
@@ -167,6 +167,7 @@ enum Scenes {
 	
 	GAME_OVER_FISH = 91,
 	FOREST_QUIET_FORK_SIGNPOST = 92,
+	GAME_OVER_GRUE = 93
 }
 
 var ScenePaths = {
@@ -205,7 +206,7 @@ var ScenePaths = {
 	Scenes.FOREST_BEND: "res://src/scenes/forest/bend/Bend.tscn",
 	Scenes.FOREST_BRIDGE_NORTH: "res://src/scenes/forest/",
 	Scenes.FOREST_BRIDGE_SOUTH: "res://src/scenes/forest/bridge_south/BridgeSouth.tscn",
-	Scenes.FOREST_CABIN_EXTERIOR: "res://src/scenes/forest/",
+	Scenes.FOREST_CABIN_EXTERIOR: "res://src/scenes/forest/cabin_exterior/CabinExterior.tscn",
 	Scenes.FOREST_CABIN_INTERIOR: "res://src/scenes/forest/",
 	Scenes.FOREST_CAVE_ENTRANCE: "res://src/scenes/forest/",
 	Scenes.FOREST_CLEARING: "res://src/scenes/forest/clearing/Clearing.tscn",
@@ -222,7 +223,7 @@ var ScenePaths = {
 	Scenes.FOREST_RIVER_BANK: "res://src/scenes/forest/river_bank/RiverBank.tscn",
 	Scenes.FOREST_RUINS_ENTRANCE: "res://src/scenes/forest/ruins_entrance/RuinsEntrance.tscn",
 	Scenes.FOREST_SWAMP_ENTRANCE: "res://src/scenes/forest/",
-	Scenes.FOREST_WELL_CAVE: "res://src/scenes/forest/",
+	Scenes.FOREST_WELL_CAVE: "res://src/scenes/forest/cave_of_bones/CaveOfBones.tscn",
 	Scenes.FOREST_WELL_WORN_TRAIL: "res://src/scenes/forest/well_worn_trail/WellWornTrail.tscn",
 
 	Scenes.MEMORIES_ARDEN: "res://src/scenes/memories/",
@@ -269,4 +270,5 @@ var ScenePaths = {
 	Scenes.SWAMP_TOPPLED_LOG: "res://src/scenes/swamp/",
 	
 	Scenes.GAME_OVER_FISH: "res://src/scenes/game_overs/fish/fish_game_over.tscn",
+	Scenes.GAME_OVER_GRUE: "res://src/scenes/game_overs/grue/grue_game_over.tscn",
 }

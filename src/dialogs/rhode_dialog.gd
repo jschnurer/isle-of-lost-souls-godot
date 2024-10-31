@@ -1,8 +1,5 @@
 extends "res://src/dialogs/base_dialog.gd"
 
-func _ready():
-	topic_group = Enums.TopicGroups.RHODE
-
 func ask_about(topic: Enums.Topics):
 	if (topic == Enums.Topics.WHO_ARE_YOU):
 		SignalBus.show_dialog_message.emit("\"My name is Rhode and thou art the first person that I have laid eyes upon in a long time.\"", true)

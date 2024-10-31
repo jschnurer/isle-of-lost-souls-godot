@@ -1,4 +1,5 @@
 @tool
+class_name SceneBG
 extends TextureRect
 
 var _current_bg_index = 0

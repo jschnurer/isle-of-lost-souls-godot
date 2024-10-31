@@ -24,5 +24,5 @@ func investigate():
 func take():
 	SignalBus.show_message.emit(GameScript.Forest_Quiet_Fork_Signpost_Take, false)
 
-func use_item(item: Item):
+func use_item(_item: Item):
 	pass

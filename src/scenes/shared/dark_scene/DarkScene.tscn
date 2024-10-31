@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d08ryhtjgu1tq"]
+
+[ext_resource type="Script" path="res://src/scenes/shared/dark_scene/dark_scene.gd" id="1_y0wtb"]
+
+[node name="DarkScene" type="Node2D"]
+script = ExtResource("1_y0wtb")

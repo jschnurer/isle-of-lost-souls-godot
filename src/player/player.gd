@@ -11,7 +11,7 @@ const POINTER_SPEED = 400.0
 var SPEED = PERSON_SPEED
 var facing_dir: Enums.Direction = Enums.Direction.RIGHT
 var game_event_in_range: GameEvent
-var mode: Enums.PlayerMode = Enums.PlayerMode.PERSON
+@export var mode: Enums.PlayerMode = Enums.PlayerMode.PERSON
 var is_controllable: bool = true
 
 func _ready():

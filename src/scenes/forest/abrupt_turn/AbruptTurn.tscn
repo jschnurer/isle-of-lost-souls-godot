@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d33rwce3fhbat"]
+[gd_scene load_steps=8 format=3 uid="uid://d33rwce3fhbat"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_mpl85"]
 [ext_resource type="Texture2D" uid="uid://cx7hwvvte6eth" path="res://art/backgrounds/forest/Abrupt Turn.png" id="2_t8nd3"]
@@ -9,13 +9,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsv8x"]
 size = Vector2(200, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2e8a"]
+size = Vector2(20, 200)
+
 [node name="AbruptTurn" type="Node2D"]
 
 [node name="SceneBG" parent="." instance=ExtResource("1_mpl85")]
 texture = ExtResource("2_t8nd3")
 bg_images = Array[Texture2D]([ExtResource("2_t8nd3")])
 collision_image = ExtResource("3_k0w46")
-use_collision_frame = false
 bgm_stream = ExtResource("4_vqcba")
 
 [node name="ToBend" parent="." instance=ExtResource("5_i3wtb")]
@@ -25,3 +27,11 @@ scene_name_valid = true
 event_area = SubResource("RectangleShape2D_fsv8x")
 to_north = true
 preserve_x = true
+
+[node name="ToRuinsEntrance" parent="." instance=ExtResource("5_i3wtb")]
+position = Vector2(806, 349)
+to_scene = "FOREST_RUINS_ENTRANCE"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_u2e8a")
+to_east = true
+preserve_y = true

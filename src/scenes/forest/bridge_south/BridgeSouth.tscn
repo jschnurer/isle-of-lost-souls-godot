@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://lroweyrypev2"]
+[gd_scene load_steps=20 format=3 uid="uid://lroweyrypev2"]
 
 [ext_resource type="Texture2D" uid="uid://w5djnj5frudu" path="res://art/backgrounds/forest/Forest Broken Bridge South 1.png" id="1_ro3oe"]
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_thwdb"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://src/scenes/forest/bridge_south/interactables/bridge.gd" id="10_8cs06"]
 [ext_resource type="Script" path="res://src/scenes/forest/bridge_south/interactables/rusty_rod.gd" id="11_02ueu"]
 [ext_resource type="Texture2D" uid="uid://dn4v442wa583y" path="res://art/actors/rusty_rod.png" id="11_i57cd"]
+[ext_resource type="AudioStream" uid="uid://yb55eo28u5ay" path="res://audio/effects/impactcrunch03.ogg" id="12_j1b01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50rri"]
 size = Vector2(200, 20)
@@ -51,7 +52,7 @@ animations = [{
 [node name="BridgeSouth" type="Node2D"]
 
 [node name="SceneBG" parent="." instance=ExtResource("1_thwdb")]
-texture = ExtResource("3_typln")
+texture = ExtResource("1_ro3oe")
 bg_images = Array[Texture2D]([ExtResource("1_ro3oe"), ExtResource("3_typln"), ExtResource("4_rum85")])
 collision_image = ExtResource("5_agcjw")
 bgm_stream = ExtResource("4_rxf6y")
@@ -87,6 +88,7 @@ polygon = PackedVector2Array(494, 172, 515, 158, 520, 289, 489, 289, 483, 234, 4
 [node name="RustyRod" type="Node2D" parent="."]
 position = Vector2(586, 229)
 script = ExtResource("11_02ueu")
+death_sound = ExtResource("12_j1b01")
 
 [node name="GameEvent" parent="RustyRod" instance=ExtResource("9_eghx8")]
 

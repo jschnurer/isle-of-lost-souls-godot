@@ -21,6 +21,8 @@ func activate(input_action: Enums.InputAction):
 	elif (input_action == Enums.InputAction.USE_ITEM):
 		# TODO: Implement item chooser. Then send chosen item to use_item(item) or just cancel the event.
 		use_item(null)
+	elif (input_action == Enums.InputAction.COLLIDE):
+		collide()
 	
 func investigate():
 	SignalBus.show_message.emit(GameScript.Global_Uninteresting, false)
@@ -33,3 +35,6 @@ func interact():
 	
 func use_item(_item: Item):
 	SignalBus.show_message.emit(GameScript.Global_No_Effect, false)
+
+func collide():
+	pass

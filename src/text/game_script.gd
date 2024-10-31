@@ -43,6 +43,14 @@ var Forest_Quiet_Fork_Signpost_Take = "You have no need of an armload of rotten 
 var Forest_Quiet_Fork_Nail_Look = "It's a rusty old nail. The hole it's in is rotting away and it looks quite loose."
 var Forest_Quiet_Fork_Nail_Take = "You get your fingernails under the head of the nail and give it a good couple tugs. Eventually, you work it out of the signpost and take it with you."
 
+## Cabin Exterior
+# Garden
+var Forest_Cabin_Exterior_Garden_Look = "The garden is well kept and has lots of different things growing in it. You can see carrots, cabbage, peas, tomatoes, and some others you don't recognize."
+var Forest_Cabin_Exterior_Garden_Take = "You're not hungry enough to steal someone else's crops."
+var Forest_Cabin_Exterior_Cabin_Look = "It's a roughly built log cabin but it seems sturdy enough. There's a door and some shuttered windows around the side."
+var Forest_Cabin_Exterior_Door_Look = "It's a sturdy door constructed of rough lumber."
+var Forest_Cabin_Exterior_Fence_Look = "It's a simple wooden fence. It completely surrounds the cabin, yard, and garden."
+
 ###### Game Overs
 ## Fish Game Over
 var Game_Over_Fish_1 = "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks."
@@ -52,6 +60,9 @@ var Game_Over_Fish_4 = "You flee back to the bank of the river but it's too late
 var Game_Over_Fish_5 = "Your head begins spinning. As everything fades to black, you have one, final thought..."
 var Game_Over_Fish_6 = "If only you had done something to distract the fish..."
 
+var Game_Over_Grue_1 = "You fumble around in the dark for a few moments. You think you hear something so you immediately stop what you're doing, ears attuned to the silence all around you. Did you really hear something or are your ears playing tricks on you? Your question is answered only a few seconds later."
+var Game_Over_Grue_2 = "The sound of slapping feet approaches, its direction indeterminate! Claws dig into your flesh and something large and leathery wraps long, spindly arms around you. You struggle to free yourself but its strength far, far, surpasses your own. You let out a scream as it bites down on your neck."
+var Game_Over_Grue_3 = "You should fear the dark..."
 ############ DIALOGS ############
 
 ###### Topics
