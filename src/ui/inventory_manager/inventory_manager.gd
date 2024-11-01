@@ -3,7 +3,8 @@ extends CanvasLayer
 var is_open = false
 var delay_event_time = 0
 var delay_before_can_choose = .1
-@onready var grid_container = $VBoxContainer/Panel/MarginContainer/GridContainer
+@onready var grid_container = $VBoxContainer/Items/MarginContainer/GridContainer
+@onready var item_description_lbl = $VBoxContainer/Description/MarginContainer/Label
 
 func _ready():
 	hide()
@@ -50,6 +51,7 @@ func populate_grid():
 		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		btn.pressed.connect(_on_item_chosen.bind(item))
+		btn.focus_entered.connect(_on_item_focused.bind(item))
 		grid_container.add_child(btn)
 	
 	if (grid_container.get_child_count() > 0):
@@ -58,3 +60,6 @@ func populate_grid():
 func _on_item_chosen(item: Item):
 	SignalBus.inventory_closed.emit(item)
 	toggle(false)
+
+func _on_item_focused(item: Item):
+	item_description_lbl.text = item.description

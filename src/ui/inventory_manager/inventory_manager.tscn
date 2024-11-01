@@ -1,26 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://codq0ruqtbu4q"]
+[gd_scene load_steps=4 format=3 uid="uid://codq0ruqtbu4q"]
 
 [ext_resource type="Script" path="res://src/ui/inventory_manager/inventory_manager.gd" id="1_7de4o"]
 [ext_resource type="Theme" uid="uid://v1piyp7jwkvp" path="res://styles/base_theme.tres" id="1_gmoj4"]
+[ext_resource type="LabelSettings" uid="uid://4wsvigqxxrfw" path="res://styles/message_box_font_settings.tres" id="3_8brgs"]
 
 [node name="InventoryManager" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_7de4o")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_gmoj4")
-theme_override_constants/separation = 10
 
-[node name="Panel2" type="Panel" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="Panel" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 47)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel2"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Header"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,17 +35,18 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Label" type="Label" parent="VBoxContainer/Panel2/MarginContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Header/MarginContainer"]
 layout_mode = 2
 text = "Inventory"
+label_settings = ExtResource("3_8brgs")
 
-[node name="Panel" type="Panel" parent="VBoxContainer"]
+[node name="Items" type="Panel" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(327, 86)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_gmoj4")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Items"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,10 +58,32 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Panel/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/Items/MarginContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 3
 
-[connection signal="minimum_size_changed" from="VBoxContainer/Panel/MarginContainer" to="." method="_on_margin_container_minimum_size_changed"]
+[node name="Description" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 94)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Description"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Description/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+label_settings = ExtResource("3_8brgs")
+autowrap_mode = 2
+
+[connection signal="minimum_size_changed" from="MarginContainer/VBoxContainer/Items/MarginContainer" to="." method="_on_margin_container_minimum_size_changed"]
