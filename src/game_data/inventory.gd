@@ -34,5 +34,5 @@ func remove_item(slug: Enums.ItemSlugs, quantity: int = 1):
 	else:
 		item.quantity -= quantity
 
-func get_items():
+func get_items() -> Array[Item]:
 	return items

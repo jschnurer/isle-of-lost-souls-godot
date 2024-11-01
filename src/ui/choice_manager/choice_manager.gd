@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 		delay_event_time += delta
 		
 func _input(event: InputEvent) -> void:
-	if (event.is_action_pressed("ui_cancel")):
+	if (is_open and event.is_action_pressed("ui_cancel")):
 		var btn = container.get_child(cancel_choice_index) as Button
 		var choice = Choice.new()
 		choice.text = btn.text

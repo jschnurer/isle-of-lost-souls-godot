@@ -4,7 +4,7 @@ var screen_edge_padding_x = 50
 var screen_edge_padding_y = 30
 var screen_width = 816
 var screen_height = 624
-var current_scene = Enums.Scenes.FOREST_CABIN_EXTERIOR
+var current_scene = Enums.Scenes.FOREST_OLD_WELL
 
 func _ready():
 	SignalBus.connect("transfer_player_to_scene", _on_transfer_player_to_scene)

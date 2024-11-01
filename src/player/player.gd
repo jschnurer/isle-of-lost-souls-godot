@@ -30,14 +30,16 @@ func _ready():
 	SignalBus.toggle_player.connect(_on_toggle_player)
 
 func  _input(event):
-	if (!is_controllable or !game_event_in_range):
+	if (!is_controllable):
 		return
 	
-	if (event.is_action_pressed("ui_accept")):
+	if (game_event_in_range and event.is_action_pressed("ui_accept")):
 		if (game_event_in_range.use_action_chooser):
 			show_item_chooser()
 		else:
 			game_event_in_range.activate(Enums.InputAction.INTERACT)
+	elif (event.is_action_pressed("ui_cancel")):
+		SignalBus.open_inventory.emit()
 
 func _physics_process(_delta: float) -> void:
 	if (!is_controllable):

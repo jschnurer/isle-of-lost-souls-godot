@@ -19,8 +19,8 @@ func activate(input_action: Enums.InputAction):
 	elif (input_action == Enums.InputAction.TAKE):
 		take()
 	elif (input_action == Enums.InputAction.USE_ITEM):
-		# TODO: Implement item chooser. Then send chosen item to use_item(item) or just cancel the event.
-		use_item(null)
+		SignalBus.open_inventory.emit()
+		use_item((await SignalBus.inventory_closed) as Item)
 	elif (input_action == Enums.InputAction.COLLIDE):
 		collide()
 	

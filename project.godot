@@ -34,6 +34,7 @@ Utility="*res://src/singletons/Utility.gd"
 DialogTopics="*res://src/game_data/dialog_topics.gd"
 DialogManager="*res://src/ui/dialog/DialogManager.tscn"
 ChoiceManager="*res://src/ui/choice_manager/choice_manager.tscn"
+InventoryManager="*res://src/ui/inventory_manager/inventory_manager.tscn"
 
 [display]
 

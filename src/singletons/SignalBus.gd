@@ -89,3 +89,9 @@ signal show_choice(choices: Array[String], cancel_index: int)
 
 @warning_ignore("unused_signal")
 signal choice_chosen(choice: Choice)
+
+@warning_ignore("unused_signal")
+signal open_inventory()
+
+@warning_ignore("unused_signal")
+signal inventory_closed(item: Item)
