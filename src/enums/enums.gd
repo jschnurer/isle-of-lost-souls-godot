@@ -11,7 +11,8 @@ enum Vars {
 	PLAYER_INFO,
 	TOOK_STONE,
 	DISTRACTED_FISH,
-	TOOK_NAIL
+	TOOK_NAIL,
+	TOOK_RIVER_ROD,
 }
 
 enum EngineEvents {
@@ -253,7 +254,7 @@ var ScenePaths = {
 
 	Scenes.RUINS_BUNKER: "res://src/scenes/ruins/",
 	Scenes.RUINS_LAB: "res://src/scenes/ruins/",
-	Scenes.RUINS_HALL: "res://src/scenes/ruins/",
+	Scenes.RUINS_HALL: "res://src/scenes/ruins/ruined_hall/ruined_hall.tscn",
 	Scenes.RUINS_HOUSE: "res://src/scenes/ruins/",
 	Scenes.RUINS_SQUARE_NORTH: "res://src/scenes/ruins/",
 	Scenes.RUINS_SQUARE_SOUTH: "res://src/scenes/ruins/",

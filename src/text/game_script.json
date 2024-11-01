@@ -29,7 +29,9 @@
 	  "Bridge_Look": "A mighty stone bridge once spanned the river but has since mostly collapsed. Part of it still juts out from either side of the river.",
 	  "Bridge_Take": "Thinking about carrying this entire bridge away makes your back hurt.",
 	  "River_Look": "The rushing water is a little murky. You can see dark shapes moving around in it.",
+	  "River_Look_No_Fish": "The rushing water is a little murky.",
 	  "River_Take": "Holding an entire river in your hands seems problematic.",
+	  "River_Use_Stone": "You throw the stone into the river. Dark shapes beneath the murky water quickly dart downstream to where the stone splashed.",
 	  "Rod_Look": "A cylindrical, rusty metal rod sticks out of the water about 5 feet from the shore.",
 	  "Rod_Take_Successful": "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You work it back and forth until it's free and then make your way back to the bank."
 	},
@@ -52,6 +54,11 @@
 	  "Arden_Interact": "The man turns toward you. \"Oh, hello there! The name's Arden. We haven't seen any new arrivals in a long, long time. Sorry, but I can't talk now, I have to finish mending this fence. You wouldn't happen to have any nails on you, would you?\"",
 	  "Arden_No_Nail": "\"Well that's a shame. If you find any, I'd really appreciate one.\"",
 	  "Arden_Lie_About_Nail": "\"Now listen here, young'un! I've known many a man to carry a nail or few and I've even done it myself. I can tell quite plainly that you don't have any on you. I don't appreciate this kind of tomfoolery!\""
+	}
+  },
+  "Ruins": {
+	"Hall": {
+	  "Altar_Look": "The altar is a large piece of white stone. Engraved on its surface is a large, runic symbol: ᛞ."
 	}
   },
   "Game_Overs": {

@@ -3,8 +3,8 @@ extends CanvasLayer
 var is_open = false
 var delay_event_time = 0
 var delay_before_can_choose = .1
-@onready var grid_container = $VBoxContainer/Items/MarginContainer/GridContainer
-@onready var item_description_lbl = $VBoxContainer/Description/MarginContainer/Label
+@onready var grid_container = $MarginContainer/VBoxContainer/Items/MarginContainer/GridContainer
+@onready var item_description_lbl = $MarginContainer/VBoxContainer/Description/MarginContainer/Label
 
 func _ready():
 	hide()
@@ -58,8 +58,8 @@ func populate_grid():
 		(grid_container.get_child(0) as Button).grab_focus()
 
 func _on_item_chosen(item: Item):
-	SignalBus.inventory_closed.emit(item)
 	toggle(false)
+	SignalBus.inventory_closed.emit(item)
 
 func _on_item_focused(item: Item):
 	item_description_lbl.text = item.description

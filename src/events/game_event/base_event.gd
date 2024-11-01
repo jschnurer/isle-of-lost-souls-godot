@@ -20,7 +20,8 @@ func activate(input_action: Enums.InputAction):
 		take()
 	elif (input_action == Enums.InputAction.USE_ITEM):
 		SignalBus.open_inventory.emit()
-		use_item((await SignalBus.inventory_closed) as Item)
+		var item = await SignalBus.inventory_closed
+		use_item(item as Item)
 	elif (input_action == Enums.InputAction.COLLIDE):
 		collide()
 	

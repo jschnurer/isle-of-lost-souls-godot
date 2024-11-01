@@ -13,5 +13,10 @@
 		"slug": "FLASHLIGHT",
 		"name": "flashlight",
 		"description": "It's a heavy duty metal flashlight. There's a button on it that toggles it on and off. You'll use it when you need to."
+	},
+	{
+		"slug": "RUINS_ROD",
+		"name": "rusty metal rod",
+		"description": "It's a sturdy metal rod about an inch and a half in diameter. It has a grip at one end. Maybe it's a handle of some kind."
 	}
 ]

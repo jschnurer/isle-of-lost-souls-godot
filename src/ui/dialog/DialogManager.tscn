@@ -71,10 +71,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -9.0
-offset_top = -621.0
-offset_right = 405.0
-offset_bottom = -237.0
+offset_left = -2.0
+offset_top = -614.0
+offset_right = 398.0
+offset_bottom = -254.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(405, 117)
@@ -91,10 +91,12 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
+metadata/_edit_lock_ = true
 
 [node name="GridContainer" type="GridContainer" parent="Topics/MarginContainer"]
 layout_mode = 2
 columns = 2
+metadata/_edit_lock_ = true
 
 [node name="MessageBox" type="Panel" parent="."]
 anchors_preset = 7
@@ -102,9 +104,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -405.0
-offset_top = -234.0
-offset_right = 405.0
+offset_left = -398.0
+offset_top = -244.0
+offset_right = 398.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(405, 117)
@@ -143,7 +146,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Portrait" type="TextureRect" parent="."]
-offset_left = 3.0
-offset_top = 3.0
+offset_left = 10.0
+offset_top = 10.0
 offset_right = 396.0
-offset_bottom = 387.0
+offset_bottom = 370.0

@@ -4,13 +4,12 @@ var screen_edge_padding_x = 50
 var screen_edge_padding_y = 30
 var screen_width = 816
 var screen_height = 624
-var current_scene = Enums.Scenes.FOREST_OLD_WELL
+var current_scene = Enums.Scenes.FOREST_RUINS_ENTRANCE
 
 func _ready():
 	SignalBus.connect("transfer_player_to_scene", _on_transfer_player_to_scene)
 	transfer_player_to_scene(current_scene, Vector2(462, 328))
 
-# Callback for when the SignalBus is told to transfer the player.
 func _on_transfer_player_to_scene(args: TeleportArgs):
 	var location = args.to_location
 	
@@ -42,7 +41,6 @@ func _on_transfer_player_to_scene(args: TeleportArgs):
 	
 	transfer_player_to_scene(to_scene, location)
 
-# Load a new scene, move the player.
 func transfer_player_to_scene(destination: Enums.Scenes, location: Vector2):
 	var scene = load(Enums.ScenePaths.get(destination))
 	var scene_node = scene.instantiate()

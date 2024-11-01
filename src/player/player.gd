@@ -35,7 +35,7 @@ func  _input(event):
 	
 	if (game_event_in_range and event.is_action_pressed("ui_accept")):
 		if (game_event_in_range.use_action_chooser):
-			show_item_chooser()
+			show_action_chooser()
 		else:
 			game_event_in_range.activate(Enums.InputAction.INTERACT)
 	elif (event.is_action_pressed("ui_cancel")):
@@ -151,7 +151,7 @@ func _on_set_player_mode(new_mode: Enums.PlayerMode):
 	$PointerArea/CollisionShape2D.disabled = !is_pointer
 	$PointerCollision.disabled = !is_pointer
 
-func show_item_chooser():
+func show_action_chooser():
 	SignalBus.show_action_chooser.emit()
 	var action = await SignalBus.action_chooser_closed
 	

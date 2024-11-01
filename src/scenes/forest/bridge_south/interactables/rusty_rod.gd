@@ -2,6 +2,12 @@ extends "res://src/events/game_event/base_event.gd"
 
 @export var death_sound: AudioStream
 
+func _ready():
+	if (GameVars.get_var(Enums.Vars.TOOK_RIVER_ROD)):
+		queue_free()
+	else:
+		super._ready()
+
 func investigate():
 	Utility.show_message(GameScript.get_entry("Forest.Bridge_South.Rod_Look"))
 
@@ -34,4 +40,8 @@ func take():
 		teleport_args.to_scene = Enums.Scenes.GAME_OVER_FISH
 		SignalBus.transfer_player_to_scene.emit(teleport_args)
 	else:
-		Utility.show_message(GameScript.get_entry("Forest.Bridge_South.Rod_Take_Successful"))
+		$AnimatedSprite2D.queue_free()
+		await Utility.show_message(GameScript.get_entry("Forest.Bridge_South.Rod_Take_Successful"))
+		Inventory.add_item(Enums.ItemSlugs.RUINS_ROD)
+		GameVars.set_var(Enums.Vars.TOOK_RIVER_ROD, true)
+		queue_free()
