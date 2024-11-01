@@ -14,7 +14,7 @@ var _variant: SpriteVariant = SpriteVariant.NORMAL
 
 @export var sprites: Array[Texture2D]
 
-@export var investigate_game_script_key: String = "Global_Cairn_Look"
+@export var investigate_game_script_key: String = "Global.Cairn_Look"
 
 func variant_changed():
 	$Sprite.texture = sprites[_variant]
@@ -26,11 +26,11 @@ func variant_changed():
 	$StaticBody2D/ShortCollisionShape.disabled = _variant != SpriteVariant.SHORT
 
 func investigate():
-	Utility.show_message(GameScript.get(investigate_game_script_key))
+	Utility.show_message(GameScript.get_entry(investigate_game_script_key))
 
 func take():
-	Utility.show_message(GameScript.GameScript.Global_Cairn_Take)
+	Utility.show_message(GameScript.get_entry("Global.Cairn_Take"))
 
 func interact():
-	Utility.show_message(GameScript.GameScript.Global_Cairn_Interact)
+	Utility.show_message(GameScript.get_entry("Global.Cairn_Interact"))
 	# TODO: Implement saving the game.

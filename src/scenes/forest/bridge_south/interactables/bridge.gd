@@ -1,7 +1,7 @@
 extends "res://src/events/game_event/base_event.gd"
 
 func investigate():
-	Utility.show_message(GameScript.Forest_Bridge_South_Bridge_Look)
+	Utility.show_message(GameScript.get_entry("Forest.Bridge_South.Bridge_Look"))
 
 func take():
-	Utility.show_message(GameScript.Forest_Bridge_South_Bridge_Take)
+	Utility.show_message(GameScript.get_entry("Forest.Bridge_South.Bridge_Take"))

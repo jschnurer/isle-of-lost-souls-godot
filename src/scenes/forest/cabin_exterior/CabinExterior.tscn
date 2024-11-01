@@ -106,7 +106,6 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Arden/GameEvent" index="0"]
 position = Vector2(-2.39404, 2.27274)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_p3q1e")
 metadata/_edit_lock_ = true
 

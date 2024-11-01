@@ -6,24 +6,13 @@ var known_topics: Dictionary = {
 	Enums.TopicGroups.RHODE: [Enums.Topics.TOTEMS],
 }
 
-var topic_texts: Dictionary = {
-	Enums.Topics.WHO_ARE_YOU: GameScript.Topic_Who_Are_You,
-	Enums.Topics.GOODBYE: GameScript.Topic_Goodbye,
-	Enums.Topics.MY_PAST: GameScript.Topic_My_Past,
-	Enums.Topics.ISLAND_ARRIVAL: GameScript.Topic_Island_Arrival,
-	Enums.Topics.MEREK: GameScript.Topic_Merek,
-	Enums.Topics.TOTEMS: GameScript.Topic_Totems,
-	Enums.Topics.FAIR_HAIRED_WOMAN: GameScript.Topic_Fair_Haired_Woman,
-}
+var enum_keys = Enums.Topics.keys()
 
 func _ready():
 	SignalBus.learn_topic.connect(_on_learn_topic)
 
 func get_topic_text(var_name: Enums.Topics):
-	if (topic_texts.has(var_name)):
-		return topic_texts[var_name]
-	else:
-		return "##UNKNOWNTOPIC##"
+	return GameScript.get_entry(Utility.enum_str_to_title_case(enum_keys[var_name]))
 
 func get_item_index(group: Enums.TopicGroups, topic: Enums.Topics):
 	for index in known_topics[group].size():

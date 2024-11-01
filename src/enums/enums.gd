@@ -6,16 +6,19 @@ enum Direction { UP, DOWN, LEFT, RIGHT, }
 enum PlayerMode { PERSON, POINTER }
 enum ActivationMode { ACTIVATE, COLLIDE, }
 enum EventType { DIALOG, TELEPORT }
+
 enum Vars {
 	PLAYER_INFO,
 	TOOK_STONE,
 	DISTRACTED_FISH,
 	TOOK_NAIL
 }
+
 enum EngineEvents {
 	SHOW_MESSAGE,
 	TRANSFER_PLAYER
 }
+
 enum ItemSlugs {
 	BLIGHT_CURE,
 	BOTTLE,
@@ -50,13 +53,14 @@ enum ItemSlugs {
 	SLEDGE,
 	TARNROOT,
 }
+
 enum TopicGroups {
 	GLOBAL = 1,
 	ARDEN = 2,
 	RHODE = 3,
 }
+
 enum Topics {
-	UNSET = 0,
 	WHO_ARE_YOU = 1,
 	GOODBYE = 2,
 	MY_PAST = 3,

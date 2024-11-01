@@ -13,6 +13,7 @@ var time_before_can_close = .25
 
 func _ready():
 	vbox.visible = false
+	set_button_texts()
 	SignalBus.show_action_chooser.connect(_on_show_action_chooser)
 
 func _on_show_action_chooser():
@@ -54,16 +55,15 @@ func _process(delta):
 		and btn_focused
 		and Input.is_action_pressed("ui_accept")):
 		toggle(false)
-		var chosen_text = btn_focused.text
 		var action_chosen = null
-
-		if (chosen_text == "Investigate"):
+		
+		if (btn_focused == btn_investigate):
 			action_chosen = Enums.InputAction.INVESTIGATE
-		elif (chosen_text == "Interact"):
+		elif (btn_focused == btn_interact):
 			action_chosen = Enums.InputAction.INTERACT
-		elif (chosen_text == "Take"):
+		elif (btn_focused == btn_take):
 			action_chosen = Enums.InputAction.TAKE
-		elif (chosen_text == "Use Item"):
+		elif (btn_focused == btn_use_item):
 			action_chosen = Enums.InputAction.USE_ITEM
 		
 		SignalBus.action_chooser_closed.emit(action_chosen)
@@ -71,3 +71,10 @@ func _process(delta):
 func focus_button(btn_node: Button):
 	btn_node.grab_focus()
 	btn_focused = btn_node
+
+func set_button_texts():
+	btn_cancel.text = GameScript.get_entry("Global.Cancel")
+	btn_investigate.text = GameScript.get_entry("Global.Investigate")
+	btn_interact.text = GameScript.get_entry("Global.Interact")
+	btn_take.text = GameScript.get_entry("Global.Take")
+	btn_use_item.text = GameScript.get_entry("Global.Use_Item")

@@ -9,11 +9,12 @@ func _ready():
 		super._ready()
 
 func investigate():
-	Utility.show_message(GameScript.Forest_Quiet_Fork_Nail_Look)
+	Utility.show_message(GameScript.get_entry("Forest.Quiet_Fork.Nail_Look"))
 
 func take():
 	Inventory.add_item(Enums.ItemSlugs.NAIL)
 	GameVars.set_var(Enums.Vars.TOOK_NAIL, true)
 	$"../SceneBG".set_bg_texture(nail_missing_texture)
-	await Utility.show_message(GameScript.Forest_Quiet_Fork_Nail_Take)
+	$Sprite2D.queue_free()
+	await Utility.show_message(GameScript.get_entry("Forest.Quiet_Fork.Nail_Take"))
 	queue_free()

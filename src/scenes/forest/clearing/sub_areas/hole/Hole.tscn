@@ -22,13 +22,16 @@ bgm_stream = ExtResource("3_clega")
 
 [node name="BackArrow" parent="." instance=ExtResource("4_vm3p6")]
 
-[node name="Stone" type="Sprite2D" parent="."]
+[node name="Stone" type="Node2D" parent="."]
+script = ExtResource("4_ba0as")
+
+[node name="Sprite" type="Sprite2D" parent="Stone"]
 texture_filter = 1
 position = Vector2(425, 423)
 texture = ExtResource("3_vvi4b")
-script = ExtResource("4_ba0as")
 
 [node name="GameEvent" parent="Stone" instance=ExtResource("4_s471m")]
+position = Vector2(425, 423)
 
 [node name="CollisionShape2D" parent="Stone/GameEvent" index="0"]
 position = Vector2(1, -2)

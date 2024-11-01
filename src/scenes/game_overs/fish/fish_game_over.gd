@@ -8,15 +8,15 @@ func _ready():
 	await SignalBus.fade_in_screen_finished
 	
 	await Utility.wait(2)
-		
-	await Utility.show_message(GameScript.Game_Over_Fish_1)
-	await Utility.show_message(GameScript.Game_Over_Fish_2)
-	await Utility.show_message(GameScript.Game_Over_Fish_3)
-	await Utility.show_message(GameScript.Game_Over_Fish_4)
-	await Utility.show_message(GameScript.Game_Over_Fish_5)
+	
+	await Utility.show_message(GameScript.get_entry("Game_Overs.Fish.Fish_1"), true)
+	await Utility.show_message(GameScript.get_entry("Game_Overs.Fish.Fish_2"), true)
+	await Utility.show_message(GameScript.get_entry("Game_Overs.Fish.Fish_3"), true)
+	await Utility.show_message(GameScript.get_entry("Game_Overs.Fish.Fish_4"), true)
+	await Utility.show_message(GameScript.get_entry("Game_Overs.Fish.Fish_5"))
 	
 	await Utility.wait(1)
 	
-	await Utility.show_message(GameScript.Game_Over_Fish_6)
+	await Utility.show_message(GameScript.get_entry("Game_Overs.Fish.Fish_6"))
 	
 	SignalBus.return_to_title_screen.emit()

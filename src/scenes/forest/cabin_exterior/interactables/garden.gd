@@ -1,7 +1,7 @@
 extends "res://src/events/game_event/base_event.gd"
 
 func investigate():
-	Utility.show_message(GameScript.Forest_Cabin_Exterior_Garden_Look)
+	Utility.show_message(GameScript.get_entry("Forest.Cabin_Exterior.Garden_Look"))
 
 func take():
-	Utility.show_message(GameScript.Forest_Cabin_Exterior_Garden_Take)
+	Utility.show_message(GameScript.get_entry("Forest.Cabin_Exterior.Garden_Take"))

@@ -1,8 +1,8 @@
 extends "res://src/events/game_event/base_event.gd"
 
 func investigate():
-	await Utility.show_message(GameScript.Forest_Clearing_Hole_Look)
-	
+	await Utility.show_message(GameScript.get_entry("Forest.Clearing.Hole_Look"))
+
 	SignalBus.memorize_player_info.emit()
 	SignalBus.set_player_mode.emit(Enums.PlayerMode.POINTER)
 	
@@ -12,7 +12,4 @@ func investigate():
 	SignalBus.transfer_player_to_scene.emit(tele_args)
 
 func take():
-	Utility.show_message(GameScript.Forest_Clearing_Hole_Take)
-
-func interact():
-	Utility.show_message(GameScript.Global_No_Mechanism_To_Interact)
+	Utility.show_message(GameScript.get_entry("Forest.Clearing.Hole_Take"))

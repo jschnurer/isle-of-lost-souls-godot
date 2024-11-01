@@ -3,7 +3,7 @@ extends "res://src/events/game_event/base_event.gd"
 @export var death_sound: AudioStream
 
 func investigate():
-	Utility.show_message(GameScript.Forest_Bridge_South_Rod_Look)
+	Utility.show_message(GameScript.get_entry("Forest.Bridge_South.Rod_Look"))
 
 func take():
 	if (!GameVars.get_var(Enums.Vars.DISTRACTED_FISH)):
@@ -34,7 +34,4 @@ func take():
 		teleport_args.to_scene = Enums.Scenes.GAME_OVER_FISH
 		SignalBus.transfer_player_to_scene.emit(teleport_args)
 	else:
-		Utility.show_message(GameScript.Forest_Bridge_South_Rod_Take_Successful)
-
-func interact():
-	Utility.show_message(GameScript.Global_No_Mechanism_To_Interact)
+		Utility.show_message(GameScript.get_entry("Forest.Bridge_South.Rod_Take_Successful"))
