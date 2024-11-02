@@ -1,18 +1,20 @@
 extends Node2D
 
+@onready var audio_player: AudioStreamPlayer2D = $BGM
+
 func _ready():
-	SignalBus.connect("play_bgm", play_bgm)
-	SignalBus.connect("stop_bgm", stop_bgm)
+	SignalBus.play_bgm.connect(play_bgm)
+	SignalBus.stop_bgm.connect(stop_bgm)
 	
 func play_bgm(stream: AudioStream, volume: float):
 	# If this track is already playing, no need to restart it.
-	if ($BGM.playing and $BGM.stream.resource_path == stream.resource_path):
+	if (audio_player.playing and audio_player.stream.resource_path == stream.resource_path):
 		return
 	
-	$BGM.stop()
-	$BGM.stream = stream
-	$BGM.volume_db = volume
-	$BGM.play()
+	audio_player.stop()
+	audio_player.stream = stream
+	audio_player.volume_db = volume
+	audio_player.play()
 
 func stop_bgm():
-	$BGM.stop()
+	audio_player.stop()

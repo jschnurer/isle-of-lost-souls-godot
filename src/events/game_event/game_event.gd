@@ -7,7 +7,7 @@ extends Area2D
 @export var parent_node_index: int = -1
 @export var activation_mode: Enums.ActivationMode = Enums.ActivationMode.ACTIVATE
 @export var use_action_chooser: bool = true
-signal on_activate
+signal on_activate(input_action: Enums.InputAction)
 
 func _ready():
 	if (parent_node_index == -1):
