@@ -13,6 +13,8 @@ enum Vars {
 	DISTRACTED_FISH,
 	TOOK_NAIL,
 	TOOK_RIVER_ROD,
+	ROD_IN_DEVICE,
+	RUIN_HALL_DOOR_OPEN,
 }
 
 enum EngineEvents {

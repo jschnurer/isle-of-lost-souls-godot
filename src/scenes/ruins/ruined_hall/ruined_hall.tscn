@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvjrpv3yqfru1"]
+[gd_scene load_steps=20 format=3 uid="uid://cvjrpv3yqfru1"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_aneab"]
 [ext_resource type="Texture2D" uid="uid://cxst11l4q2lk7" path="res://art/backgrounds/ruins/Ruined Hall.png" id="2_ry10p"]
@@ -6,6 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="4_h4adm"]
 [ext_resource type="Script" path="res://src/scenes/ruins/ruined_hall/interactables/altar.gd" id="5_da778"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="5_ugdka"]
+[ext_resource type="Script" path="res://src/scenes/ruins/ruined_hall/interactables/device.gd" id="7_d7cs0"]
+[ext_resource type="Texture2D" uid="uid://dpbmgtia45aey" path="res://art/actors/device.png" id="7_wnl16"]
+[ext_resource type="Texture2D" uid="uid://c22jg6c2qwsqb" path="res://art/actors/device_rod.png" id="9_27r2e"]
+[ext_resource type="Texture2D" uid="uid://cjxw5pcfrqxg1" path="res://art/actors/device_front.png" id="10_ggv13"]
+[ext_resource type="Texture2D" uid="uid://ic4e23o53vw4" path="res://art/actors/stone_wall.png" id="11_cypiv"]
+[ext_resource type="Script" path="res://src/scenes/ruins/ruined_hall/interactables/stone_door.gd" id="11_wiar2"]
+[ext_resource type="Texture2D" uid="uid://crqxggia858se" path="res://art/actors/stone_wall_recessed.png" id="12_27ihj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gijkd"]
 size = Vector2(40, 20)
@@ -13,12 +20,25 @@ size = Vector2(40, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw81n"]
 size = Vector2(45, 127)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxry0"]
+size = Vector2(15, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obl23"]
+size = Vector2(15, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd4rd"]
+size = Vector2(33, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hqm8"]
+size = Vector2(33, 44)
+
 [node name="RuinedHall" type="Node2D"]
 
 [node name="SceneBG" parent="." instance=ExtResource("1_aneab")]
 texture = ExtResource("2_ry10p")
 bg_images = Array[Texture2D]([ExtResource("2_ry10p")])
 collision_image = ExtResource("3_l5c6g")
+metadata/_edit_lock_ = true
 
 [node name="ToRuinsEntrance" parent="." instance=ExtResource("4_h4adm")]
 position = Vector2(115, 414)
@@ -38,4 +58,64 @@ metadata/_edit_lock_ = true
 position = Vector2(-0.5, 10.5)
 shape = SubResource("RectangleShape2D_xw81n")
 
+[node name="Device" type="Node2D" parent="."]
+position = Vector2(761, 461)
+script = ExtResource("7_d7cs0")
+
+[node name="GameEvent" parent="Device" instance=ExtResource("5_ugdka")]
+
+[node name="CollisionShape2D" parent="Device/GameEvent" index="0"]
+visible = false
+position = Vector2(-1.5, 16.5)
+shape = SubResource("RectangleShape2D_pxry0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Device"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/StaticBody2D"]
+position = Vector2(-1.5, 16.5)
+shape = SubResource("RectangleShape2D_obl23")
+
+[node name="DeviceBack" type="Sprite2D" parent="Device"]
+texture = ExtResource("7_wnl16")
+
+[node name="RodSprite" type="Sprite2D" parent="Device"]
+position = Vector2(5, 1)
+rotation = -2.44346
+texture = ExtResource("9_27r2e")
+offset = Vector2(-5, -16)
+
+[node name="DeviceFront" type="Sprite2D" parent="Device"]
+texture = ExtResource("10_ggv13")
+
+[node name="StoneDoor" type="Node2D" parent="."]
+position = Vector2(800, 364)
+script = ExtResource("11_wiar2")
+
+[node name="GameEvent" parent="StoneDoor" instance=ExtResource("5_ugdka")]
+
+[node name="CollisionShape2D" parent="StoneDoor/GameEvent" index="0"]
+position = Vector2(-16.5, -50.5)
+shape = SubResource("RectangleShape2D_wd4rd")
+
+[node name="WallClosed" type="Sprite2D" parent="StoneDoor"]
+texture = ExtResource("11_cypiv")
+centered = false
+offset = Vector2(-33, -101)
+metadata/_edit_lock_ = true
+
+[node name="WallOpen" type="Sprite2D" parent="StoneDoor"]
+texture = ExtResource("12_27ihj")
+centered = false
+offset = Vector2(-33, -44)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StoneDoor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoneDoor/StaticBody2D"]
+position = Vector2(-16.5, -22)
+shape = SubResource("RectangleShape2D_5hqm8")
+
 [editable path="Altar/GameEvent"]
+[editable path="Device/GameEvent"]
+[editable path="StoneDoor/GameEvent"]

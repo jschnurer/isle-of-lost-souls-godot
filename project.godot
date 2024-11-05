@@ -34,11 +34,13 @@ DialogTopics="*res://src/game_data/dialog_topics.gd"
 DialogManager="*res://src/ui/dialog/DialogManager.tscn"
 ChoiceManager="*res://src/ui/choice_manager/choice_manager.tscn"
 InventoryManager="*res://src/ui/inventory_manager/inventory_manager.tscn"
+Debug="*res://src/debug.gd"
 
 [display]
 
 window/size/viewport_width=816
 window/size/viewport_height=624
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [dotnet]

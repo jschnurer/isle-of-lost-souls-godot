@@ -3,7 +3,7 @@
 	"You_Cant": "You can't do that.",
 	"No_Effect": "No effect.",
 	"Uninteresting": "It's not very interesting.",
-	"Dont_Take": "Take it would be pointless. You decide to leave it.",
+	"Dont_Take": "You can't take that.",
 	"No_Mechanism_To_Interact": "It has no mechanism to interact with.",
 	"Cairn_Take": "Somehow, like a half-remembered memory, you feel that moving the cairn would be detrimental to your progress.",
 	"Cairn_Look": "The cairn stands about 3 feet fall. The stones are covered in runic markings.",
@@ -58,7 +58,19 @@
   },
   "Ruins": {
 	"Hall": {
-	  "Altar_Look": "The altar is a large piece of white stone. Engraved on its surface is a large, runic symbol: ᛞ."
+	  "Altar_Look": "The altar is a large piece of white stone. Engraved on its surface is a large, runic symbol: ᛞ.",
+	  "Door_Closed_Look": "The stone door is large and solid. It's made out of a different material than the rest of the walls.",
+	  "Door_Open_Look": "The door has slid down into the floor and out of the way, granting access to the passage beyond.",
+	  "Device_Look": "It's a metal base for some sort of device affixed to the wall. It's rounded and looks like it must pivot up and down.",
+	  "Device_Pointed_Up": "It's currently pointed up.",
+	  "Device_Pointed_Down": "It's currently pointed down.",
+	  "Device_Opening_Look": "There's a round opening in the front of it that is about an inch and a half in diameter.",
+	  "Device_Has_Rod": "There's a rusty metal rod sticking out of it. You could probably interact with the device now.",
+	  "Device_Interact_No_Rod": "There's no way to use the device in its current state. It seems like there's something missing.",
+	  "Device_Use_Rod": "You slot the metal rod into the opening in the device. It fits perfectly!",
+	  "Device_Door_Opens": "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides down into the floor, unsealing the passage.",
+	  "Device_Door_Closes": "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides up, out of the floor, unsealing the passage.",
+	  "Device_Take_Rod": "You pull the metal rod out of the device and take it."
 	}
   },
   "Game_Overs": {
