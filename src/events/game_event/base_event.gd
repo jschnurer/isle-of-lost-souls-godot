@@ -6,12 +6,9 @@ var is_base_event = true
 
 func _ready():
 	if (auto_connect_child_game_event):
-		$GameEvent.connect("on_activate", _on_activate)
+		$GameEvent.on_activate.connect(_on_activate)
 
 func _on_activate(input_action: Enums.InputAction):
-	activate(input_action)
-
-func activate(input_action: Enums.InputAction):
 	if (input_action == Enums.InputAction.INVESTIGATE):
 		investigate()
 	elif (input_action == Enums.InputAction.INTERACT):

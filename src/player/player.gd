@@ -102,9 +102,8 @@ func update_areas():
 func _on_game_event_entered_range(game_event: GameEvent):
 	if (game_event_in_range == null):
 		game_event_in_range = game_event
-	else:
-		if (game_event.parent_node_index > game_event_in_range.parent_node_index):
-			game_event_in_range = game_event
+	elif (game_event.parent_node_index > game_event_in_range.parent_node_index):
+		game_event_in_range = game_event
 	
 func _on_game_event_exited_range(game_event: GameEvent):
 	if game_event_in_range == game_event:

@@ -14,7 +14,7 @@ var stay_open = false
 
 func _ready():
 	panel.visible = false
-	SignalBus.connect("show_message", _on_show_message)
+	SignalBus.show_message.connect(_on_show_message)
 	
 func _on_show_message(message: String, has_more: bool):
 	Utility.pause()
