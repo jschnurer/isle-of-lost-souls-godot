@@ -18,5 +18,10 @@
 		"slug": "RUINS_ROD",
 		"name": "rusty metal rod",
 		"description": "It's a sturdy metal rod about an inch and a half in diameter. It has a grip at one end. Maybe it's a handle of some kind."
+	},
+	{
+		"slug": "SLEDGE",
+		"name": "sledgehammer",
+		"description": "It's heavy! You bet it could do a lot of damage. Loudly."
 	}
 ]

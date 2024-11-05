@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cvjrpv3yqfru1"]
+[gd_scene load_steps=21 format=3 uid="uid://cvjrpv3yqfru1"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_aneab"]
 [ext_resource type="Texture2D" uid="uid://cxst11l4q2lk7" path="res://art/backgrounds/ruins/Ruined Hall.png" id="2_ry10p"]
@@ -16,6 +16,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gijkd"]
 size = Vector2(40, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjagk"]
+size = Vector2(20, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw81n"]
 size = Vector2(45, 127)
@@ -46,6 +49,14 @@ to_scene = "FOREST_RUINS_ENTRANCE"
 scene_name_valid = true
 event_area = SubResource("RectangleShape2D_gijkd")
 to_location = Vector2(648, 304)
+
+[node name="ToSquareSouth" parent="." instance=ExtResource("4_h4adm")]
+position = Vector2(806, 345)
+to_scene = "RUINS_SQUARE_SOUTH"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_tjagk")
+to_east = true
+preserve_y = true
 
 [node name="Altar" type="Node2D" parent="."]
 position = Vector2(682, 317)

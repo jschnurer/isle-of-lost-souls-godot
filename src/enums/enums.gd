@@ -15,6 +15,7 @@ enum Vars {
 	TOOK_RIVER_ROD,
 	ROD_IN_DEVICE,
 	RUIN_HALL_DOOR_OPEN,
+	RUINED_HOUSE_OPEN,
 }
 
 enum EngineEvents {
@@ -259,7 +260,7 @@ var ScenePaths = {
 	Scenes.RUINS_HALL: "res://src/scenes/ruins/ruined_hall/ruined_hall.tscn",
 	Scenes.RUINS_HOUSE: "res://src/scenes/ruins/",
 	Scenes.RUINS_SQUARE_NORTH: "res://src/scenes/ruins/",
-	Scenes.RUINS_SQUARE_SOUTH: "res://src/scenes/ruins/",
+	Scenes.RUINS_SQUARE_SOUTH: "res://src/scenes/ruins/square_south/SquareSouth.tscn",
 	Scenes.RUINS_TEMPLE: "res://src/scenes/ruins/",
 
 	Scenes.SWAMP_BUBBLING_MUCK: "res://src/scenes/swamp/",

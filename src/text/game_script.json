@@ -71,6 +71,11 @@
 	  "Device_Door_Opens": "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides down into the floor, unsealing the passage.",
 	  "Device_Door_Closes": "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides up, out of the floor, unsealing the passage.",
 	  "Device_Take_Rod": "You pull the metal rod out of the device and take it."
+	},
+	"Square_South": {
+	  "Rubble_Look": "Stone and concrete rubble fills the area.",
+	  "Wall_Look": "This building is sealed shut by a much newer brick wall. It's covered in fractures and looks pretty weak. You'll have to deal with that first if you want to go inside.",
+	  "Wall_Destroy": "You take the sledgehammer in hand and swing with all your might. You shatter a brick in the center of the wall, bowing the entire wall inward slightly. After another few strong strikes, the wall gives out and collapses into a heap of bricks. The way is open."
 	}
   },
   "Game_Overs": {

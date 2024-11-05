@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://src/singletons/sfx_player/sfx_emitter/sfx_emitter.gd" id="1_fmbgd"]
 
 [node name="SfxEmitter" type="AudioStreamPlayer2D"]
+process_mode = 3
 script = ExtResource("1_fmbgd")
 
 [connection signal="finished" from="." to="." method="_on_finished"]
