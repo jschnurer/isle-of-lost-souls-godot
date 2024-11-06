@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://ces6nycvwi84i"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_xyfwp"]
+[ext_resource type="Texture2D" uid="uid://bsxbamm3e7p7w" path="res://art/backgrounds/ruins/Ruined Home Chest.png" id="2_hagwa"]
+[ext_resource type="PackedScene" uid="uid://d3oqcmtd837nj" path="res://src/interactables/back_arrow.tscn" id="3_oxu2o"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="4_6calk"]
+[ext_resource type="Script" path="res://src/scenes/ruins/ruined_house_chest/interactables/flashlight.gd" id="4_q8g0p"]
+[ext_resource type="Texture2D" uid="uid://c71yu0rr4woc8" path="res://art/actors/flashlight.png" id="5_b6wc0"]
+
+[node name="RuinedHouseChest" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_xyfwp")]
+texture = ExtResource("2_hagwa")
+area = 5
+bg_images = Array[Texture2D]([ExtResource("2_hagwa")])
+metadata/_edit_lock_ = true
+
+[node name="BackArrow" parent="." instance=ExtResource("3_oxu2o")]
+
+[node name="Flashlight" type="Node2D" parent="."]
+position = Vector2(474, 452)
+script = ExtResource("4_q8g0p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flashlight"]
+texture = ExtResource("5_b6wc0")
+metadata/_edit_lock_ = true
+
+[node name="GameEvent" parent="Flashlight" instance=ExtResource("4_6calk")]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Flashlight/GameEvent"]
+polygon = PackedVector2Array(190, -52, 220, 52, -227, 52, -32, 11, 46, -5, 96, -4, 95, -20, 137, -45)

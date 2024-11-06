@@ -1,11 +1,13 @@
 extends BaseEvent
 
 @onready var sprite = $Sprite2D
+@onready var game_event = $GameEvent
+@onready var static_body = $StaticBody2D
 @export var break_sound: AudioStream
 
 func _ready():
 	if (GameVars.get_var(Enums.Vars.RUINED_HOUSE_OPEN)):
-		queue_free()
+		remove_wall()
 	else:
 		super._ready()
 
@@ -24,6 +26,11 @@ func use_item(item: Item):
 		
 		await Utility.show_message(GameScript.get_entry("Ruins.Square_South.Wall_Destroy"))
 		
-		queue_free()
+		remove_wall()
 	else:
 		super.use_item(item)
+
+func remove_wall():
+	sprite.queue_free()
+	game_event.queue_free()
+	static_body.queue_free()

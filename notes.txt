@@ -3,3 +3,5 @@ Teleporters:
 	To West: x_destination = 766
 	To North: y_destination = 574
 	To South: y_destination = 50
+
+Title Font (Such as game over): 8-Bit Limit, size 48

@@ -29,6 +29,7 @@ size = Vector2(40, 31)
 
 [node name="SceneBG" parent="." instance=ExtResource("1_ltkpc")]
 texture = ExtResource("2_4x3go")
+scene = 3
 bg_images = Array[Texture2D]([ExtResource("2_4x3go")])
 collision_image = ExtResource("3_x6ijh")
 bgm_stream = ExtResource("6_kqm22")

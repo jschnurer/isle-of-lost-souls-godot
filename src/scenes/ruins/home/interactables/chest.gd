@@ -1,0 +1,39 @@
+extends BaseEvent
+
+@export var closed_sprite: Texture2D
+@export var open_sprite: Texture2D
+@onready var sprite = $Sprite2D
+
+func _ready():
+	super._ready()
+	update_sprite()
+
+func update_sprite():
+	if (GameVars.get_var(Enums.Vars.HOUSE_CHEST_OPEN)):
+		sprite.texture = open_sprite
+	else:
+		sprite.texture = closed_sprite
+
+func investigate():
+	if (GameVars.get_var(Enums.Vars.HOUSE_CHEST_OPEN)):
+		await Utility.show_message(GameScript.get_entry("Ruins.House.Chest_Open_Look"))
+		
+		SignalBus.memorize_player_info.emit()
+		SignalBus.set_player_mode.emit(Enums.PlayerMode.POINTER)
+		
+		var tele_args = TeleportArgs.new()
+		tele_args.to_scene = Enums.Scenes.RUINS_HOUSE_CHEST
+		tele_args.to_screen_center = true
+		SignalBus.transfer_player_to_scene.emit(tele_args)
+	else:
+		Utility.show_message(GameScript.get_entry("Ruins.House.Chest_Closed_Look"))
+
+func interact():
+	if (GameVars.get_var(Enums.Vars.HOUSE_CHEST_OPEN)):
+		GameVars.set_var(Enums.Vars.HOUSE_CHEST_OPEN, false)
+		update_sprite()
+		Utility.show_message(GameScript.get_entry("Ruins.House.Chest_Close"))
+	else:
+		GameVars.set_var(Enums.Vars.HOUSE_CHEST_OPEN, true)
+		update_sprite()
+		Utility.show_message(GameScript.get_entry("Ruins.House.Chest_Open"))

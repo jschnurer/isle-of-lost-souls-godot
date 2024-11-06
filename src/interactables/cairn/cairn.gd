@@ -32,5 +32,13 @@ func take():
 	Utility.show_message(GameScript.get_entry("Global.Cairn_Take"))
 
 func interact():
-	Utility.show_message(GameScript.get_entry("Global.Cairn_Interact"))
-	# TODO: Implement saving the game.
+	await Utility.show_message(GameScript.get_entry("Global.Cairn_Interact"))
+	
+	var choices: Array[String] = [GameScript.get_entry("Global.Save_Progress"), GameScript.get_entry("Global.Cancel")]
+	var choice = await Utility.show_choice(choices, 1)
+	
+	if (choice.index == 1):
+		Utility.show_message(GameScript.get_entry("Global.Save_Canceled"))
+		return
+	
+	SignalBus.save_game.emit()

@@ -95,3 +95,9 @@ signal open_inventory()
 
 @warning_ignore("unused_signal")
 signal inventory_closed(item: Item)
+
+@warning_ignore("unused_signal")
+signal save_game()
+
+@warning_ignore("unused_signal")
+signal load_game(slot_number: int)

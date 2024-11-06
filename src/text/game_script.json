@@ -7,14 +7,21 @@
 	"No_Mechanism_To_Interact": "It has no mechanism to interact with.",
 	"Cairn_Take": "Somehow, like a half-remembered memory, you feel that moving the cairn would be detrimental to your progress.",
 	"Cairn_Look": "The cairn stands about 3 feet fall. The stones are covered in runic markings.",
-	"Cairn_Interact": "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK. A new runic symbol slowly etches itself onto one of the stones.",
+	"Cairn_Interact": "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK.",
 	"Yes": "Yes",
 	"No": "No",
 	"Take": "Take",
 	"Investigate": "Investigate",
 	"Interact": "Interact",
 	"Cancel": "Cancel",
-	"Use_Item": "Use Item"
+	"Use_Item": "Use Item",
+	"Save_Progress": "Save Progress",
+	"Save_Canceled": "You pull your hand back from the cairn.",
+	"Save_Complete": "A new runic symbol slowly etches itself onto one of the stones.",
+	"Continue": "Continue",
+	"New_Game": "New Game",
+	"Load": "Load Game",
+	"Quit": "Quit"
   },
   "Forest": {
 	"Clearing": {
@@ -73,9 +80,19 @@
 	  "Device_Take_Rod": "You pull the metal rod out of the device and take it."
 	},
 	"Square_South": {
-	  "Rubble_Look": "Stone and concrete rubble fills the area.",
+	  "Rubble_Look": "A small city has been reduced to stone and concrete rubble. The remains fill the area.",
 	  "Wall_Look": "This building is sealed shut by a much newer brick wall. It's covered in fractures and looks pretty weak. You'll have to deal with that first if you want to go inside.",
-	  "Wall_Destroy": "You take the sledgehammer in hand and swing with all your might. You shatter a brick in the center of the wall, bowing the entire wall inward slightly. After another few strong strikes, the wall gives out and collapses into a heap of bricks. The way is open."
+	  "Wall_Destroy": "You take the sledgehammer in hand and swing with all your might. You shatter a brick in the center of the wall, bowing the entire wall inward slightly. After another few strong strikes, the wall gives out and collapses into a heap of bricks. The way is open.",
+	  "Cairn_Look": "Small bits of rubble have been stacked, forming a cairn about 3 feet tall. Each piece is inscribed with small runes."
+	},
+	"House": {
+	  "Chest_Closed_Look": "It's a metal storage chest. It's badly dented and scuffed but somehow still in one piece. It's shut tight.",
+	  "Chest_Open_Look": "It's a metal storage chest. It's badly dented and scuffed but still in one piece.",
+	  "Rubble_Look": "Debris and rubble fill the small home. You can see daylight through the shattered walls. It's a miracle the building's still standing.",
+	  "Chest_Open": "You clear some rubble off the top of the metal chest and open it.",
+	  "Chest_Close": "You shut the metal chest.",
+	  "Flashlight_Look": "It's a heavy-duty, blue and yellow metal flashlight.",
+	  "Flashlight_Take": "You take the flashlight from the metal chest. It's surprisingly heavy and sturdy-feeling."
 	}
   },
   "Game_Overs": {

@@ -36,3 +36,6 @@ func remove_item(slug: Enums.ItemSlugs, quantity: int = 1):
 
 func get_items() -> Array[Item]:
 	return items
+
+func clear():
+	items.clear()

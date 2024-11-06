@@ -7,6 +7,16 @@ enum PlayerMode { PERSON, POINTER }
 enum ActivationMode { ACTIVATE, COLLIDE, }
 enum EventType { DIALOG, TELEPORT }
 
+enum Areas {
+	CAVES,
+	COAST,
+	FOREST,
+	MEMORIES,
+	MOUNTAIN,
+	RUINS,
+	SWAMP,
+}
+
 enum Vars {
 	PLAYER_INFO,
 	TOOK_STONE,
@@ -16,6 +26,8 @@ enum Vars {
 	ROD_IN_DEVICE,
 	RUIN_HALL_DOOR_OPEN,
 	RUINED_HOUSE_OPEN,
+	HOUSE_CHEST_OPEN,
+	TOOK_FLASHLIGHT,
 }
 
 enum EngineEvents {
@@ -74,7 +86,7 @@ enum Topics {
 	FAIR_HAIRED_WOMAN = 7,
 }
 
-# max is 93
+# max is 95
 enum Scenes {
 	CAVES_BAT_DEN = 13,
 	CAVES_BOTTOM_OF_SHAFT = 14,
@@ -175,7 +187,9 @@ enum Scenes {
 	
 	GAME_OVER_FISH = 91,
 	FOREST_QUIET_FORK_SIGNPOST = 92,
-	GAME_OVER_GRUE = 93
+	GAME_OVER_GRUE = 93,
+	RUINS_HOUSE_CHEST = 94,
+	TITLE_SCREEN = 95,
 }
 
 var ScenePaths = {
@@ -258,7 +272,8 @@ var ScenePaths = {
 	Scenes.RUINS_BUNKER: "res://src/scenes/ruins/",
 	Scenes.RUINS_LAB: "res://src/scenes/ruins/",
 	Scenes.RUINS_HALL: "res://src/scenes/ruins/ruined_hall/ruined_hall.tscn",
-	Scenes.RUINS_HOUSE: "res://src/scenes/ruins/",
+	Scenes.RUINS_HOUSE: "res://src/scenes/ruins/home/Home.tscn",
+	Scenes.RUINS_HOUSE_CHEST: "res://src/scenes/ruins/ruined_house_chest/ruined_house_chest.tscn",
 	Scenes.RUINS_SQUARE_NORTH: "res://src/scenes/ruins/",
 	Scenes.RUINS_SQUARE_SOUTH: "res://src/scenes/ruins/square_south/SquareSouth.tscn",
 	Scenes.RUINS_TEMPLE: "res://src/scenes/ruins/",
@@ -279,4 +294,6 @@ var ScenePaths = {
 	
 	Scenes.GAME_OVER_FISH: "res://src/scenes/game_overs/fish/fish_game_over.tscn",
 	Scenes.GAME_OVER_GRUE: "res://src/scenes/game_overs/grue/grue_game_over.tscn",
+	
+	Scenes.TITLE_SCREEN: "res://src/scenes/title/title_screen.tscn",
 }

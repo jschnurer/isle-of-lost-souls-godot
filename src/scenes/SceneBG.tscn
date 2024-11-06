@@ -9,12 +9,13 @@ size = Vector2(50, 625)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv6e0"]
 size = Vector2(816, 50)
 
-[node name="SceneBG" type="TextureRect"]
+[node name="SceneBG" type="TextureRect" groups=["GameScene"]]
 process_mode = 3
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_2hmeu")
+scene = null
 
 [node name="CollisionFromImage" type="StaticBody2D" parent="."]
 

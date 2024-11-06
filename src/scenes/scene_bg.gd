@@ -7,8 +7,12 @@ var _bg_images: Array[Texture2D] = []
 var _bg_anim_frame_duration = .333
 var _bg_anim_elapsed = 0
 var _collision_image: Texture2D
+var _hide_collider: bool = false
 var _use_collision_frame: bool
 
+@export var scene: Enums.Scenes = Enums.Scenes.CAVES_BAT_DEN
+@export var area: Enums.Areas
+@export var room: String = ""
 @export var bg_images: Array[Texture2D] :
 	set(value):
 		_bg_images = value
@@ -18,27 +22,30 @@ var _use_collision_frame: bool
 			set_bg_texture(value[0])
 	get:
 		return _bg_images
-
 @export var collision_image: Texture2D :
 	set(value):
 		_collision_image = value
 		generate_collision_shapes()
 	get:
 		return _collision_image
-
 @export var use_collision_frame: bool :
 	set(value):
 		_use_collision_frame = value
 		generate_collision_shapes()
 	get:
 		return _use_collision_frame
-
+@export var hide_collider: bool :
+	set(value):
+		_hide_collider = value
+		$CollisionFromFrame.visible = not value
+		$CollisionFromImage.visible = not value
+	get:
+		return _hide_collider
 @export var bgm_stream: AudioStream :
 	set(value):
 		$BgmPlayer.stream = value
 	get:
 		return $BgmPlayer.stream
-		
 @export var bgm_volume: float = 1:
 	set(value):
 		$BgmPlayer.volume_db = value

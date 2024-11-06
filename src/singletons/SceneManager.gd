@@ -4,11 +4,11 @@ var screen_edge_padding_x = 50
 var screen_edge_padding_y = 30
 var screen_width = 816
 var screen_height = 624
-var current_scene = Enums.Scenes.FOREST_CLEARING
+var current_scene = Enums.Scenes.TITLE_SCREEN
 
 func _ready():
 	SignalBus.connect("transfer_player_to_scene", _on_transfer_player_to_scene)
-	transfer_player_to_scene(current_scene, Vector2(462, 328))
+	transfer_player_to_scene(current_scene, Vector2(-500, -500))
 
 func _on_transfer_player_to_scene(args: TeleportArgs):
 	var location = args.to_location

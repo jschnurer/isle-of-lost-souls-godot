@@ -11,3 +11,9 @@ func get_var(var_name: Enums.Vars):
 		return vars[var_name]
 	else:
 		return null
+
+func get_all():
+	return vars
+
+func set_all(var_dict: Dictionary):
+	vars = var_dict

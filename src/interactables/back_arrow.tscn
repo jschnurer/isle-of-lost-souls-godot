@@ -13,7 +13,6 @@ centered = false
 
 [node name="Teleporter" parent="." instance=ExtResource("2_o08gh")]
 position = Vector2(37, 24)
-scene_name_valid = true
 event_area = SubResource("RectangleShape2D_wv6d4")
 activation_mode = 0
 to_previous_position = true

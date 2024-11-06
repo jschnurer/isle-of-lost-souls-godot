@@ -1,0 +1,75 @@
+[gd_scene load_steps=13 format=3 uid="uid://bcj1uajldiqxg"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_b0hpe"]
+[ext_resource type="Texture2D" uid="uid://do4fpk6otvomk" path="res://art/backgrounds/ruins/Ruined Home.png" id="2_djfc7"]
+[ext_resource type="Texture2D" uid="uid://dacmql6l3qfcs" path="res://art/backgrounds/ruins/Ruined Home Collision.png" id="3_krbiq"]
+[ext_resource type="Script" path="res://src/scenes/ruins/home/interactables/rubble.gd" id="4_3dog2"]
+[ext_resource type="Script" path="res://src/scenes/ruins/home/interactables/chest.gd" id="4_d7q5q"]
+[ext_resource type="Texture2D" uid="uid://n44i7xcakxec" path="res://art/actors/chest_closed.png" id="4_tcf3d"]
+[ext_resource type="Texture2D" uid="uid://dc6p5xfyd0sgy" path="res://art/actors/chest_open.png" id="6_0131s"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="7_yhcuc"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="9_0l464"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_874uk"]
+size = Vector2(41, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a73hj"]
+size = Vector2(41, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irgax"]
+size = Vector2(40, 20)
+
+[node name="RuinedHouse" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_b0hpe")]
+texture = ExtResource("2_djfc7")
+area = 5
+bg_images = Array[Texture2D]([ExtResource("2_djfc7")])
+collision_image = ExtResource("3_krbiq")
+hide_collider = true
+metadata/_edit_lock_ = true
+
+[node name="Rubble" type="Node2D" parent="."]
+script = ExtResource("4_3dog2")
+
+[node name="GameEvent" parent="Rubble" instance=ExtResource("7_yhcuc")]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rubble/GameEvent"]
+polygon = PackedVector2Array(49, 145, 818, 101, 817, 624, 669, 621, 355, 553, 406, 529, 430, 481, 449, 476, 504, 503, 522, 501, 532, 492, 536, 487, 522, 475, 486, 465, 482, 440, 460, 423, 444, 415, 460, 404, 410, 394, 424, 382, 448, 376, 483, 355, 488, 339, 510, 292, 477, 281, 508, 250, 525, 239, 525, 233, 499, 227, 460, 236, 440, 233, 398, 236, 425, 254, 376, 258, 360, 268, 321, 269, 286, 277, 261, 286, 233, 304, 236, 367, 264, 424, 265, 447, 243, 459, 224, 458, 211, 445, 209, 387, 49, 373)
+
+[node name="Chest" type="Node2D" parent="."]
+position = Vector2(423, 245)
+script = ExtResource("4_d7q5q")
+closed_sprite = ExtResource("4_tcf3d")
+open_sprite = ExtResource("6_0131s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Chest"]
+texture = ExtResource("4_tcf3d")
+centered = false
+offset = Vector2(0, -47)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Chest"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/StaticBody2D"]
+position = Vector2(20.5, -20)
+shape = SubResource("RectangleShape2D_874uk")
+
+[node name="GameEvent" parent="Chest" instance=ExtResource("7_yhcuc")]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Chest/GameEvent" index="0"]
+position = Vector2(20.5, -23)
+shape = SubResource("RectangleShape2D_a73hj")
+
+[node name="ToSquareSouth" parent="." instance=ExtResource("9_0l464")]
+position = Vector2(176, 588)
+to_scene = "RUINS_SQUARE_SOUTH"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_irgax")
+to_location = Vector2(755, 530)
+
+[editable path="Chest/GameEvent"]
