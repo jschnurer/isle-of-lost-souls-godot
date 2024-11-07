@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b6twtjgn4l77"]
+[gd_scene load_steps=13 format=3 uid="uid://b6twtjgn4l77"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_5ubrn"]
 [ext_resource type="Texture2D" uid="uid://bpqd6it8kd0u5" path="res://art/backgrounds/ruins/Ruined Square North.png" id="2_6s45c"]
@@ -11,6 +11,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crcsy"]
 size = Vector2(300, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh4eo"]
+size = Vector2(60, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmylg"]
 size = Vector2(720, 79)
@@ -36,8 +39,16 @@ scene_name_valid = true
 event_area = SubResource("RectangleShape2D_crcsy")
 to_location = Vector2(241.374, 43.5631)
 
+[node name="ToGrandTempleSouth" parent="." instance=ExtResource("4_8ngoq")]
+position = Vector2(409, 69)
+to_scene = "RUINS_TEMPLE_SOUTH"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_sh4eo")
+to_location = Vector2(405.075, 530.028)
+
 [node name="Rubble" type="Node2D" parent="."]
 script = ExtResource("4_3cg6j")
+metadata/_edit_lock_ = true
 
 [node name="GameEvent" parent="Rubble" instance=ExtResource("5_u8mvh")]
 visible = false
@@ -50,6 +61,7 @@ polygon = PackedVector2Array(-1, 623, 151, 624, 179, 582, 233, 558, 267, 555, 30
 
 [node name="Temple" type="Node2D" parent="."]
 script = ExtResource("6_7jpe4")
+metadata/_edit_lock_ = true
 
 [node name="GameEvent" parent="Temple" instance=ExtResource("5_u8mvh")]
 visible = false

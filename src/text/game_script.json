@@ -111,6 +111,14 @@
 	  "Potion_Take": "You take the bottle labeled \"potion of healing\". If the label's correct, it sounds like it could be useful.",
 	  "Poster_Look": "The anatomical poster depicts a dissected giant hornet, pointing out what each of the internal organs is. The picture depicting a purple-ish sac is circled with red marker. It's labeled \"pheromone sac\".",
 	  "Poster_Take": "It looks like it's ready to crumble to dust at any moment. You decide not to disturb it."
+	},
+	"Temple_North": {
+	  "Altar_Look": "It's a large altar made from some type of white stone. It's incredibly sturdy.",
+	  "Marek_Look_1": "Sitting on the edge of the altar is... well, a knight. He's wearing dented and dirty plate armor and has a helmet sitting next to him. He carries no weapon or shield. The tattered remains of a red cloak hang across his back.",
+	  "Marek_Look_2": "He's just sitting there staring off into space. It's like he hasn't even noticed you even though you're basically right in front of him. He occasionally mumbles to himself.",
+	  "Marek_Take": "You consider taking the his possessions but decide that, not only have you no use of them, you'd also rather not anger a knight.",
+	  "Device_Altar_Opens": "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts forward, revealing steps leading down to darkness. The knight didn't seem to notice at all.",
+	  "Device_Altar_Closes": "You grip the rusty metal rod and pull the lever downward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts back, sealing the stairway that leads down to darkness. The knight didn't seem to notice at all.",
 	}
   },
   "Game_Overs": {

@@ -4,9 +4,9 @@ extends Node
 # etc. for debug purposes. Before shipping the game, remove this file completely.
 
 func _ready():
-	#Inventory.add_item(Enums.ItemSlugs.RUINS_ROD)
-	#Inventory.add_item(Enums.ItemSlugs.SLEDGE)
-	#
+	Inventory.add_item(Enums.ItemSlugs.RUINS_ROD)
+	Inventory.add_item(Enums.ItemSlugs.SLEDGE)
+	
 	
 	await Utility.wait(.1)
 	
@@ -17,7 +17,7 @@ func _ready():
 	
 	
 	var tele_args = TeleportArgs.new()
-	tele_args.to_scene = Enums.Scenes.RUINS_LAB
+	tele_args.to_scene = Enums.Scenes.RUINS_TEMPLE_NORTH
 	tele_args.to_location = Vector2(417, 338)
 	SignalBus.transfer_player_to_scene.emit(tele_args)
 	

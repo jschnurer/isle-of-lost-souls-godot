@@ -31,6 +31,8 @@ enum Vars {
 	MOVED_RUG,
 	TOOK_POTION,
 	SAW_POSTER,
+	MOVED_TEMPLE_ALTAR,
+	ROD_IN_TEMPLE_DEVICE,
 }
 
 enum EngineEvents {
@@ -89,7 +91,6 @@ enum Topics {
 	FAIR_HAIRED_WOMAN = 7,
 }
 
-# max is 95
 enum Scenes {
 	CAVES_BAT_DEN = 13,
 	CAVES_BOTTOM_OF_SHAFT = 14,
@@ -172,7 +173,7 @@ enum Scenes {
 	RUINS_HOUSE = 74,
 	RUINS_SQUARE_NORTH = 75,
 	RUINS_SQUARE_SOUTH = 76,
-	RUINS_TEMPLE = 77,
+	RUINS_TEMPLE_SOUTH = 77,
 	
 	SWAMP_BUBBLING_MUCK = 78,
 	SWAMP_CAMPSITE = 79,
@@ -193,6 +194,7 @@ enum Scenes {
 	GAME_OVER_GRUE = 93,
 	RUINS_HOUSE_CHEST = 94,
 	TITLE_SCREEN = 95,
+	RUINS_TEMPLE_NORTH = 96,
 }
 
 var ScenePaths = {
@@ -279,7 +281,8 @@ var ScenePaths = {
 	Scenes.RUINS_HOUSE_CHEST: "res://src/scenes/ruins/ruined_house_chest/ruined_house_chest.tscn",
 	Scenes.RUINS_SQUARE_NORTH: "res://src/scenes/ruins/square_north/square_north.tscn",
 	Scenes.RUINS_SQUARE_SOUTH: "res://src/scenes/ruins/square_south/SquareSouth.tscn",
-	Scenes.RUINS_TEMPLE: "res://src/scenes/ruins/",
+	Scenes.RUINS_TEMPLE_SOUTH: "res://src/scenes/ruins/grand_temple_south/grand_temple_south.tscn",
+	Scenes.RUINS_TEMPLE_NORTH: "res://src/scenes/ruins/grand_temple_north/grand_temple_north.tscn",
 
 	Scenes.SWAMP_BUBBLING_MUCK: "res://src/scenes/swamp/",
 	Scenes.SWAMP_CAMPSITE: "res://src/scenes/swamp/",
