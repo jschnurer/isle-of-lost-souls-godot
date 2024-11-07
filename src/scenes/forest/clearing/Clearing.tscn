@@ -27,6 +27,7 @@ size = Vector2(25, 20)
 offset_right = 816.0
 offset_bottom = 624.0
 texture = ExtResource("1_i6pxq")
+scene = 13
 bg_images = Array[Texture2D]([ExtResource("1_i6pxq")])
 collision_image = ExtResource("3_4p7yf")
 bgm_stream = ExtResource("5_m1kp8")

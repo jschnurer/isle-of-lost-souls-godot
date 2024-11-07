@@ -17,7 +17,7 @@ func _ready():
 	
 	
 	var tele_args = TeleportArgs.new()
-	tele_args.to_scene = Enums.Scenes.RUINS_TEMPLE_NORTH
+	tele_args.to_scene = Enums.Scenes.RUINS_SQUARE_SOUTH
 	tele_args.to_location = Vector2(417, 338)
 	SignalBus.transfer_player_to_scene.emit(tele_args)
 	

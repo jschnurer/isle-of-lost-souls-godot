@@ -53,8 +53,18 @@ func handle_choice(choice: Choice, most_recent_save_slot: int):
 		SignalBus.load_game.emit(most_recent_save_slot)
 	elif (choice.text == new_text):
 		# New Game
-		# TODO: Show new game slot choice.
-		pass
+		#SignalBus.fade_out_screen.emit(ScreenFadeArgs.new())
+		#await SignalBus.fade_out_screen_finished
+		
+		var args = TogglePlayerArgs.new()
+		args.is_controllable = true
+		args.is_visible = true
+		SignalBus.toggle_player.emit(args)
+		
+		var tele_args = TeleportArgs.new()
+		tele_args.to_location = Vector2(142, 420)
+		tele_args.to_scene = Enums.Scenes.FOREST_CLEARING
+		SignalBus.transfer_player_to_scene.emit(tele_args)
 	elif (choice.text == load_text):
 		# Load Game
 		# TODO: Show load slot choice.
