@@ -13,6 +13,9 @@ signal toggle_player(toggle_args: TogglePlayerArgs)
 signal transfer_player_to_scene(transfer_args: TeleportArgs)
 
 @warning_ignore("unused_signal")
+signal teleport_player(location: Vector2, facing: Enums.Direction)
+
+@warning_ignore("unused_signal")
 signal play_bgm(stream: AudioStream, volume: float)
 
 @warning_ignore("unused_signal")

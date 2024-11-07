@@ -29,6 +29,7 @@ func _ready():
 	SignalBus.restore_player_info.connect(_on_restore_player_info)
 	SignalBus.set_player_mode.connect(_on_set_player_mode)
 	SignalBus.toggle_player.connect(_on_toggle_player)
+	SignalBus.teleport_player.connect(_on_teleport_player)
 
 func  _input(event):
 	if (!is_controllable):
@@ -163,3 +164,9 @@ func show_action_chooser():
 func _on_toggle_player(args: TogglePlayerArgs):
 	visible = args.is_visible
 	is_controllable = args.is_controllable
+
+func _on_teleport_player(location: Vector2, facing: Enums.Direction):
+	position = location
+	if (facing != Enums.Direction.UNSET):
+		facing_dir = facing
+		update_sprite()

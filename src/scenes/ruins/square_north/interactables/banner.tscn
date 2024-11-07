@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2m1pp5vbivfi"]
+
+[ext_resource type="Script" path="res://src/scenes/ruins/square_north/interactables/banner.gd" id="1_m6lgb"]
+[ext_resource type="Texture2D" uid="uid://bwpbrv28mstcj" path="res://art/actors/temple_banner.png" id="1_plkly"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="2_k07rr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k73wu"]
+size = Vector2(16, 54)
+
+[node name="Banner" type="Node2D"]
+script = ExtResource("1_m6lgb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_plkly")
+metadata/_edit_lock_ = true
+
+[node name="GameEvent" parent="." instance=ExtResource("2_k07rr")]
+
+[node name="CollisionShape2D" parent="GameEvent" index="0"]
+shape = SubResource("RectangleShape2D_k73wu")
+
+[editable path="GameEvent"]

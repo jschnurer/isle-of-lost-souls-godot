@@ -1,0 +1,109 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6twtjgn4l77"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_5ubrn"]
+[ext_resource type="Texture2D" uid="uid://bpqd6it8kd0u5" path="res://art/backgrounds/ruins/Ruined Square North.png" id="2_6s45c"]
+[ext_resource type="Texture2D" uid="uid://dd314jv0cblh6" path="res://art/backgrounds/ruins/Ruined Square North Collision.png" id="3_0dheo"]
+[ext_resource type="Script" path="res://src/scenes/ruins/square_north/interactables/rubble.gd" id="4_3cg6j"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="4_8ngoq"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="5_u8mvh"]
+[ext_resource type="Script" path="res://src/scenes/ruins/square_north/interactables/temple.gd" id="6_7jpe4"]
+[ext_resource type="PackedScene" uid="uid://d2m1pp5vbivfi" path="res://src/scenes/ruins/square_north/interactables/banner.tscn" id="7_a7w8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crcsy"]
+size = Vector2(300, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmylg"]
+size = Vector2(720, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ge4g2"]
+size = Vector2(31, 28)
+
+[node name="SquareNorth" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_5ubrn")]
+texture = ExtResource("2_6s45c")
+scene = 75
+area = 5
+bg_images = Array[Texture2D]([ExtResource("2_6s45c")])
+collision_image = ExtResource("3_0dheo")
+hide_collider = true
+metadata/_edit_lock_ = true
+
+[node name="ToSquareSouth" parent="." instance=ExtResource("4_8ngoq")]
+position = Vector2(255, 614)
+to_scene = "RUINS_SQUARE_SOUTH"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_crcsy")
+to_location = Vector2(241.374, 43.5631)
+
+[node name="Rubble" type="Node2D" parent="."]
+script = ExtResource("4_3cg6j")
+
+[node name="GameEvent" parent="Rubble" instance=ExtResource("5_u8mvh")]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rubble/GameEvent"]
+polygon = PackedVector2Array(784, 2, 768, 102, 760, 113, 754, 127, 709, 155, 705, 170, 661, 182, 664, 191, 621, 224, 589, 230, 536, 293, 565, 302, 635, 298, 673, 302, 651, 329, 613, 334, 602, 322, 577, 337, 577, 362, 552, 384, 555, 394, 468, 422, 438, 445, 463, 453, 525, 458, 584, 460, 691, 465, 671, 476, 605, 489, 554, 524, 547, 531, 564, 532, 553, 539, 535, 557, 497, 551, 459, 574, 415, 572, 385, 575, 379, 590, 357, 602, 343, 624, 814, 627, 819, 2)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Rubble/GameEvent"]
+polygon = PackedVector2Array(-1, 623, 151, 624, 179, 582, 233, 558, 267, 555, 306, 549, 334, 536, 360, 536, 328, 506, 298, 504, 257, 479, 227, 473, 206, 461, 177, 456, 117, 467, 98, 464, 123, 443, 197, 428, 210, 421, 173, 402, 109, 400, 89, 371, 117, 353, 136, 354, 168, 344, 163, 334, 126, 298, 85, 286, 53, 232, 39, 206, 104, 178, 130, 167, 141, 153, 107, 120, 68, 111, 37, 79, 18, 25, 31, 2, 0, 2)
+
+[node name="Temple" type="Node2D" parent="."]
+script = ExtResource("6_7jpe4")
+
+[node name="GameEvent" parent="Temple" instance=ExtResource("5_u8mvh")]
+visible = false
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Temple/GameEvent"]
+position = Vector2(409, 40.5)
+shape = SubResource("RectangleShape2D_wmylg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Temple/GameEvent"]
+position = Vector2(88.5, 93)
+shape = SubResource("RectangleShape2D_ge4g2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Temple/GameEvent"]
+position = Vector2(178, 93)
+shape = SubResource("RectangleShape2D_ge4g2")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Temple/GameEvent"]
+position = Vector2(269, 93)
+shape = SubResource("RectangleShape2D_ge4g2")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Temple/GameEvent"]
+position = Vector2(358, 94)
+shape = SubResource("RectangleShape2D_ge4g2")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Temple/GameEvent"]
+position = Vector2(459, 93)
+shape = SubResource("RectangleShape2D_ge4g2")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Temple/GameEvent"]
+position = Vector2(549, 94)
+shape = SubResource("RectangleShape2D_ge4g2")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Temple/GameEvent"]
+position = Vector2(639, 93)
+shape = SubResource("RectangleShape2D_ge4g2")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Temple/GameEvent"]
+position = Vector2(729, 93)
+shape = SubResource("RectangleShape2D_ge4g2")
+
+[node name="Banner" parent="." instance=ExtResource("7_a7w8t")]
+position = Vector2(134, 50.5)
+
+[node name="Banner2" parent="." instance=ExtResource("7_a7w8t")]
+position = Vector2(224, 50.5)
+
+[node name="Banner3" parent="." instance=ExtResource("7_a7w8t")]
+position = Vector2(315, 50.5)
+
+[node name="Banner4" parent="." instance=ExtResource("7_a7w8t")]
+position = Vector2(503, 50.5)
+
+[node name="Banner5" parent="." instance=ExtResource("7_a7w8t")]
+position = Vector2(595, 50.5)
+
+[node name="Banner6" parent="." instance=ExtResource("7_a7w8t")]
+position = Vector2(685, 50.5)

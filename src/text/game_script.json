@@ -85,6 +85,11 @@
 	  "Wall_Destroy": "You take the sledgehammer in hand and swing with all your might. You shatter a brick in the center of the wall, bowing the entire wall inward slightly. After another few strong strikes, the wall gives out and collapses into a heap of bricks. The way is open.",
 	  "Cairn_Look": "Small bits of rubble have been stacked, forming a cairn about 3 feet tall. Each piece is inscribed with small runes."
 	},
+	"Square_North": {
+	  "Rubble_Look": "An ocean of rubble fills the area. The ancient bones of a lost civilization.",
+	  "Temple_Look": "It's a large building supported by pillars. Unlike the rest of the buildings, the temple is still mostly intact. It has long, tattered banners hanging from its walls.",
+	  "Banner_Look": "The banner is long and tattered. It depicts a yellow griffin clutching a dozen red roses in its talons."
+	},
 	"House": {
 	  "Chest_Closed_Look": "It's a metal storage chest. It's badly dented and scuffed but somehow still in one piece. It's shut tight.",
 	  "Chest_Open_Look": "It's a metal storage chest. It's badly dented and scuffed but still in one piece.",
@@ -93,6 +98,19 @@
 	  "Chest_Close": "You shut the metal chest.",
 	  "Flashlight_Look": "It's a heavy-duty, blue and yellow metal flashlight.",
 	  "Flashlight_Take": "You take the flashlight from the metal chest. It's surprisingly heavy and sturdy-feeling."
+	},
+	"Lab": {
+	  "Rug_Look": "It's a very plain brown rug. It sags downward into the floor in the middle.",
+	  "Rug_Interact": "You roll the rug up and out of the way, revealing stone steps that lead down into darkness.",
+	  "Rug_Moved_Look": "It's a very plain brown rug. You rolled it up but it's still plain.",
+	  "Rug_Moved_Interact": "It wouldn't be very useful unrolled and covering the steps again. You decide to leave it alone.",
+	  "Rug_Take": "You bend down to take the rug and pause for a moment. Why would you need a ratty, dusty old rug? You decide to leave it.",
+	  "Science_Gear_Look": "You don't really know what any of this stuff is. It just looks rather sciencey. There are many glass bottles of every shape and size. Some are broken but most remain intact.",
+	  "Science_Gear_Take": "You don't even know what it is! Plus it seems too unwieldy to carry.",
+	  "Potion_Look": "There's a bottle stoppered with a cork with a red liquid inside. It's got a label that reads \"potion of healing\".",
+	  "Potion_Take": "You take the bottle labeled \"potion of healing\". If the label's correct, it sounds like it could be useful.",
+	  "Poster_Look": "The anatomical poster depicts a dissected giant hornet, pointing out what each of the internal organs is. The picture depicting a purple-ish sac is circled with red marker. It's labeled \"pheromone sac\".",
+	  "Poster_Take": "It looks like it's ready to crumble to dust at any moment. You decide not to disturb it."
 	}
   },
   "Game_Overs": {

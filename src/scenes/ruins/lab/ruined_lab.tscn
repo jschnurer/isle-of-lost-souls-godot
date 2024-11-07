@@ -1,0 +1,177 @@
+[gd_scene load_steps=23 format=3 uid="uid://c46mmju3yxp4m"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_em0kh"]
+[ext_resource type="Texture2D" uid="uid://cme07a6i3tud2" path="res://art/backgrounds/ruins/Ruined Lab.png" id="2_kuwq4"]
+[ext_resource type="Texture2D" uid="uid://w0uu8ji4k3f" path="res://art/backgrounds/ruins/Ruined Lab Collision.png" id="3_64w1r"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="4_kt7ck"]
+[ext_resource type="Texture2D" uid="uid://cdym8x0mlj0tf" path="res://art/actors/rug.png" id="5_0naj7"]
+[ext_resource type="Script" path="res://src/scenes/ruins/lab/interactables/rug.gd" id="5_b0r51"]
+[ext_resource type="Texture2D" uid="uid://8k4tmojed5c0" path="res://art/actors/rug_rolled.png" id="6_q5fwa"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="8_axp76"]
+[ext_resource type="Script" path="res://src/scenes/ruins/lab/interactables/science_gear.gd" id="9_i84lp"]
+[ext_resource type="Texture2D" uid="uid://0fbgy3imyxw" path="res://art/actors/healing_potion.png" id="10_0kyne"]
+[ext_resource type="Script" path="res://src/scenes/ruins/lab/interactables/healing_potion.gd" id="10_q0hm3"]
+[ext_resource type="Script" path="res://src/scenes/ruins/lab/interactables/poster.gd" id="12_56bjf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a718y"]
+size = Vector2(40, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_712ww"]
+size = Vector2(86, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n04eg"]
+size = Vector2(27, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_josnw"]
+size = Vector2(27, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehwsy"]
+size = Vector2(46, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3g0dg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_078r8"]
+size = Vector2(65, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o2mu"]
+size = Vector2(32, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0ric"]
+size = Vector2(32, 20.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_no1h8"]
+size = Vector2(26, 47)
+
+[node name="RuinedLab" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_em0kh")]
+texture = ExtResource("2_kuwq4")
+scene = 13
+bg_images = Array[Texture2D]([ExtResource("2_kuwq4")])
+collision_image = ExtResource("3_64w1r")
+hide_collider = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionFromImage" parent="SceneBG" index="0"]
+visible = false
+
+[node name="CollisionFromFrame" parent="SceneBG" index="2"]
+visible = false
+
+[node name="CollisionShape2D" parent="SceneBG/CollisionFromFrame" index="0"]
+disabled = true
+
+[node name="CollisionShape2D2" parent="SceneBG/CollisionFromFrame" index="1"]
+disabled = true
+
+[node name="CollisionShape2D3" parent="SceneBG/CollisionFromFrame" index="2"]
+disabled = true
+
+[node name="CollisionShape2D4" parent="SceneBG/CollisionFromFrame" index="3"]
+disabled = true
+
+[node name="ToSquareSouth" parent="." instance=ExtResource("4_kt7ck")]
+position = Vector2(306, 497)
+to_scene = "RUINS_SQUARE_SOUTH"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_a718y")
+to_location = Vector2(671.723, 273.976)
+
+[node name="Rug" type="Node2D" parent="."]
+position = Vector2(495, 339)
+script = ExtResource("5_b0r51")
+auto_connect_child_game_event = false
+
+[node name="UnrolledSprite" type="Sprite2D" parent="Rug"]
+position = Vector2(-6, 1)
+texture = ExtResource("5_0naj7")
+metadata/_edit_lock_ = true
+
+[node name="RolledSprite" type="Sprite2D" parent="Rug"]
+visible = false
+position = Vector2(24, -2)
+texture = ExtResource("6_q5fwa")
+metadata/_edit_lock_ = true
+
+[node name="UnrolledEvent" parent="Rug" instance=ExtResource("8_axp76")]
+visible = false
+
+[node name="CollisionShape2D" parent="Rug/UnrolledEvent" index="0"]
+position = Vector2(-6, 1)
+shape = SubResource("RectangleShape2D_712ww")
+
+[node name="RolledEvent" parent="Rug" instance=ExtResource("8_axp76")]
+visible = false
+
+[node name="CollisionShape2D" parent="Rug/RolledEvent" index="0"]
+position = Vector2(23.5, -2)
+shape = SubResource("RectangleShape2D_n04eg")
+
+[node name="RolledStaticBody" type="StaticBody2D" parent="Rug"]
+visible = false
+
+[node name="Shape1" type="CollisionShape2D" parent="Rug/RolledStaticBody"]
+position = Vector2(23.5, -2)
+shape = SubResource("RectangleShape2D_josnw")
+
+[node name="Shape2" type="CollisionShape2D" parent="Rug/RolledStaticBody"]
+position = Vector2(-4, -13)
+shape = SubResource("RectangleShape2D_ehwsy")
+
+[node name="Shape3" type="CollisionShape2D" parent="Rug/RolledStaticBody"]
+position = Vector2(-4, 16)
+shape = SubResource("RectangleShape2D_ehwsy")
+
+[node name="ToBasement" parent="Rug" instance=ExtResource("4_kt7ck")]
+visible = false
+position = Vector2(-3, 2)
+to_scene = "CAVES_LAB_EXIT"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_3g0dg")
+
+[node name="ScienceGear" type="Node2D" parent="."]
+position = Vector2(489, 182)
+script = ExtResource("9_i84lp")
+
+[node name="GameEvent" parent="ScienceGear" instance=ExtResource("8_axp76")]
+visible = false
+
+[node name="CollisionShape2D" parent="ScienceGear/GameEvent" index="0"]
+position = Vector2(-32.5, 13)
+shape = SubResource("RectangleShape2D_078r8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ScienceGear/GameEvent"]
+position = Vector2(33, 12.5)
+shape = SubResource("RectangleShape2D_2o2mu")
+
+[node name="HealingPotion" type="Node2D" parent="."]
+position = Vector2(523.5, 213.5)
+script = ExtResource("10_q0hm3")
+
+[node name="Sprite2D" type="Sprite2D" parent="HealingPotion"]
+texture = ExtResource("10_0kyne")
+
+[node name="GameEvent" parent="HealingPotion" instance=ExtResource("8_axp76")]
+visible = false
+
+[node name="CollisionShape2D" parent="HealingPotion/GameEvent" index="0"]
+position = Vector2(-1.5, 0.25)
+shape = SubResource("RectangleShape2D_r0ric")
+
+[node name="Poster" type="Node2D" parent="."]
+position = Vector2(583, 179)
+script = ExtResource("12_56bjf")
+
+[node name="GameEvent" parent="Poster" instance=ExtResource("8_axp76")]
+visible = false
+
+[node name="CollisionShape2D" parent="Poster/GameEvent" index="0"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_no1h8")
+
+[editable path="SceneBG"]
+[editable path="Rug/UnrolledEvent"]
+[editable path="Rug/RolledEvent"]
+[editable path="ScienceGear/GameEvent"]
+[editable path="HealingPotion/GameEvent"]
+[editable path="Poster/GameEvent"]

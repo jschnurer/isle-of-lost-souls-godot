@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cg6ouj17dub12"]
+[gd_scene load_steps=17 format=3 uid="uid://cg6ouj17dub12"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_5r61t"]
 [ext_resource type="Texture2D" uid="uid://cauqdan3il45h" path="res://art/backgrounds/ruins/Ruined Square.png" id="2_150u5"]
@@ -13,6 +13,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgtd6"]
 size = Vector2(20, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cww5n"]
+size = Vector2(300, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhvn5"]
+size = Vector2(40, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48tri"]
 size = Vector2(37, 53)
@@ -40,6 +46,20 @@ scene_name_valid = true
 event_area = SubResource("RectangleShape2D_rgtd6")
 to_west = true
 preserve_y = true
+
+[node name="ToSquareNorth" parent="." instance=ExtResource("4_5qa8m")]
+position = Vector2(231, 10)
+to_scene = "RUINS_SQUARE_NORTH"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_cww5n")
+to_location = Vector2(298.696, 574.19)
+
+[node name="ToLab" parent="." instance=ExtResource("4_5qa8m")]
+position = Vector2(672, 231)
+to_scene = "RUINS_LAB"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_qhvn5")
+to_location = Vector2(308.809, 449.524)
 
 [node name="Rubble" type="Node2D" parent="."]
 script = ExtResource("4_4mvjw")

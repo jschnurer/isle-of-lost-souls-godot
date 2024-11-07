@@ -23,5 +23,10 @@
 		"slug": "SLEDGE",
 		"name": "sledgehammer",
 		"description": "It's heavy! You bet it could do a lot of damage. Loudly."
+	},
+	{
+		"slug": "POTION",
+		"name": "potion of healing",
+		"description": "It's a glass bottle with a cork stopper. It has red liquid inside and a label that reads \"potion of healing\"."
 	}
 ]

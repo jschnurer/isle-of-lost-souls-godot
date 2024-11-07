@@ -20,7 +20,7 @@ size = Vector2(28, 26.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vjpk"]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-scale = Vector2(0.66, 0.66)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_i00hy")
 normal_sprite = ExtResource("1_gdqck")
 up_sprite = ExtResource("3_4clwk")

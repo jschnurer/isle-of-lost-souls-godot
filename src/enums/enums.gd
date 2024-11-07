@@ -2,7 +2,7 @@ extends Node
 
 enum InputMethod { PC, XBOX, }
 enum InputAction { COLLIDE, INVESTIGATE, INTERACT, TAKE, USE_ITEM, }
-enum Direction { UP, DOWN, LEFT, RIGHT, }
+enum Direction { UNSET = 0, UP = 1, DOWN = 2, LEFT = 3, RIGHT = 4, }
 enum PlayerMode { PERSON, POINTER }
 enum ActivationMode { ACTIVATE, COLLIDE, }
 enum EventType { DIALOG, TELEPORT }
@@ -28,6 +28,9 @@ enum Vars {
 	RUINED_HOUSE_OPEN,
 	HOUSE_CHEST_OPEN,
 	TOOK_FLASHLIGHT,
+	MOVED_RUG,
+	TOOK_POTION,
+	SAW_POSTER,
 }
 
 enum EngineEvents {
@@ -270,11 +273,11 @@ var ScenePaths = {
 	Scenes.MOUNTAINS_WINDING_PATH: "res://src/scenes/mountains/",
 
 	Scenes.RUINS_BUNKER: "res://src/scenes/ruins/",
-	Scenes.RUINS_LAB: "res://src/scenes/ruins/",
+	Scenes.RUINS_LAB: "res://src/scenes/ruins/lab/ruined_lab.tscn",
 	Scenes.RUINS_HALL: "res://src/scenes/ruins/ruined_hall/ruined_hall.tscn",
 	Scenes.RUINS_HOUSE: "res://src/scenes/ruins/home/Home.tscn",
 	Scenes.RUINS_HOUSE_CHEST: "res://src/scenes/ruins/ruined_house_chest/ruined_house_chest.tscn",
-	Scenes.RUINS_SQUARE_NORTH: "res://src/scenes/ruins/",
+	Scenes.RUINS_SQUARE_NORTH: "res://src/scenes/ruins/square_north/square_north.tscn",
 	Scenes.RUINS_SQUARE_SOUTH: "res://src/scenes/ruins/square_south/SquareSouth.tscn",
 	Scenes.RUINS_TEMPLE: "res://src/scenes/ruins/",
 
