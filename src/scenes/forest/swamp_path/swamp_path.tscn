@@ -1,3 +1,98 @@
-[gd_scene format=3 uid="uid://ccf1p85m3yje6"]
+[gd_scene load_steps=12 format=3 uid="uid://ccf1p85m3yje6"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_escpo"]
+[ext_resource type="Texture2D" uid="uid://ch4epirmy7gvq" path="res://art/backgrounds/forest/Swamp Path.png" id="2_dnl7k"]
+[ext_resource type="Texture2D" uid="uid://dp88eidg5bapk" path="res://art/backgrounds/forest/Swamp Path Collision.png" id="3_fyf5f"]
+[ext_resource type="AudioStream" uid="uid://dew108n6x52bl" path="res://audio/bgm/birds-isaiah658.ogg" id="4_tpqcy"]
+[ext_resource type="Texture2D" uid="uid://c7rva3pqkcbtx" path="res://art/actors/lilypads1.png" id="5_1xok6"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="5_k0ci4"]
+[ext_resource type="Texture2D" uid="uid://bat80qf2kfxtm" path="res://art/actors/lilypads2.png" id="6_gir2x"]
+[ext_resource type="Texture2D" uid="uid://cvkqpmpskx371" path="res://art/actors/cattails.png" id="7_ggvc6"]
+[ext_resource type="Texture2D" uid="uid://davkmg4pmfb7m" path="res://art/actors/swamp_grass1.png" id="8_vs8fm"]
+[ext_resource type="Texture2D" uid="uid://bx0mncyyhqwb8" path="res://art/actors/swamp_grass2.png" id="9_6ubc3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cf5fe"]
+size = Vector2(200, 20)
 
 [node name="SwampPath" type="Node2D"]
+texture_filter = 1
+
+[node name="SceneBG" parent="." instance=ExtResource("1_escpo")]
+texture = ExtResource("2_dnl7k")
+scene = 50
+area = 2
+bg_images = Array[Texture2D]([ExtResource("2_dnl7k")])
+collision_image = ExtResource("3_fyf5f")
+hide_collider = true
+bgm_stream = ExtResource("4_tpqcy")
+metadata/_edit_lock_ = true
+
+[node name="ToOldWell" parent="." instance=ExtResource("5_k0ci4")]
+position = Vector2(485, 10)
+to_scene = "FOREST_OLD_WELL"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_cf5fe")
+to_north = true
+preserve_x = true
+
+[node name="Vegetation" type="Node2D" parent="."]
+position = Vector2(78, 557)
+metadata/_edit_lock_ = true
+
+[node name="LilyPads1" type="Sprite2D" parent="Vegetation"]
+position = Vector2(591, 27)
+texture = ExtResource("5_1xok6")
+
+[node name="LilyPads2" type="Sprite2D" parent="Vegetation"]
+position = Vector2(73, -9)
+texture = ExtResource("5_1xok6")
+
+[node name="LilyPads3" type="Sprite2D" parent="Vegetation"]
+position = Vector2(-9, 5)
+texture = ExtResource("6_gir2x")
+
+[node name="LilyPads4" type="Sprite2D" parent="Vegetation"]
+position = Vector2(482, -87)
+texture = ExtResource("6_gir2x")
+
+[node name="Cattails1" type="Sprite2D" parent="Vegetation"]
+position = Vector2(698, -23)
+texture = ExtResource("7_ggvc6")
+
+[node name="Cattails5" type="Sprite2D" parent="Vegetation"]
+position = Vector2(8, -47)
+texture = ExtResource("7_ggvc6")
+
+[node name="Cattails2" type="Sprite2D" parent="Vegetation"]
+position = Vector2(649, 52)
+texture = ExtResource("7_ggvc6")
+
+[node name="Cattails4" type="Sprite2D" parent="Vegetation"]
+position = Vector2(107, 16)
+texture = ExtResource("7_ggvc6")
+flip_h = true
+
+[node name="Cattails3" type="Sprite2D" parent="Vegetation"]
+position = Vector2(141, 28)
+texture = ExtResource("7_ggvc6")
+
+[node name="SwampGrass1" type="Sprite2D" parent="Vegetation"]
+position = Vector2(3, 30)
+texture = ExtResource("8_vs8fm")
+
+[node name="SwampGrass2" type="Sprite2D" parent="Vegetation"]
+position = Vector2(26, 41)
+texture = ExtResource("9_6ubc3")
+
+[node name="SwampGrass3" type="Sprite2D" parent="Vegetation"]
+position = Vector2(-58, -21)
+texture = ExtResource("8_vs8fm")
+
+[node name="SwampGrass4" type="Sprite2D" parent="Vegetation"]
+position = Vector2(711, 45)
+texture = ExtResource("8_vs8fm")
+
+[node name="SwampGrass5" type="Sprite2D" parent="Vegetation"]
+position = Vector2(495, 58)
+texture = ExtResource("8_vs8fm")
+flip_h = true

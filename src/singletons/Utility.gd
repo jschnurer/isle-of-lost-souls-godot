@@ -30,3 +30,16 @@ func enum_str_to_title_case(enum_str: String):
 	var title_str = enum_str.to_lower()
 	return to_title_case_regex.sub(title_str, "$1".to_upper(), true)
 	
+func fade_out(instantly: bool = false, speed_scale: float = 1):
+	var args = ScreenFadeArgs.new()
+	args.instantly = args.instantly
+	args.speed_scale = speed_scale
+	SignalBus.fade_out_screen.emit(args)
+	await SignalBus.fade_out_screen_finished
+	
+func fade_in(instantly: bool = false, speed_scale: float = 1):
+	var args = ScreenFadeArgs.new()
+	args.instantly = args.instantly
+	args.speed_scale = speed_scale
+	SignalBus.fade_in_screen.emit(args)
+	await SignalBus.fade_in_screen_finished

@@ -8,7 +8,7 @@ var current_scene = Enums.Scenes.TITLE_SCREEN
 
 func _ready():
 	SignalBus.connect("transfer_player_to_scene", _on_transfer_player_to_scene)
-	transfer_player_to_scene(current_scene, Vector2(-500, -500))
+	#transfer_player_to_scene(current_scene, Vector2(-500, -500))
 
 func _on_transfer_player_to_scene(args: TeleportArgs):
 	var location = args.to_location

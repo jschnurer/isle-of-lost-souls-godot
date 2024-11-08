@@ -1,11 +1,7 @@
 extends Node2D
 
 func _ready():
-	var fade_args = ScreenFadeArgs.new()
-	fade_args.color = Color.BLACK
-	fade_args.speed_scale = .33
-	SignalBus.fade_in_screen.emit(fade_args)
-	await SignalBus.fade_in_screen_finished
+	await Utility.fade_in(false, .33)
 	
 	await Utility.wait(2)
 	

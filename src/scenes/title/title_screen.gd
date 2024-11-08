@@ -1,13 +1,19 @@
 extends CanvasLayer
 
-@onready var anim_player = $AnimationPlayer
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
+@export var title_music: AudioStream
 
 func _ready():
 	var args = TogglePlayerArgs.new()
 	args.is_controllable = false
 	SignalBus.toggle_player.emit(args)
+	
+	# Fade screen in.
+	Utility.fade_in()
+	
+	SignalBus.play_bgm.emit(title_music, 1)
 
-func _on_fade_in_complete():
+func _on_fade_in_title_complete():
 	var args = TogglePlayerArgs.new()
 	args.is_controllable = true
 	args.is_visible = true
@@ -16,8 +22,7 @@ func _on_fade_in_complete():
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("ui_accept") and anim_player.is_playing()):
-		# Skip to the end
-		anim_player.seek(3)
+		anim_player.seek(anim_player.get_animation("title_fade_in").length)
 
 func show_menu():
 	var most_recent_save_slot = 0
@@ -34,6 +39,7 @@ func show_menu():
 	]
 	
 	if (most_recent_save_slot > 0):
+		FileAccess.file_exists("user://savegame" + str(most_recent_save_slot) + ".save")
 		choices.insert(0, GameScript.get_entry("Global.Continue"))
 	
 	var choice = await Utility.show_choice(choices, 3)
@@ -47,9 +53,7 @@ func handle_choice(choice: Choice, most_recent_save_slot: int):
 		
 	if (choice.text == continue_text):
 		# Continue
-		SignalBus.fade_out_screen.emit(ScreenFadeArgs.new())
-		await SignalBus.fade_out_screen_finished
-		
+		await Utility.fade_out()
 		SignalBus.load_game.emit(most_recent_save_slot)
 	elif (choice.text == new_text):
 		# New Game

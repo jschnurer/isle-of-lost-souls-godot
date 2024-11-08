@@ -47,6 +47,14 @@ event_area = SubResource("RectangleShape2D_jqevo")
 to_north = true
 preserve_x = true
 
+[node name="ToSwampPath" parent="." instance=ExtResource("5_2ck6y")]
+position = Vector2(481, 624)
+to_scene = "FOREST_SWAMP_ENTRANCE"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_jqevo")
+to_south = true
+preserve_x = true
+
 [node name="ToCaveOfBones" parent="." instance=ExtResource("5_2ck6y")]
 position = Vector2(740, 370)
 to_scene = "FOREST_WELL_CAVE"

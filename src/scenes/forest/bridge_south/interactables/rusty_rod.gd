@@ -25,11 +25,7 @@ func take():
 		SignalBus.play_sfx.emit(sfx_args)
 		
 		# Fade out the screen quickly.
-		var fade_out_args = ScreenFadeArgs.new()
-		fade_out_args.color = Color.BLACK
-		fade_out_args.speed_scale = 3
-		SignalBus.fade_out_screen.emit(fade_out_args)
-		await SignalBus.fade_out_screen_finished
+		await Utility.fade_out(false, 3)
 		
 		# Hide the player invisible.
 		toggle_args.is_visible = false

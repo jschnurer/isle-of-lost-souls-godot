@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Isle of Lost Souls"
-run/main_scene="res://src/scenes/world.tscn"
+run/main_scene="res://src/scenes/splash/splash_screens.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -27,7 +27,6 @@ GameVars="*res://src/game_data/game_vars.gd"
 ItemDb="*res://src/game_data/item_db.gd"
 Inventory="*res://src/game_data/inventory.gd"
 ActionChooser="*res://src/ui/action_chooser/ActionChooser.tscn"
-ScreenFader="*res://src/ui/screen_fader/ScreenFader.tscn"
 SfxPlayer="*res://src/singletons/sfx_player/SFXPlayer.tscn"
 Utility="*res://src/singletons/Utility.gd"
 DialogTopics="*res://src/game_data/dialog_topics.gd"
@@ -36,6 +35,9 @@ ChoiceManager="*res://src/ui/choice_manager/choice_manager.tscn"
 InventoryManager="*res://src/ui/inventory_manager/inventory_manager.tscn"
 SaveManager="*res://src/singletons/SaveManager.gd"
 Debug="*res://src/debug.gd"
+GameTimer="*res://src/singletons/GameTimer.gd"
+World="*res://src/scenes/world.tscn"
+ScreenFader="*res://src/ui/screen_fader/ScreenFader.tscn"
 
 [display]
 
