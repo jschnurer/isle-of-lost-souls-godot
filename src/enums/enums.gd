@@ -249,7 +249,7 @@ var ScenePaths = {
 	Scenes.FOREST_QUIET_PATH: "res://src/scenes/forest/quiet_path/QuietPath.tscn",
 	Scenes.FOREST_RIVER_BANK: "res://src/scenes/forest/river_bank/RiverBank.tscn",
 	Scenes.FOREST_RUINS_ENTRANCE: "res://src/scenes/forest/ruins_entrance/RuinsEntrance.tscn",
-	Scenes.FOREST_SWAMP_ENTRANCE: "res://src/scenes/forest/",
+	Scenes.FOREST_SWAMP_ENTRANCE: "res://src/scenes/forest/swamp_path/swamp_path.tscn",
 	Scenes.FOREST_WELL_CAVE: "res://src/scenes/forest/cave_of_bones/CaveOfBones.tscn",
 	Scenes.FOREST_WELL_WORN_TRAIL: "res://src/scenes/forest/well_worn_trail/WellWornTrail.tscn",
 
