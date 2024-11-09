@@ -64,6 +64,9 @@
 	  "Arden_Interact": "The man turns toward you. \"Oh, hello there! The name's Arden. We haven't seen any new arrivals in a long, long time. Sorry, but I can't talk now, I have to finish mending this fence. You wouldn't happen to have any nails on you, would you?\"",
 	  "Arden_No_Nail": "\"Well that's a shame. If you find any, I'd really appreciate one.\"",
 	  "Arden_Lie_About_Nail": "\"Now listen here, young'un! I've known many a man to carry a nail or few and I've even done it myself. I can tell quite plainly that you don't have any on you. I don't appreciate this kind of tomfoolery!\""
+	},
+	"Swamp_Path": {
+	  "Rotten_Log_Look": "There's an old, toppled tree sticking out of the reeking muck. It's covered in grime and mildew."
 	}
   },
   "Ruins": {

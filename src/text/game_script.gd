@@ -7,6 +7,7 @@ func _ready():
 	var json_as_text = FileAccess.get_file_as_string(file)
 	script_dict = JSON.parse_string(json_as_text)
 
+
 func get_entry(path: StringName) -> String:
 	var path_chunks = path.split(".", false)
 	var item = script_dict

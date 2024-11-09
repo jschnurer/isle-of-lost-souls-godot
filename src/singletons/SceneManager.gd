@@ -7,8 +7,8 @@ var screen_height = 624
 var current_scene = Enums.Scenes.TITLE_SCREEN
 
 func _ready():
-	SignalBus.connect("transfer_player_to_scene", _on_transfer_player_to_scene)
-	#transfer_player_to_scene(current_scene, Vector2(-500, -500))
+	SignalBus.transfer_player_to_scene.connect(_on_transfer_player_to_scene)
+	SignalBus.return_to_title_screen.connect(_on_return_to_title_screen)
 
 func _on_transfer_player_to_scene(args: TeleportArgs):
 	var location = args.to_location
@@ -56,3 +56,9 @@ func transfer_player_to_scene(destination: Enums.Scenes, location: Vector2):
 	player.set_deferred("position", location)
 	
 	current_scene = destination
+
+func _on_return_to_title_screen():
+	var args = TeleportArgs.new()
+	args.to_scene = Enums.Scenes.TITLE_SCREEN
+	args.to_location = Vector2(0, 0)
+	SignalBus.transfer_player_to_scene.emit(args)

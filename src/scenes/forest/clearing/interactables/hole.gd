@@ -1,4 +1,4 @@
-extends "res://src/events/game_event/base_event.gd"
+extends BaseEvent
 
 func investigate():
 	await Utility.show_message(GameScript.get_entry("Forest.Clearing.Hole_Look"))

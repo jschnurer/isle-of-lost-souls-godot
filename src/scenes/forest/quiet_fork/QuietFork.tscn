@@ -32,6 +32,7 @@ texture = ExtResource("2_4x3go")
 scene = 3
 bg_images = Array[Texture2D]([ExtResource("2_4x3go")])
 collision_image = ExtResource("3_x6ijh")
+hide_collider = true
 bgm_stream = ExtResource("6_kqm22")
 
 [node name="ToClearing" parent="." instance=ExtResource("3_ooo6e")]

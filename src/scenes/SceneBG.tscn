@@ -15,7 +15,6 @@ texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_2hmeu")
-scene = null
 
 [node name="CollisionFromImage" type="StaticBody2D" parent="."]
 

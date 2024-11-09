@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccf1p85m3yje6"]
+[gd_scene load_steps=15 format=3 uid="uid://ccf1p85m3yje6"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_escpo"]
 [ext_resource type="Texture2D" uid="uid://ch4epirmy7gvq" path="res://art/backgrounds/forest/Swamp Path.png" id="2_dnl7k"]
@@ -10,9 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://cvkqpmpskx371" path="res://art/actors/cattails.png" id="7_ggvc6"]
 [ext_resource type="Texture2D" uid="uid://davkmg4pmfb7m" path="res://art/actors/swamp_grass1.png" id="8_vs8fm"]
 [ext_resource type="Texture2D" uid="uid://bx0mncyyhqwb8" path="res://art/actors/swamp_grass2.png" id="9_6ubc3"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="11_3tdsh"]
+[ext_resource type="Script" path="res://src/scenes/forest/swamp_path/interactables/rotten_log.gd" id="11_wtc01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cf5fe"]
 size = Vector2(200, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t505"]
+size = Vector2(98, 39)
 
 [node name="SwampPath" type="Node2D"]
 texture_filter = 1
@@ -73,7 +78,7 @@ texture = ExtResource("7_ggvc6")
 flip_h = true
 
 [node name="Cattails3" type="Sprite2D" parent="Vegetation"]
-position = Vector2(141, 28)
+position = Vector2(142, 31)
 texture = ExtResource("7_ggvc6")
 
 [node name="SwampGrass1" type="Sprite2D" parent="Vegetation"]
@@ -89,10 +94,22 @@ position = Vector2(-58, -21)
 texture = ExtResource("8_vs8fm")
 
 [node name="SwampGrass4" type="Sprite2D" parent="Vegetation"]
-position = Vector2(711, 45)
+position = Vector2(711, 44)
 texture = ExtResource("8_vs8fm")
 
 [node name="SwampGrass5" type="Sprite2D" parent="Vegetation"]
 position = Vector2(495, 58)
 texture = ExtResource("8_vs8fm")
 flip_h = true
+
+[node name="RottenLog" type="Node2D" parent="."]
+position = Vector2(514, 612)
+script = ExtResource("11_wtc01")
+
+[node name="GameEvent" parent="RottenLog" instance=ExtResource("11_3tdsh")]
+
+[node name="CollisionShape2D" parent="RottenLog/GameEvent" index="0"]
+position = Vector2(8, -5.5)
+shape = SubResource("RectangleShape2D_7t505")
+
+[editable path="RottenLog/GameEvent"]

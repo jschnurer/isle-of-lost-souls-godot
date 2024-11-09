@@ -17,10 +17,10 @@ size = Vector2(20, 200)
 [node name="RiverBank" type="Node2D"]
 
 [node name="SceneBG" parent="." instance=ExtResource("1_snoam")]
-texture = ExtResource("3_gfxqw")
+texture = ExtResource("2_53p15")
 bg_images = Array[Texture2D]([ExtResource("3_gfxqw"), ExtResource("2_53p15"), ExtResource("4_nv01v")])
 collision_image = ExtResource("5_rs5ov")
-use_collision_frame = false
+hide_collider = true
 bgm_stream = ExtResource("8_hovmb")
 
 [node name="ToFork" parent="." instance=ExtResource("6_pvv5m")]

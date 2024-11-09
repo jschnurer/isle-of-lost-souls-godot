@@ -4,8 +4,10 @@ extends CanvasLayer
 @export var title_music: AudioStream
 
 func _ready():
+	# Disable the player.
 	var args = TogglePlayerArgs.new()
 	args.is_controllable = false
+	args.is_visible = false
 	SignalBus.toggle_player.emit(args)
 	
 	# Fade screen in.

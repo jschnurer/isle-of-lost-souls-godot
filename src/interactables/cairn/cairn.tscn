@@ -20,6 +20,7 @@ texture_filter = 1
 texture = ExtResource("2_fbl81")
 
 [node name="GameEvent" parent="." instance=ExtResource("4_1xe31")]
+visible = false
 
 [node name="CollisionShape2D" parent="GameEvent" index="0"]
 visible = false
@@ -35,6 +36,7 @@ shape = SubResource("RectangleShape2D_em0ra")
 disabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="NormalCollisionShape" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-0.5, 0)

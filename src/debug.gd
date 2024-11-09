@@ -7,14 +7,12 @@ func _ready():
 	Inventory.add_item(Enums.ItemSlugs.RUINS_ROD)
 	Inventory.add_item(Enums.ItemSlugs.SLEDGE)
 	
-	
 	await Utility.wait(.1)
 	
 	var args = TogglePlayerArgs.new()
 	args.is_controllable = true
 	args.is_visible = true
 	SignalBus.toggle_player.emit(args)
-	
 	
 	var tele_args = TeleportArgs.new()
 	tele_args.to_scene = Enums.Scenes.RUINS_SQUARE_SOUTH

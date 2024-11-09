@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var center_container = $CenterContainer
 @onready var container = $CenterContainer/VBoxContainer
 var is_open = false
 var delay_event_time = 0
@@ -34,8 +35,15 @@ func toggle(open: bool):
 		hide()
 		Utility.unpause()
 
-func _on_show_choice(choices: Array[String], cancel_index: int):
+func _on_show_choice(choices: Array[String], cancel_index: int, choice_location: Enums.ChoiceLocation):
 	toggle(true)
+	
+	if (choice_location == Enums.ChoiceLocation.CENTER):
+		center_container.set_anchors_preset(Control.PRESET_FULL_RECT)
+	elif(choice_location == Enums.ChoiceLocation.BOTTOM):
+		center_container.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
+	elif(choice_location == Enums.ChoiceLocation.TOP):
+		center_container.set_anchors_preset(Control.PRESET_TOP_WIDE)
 	
 	cancel_choice_index = cancel_index
 	

@@ -45,6 +45,7 @@ scene = 96
 area = 5
 bg_images = Array[Texture2D]([ExtResource("2_32l1b")])
 collision_image = ExtResource("3_r3ym8")
+hide_collider = true
 metadata/_edit_lock_ = true
 
 [node name="ToGrandTempleSouth" parent="." instance=ExtResource("4_y0m6c")]
@@ -100,6 +101,7 @@ texture = ExtResource("9_0v4l2")
 flip_h = true
 
 [node name="GameEvent" parent="Altar/Marek" instance=ExtResource("7_1grwk")]
+visible = false
 parent_node_index = 10
 
 [node name="CollisionShape2D" parent="Altar/Marek/GameEvent" index="0"]

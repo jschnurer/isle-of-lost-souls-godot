@@ -1,5 +1,5 @@
 @tool
-extends "res://src/events/game_event/base_event.gd"
+extends BaseEvent
 
 enum SpriteVariant { NORMAL, SHORT }
 

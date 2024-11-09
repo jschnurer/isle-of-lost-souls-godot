@@ -46,7 +46,7 @@ func populate_grid():
 		var btn = Button.new()
 		btn.text = item.name
 		if (item.quantity > 1):
-			btn.text += " (" + item.quantity + ")"
+			btn.text += " (" + str(item.quantity) + ")"
 		btn.set_meta("item_slug", item.slug)
 		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		btn.alignment = HORIZONTAL_ALIGNMENT_LEFT

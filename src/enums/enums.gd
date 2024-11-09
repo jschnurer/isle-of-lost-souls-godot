@@ -6,6 +6,7 @@ enum Direction { UNSET = 0, UP = 1, DOWN = 2, LEFT = 3, RIGHT = 4, }
 enum PlayerMode { PERSON, POINTER }
 enum ActivationMode { ACTIVATE, COLLIDE, }
 enum EventType { DIALOG, TELEPORT }
+enum ChoiceLocation { CENTER, BOTTOM, TOP }
 
 enum Areas {
 	CAVES,

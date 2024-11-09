@@ -28,6 +28,7 @@ texture = ExtResource("2_ptgum")
 scene = 12
 bg_images = Array[Texture2D]([ExtResource("2_ptgum")])
 collision_image = ExtResource("3_8t46k")
+hide_collider = true
 bgm_stream = ExtResource("4_4gmh3")
 metadata/_edit_lock_ = true
 

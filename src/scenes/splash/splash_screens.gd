@@ -11,6 +11,10 @@ func _ready():
 	else:
 		next_splash()
 
+func _input(event: InputEvent) -> void:
+	if (event.is_action_pressed("ui_accept")):
+		go_to_title()
+
 func next_splash():
 	current_index += 1
 	if (splash_images.size() <= current_index):

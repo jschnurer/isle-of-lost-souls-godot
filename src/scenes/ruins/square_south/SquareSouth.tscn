@@ -37,6 +37,7 @@ scene = 76
 area = 5
 bg_images = Array[Texture2D]([ExtResource("2_150u5")])
 collision_image = ExtResource("3_2jk2n")
+hide_collider = true
 metadata/_edit_lock_ = true
 
 [node name="ToHall" parent="." instance=ExtResource("4_5qa8m")]
