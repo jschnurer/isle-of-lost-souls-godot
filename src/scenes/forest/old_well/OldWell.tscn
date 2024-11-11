@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://7ifixxupx2fk"]
+[gd_scene load_steps=15 format=3 uid="uid://7ifixxupx2fk"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_58h26"]
 [ext_resource type="Texture2D" uid="uid://bgsxgsru60sel" path="res://art/backgrounds/forest/Old Well.png" id="2_ptgum"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="5_2ck6y"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="6_0tpk2"]
 [ext_resource type="Script" path="res://src/scenes/forest/old_well/interactables/well.gd" id="6_r2utv"]
+[ext_resource type="Texture2D" uid="uid://bxo05jw5nfqy4" path="res://art/actors/well_pail.png" id="7_vnf4k"]
+[ext_resource type="Texture2D" uid="uid://bby72rttxmcy" path="res://art/actors/well_rope.png" id="8_03jka"]
 [ext_resource type="PackedScene" uid="uid://drd16cul8qeeq" path="res://src/interactables/cairn/cairn.tscn" id="8_vipes"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7kt6"]
@@ -64,13 +66,24 @@ event_area = SubResource("RectangleShape2D_rd4og")
 to_location = Vector2(265, 528)
 
 [node name="Well" type="Node2D" parent="."]
+position = Vector2(408, 442)
 script = ExtResource("6_r2utv")
+pail_sprite = ExtResource("7_vnf4k")
+rope_sprite = ExtResource("8_03jka")
+metadata/_edit_lock_ = true
 
 [node name="GameEvent" parent="Well" instance=ExtResource("6_0tpk2")]
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Well/GameEvent" index="0"]
-position = Vector2(413, 438)
+position = Vector2(4, -3)
 shape = SubResource("RectangleShape2D_dapfe")
+metadata/_edit_lock_ = true
+
+[node name="PailRopeSprite" type="Sprite2D" parent="Well"]
+position = Vector2(-0.5, -4.5)
+texture = ExtResource("7_vnf4k")
 
 [node name="Cairn" parent="." instance=ExtResource("8_vipes")]
 position = Vector2(545, 327)

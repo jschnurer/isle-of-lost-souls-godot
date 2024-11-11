@@ -67,6 +67,23 @@
 	},
 	"Swamp_Path": {
 	  "Rotten_Log_Look": "There's an old, toppled tree sticking out of the reeking muck. It's covered in grime and mildew."
+	},
+	"Old_Well": {
+	  "Well_Look_Pail_Up": "It's an old well made of bricks. It has a little roof and a crank. The rope is retracted and it's attached to a pail sitting on the edge of the well.",
+	  "Well_Look_Pail_Down": "It's an old well made of bricks. It has a little roof and a crank. The rope hangs down into the darkness below.",
+	  "Well_Drop_Pail": "You grab the pail and drop it down into the well. It falls all the way to the bottom and you can hear a splash from down in the darkness.",
+	  "Well_Raise_Pail": "You turn the crank on the side of the well over and over. Eventually the pail returns to the surface. You grab it and set it on the edge of the well.",
+	  "Well_Look_Pail_Empty": "The pail is full of crystal-clear water.",
+	  "Well_Look_Pail_Item": "The pail is full of crystal-clear water. The #ITEMNAME# sits at the bottom of the pail.",
+	  "Well_Look_Pail_Etavoner": "The pail is full of crystal-clear water. The etavoner rune sits in the pail, glimmering with magic.",
+	  "Well_Take_Charged_Etavoner_1": "You take the rune from the pail. The glimmering surrounding the rune grows in intensity and you watch as the rune dissolves into nothingness before your very eyes!",
+	  "Well_Take_Charged_Etavoner_2": "Suddenly, something pops into your head. A vague memory, half formed. You can now incant etavoner, the Charm of Repairing!",
+	  "Well_Take_Pail_Item": "You retrieve the #ITEMNAME# from the pail. It's soggy but should be okay.",
+	  "Well_Take_Pail_Down": "You can't take whatever's in the pail because it's at the bottom of the well!",
+	  "Well_Take_Empty": "There's nothing in the pail to take!",
+	  "Well_Use_Item_Pail_Down": "You can't put anything in the pail when it's at the bottom of the well!",
+	  "Well_Use_Item_Pail_Full": "There's already something in the pail. It can't hold anymore items.",
+	  "Well_Use_Item_Put_Into_Pail": "You put the #ITEMNAME# into the pail."
 	}
   },
   "Ruins": {

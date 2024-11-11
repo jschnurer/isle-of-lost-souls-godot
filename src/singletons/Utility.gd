@@ -8,8 +8,8 @@ func _ready():
 func wait(seconds: float):
 	await get_tree().create_timer(seconds).timeout
 
-func show_message(msg: String, has_more: bool = false):
-	SignalBus.show_message.emit(msg, has_more)
+func show_message(message: String, has_more: bool = false):
+	SignalBus.show_message.emit(message, has_more)
 	await SignalBus.message_closed
 
 func msg(msg_key: String, has_more: bool = false):

@@ -18,6 +18,6 @@ func update_state():
 func investigate():
 	Utility.show_message(GameScript.get_entry("Ruins.Temple_North.Altar_Look"))
 
-func _on_game_var_set(var_name: Enums.Vars, value):
+func _on_game_var_set(var_name: Enums.Vars, _value):
 	if (var_name == Enums.Vars.MOVED_TEMPLE_ALTAR):
 		update_state()

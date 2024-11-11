@@ -17,5 +17,5 @@ func initialize_db():
 		new_item.description = json_item.description
 		item_db[new_item.slug] = new_item
 
-func get_item(slug: Enums.ItemSlugs):
+func get_item(slug: Enums.ItemSlugs) -> Item:
 	return item_db[slug]
