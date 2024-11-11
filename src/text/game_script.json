@@ -94,7 +94,15 @@
 	"Square_North": {
 	  "Rubble_Look": "An ocean of rubble fills the area. The ancient bones of a lost civilization.",
 	  "Temple_Look": "It's a large building supported by pillars. Unlike the rest of the buildings, the temple is still mostly intact. It has long, tattered banners hanging from its walls.",
-	  "Banner_Look": "The banner is long and tattered. It depicts a yellow griffin clutching a dozen red roses in its talons."
+	  "Banner_Look": "The banner is long and tattered. It depicts a yellow griffin clutching a dozen red roses in its talons.",
+	  "Hatch_Lid_Look": "It's a large, metal hatch set into the ground. It's got a red handle on the top.",
+	  "Hatch_Lid_Open": "You turn the handle and lift with all your strength, opening the hatch.",
+	  "Hatch_Lid_Close": "You take hold of the heavy hatch door and slowly lower it closed. Then you turn the handle for good measure.",
+	  "Hatch_Hole_Look": "A dark, metallic shaft leads downward into the Earth. A sturdy metal ladder is affixed to the shaft wall.",
+	  "Hatch_Hole_Go": "You mount the ladder and begin making your way down into darkness."
+	},
+	"Hatch_Interior": {
+	  "Ladder_Go": "You mount the ladder and begin making your way up into daylight."
 	},
 	"House": {
 	  "Chest_Closed_Look": "It's a metal storage chest. It's badly dented and scuffed but somehow still in one piece. It's shut tight.",

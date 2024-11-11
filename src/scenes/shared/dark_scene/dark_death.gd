@@ -1,4 +1,4 @@
-extends "res://src/events/game_event/base_event.gd"
+extends BaseEvent
 
 @export var grue_sound: AudioStream
 

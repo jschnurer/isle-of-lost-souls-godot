@@ -34,6 +34,7 @@ enum Vars {
 	SAW_POSTER,
 	MOVED_TEMPLE_ALTAR,
 	ROD_IN_TEMPLE_DEVICE,
+	HATCH_OPEN,
 }
 
 enum EngineEvents {
@@ -275,7 +276,7 @@ var ScenePaths = {
 	Scenes.MOUNTAINS_SUMMIT: "res://src/scenes/mountains/",
 	Scenes.MOUNTAINS_WINDING_PATH: "res://src/scenes/mountains/",
 
-	Scenes.RUINS_BUNKER: "res://src/scenes/ruins/",
+	Scenes.RUINS_BUNKER: "res://src/scenes/ruins/hatch_interior/hatch_interior.tscn",
 	Scenes.RUINS_LAB: "res://src/scenes/ruins/lab/ruined_lab.tscn",
 	Scenes.RUINS_HALL: "res://src/scenes/ruins/ruined_hall/ruined_hall.tscn",
 	Scenes.RUINS_HOUSE: "res://src/scenes/ruins/home/Home.tscn",

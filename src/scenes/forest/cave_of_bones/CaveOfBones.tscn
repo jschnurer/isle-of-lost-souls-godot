@@ -1,12 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://drnvdcvxy2onw"]
+[gd_scene load_steps=9 format=3 uid="uid://drnvdcvxy2onw"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_2rxdi"]
 [ext_resource type="Texture2D" uid="uid://btr0fskbs1k1t" path="res://art/backgrounds/forest/Cave of Bones (Dark).png" id="2_3oc6w"]
 [ext_resource type="Texture2D" uid="uid://csyveb7ay1mn7" path="res://art/backgrounds/forest/Cave of Bones Collision.png" id="3_ifw3q"]
-[ext_resource type="Script" path="res://src/scenes/forest/cave_of_bones/interactables/dark_death.gd" id="4_bn3mj"]
-[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="4_loavs"]
 [ext_resource type="AudioStream" uid="uid://bnebhmtpm8jpa" path="res://audio/bgm/cave.ogg" id="4_uiwm7"]
-[ext_resource type="AudioStream" uid="uid://1mwbm2jcx5gu" path="res://audio/effects/grue.ogg" id="6_a3v4j"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="6_l61fp"]
 [ext_resource type="PackedScene" uid="uid://d08ryhtjgu1tq" path="res://src/scenes/shared/dark_scene/DarkScene.tscn" id="8_s1ps2"]
 [ext_resource type="Texture2D" uid="uid://bp5bpyr8mh0x5" path="res://art/backgrounds/forest/Cave of Bones (Light).png" id="9_e3bki"]
@@ -57,15 +54,8 @@ scene_bg = NodePath("../SceneBG")
 dark_scene_bg = ExtResource("2_3oc6w")
 light_scene_bg = ExtResource("9_e3bki")
 
-[node name="DarkDeath" type="Node2D" parent="DarkScene"]
-script = ExtResource("4_bn3mj")
-grue_sound = ExtResource("6_a3v4j")
-
-[node name="GameEvent" parent="DarkScene/DarkDeath" instance=ExtResource("4_loavs")]
-activation_mode = 1
-use_action_chooser = false
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DarkScene/DarkDeath/GameEvent"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DarkScene/DarkDeath/GameEvent" index="1"]
 polygon = PackedVector2Array(149, 480, 176, 431, 221, 401, 293, 396, 327, 407, 353, 442, 369, 501, 515, 467, 518, 237, 300, 189, 120, 197, 80, 414)
 
 [editable path="SceneBG"]
+[editable path="DarkScene"]

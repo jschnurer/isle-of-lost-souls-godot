@@ -4,10 +4,7 @@ var slug_strings = Enums.ItemSlugs.keys()
 var items: Array[Item] = []
 
 func has_item(slug: Enums.ItemSlugs):
-	for item in items:
-		if (item.slug == slug):
-			return true
-	return false
+	return items.any(func(item): return item.slug == slug)
 
 func get_item_index(slug: Enums.ItemSlugs):
 	for index in items.size():

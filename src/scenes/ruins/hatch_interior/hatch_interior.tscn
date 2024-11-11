@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://dykio4jrk740p"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_hcgg7"]
+[ext_resource type="Texture2D" uid="uid://crgghkyhhin6d" path="res://art/backgrounds/ruins/Hatch Interior.png" id="2_w8o0y"]
+[ext_resource type="Texture2D" uid="uid://bdunc5mpu20pc" path="res://art/backgrounds/ruins/Hatch Interior Collision.png" id="3_kd76h"]
+[ext_resource type="PackedScene" uid="uid://d08ryhtjgu1tq" path="res://src/scenes/shared/dark_scene/DarkScene.tscn" id="4_rg18a"]
+[ext_resource type="Texture2D" uid="uid://bw6ijx0g8r73j" path="res://art/backgrounds/ruins/Hatch Interior Dark.png" id="5_xtsqa"]
+[ext_resource type="Script" path="res://src/scenes/ruins/hatch_interior/interactables/ladder.gd" id="6_ugwul"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="7_f8dwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66yqy"]
+size = Vector2(8, 61)
+
+[node name="HatchInterior" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_hcgg7")]
+texture = ExtResource("2_w8o0y")
+scene = 71
+area = 5
+bg_images = Array[Texture2D]([ExtResource("2_w8o0y")])
+collision_image = ExtResource("3_kd76h")
+hide_collider = true
+metadata/_edit_lock_ = true
+
+[node name="DarkScene" parent="." node_paths=PackedStringArray("scene_bg") instance=ExtResource("4_rg18a")]
+scene_bg = NodePath("../SceneBG")
+dark_scene_bg = ExtResource("5_xtsqa")
+light_scene_bg = ExtResource("2_w8o0y")
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DarkScene/DarkDeath/GameEvent" index="1"]
+polygon = PackedVector2Array(212, 377, 219, 385, 220, 392, 219, 400, 215, 406, 211, 412, 204, 416, 246, 436, 263, 408, 261, 380, 255, 364)
+
+[node name="Ladder" type="Node2D" parent="."]
+script = ExtResource("6_ugwul")
+metadata/_edit_lock_ = true
+
+[node name="GameEvent" parent="Ladder" instance=ExtResource("7_f8dwq")]
+
+[node name="CollisionShape2D" parent="Ladder/GameEvent" index="0"]
+position = Vector2(143, 370.5)
+shape = SubResource("RectangleShape2D_66yqy")
+
+[editable path="DarkScene"]
+[editable path="Ladder/GameEvent"]
