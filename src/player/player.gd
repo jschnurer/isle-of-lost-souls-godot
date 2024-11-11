@@ -11,6 +11,7 @@ const POINTER_SPEED = 400.0
 
 var SPEED = PERSON_SPEED
 var facing_dir: Enums.Direction = Enums.Direction.RIGHT
+var all_game_events_in_range: Array[GameEvent] = []
 var game_event_in_range: GameEvent
 @export var mode: Enums.PlayerMode = Enums.PlayerMode.PERSON
 var is_controllable: bool = true
@@ -102,14 +103,30 @@ func update_areas():
 		$LeftArea/CollisionShape2D.disabled = facing_dir != Enums.Direction.LEFT
 
 func _on_game_event_entered_range(game_event: GameEvent):
+	all_game_events_in_range.append(game_event)
+	all_game_events_in_range.sort_custom(func sort_ascending(a, b): return a.parent_node_index > b.parent_node_index)
+	
+	print(all_game_events_in_range)
+	
 	if (game_event_in_range == null):
 		game_event_in_range = game_event
 	elif (game_event.parent_node_index > game_event_in_range.parent_node_index):
 		game_event_in_range = game_event
 	
 func _on_game_event_exited_range(game_event: GameEvent):
+	var item_ix = -1
+	for ge in all_game_events_in_range:
+		item_ix += 1
+		if (ge == game_event):
+			all_game_events_in_range.remove_at(item_ix)
+			break
+	
 	if game_event_in_range == game_event:
 		game_event_in_range = null
+		if (all_game_events_in_range.size() > 0):
+			game_event_in_range = all_game_events_in_range[0]
+	
+	print(all_game_events_in_range)
 
 func _on_memorize_player_info():
 	var info = PlayerInfo.new()
