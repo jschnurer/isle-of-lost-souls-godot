@@ -19,6 +19,7 @@ enum Areas {
 }
 
 enum Vars {
+	UNSPECIFIED,
 	PLAYER_INFO,
 	TOOK_STONE,
 	DISTRACTED_FISH,
@@ -35,6 +36,8 @@ enum Vars {
 	MOVED_TEMPLE_ALTAR,
 	ROD_IN_TEMPLE_DEVICE,
 	HATCH_OPEN,
+	TOOK_HATCH_NOTE,
+	TOOK_ETAVONER,
 }
 
 enum EngineEvents {

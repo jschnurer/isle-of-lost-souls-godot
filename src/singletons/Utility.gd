@@ -12,6 +12,10 @@ func show_message(msg: String, has_more: bool = false):
 	SignalBus.show_message.emit(msg, has_more)
 	await SignalBus.message_closed
 
+func msg(msg_key: String, has_more: bool = false):
+	SignalBus.show_message.emit(GameScript.get_entry(msg_key), has_more)
+	await SignalBus.message_closed
+
 func show_choice(choices: Array[String], cancel_index: int, choice_location: Enums.ChoiceLocation = Enums.ChoiceLocation.CENTER) -> Choice:
 	SignalBus.show_choice.emit(choices, cancel_index, choice_location)
 	return await SignalBus.choice_chosen

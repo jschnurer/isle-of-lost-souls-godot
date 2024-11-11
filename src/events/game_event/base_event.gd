@@ -3,8 +3,16 @@ extends Node2D
 
 var is_base_event = true
 @export var auto_connect_child_game_event = true
+@export var auto_destroy_flag: Enums.Vars = Enums.Vars.UNSPECIFIED
 
 func _ready():
+	if (auto_destroy_flag != Enums.Vars.UNSPECIFIED):
+		if (GameVars.get_var(auto_destroy_flag)):
+			queue_free()
+			return
+		else:
+			SignalBus.on_game_var_set.connect(_on_game_var_set)
+		
 	if (auto_connect_child_game_event):
 		$GameEvent.on_activate.connect(_on_activate)
 
@@ -36,3 +44,7 @@ func use_item(_item: Item):
 
 func collide():
 	pass
+
+func _on_game_var_set(var_name: Enums.Vars, _value):
+	if (var_name == auto_destroy_flag):
+		queue_free()

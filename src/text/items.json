@@ -28,5 +28,15 @@
 		"slug": "POTION",
 		"name": "potion of healing",
 		"description": "It's a glass bottle with a cork stopper. It has red liquid inside and a label that reads \"potion of healing\"."
+	},
+	{
+		"slug": "HATCH_NOTE",
+		"name": "dusty note",
+		"description": "\"Lowered into darkness, far and out of sight\nPlunged into clear waters, etavoner regains its might.\""
+	},
+	{
+		"slug": "ETAVONER_RUNE",
+		"name": "etavoner rune",
+		"description": "You don't know how you know this, but the rune represents the etavoner charm."
 	}
 ]

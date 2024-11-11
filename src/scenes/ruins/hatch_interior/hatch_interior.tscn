@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dykio4jrk740p"]
+[gd_scene load_steps=15 format=3 uid="uid://dykio4jrk740p"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_hcgg7"]
 [ext_resource type="Texture2D" uid="uid://crgghkyhhin6d" path="res://art/backgrounds/ruins/Hatch Interior.png" id="2_w8o0y"]
@@ -7,9 +7,19 @@
 [ext_resource type="Texture2D" uid="uid://bw6ijx0g8r73j" path="res://art/backgrounds/ruins/Hatch Interior Dark.png" id="5_xtsqa"]
 [ext_resource type="Script" path="res://src/scenes/ruins/hatch_interior/interactables/ladder.gd" id="6_ugwul"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="7_f8dwq"]
+[ext_resource type="Script" path="res://src/scenes/ruins/hatch_interior/interactables/dusty_note.gd" id="8_nwte1"]
+[ext_resource type="Texture2D" uid="uid://dke81a4ky4bd7" path="res://art/actors/dusty_note.png" id="9_vkq4f"]
+[ext_resource type="Script" path="res://src/scenes/ruins/hatch_interior/interactables/etavoner_rune.gd" id="10_cpx4t"]
+[ext_resource type="Texture2D" uid="uid://cuh1ml3ob01n3" path="res://art/actors/etavoner_rune.png" id="11_xa15p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66yqy"]
 size = Vector2(8, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qp4d4"]
+size = Vector2(12, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcyvm"]
+size = Vector2(10, 8)
 
 [node name="HatchInterior" type="Node2D"]
 
@@ -41,5 +51,48 @@ metadata/_edit_lock_ = true
 position = Vector2(143, 370.5)
 shape = SubResource("RectangleShape2D_66yqy")
 
+[node name="DustyNote" type="Node2D" parent="."]
+position = Vector2(302, 381)
+script = ExtResource("8_nwte1")
+auto_destroy_flag = 17
+
+[node name="GameEvent" parent="DustyNote" instance=ExtResource("7_f8dwq")]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="DustyNote/GameEvent" index="0"]
+shape = SubResource("RectangleShape2D_qp4d4")
+
+[node name="Sprite2D" type="Sprite2D" parent="DustyNote"]
+texture = ExtResource("9_vkq4f")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DustyNote"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DustyNote/StaticBody2D"]
+shape = SubResource("RectangleShape2D_qp4d4")
+
+[node name="EtavonerRune" type="Node2D" parent="."]
+position = Vector2(352, 392)
+script = ExtResource("10_cpx4t")
+auto_destroy_flag = 18
+
+[node name="GameEvent" parent="EtavonerRune" instance=ExtResource("7_f8dwq")]
+
+[node name="CollisionShape2D" parent="EtavonerRune/GameEvent" index="0"]
+shape = SubResource("RectangleShape2D_gcyvm")
+
+[node name="Sprite2D" type="Sprite2D" parent="EtavonerRune"]
+texture = ExtResource("11_xa15p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="EtavonerRune"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EtavonerRune/StaticBody2D"]
+shape = SubResource("RectangleShape2D_gcyvm")
+
 [editable path="DarkScene"]
 [editable path="Ladder/GameEvent"]
+[editable path="DustyNote/GameEvent"]
+[editable path="EtavonerRune/GameEvent"]
