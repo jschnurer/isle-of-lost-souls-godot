@@ -47,3 +47,32 @@ func fade_in(instantly: bool = false, speed_scale: float = 1):
 	args.speed_scale = speed_scale
 	SignalBus.fade_in_screen.emit(args)
 	await SignalBus.fade_in_screen_finished
+
+func initiate_game_over(game_over_scene: Enums.Scenes, fade_speed_scale: float = 1, death_sfx: AudioStream = null, teleport_delay: float = 0):
+	# Disable the player.
+	var toggle_args = TogglePlayerArgs.new()
+	toggle_args.is_visible = true
+	toggle_args.is_controllable = false
+	SignalBus.toggle_player.emit(toggle_args)
+	
+	if (death_sfx != null):
+		# Play the death sound effect.
+		var sfx_args = PlaySfxArgs.new()
+		sfx_args.stream = death_sfx
+		SignalBus.play_sfx.emit(sfx_args)
+	
+	# Fade out the screen.
+	await Utility.fade_out(false, fade_speed_scale)
+	
+	if (teleport_delay > 0):
+		# Wait for the teleport delay.
+		await Utility.wait(teleport_delay)
+	
+	# Hide the player invisible.
+	toggle_args.is_visible = false
+	SignalBus.toggle_player.emit(toggle_args)
+	
+	# Teleport the player to the game over screen.
+	var teleport_args = TeleportArgs.new()
+	teleport_args.to_scene = game_over_scene
+	SignalBus.transfer_player_to_scene.emit(teleport_args)

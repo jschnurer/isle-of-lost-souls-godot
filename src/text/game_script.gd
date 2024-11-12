@@ -12,7 +12,7 @@ func get_entry(path: StringName) -> String:
 	var item = script_dict
 	
 	for chunk in path_chunks:
-		item = item[chunk]
+		item = item.get(chunk)
 		
 		if (item == null):
 			return "INVALID PATH: " + path

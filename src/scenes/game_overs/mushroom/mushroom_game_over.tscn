@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://0ihuuutsh6jv"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_tgpax"]
+[ext_resource type="Script" path="res://src/scenes/game_overs/mushroom/mushroom_game_over.gd" id="1_uh71x"]
+[ext_resource type="Texture2D" uid="uid://cvv7dwr2rcbpb" path="res://art/backgrounds/game_over/game_over.png" id="2_qi83x"]
+[ext_resource type="AudioStream" uid="uid://c24ddpye4f68b" path="res://audio/bgm/game_over.mp3" id="3_qof8w"]
+
+[node name="MushroomGameOver" type="Node2D"]
+script = ExtResource("1_uh71x")
+
+[node name="SceneBG" parent="." instance=ExtResource("1_tgpax")]
+texture = ExtResource("2_qi83x")
+scene = 98
+bg_images = Array[Texture2D]([ExtResource("2_qi83x")])
+use_collision_frame = true
+hide_collider = true
+bgm_stream = ExtResource("3_qof8w")

@@ -41,6 +41,8 @@ enum Vars {
 	WELL_PAIL_DOWN,
 	ITEM_IN_PAIL,
 	DROPPED_ETAVONER_IN_WELL,
+	MUSHROOMS_ANCHORED,
+	MUSHROOM_TOUCH_SEQUENCE,
 }
 
 enum EngineEvents {
@@ -203,6 +205,8 @@ enum Scenes {
 	RUINS_HOUSE_CHEST = 94,
 	TITLE_SCREEN = 95,
 	RUINS_TEMPLE_NORTH = 96,
+	SWAMP_TOPPLED_TREE_MUSHROOMS = 97,
+	GAME_OVER_MUSHROOM = 98,
 }
 
 var ScenePaths = {
@@ -304,10 +308,12 @@ var ScenePaths = {
 	Scenes.SWAMP_RIDGE: "res://src/scenes/swamp/",
 	Scenes.SWAMP_STANDING_WATER: "res://src/scenes/swamp/",
 	Scenes.SWAMP_STATUE: "res://src/scenes/swamp/",
-	Scenes.SWAMP_TOPPLED_LOG: "res://src/scenes/swamp/",
+	Scenes.SWAMP_TOPPLED_LOG: "res://src/scenes/swamp/toppled_tree/toppled_tree.tscn",
+	Scenes.SWAMP_TOPPLED_TREE_MUSHROOMS: "res://src/scenes/swamp/toppled_tree_mushrooms/toppled_tree_mushrooms.tscn",
 	
 	Scenes.GAME_OVER_FISH: "res://src/scenes/game_overs/fish/fish_game_over.tscn",
 	Scenes.GAME_OVER_GRUE: "res://src/scenes/game_overs/grue/grue_game_over.tscn",
+	Scenes.GAME_OVER_MUSHROOM: "res://src/scenes/game_overs/mushroom/mushroom_game_over.tscn",
 	
 	Scenes.TITLE_SCREEN: "res://src/scenes/title/title_screen.tscn",
 }

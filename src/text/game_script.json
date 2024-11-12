@@ -156,6 +156,22 @@
 	  "Device_Altar_Closes": "You grip the rusty metal rod and pull the lever downward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts back, sealing the stairway that leads down to darkness. The knight didn't seem to notice at all.",
 	}
   },
+  "Swamp": {
+	"Toppled_Tree": {
+	  "Log_Look": "A toppled tree rests here, infested with moss, lichen, and rot. An array of seven colorful mushrooms grow in a neat row.",
+	  "Mushroom_Touch_Moves": "You reach out to touch the mushroom but before you can quite reach it, it shudders and and suddenly shuffles across the log, avoiding your touch. You've never heard of moving mushrooms before!",
+	  "Mushroom_Hint": "You might be able to touch them if you had some way of preventing them from moving.",
+	  "Mushroom_Look_Green": "It's a bright green color.",
+	  "Mushroom_Look_Yellow": "It's a bright yellow color.",
+	  "Mushroom_Look_Indigo": "It's a bright indigo color.",
+	  "Mushroom_Look_Red": "It's a bright red color.",
+	  "Mushroom_Look_Purple": "It's a bright purple color.",
+	  "Mushroom_Look_Blue": "It's a bright blue color.",
+	  "Mushroom_Look_Orange": "It's a bright orange color.",
+	  "Mushroom_Interact_Glow": "You touch the mushroom and it begins to glow...",
+	  "Mushroom_Interact_Glow_Final": "You touch the mushroom and it begins to glow. Now all of the colored mushrooms on the log are glowing.\n\nA faint glimmer appears in the air nearby.",
+	}
+  },
   "Game_Overs": {
 	"Fish": {
 	  "Fish_1": "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks.",
@@ -169,6 +185,13 @@
 	  "Grue_1": "You fumble around in the dark for a few moments. You think you hear something so you immediately stop what you're doing, ears attuned to the silence all around you. Did you really hear something or are your ears playing tricks on you? Your question is answered only a few seconds later.",
 	  "Grue_2": "The sound of slapping feet approaches, its direction indeterminate! Claws dig into your flesh and something large and leathery wraps long, spindly arms around you. You struggle to free yourself but its strength far, far, surpasses your own. You let out a scream as it bites down on your neck.",
 	  "Grue_3": "You should fear the dark..."
+	},
+	"Mushroom": {
+	  "Mushroom_1": "As soon as you touch the mushroom you feel a jolt of pain fire down your arm and into your chest. You drop to your knees in the muck. The pain still in your chest, you begin retching violently. At some point you realize that you're laying on your side in the stagnant water.",
+	  "Mushroom_2": "You can't seem to move your body. It's raining and you feel like you're on fire...",
+	  "Mushroom_3": "You can hear the buzzing of giant mosquitos as they land on you. You can feel their needle-like proboscises pierce into your skin. You'd wince if you could. The monsters are so thirsty you can feel your blood being drained away.",
+	  "Mushroom_4": "You close your eyes...",
+	  "Mushroom_5": "     ... ...just for a moment... ..."
 	}
   },
   "Topics": {

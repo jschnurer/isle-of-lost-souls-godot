@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4murr8a3o402"]
+
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="1_sk8dj"]
+[ext_resource type="Script" path="res://src/scenes/swamp/toppled_tree_mushrooms/interactables/memory_mushroom.gd" id="1_wnsii"]
+
+[node name="MemoryMushroom" type="Node2D"]
+script = ExtResource("1_wnsii")
+
+[node name="GameEvent" parent="." instance=ExtResource("1_sk8dj")]

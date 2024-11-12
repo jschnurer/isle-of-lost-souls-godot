@@ -12,4 +12,6 @@ func _ready():
 	
 	await Utility.show_message(GameScript.get_entry("Game_Overs.Grue.Grue_3"))
 	
+	await Utility.fade_out(false, .5)
+
 	SignalBus.return_to_title_screen.emit()

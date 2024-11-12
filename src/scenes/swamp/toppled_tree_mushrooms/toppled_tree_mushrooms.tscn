@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq763cnjb6a3h"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_momlb"]
+[ext_resource type="Texture2D" uid="uid://8x0x1hgrodtk" path="res://art/backgrounds/swamp/Toppled Tree Mushrooms.png" id="2_2gqu2"]
+[ext_resource type="AudioStream" uid="uid://cfti2ptvnjkxv" path="res://audio/bgm/swamp-loop.ogg" id="3_mcier"]
+[ext_resource type="PackedScene" uid="uid://d3oqcmtd837nj" path="res://src/interactables/back_arrow.tscn" id="4_0fga4"]
+[ext_resource type="PackedScene" uid="uid://b4murr8a3o402" path="res://src/scenes/swamp/toppled_tree_mushrooms/interactables/memory_mushroom.tscn" id="5_x7hrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igvoq"]
+size = Vector2(99, 109)
+
+[node name="ToppledTreeMushrooms" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_momlb")]
+texture = ExtResource("2_2gqu2")
+scene = 90
+area = 6
+bg_images = Array[Texture2D]([ExtResource("2_2gqu2")])
+use_collision_frame = true
+bgm_stream = ExtResource("3_mcier")
+
+[node name="BackArrow" parent="." instance=ExtResource("4_0fga4")]
+
+[node name="GreenMushroom" parent="." instance=ExtResource("5_x7hrn")]
+position = Vector2(83, 274)
+color = "Green"
+
+[node name="CollisionShape2D" parent="GreenMushroom/GameEvent" index="0"]
+position = Vector2(-2.5, 16.5)
+shape = SubResource("RectangleShape2D_igvoq")
+
+[editable path="GreenMushroom"]
+[editable path="GreenMushroom/GameEvent"]
