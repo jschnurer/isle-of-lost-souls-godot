@@ -26,6 +26,7 @@ size = Vector2(720, 79)
 size = Vector2(31, 28)
 
 [node name="SquareNorth" type="Node2D"]
+y_sort_enabled = true
 
 [node name="SceneBG" parent="." instance=ExtResource("1_5ubrn")]
 texture = ExtResource("2_6s45c")
@@ -125,48 +126,66 @@ position = Vector2(595, 50.5)
 position = Vector2(685, 50.5)
 
 [node name="Hatch" type="Node2D" parent="."]
+y_sort_enabled = true
 position = Vector2(517, 329)
 metadata/_edit_lock_ = true
 
 [node name="Hole" type="Node2D" parent="Hatch"]
+y_sort_enabled = true
 script = ExtResource("9_447lm")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hatch/Hole"]
+y_sort_enabled = true
 texture = ExtResource("10_s5pte")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Hatch/Hole"]
+visible = false
+y_sort_enabled = true
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Hatch/Hole/StaticBody2D"]
+y_sort_enabled = true
 polygon = PackedVector2Array(-41, -1, -32, -7, -18, -11, -8, -13, 10, -13, 32, -8, 41, -2, 41, 5, 19, 12, 6, 14, -9, 14, -30, 9, -41, 5)
 
 [node name="GameEvent" parent="Hatch/Hole" instance=ExtResource("5_u8mvh")]
+visible = false
+y_sort_enabled = true
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hatch/Hole/GameEvent"]
+y_sort_enabled = true
 polygon = PackedVector2Array(-41, -1, -32, -7, -18, -11, -8, -13, 10, -13, 32, -8, 41, -2, 41, 5, 19, 12, 6, 14, -9, 14, -30, 9, -41, 5)
 
 [node name="Lid" type="Node2D" parent="Hatch"]
+y_sort_enabled = true
 position = Vector2(40, 0)
 script = ExtResource("11_23kdd")
 
 [node name="Pivot" type="Node2D" parent="Hatch/Lid"]
+y_sort_enabled = true
 position = Vector2(-40, 0)
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Hatch/Lid/Pivot"]
+y_sort_enabled = true
 position = Vector2(41, 3)
 texture = ExtResource("9_dvjuu")
 offset = Vector2(-41, -3)
 metadata/_edit_lock_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Hatch/Lid/Pivot"]
+visible = false
+y_sort_enabled = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hatch/Lid/Pivot/StaticBody2D"]
+y_sort_enabled = true
 polygon = PackedVector2Array(-41, -1, -32, -7, -18, -11, -8, -13, 10, -13, 32, -8, 41, -2, 41, 5, 19, 12, 6, 14, -9, 14, -30, 9, -41, 5)
 metadata/_edit_lock_ = true
 
 [node name="GameEvent" parent="Hatch/Lid/Pivot" instance=ExtResource("5_u8mvh")]
+visible = false
+y_sort_enabled = true
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hatch/Lid/Pivot/GameEvent"]
+y_sort_enabled = true
 polygon = PackedVector2Array(-41, -1, -32, -7, -18, -11, -8, -13, 10, -13, 32, -8, 41, -2, 41, 5, 19, 12, 6, 14, -9, 14, -30, 9, -41, 5)
 metadata/_edit_lock_ = true

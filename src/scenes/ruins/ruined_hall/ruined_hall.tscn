@@ -24,10 +24,10 @@ size = Vector2(20, 200)
 size = Vector2(45, 127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxry0"]
-size = Vector2(15, 57)
+size = Vector2(15, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obl23"]
-size = Vector2(15, 57)
+size = Vector2(15, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wd4rd"]
 size = Vector2(33, 101)
@@ -36,15 +36,16 @@ size = Vector2(33, 101)
 size = Vector2(33, 44)
 
 [node name="RuinedHall" type="Node2D"]
+y_sort_enabled = true
 
 [node name="SceneBG" parent="." instance=ExtResource("1_aneab")]
 texture = ExtResource("2_ry10p")
-scene = 13
 bg_images = Array[Texture2D]([ExtResource("2_ry10p")])
 collision_image = ExtResource("3_l5c6g")
 metadata/_edit_lock_ = true
 
 [node name="ToRuinsEntrance" parent="." instance=ExtResource("4_h4adm")]
+y_sort_enabled = true
 position = Vector2(115, 414)
 to_scene = "FOREST_RUINS_ENTRANCE"
 scene_name_valid = true
@@ -52,6 +53,7 @@ event_area = SubResource("RectangleShape2D_gijkd")
 to_location = Vector2(648, 304)
 
 [node name="ToSquareSouth" parent="." instance=ExtResource("4_h4adm")]
+y_sort_enabled = true
 position = Vector2(806, 345)
 to_scene = "RUINS_SQUARE_SOUTH"
 scene_name_valid = true
@@ -60,6 +62,7 @@ to_east = true
 preserve_y = true
 
 [node name="Altar" type="Node2D" parent="."]
+y_sort_enabled = true
 position = Vector2(682, 317)
 script = ExtResource("5_da778")
 
@@ -71,36 +74,52 @@ position = Vector2(-0.5, 10.5)
 shape = SubResource("RectangleShape2D_xw81n")
 
 [node name="Device" type="Node2D" parent="."]
+y_sort_enabled = true
 position = Vector2(761, 461)
 script = ExtResource("7_d7cs0")
 
 [node name="GameEvent" parent="Device" instance=ExtResource("5_ugdka")]
+y_sort_enabled = true
 
 [node name="CollisionShape2D" parent="Device/GameEvent" index="0"]
-visible = false
-position = Vector2(-1.5, 16.5)
+position = Vector2(-1.5, 35)
 shape = SubResource("RectangleShape2D_pxry0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Device"]
-visible = false
+y_sort_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Device/StaticBody2D"]
-position = Vector2(-1.5, 16.5)
+y_sort_enabled = true
+position = Vector2(-1.5, 35)
 shape = SubResource("RectangleShape2D_obl23")
 
 [node name="DeviceBack" type="Sprite2D" parent="Device"]
+y_sort_enabled = true
+position = Vector2(0, 33.305)
 texture = ExtResource("7_wnl16")
+offset = Vector2(0, -33)
 
-[node name="RodSprite" type="Sprite2D" parent="Device"]
-position = Vector2(5, 1)
-rotation = -2.44346
+[node name="RodUp" type="Sprite2D" parent="Device"]
+y_sort_enabled = true
+position = Vector2(6, 35)
 texture = ExtResource("9_27r2e")
-offset = Vector2(-5, -16)
+offset = Vector2(-5, -49)
+
+[node name="RodDown" type="Sprite2D" parent="Device"]
+y_sort_enabled = true
+position = Vector2(6, 35)
+texture = ExtResource("9_27r2e")
+offset = Vector2(-5, -18)
+flip_v = true
 
 [node name="DeviceFront" type="Sprite2D" parent="Device"]
+y_sort_enabled = true
+position = Vector2(0, 35.33)
 texture = ExtResource("10_ggv13")
+offset = Vector2(0, -35)
 
 [node name="StoneDoor" type="Node2D" parent="."]
+z_index = -1
 position = Vector2(800, 364)
 script = ExtResource("11_wiar2")
 

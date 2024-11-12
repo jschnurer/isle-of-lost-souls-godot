@@ -4,6 +4,10 @@ extends Node
 # etc. for debug purposes. Before shipping the game, remove this file completely.
 
 func _ready():
+	# Kill the splash screens
+	var splash_screens = get_node("/root/SplashScreens")
+	splash_screens.queue_free()
+	
 	Inventory.add_item(Enums.ItemSlugs.RUINS_ROD)
 	Inventory.add_item(Enums.ItemSlugs.SLEDGE)
 	
@@ -15,7 +19,7 @@ func _ready():
 	SignalBus.toggle_player.emit(args)
 	
 	var tele_args = TeleportArgs.new()
-	tele_args.to_scene = Enums.Scenes.RUINS_SQUARE_SOUTH
+	tele_args.to_scene = Enums.Scenes.RUINS_SQUARE_NORTH
 	tele_args.to_location = Vector2(417, 338)
 	SignalBus.transfer_player_to_scene.emit(tele_args)
 	

@@ -26,6 +26,7 @@ size = Vector2(40, 31)
 size = Vector2(40, 31)
 
 [node name="QuietFork" type="Node2D"]
+y_sort_enabled = true
 
 [node name="SceneBG" parent="." instance=ExtResource("1_ltkpc")]
 texture = ExtResource("2_4x3go")

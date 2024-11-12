@@ -11,6 +11,7 @@ size = Vector2(816, 50)
 
 [node name="SceneBG" type="TextureRect" groups=["GameScene"]]
 process_mode = 3
+z_index = -1
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0

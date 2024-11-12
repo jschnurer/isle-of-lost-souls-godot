@@ -18,6 +18,10 @@ var _variant: SpriteVariant = SpriteVariant.NORMAL
 
 func variant_changed():
 	$Sprite.texture = sprites[_variant]
+	if (_variant == SpriteVariant.NORMAL):
+		$Sprite.offset = Vector2(0, -14)
+	else:
+		$Sprite.offset = Vector2(0, -7)
 	
 	$GameEvent/NormalCollisionShape.disabled = _variant != SpriteVariant.NORMAL
 	$StaticBody2D/NormalCollisionShape.disabled = _variant != SpriteVariant.NORMAL

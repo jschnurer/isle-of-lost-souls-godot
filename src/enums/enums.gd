@@ -296,7 +296,7 @@ var ScenePaths = {
 	Scenes.SWAMP_CAMPSITE: "res://src/scenes/swamp/",
 	Scenes.SWAMP_DEAD_TREE: "res://src/scenes/swamp/",
 	Scenes.SWAMP_DRY_TRAIL: "res://src/scenes/swamp/",
-	Scenes.SWAMP_FOREST_ENTRANCE: "res://src/scenes/swamp/",
+	Scenes.SWAMP_FOREST_ENTRANCE: "res://src/scenes/swamp/near_forest/near_forest.tscn",
 	Scenes.SWAMP_HUT_INTERIOR: "res://src/scenes/swamp/",
 	Scenes.SWAMP_HUT_EXTERIOR: "res://src/scenes/swamp/",
 	Scenes.SWAMP_MAMMOTH_SKULL: "res://src/scenes/swamp/",

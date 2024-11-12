@@ -1,17 +1,22 @@
 extends "res://src/events/game_event/base_event.gd"
 
-@onready var rod_sprite = $RodSprite
+@onready var rod_sprite_up = $RodUp
+@onready var rod_sprite_down = $RodDown
 
 func _ready():
 	super._ready()
 	update_sprite()
 	
 func update_sprite():
-	rod_sprite.visible = GameVars.get_var(Enums.Vars.ROD_IN_DEVICE) == true
-	if (GameVars.get_var(Enums.Vars.RUIN_HALL_DOOR_OPEN) != true):
-		rod_sprite.rotation_degrees = -140
-	else:
-		rod_sprite.rotation_degrees = 0
+	if (not GameVars.get_var(Enums.Vars.ROD_IN_DEVICE)):
+		rod_sprite_up.visible = false
+		rod_sprite_down.visible = false
+		return
+		
+	var is_door_open = GameVars.get_var(Enums.Vars.RUIN_HALL_DOOR_OPEN)
+
+	rod_sprite_up.visible = not is_door_open
+	rod_sprite_down.visible = is_door_open == true
 
 func investigate():
 	var message = GameScript.get_entry("Ruins.Hall.Device_Look") + " "

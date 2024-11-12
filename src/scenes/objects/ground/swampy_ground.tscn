@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0bedbsnj460f"]
+
+[ext_resource type="Texture2D" uid="uid://dn7ick78qa2pv" path="res://art/actors/swamp_grass_short1.png" id="1_v6jnb"]
+[ext_resource type="Script" path="res://src/scenes/objects/ground/swampy_ground.gd" id="2_bpubh"]
+[ext_resource type="Texture2D" uid="uid://bmp2o1e0egcf8" path="res://art/actors/swamp_grass_short2.png" id="3_rpwxm"]
+
+[node name="SwampyGround" type="Sprite2D"]
+texture = ExtResource("1_v6jnb")
+script = ExtResource("2_bpubh")
+textures = Array[Texture2D]([ExtResource("1_v6jnb"), ExtResource("3_rpwxm")])

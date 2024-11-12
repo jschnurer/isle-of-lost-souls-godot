@@ -3,12 +3,19 @@ extends Node2D
 @export var scene_bg: SceneBG
 @export var dark_scene_bg: Texture2D
 @export var light_scene_bg: Texture2D
+@onready var dark_death = $DarkDeath
 
 func _ready():
 	handle_darkness()
 	
 func handle_darkness():
 	if (!Inventory.has_item(Enums.ItemSlugs.FLASHLIGHT)):
+		# Delete all child nodes except DarkDeath since those children can't be seen.
+		var all_children = get_children()
+		for child in all_children:
+			if child != dark_death:
+				child.queue_free()
+		
 		var img_arr: Array[Texture2D] = [dark_scene_bg]
 		scene_bg.bg_images = img_arr
 		

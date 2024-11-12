@@ -6,32 +6,34 @@
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="4_1xe31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iom2f"]
-size = Vector2(31, 38)
+size = Vector2(33.5, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_em0ra"]
-size = Vector2(25, 20)
+size = Vector2(25, 10.75)
 
 [node name="Cairn" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_bo1in")
 sprites = Array[Texture2D]([ExtResource("2_fbl81"), ExtResource("3_y582g")])
 
 [node name="Sprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
 texture = ExtResource("2_fbl81")
+offset = Vector2(0, -14)
 
 [node name="GameEvent" parent="." instance=ExtResource("4_1xe31")]
 visible = false
 
 [node name="CollisionShape2D" parent="GameEvent" index="0"]
-visible = false
 position = Vector2(-0.5, 0)
 
 [node name="NormalCollisionShape" type="CollisionShape2D" parent="GameEvent"]
-position = Vector2(-0.5, 0)
+position = Vector2(-0.75, -0.5)
 shape = SubResource("RectangleShape2D_iom2f")
 
 [node name="ShortCollisionShape" type="CollisionShape2D" parent="GameEvent"]
-position = Vector2(0.5, 0)
+position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_em0ra")
 disabled = true
 
@@ -43,7 +45,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_iom2f")
 
 [node name="ShortCollisionShape" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0.5, 0)
+position = Vector2(1, -1.625)
 shape = SubResource("RectangleShape2D_em0ra")
 disabled = true
 

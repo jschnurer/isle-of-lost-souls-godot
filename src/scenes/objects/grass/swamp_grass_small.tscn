@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2ovnve1k5fpv"]
+
+[ext_resource type="Texture2D" uid="uid://bx0mncyyhqwb8" path="res://art/actors/swamp_grass2.png" id="1_u1skr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x63a7"]
+size = Vector2(29, 10.25)
+
+[node name="SwampGrassSmall" type="Sprite2D"]
+y_sort_enabled = true
+texture = ExtResource("1_u1skr")
+offset = Vector2(0, -12)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1.125)
+shape = SubResource("RectangleShape2D_x63a7")

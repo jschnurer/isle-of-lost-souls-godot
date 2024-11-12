@@ -34,10 +34,10 @@ DialogManager="*res://src/ui/dialog/DialogManager.tscn"
 ChoiceManager="*res://src/ui/choice_manager/choice_manager.tscn"
 InventoryManager="*res://src/ui/inventory_manager/inventory_manager.tscn"
 SaveManager="*res://src/singletons/SaveManager.gd"
-Debug="*res://src/debug.gd"
 GameTimer="*res://src/singletons/GameTimer.gd"
 World="*res://src/scenes/world.tscn"
 ScreenFader="*res://src/ui/screen_fader/ScreenFader.tscn"
+Debug="*res://src/debug.gd"
 
 [display]
 

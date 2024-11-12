@@ -12,16 +12,17 @@
 [ext_resource type="Script" path="res://src/scenes/ruins/hatch_interior/interactables/etavoner_rune.gd" id="10_cpx4t"]
 [ext_resource type="Texture2D" uid="uid://cuh1ml3ob01n3" path="res://art/actors/etavoner_rune.png" id="11_xa15p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_66yqy"]
-size = Vector2(8, 61)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp4d4"]
 size = Vector2(12, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gcyvm"]
 size = Vector2(10, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66yqy"]
+size = Vector2(8, 61)
+
 [node name="HatchInterior" type="Node2D"]
+y_sort_enabled = true
 
 [node name="SceneBG" parent="." instance=ExtResource("1_hcgg7")]
 texture = ExtResource("2_w8o0y")
@@ -33,15 +34,77 @@ hide_collider = true
 metadata/_edit_lock_ = true
 
 [node name="DarkScene" parent="." node_paths=PackedStringArray("scene_bg") instance=ExtResource("4_rg18a")]
+y_sort_enabled = true
 scene_bg = NodePath("../SceneBG")
 dark_scene_bg = ExtResource("5_xtsqa")
 light_scene_bg = ExtResource("2_w8o0y")
 metadata/_edit_lock_ = true
 
+[node name="DarkDeath" parent="DarkScene" index="0"]
+y_sort_enabled = true
+
+[node name="GameEvent" parent="DarkScene/DarkDeath" index="0"]
+y_sort_enabled = true
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DarkScene/DarkDeath/GameEvent" index="1"]
+y_sort_enabled = true
 polygon = PackedVector2Array(212, 377, 219, 385, 220, 392, 219, 400, 215, 406, 211, 412, 204, 416, 246, 436, 263, 408, 261, 380, 255, 364)
 
+[node name="DustyNote" type="Node2D" parent="DarkScene"]
+y_sort_enabled = true
+position = Vector2(302, 381)
+script = ExtResource("8_nwte1")
+auto_destroy_flag = 17
+
+[node name="GameEvent" parent="DarkScene/DustyNote" instance=ExtResource("7_f8dwq")]
+visible = false
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="DarkScene/DustyNote/GameEvent" index="0"]
+y_sort_enabled = true
+shape = SubResource("RectangleShape2D_qp4d4")
+
+[node name="Sprite2D" type="Sprite2D" parent="DarkScene/DustyNote"]
+y_sort_enabled = true
+texture = ExtResource("9_vkq4f")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DarkScene/DustyNote"]
+visible = false
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DarkScene/DustyNote/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("RectangleShape2D_qp4d4")
+
+[node name="EtavonerRune" type="Node2D" parent="DarkScene"]
+y_sort_enabled = true
+position = Vector2(352, 392)
+script = ExtResource("10_cpx4t")
+auto_destroy_flag = 18
+
+[node name="GameEvent" parent="DarkScene/EtavonerRune" instance=ExtResource("7_f8dwq")]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" parent="DarkScene/EtavonerRune/GameEvent" index="0"]
+y_sort_enabled = true
+shape = SubResource("RectangleShape2D_gcyvm")
+
+[node name="Sprite2D" type="Sprite2D" parent="DarkScene/EtavonerRune"]
+y_sort_enabled = true
+texture = ExtResource("11_xa15p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DarkScene/EtavonerRune"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DarkScene/EtavonerRune/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("RectangleShape2D_gcyvm")
+
 [node name="Ladder" type="Node2D" parent="."]
+y_sort_enabled = true
 script = ExtResource("6_ugwul")
 metadata/_edit_lock_ = true
 
@@ -51,48 +114,7 @@ metadata/_edit_lock_ = true
 position = Vector2(143, 370.5)
 shape = SubResource("RectangleShape2D_66yqy")
 
-[node name="DustyNote" type="Node2D" parent="."]
-position = Vector2(302, 381)
-script = ExtResource("8_nwte1")
-auto_destroy_flag = 17
-
-[node name="GameEvent" parent="DustyNote" instance=ExtResource("7_f8dwq")]
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" parent="DustyNote/GameEvent" index="0"]
-shape = SubResource("RectangleShape2D_qp4d4")
-
-[node name="Sprite2D" type="Sprite2D" parent="DustyNote"]
-texture = ExtResource("9_vkq4f")
-metadata/_edit_lock_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="DustyNote"]
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="DustyNote/StaticBody2D"]
-shape = SubResource("RectangleShape2D_qp4d4")
-
-[node name="EtavonerRune" type="Node2D" parent="."]
-position = Vector2(352, 392)
-script = ExtResource("10_cpx4t")
-auto_destroy_flag = 18
-
-[node name="GameEvent" parent="EtavonerRune" instance=ExtResource("7_f8dwq")]
-
-[node name="CollisionShape2D" parent="EtavonerRune/GameEvent" index="0"]
-shape = SubResource("RectangleShape2D_gcyvm")
-
-[node name="Sprite2D" type="Sprite2D" parent="EtavonerRune"]
-texture = ExtResource("11_xa15p")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="EtavonerRune"]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="EtavonerRune/StaticBody2D"]
-shape = SubResource("RectangleShape2D_gcyvm")
-
 [editable path="DarkScene"]
+[editable path="DarkScene/DustyNote/GameEvent"]
+[editable path="DarkScene/EtavonerRune/GameEvent"]
 [editable path="Ladder/GameEvent"]
-[editable path="DustyNote/GameEvent"]
-[editable path="EtavonerRune/GameEvent"]

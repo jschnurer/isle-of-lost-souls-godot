@@ -30,6 +30,7 @@ size = Vector2(37, 53)
 size = Vector2(40, 20)
 
 [node name="RuinedSquareSouth" type="Node2D"]
+y_sort_enabled = true
 
 [node name="SceneBG" parent="." instance=ExtResource("1_5r61t")]
 texture = ExtResource("2_150u5")
