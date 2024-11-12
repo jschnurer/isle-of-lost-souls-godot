@@ -9,6 +9,7 @@ func _ready():
 func play_bgm(stream: AudioStream, volume: float):
 	# If this track is already playing, no need to restart it.
 	if (audio_player.playing and audio_player.stream.resource_path == stream.resource_path):
+		audio_player.volume_db = volume
 		return
 	
 	audio_player.stop()

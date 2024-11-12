@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dykio4jrk740p"]
+[gd_scene load_steps=16 format=3 uid="uid://dykio4jrk740p"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_hcgg7"]
 [ext_resource type="Texture2D" uid="uid://crgghkyhhin6d" path="res://art/backgrounds/ruins/Hatch Interior.png" id="2_w8o0y"]
 [ext_resource type="Texture2D" uid="uid://bdunc5mpu20pc" path="res://art/backgrounds/ruins/Hatch Interior Collision.png" id="3_kd76h"]
+[ext_resource type="AudioStream" uid="uid://bilox2ipgetn5" path="res://audio/bgm/ruins-loop.ogg" id="4_b367l"]
 [ext_resource type="PackedScene" uid="uid://d08ryhtjgu1tq" path="res://src/scenes/shared/dark_scene/DarkScene.tscn" id="4_rg18a"]
 [ext_resource type="Texture2D" uid="uid://bw6ijx0g8r73j" path="res://art/backgrounds/ruins/Hatch Interior Dark.png" id="5_xtsqa"]
 [ext_resource type="Script" path="res://src/scenes/ruins/hatch_interior/interactables/ladder.gd" id="6_ugwul"]
@@ -31,6 +32,8 @@ area = 5
 bg_images = Array[Texture2D]([ExtResource("2_w8o0y")])
 collision_image = ExtResource("3_kd76h")
 hide_collider = true
+bgm_stream = ExtResource("4_b367l")
+bgm_volume = -10.0
 metadata/_edit_lock_ = true
 
 [node name="DarkScene" parent="." node_paths=PackedStringArray("scene_bg") instance=ExtResource("4_rg18a")]

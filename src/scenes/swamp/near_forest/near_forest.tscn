@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfbtbdn440via"]
+[gd_scene load_steps=15 format=3 uid="uid://dfbtbdn440via"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_03msu"]
 [ext_resource type="Texture2D" uid="uid://dqog5r5lgsc47" path="res://art/backgrounds/swamp/Near Forest.png" id="2_rap11"]
 [ext_resource type="Texture2D" uid="uid://cie5odsuol1sq" path="res://art/backgrounds/swamp/Near Forest Collision.png" id="3_akfwn"]
+[ext_resource type="AudioStream" uid="uid://cfti2ptvnjkxv" path="res://audio/bgm/swamp-loop.ogg" id="4_5nqwj"]
 [ext_resource type="PackedScene" uid="uid://c0bedbsnj460f" path="res://src/scenes/objects/ground/swampy_ground.tscn" id="4_qkv7h"]
 [ext_resource type="Texture2D" uid="uid://bmp2o1e0egcf8" path="res://art/actors/swamp_grass_short2.png" id="5_hw8v2"]
 [ext_resource type="PackedScene" uid="uid://duyi2dghibnak" path="res://src/scenes/objects/tree/swamp_tree.tscn" id="6_bmxtu"]
@@ -26,6 +27,7 @@ area = 6
 bg_images = Array[Texture2D]([ExtResource("2_rap11")])
 collision_image = ExtResource("3_akfwn")
 hide_collider = true
+bgm_stream = ExtResource("4_5nqwj")
 metadata/_edit_lock_ = true
 
 [node name="Vegetation" type="Node2D" parent="."]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://cvjrpv3yqfru1"]
+[gd_scene load_steps=22 format=3 uid="uid://cvjrpv3yqfru1"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_aneab"]
 [ext_resource type="Texture2D" uid="uid://cxst11l4q2lk7" path="res://art/backgrounds/ruins/Ruined Hall.png" id="2_ry10p"]
 [ext_resource type="Texture2D" uid="uid://4y864h47rh3g" path="res://art/backgrounds/ruins/Ruined Hall Collision.png" id="3_l5c6g"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="4_h4adm"]
+[ext_resource type="AudioStream" uid="uid://bilox2ipgetn5" path="res://audio/bgm/ruins-loop.ogg" id="4_lbkrj"]
 [ext_resource type="Script" path="res://src/scenes/ruins/ruined_hall/interactables/altar.gd" id="5_da778"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="5_ugdka"]
 [ext_resource type="Script" path="res://src/scenes/ruins/ruined_hall/interactables/device.gd" id="7_d7cs0"]
@@ -42,6 +43,8 @@ y_sort_enabled = true
 texture = ExtResource("2_ry10p")
 bg_images = Array[Texture2D]([ExtResource("2_ry10p")])
 collision_image = ExtResource("3_l5c6g")
+bgm_stream = ExtResource("4_lbkrj")
+bgm_volume = -5.0
 metadata/_edit_lock_ = true
 
 [node name="ToRuinsEntrance" parent="." instance=ExtResource("4_h4adm")]

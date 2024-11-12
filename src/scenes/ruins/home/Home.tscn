@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bcj1uajldiqxg"]
+[gd_scene load_steps=14 format=3 uid="uid://bcj1uajldiqxg"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_b0hpe"]
 [ext_resource type="Texture2D" uid="uid://do4fpk6otvomk" path="res://art/backgrounds/ruins/Ruined Home.png" id="2_djfc7"]
 [ext_resource type="Texture2D" uid="uid://dacmql6l3qfcs" path="res://art/backgrounds/ruins/Ruined Home Collision.png" id="3_krbiq"]
 [ext_resource type="Script" path="res://src/scenes/ruins/home/interactables/rubble.gd" id="4_3dog2"]
+[ext_resource type="AudioStream" uid="uid://bilox2ipgetn5" path="res://audio/bgm/ruins-loop.ogg" id="4_b5jee"]
 [ext_resource type="Script" path="res://src/scenes/ruins/home/interactables/chest.gd" id="4_d7q5q"]
 [ext_resource type="Texture2D" uid="uid://n44i7xcakxec" path="res://art/actors/chest_closed.png" id="4_tcf3d"]
 [ext_resource type="Texture2D" uid="uid://dc6p5xfyd0sgy" path="res://art/actors/chest_open.png" id="6_0131s"]
@@ -27,6 +28,8 @@ area = 5
 bg_images = Array[Texture2D]([ExtResource("2_djfc7")])
 collision_image = ExtResource("3_krbiq")
 hide_collider = true
+bgm_stream = ExtResource("4_b5jee")
+bgm_volume = -5.0
 metadata/_edit_lock_ = true
 
 [node name="Rubble" type="Node2D" parent="."]

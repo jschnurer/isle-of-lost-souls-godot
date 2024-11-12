@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cg6ouj17dub12"]
+[gd_scene load_steps=18 format=3 uid="uid://cg6ouj17dub12"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_5r61t"]
 [ext_resource type="Texture2D" uid="uid://cauqdan3il45h" path="res://art/backgrounds/ruins/Ruined Square.png" id="2_150u5"]
 [ext_resource type="Texture2D" uid="uid://s61f1nl0cbch" path="res://art/backgrounds/ruins/Ruined Square Collision.png" id="3_2jk2n"]
 [ext_resource type="Script" path="res://src/scenes/ruins/square_south/interactables/rubble.gd" id="4_4mvjw"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="4_5qa8m"]
+[ext_resource type="AudioStream" uid="uid://bilox2ipgetn5" path="res://audio/bgm/ruins-loop.ogg" id="4_qvpt0"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="4_ywec3"]
 [ext_resource type="Texture2D" uid="uid://bx0lkhuknrkwa" path="res://art/actors/new_wall.png" id="7_gowhm"]
 [ext_resource type="Script" path="res://src/scenes/ruins/square_south/interactables/wall.gd" id="7_p4hu1"]
@@ -39,6 +40,7 @@ area = 5
 bg_images = Array[Texture2D]([ExtResource("2_150u5")])
 collision_image = ExtResource("3_2jk2n")
 hide_collider = true
+bgm_stream = ExtResource("4_qvpt0")
 metadata/_edit_lock_ = true
 
 [node name="ToHall" parent="." instance=ExtResource("4_5qa8m")]

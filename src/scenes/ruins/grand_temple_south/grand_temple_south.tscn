@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt78de4j06a4m"]
+[gd_scene load_steps=9 format=3 uid="uid://dt78de4j06a4m"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_tsnuy"]
 [ext_resource type="Texture2D" uid="uid://berfwpp6trpqy" path="res://art/backgrounds/ruins/Grand Temple South.png" id="2_wqucr"]
 [ext_resource type="Texture2D" uid="uid://5bc07u311j81" path="res://art/backgrounds/ruins/Grand Temple South Collision.png" id="3_cll0j"]
+[ext_resource type="AudioStream" uid="uid://bilox2ipgetn5" path="res://audio/bgm/ruins-loop.ogg" id="4_k5uui"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="4_rgcfg"]
 [ext_resource type="PackedScene" uid="uid://d2m1pp5vbivfi" path="res://src/scenes/ruins/square_north/interactables/banner.tscn" id="5_27gb4"]
 
@@ -20,6 +21,8 @@ area = 5
 bg_images = Array[Texture2D]([ExtResource("2_wqucr")])
 collision_image = ExtResource("3_cll0j")
 hide_collider = true
+bgm_stream = ExtResource("4_k5uui")
+bgm_volume = -5.0
 metadata/_edit_lock_ = true
 
 [node name="ToSquareNorth" parent="." instance=ExtResource("4_rgcfg")]

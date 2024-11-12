@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://b6twtjgn4l77"]
+[gd_scene load_steps=18 format=3 uid="uid://b6twtjgn4l77"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_5ubrn"]
 [ext_resource type="Texture2D" uid="uid://bpqd6it8kd0u5" path="res://art/backgrounds/ruins/Ruined Square North.png" id="2_6s45c"]
 [ext_resource type="Texture2D" uid="uid://dd314jv0cblh6" path="res://art/backgrounds/ruins/Ruined Square North Collision.png" id="3_0dheo"]
 [ext_resource type="Script" path="res://src/scenes/ruins/square_north/interactables/rubble.gd" id="4_3cg6j"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="4_8ngoq"]
+[ext_resource type="AudioStream" uid="uid://bilox2ipgetn5" path="res://audio/bgm/ruins-loop.ogg" id="4_x2w1i"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="5_u8mvh"]
 [ext_resource type="Script" path="res://src/scenes/ruins/square_north/interactables/temple.gd" id="6_7jpe4"]
 [ext_resource type="PackedScene" uid="uid://d2m1pp5vbivfi" path="res://src/scenes/ruins/square_north/interactables/banner.tscn" id="7_a7w8t"]
@@ -35,6 +36,7 @@ area = 5
 bg_images = Array[Texture2D]([ExtResource("2_6s45c")])
 collision_image = ExtResource("3_0dheo")
 hide_collider = true
+bgm_stream = ExtResource("4_x2w1i")
 metadata/_edit_lock_ = true
 
 [node name="ToSquareSouth" parent="." instance=ExtResource("4_8ngoq")]

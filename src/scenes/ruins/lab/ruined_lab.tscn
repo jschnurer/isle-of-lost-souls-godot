@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://c46mmju3yxp4m"]
+[gd_scene load_steps=24 format=3 uid="uid://c46mmju3yxp4m"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_em0kh"]
 [ext_resource type="Texture2D" uid="uid://cme07a6i3tud2" path="res://art/backgrounds/ruins/Ruined Lab.png" id="2_kuwq4"]
 [ext_resource type="Texture2D" uid="uid://w0uu8ji4k3f" path="res://art/backgrounds/ruins/Ruined Lab Collision.png" id="3_64w1r"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="4_kt7ck"]
+[ext_resource type="AudioStream" uid="uid://bilox2ipgetn5" path="res://audio/bgm/ruins-loop.ogg" id="4_sv5w0"]
 [ext_resource type="Texture2D" uid="uid://cdym8x0mlj0tf" path="res://art/actors/rug.png" id="5_0naj7"]
 [ext_resource type="Script" path="res://src/scenes/ruins/lab/interactables/rug.gd" id="5_b0r51"]
 [ext_resource type="Texture2D" uid="uid://8k4tmojed5c0" path="res://art/actors/rug_rolled.png" id="6_q5fwa"]
@@ -46,14 +47,19 @@ size = Vector2(26, 47)
 
 [node name="SceneBG" parent="." instance=ExtResource("1_em0kh")]
 texture = ExtResource("2_kuwq4")
-scene = 13
 bg_images = Array[Texture2D]([ExtResource("2_kuwq4")])
 collision_image = ExtResource("3_64w1r")
 hide_collider = true
+bgm_stream = ExtResource("4_sv5w0")
+bgm_volume = -5.0
 metadata/_edit_lock_ = true
 
 [node name="CollisionFromImage" parent="SceneBG" index="0"]
 visible = false
+
+[node name="BgmPlayer" parent="SceneBG" index="1"]
+stream = ExtResource("4_sv5w0")
+volume_db = -5.0
 
 [node name="CollisionFromFrame" parent="SceneBG" index="2"]
 visible = false
