@@ -298,7 +298,7 @@ var ScenePaths = {
 
 	Scenes.SWAMP_BUBBLING_MUCK: "res://src/scenes/swamp/",
 	Scenes.SWAMP_CAMPSITE: "res://src/scenes/swamp/",
-	Scenes.SWAMP_DEAD_TREE: "res://src/scenes/swamp/",
+	Scenes.SWAMP_DEAD_TREE: "res://src/scenes/swamp/dead_tree/dead_tree.tscn",
 	Scenes.SWAMP_DRY_TRAIL: "res://src/scenes/swamp/",
 	Scenes.SWAMP_FOREST_ENTRANCE: "res://src/scenes/swamp/near_forest/near_forest.tscn",
 	Scenes.SWAMP_HUT_INTERIOR: "res://src/scenes/swamp/",
@@ -306,7 +306,7 @@ var ScenePaths = {
 	Scenes.SWAMP_MAMMOTH_SKULL: "res://src/scenes/swamp/",
 	Scenes.SWAMP_MOSQUITO_SPAWN: "res://src/scenes/swamp/",
 	Scenes.SWAMP_RIDGE: "res://src/scenes/swamp/",
-	Scenes.SWAMP_STANDING_WATER: "res://src/scenes/swamp/",
+	Scenes.SWAMP_STANDING_WATER: "res://src/scenes/swamp/standing_water/standing_water.tscn",
 	Scenes.SWAMP_STATUE: "res://src/scenes/swamp/",
 	Scenes.SWAMP_TOPPLED_LOG: "res://src/scenes/swamp/toppled_tree/toppled_tree.tscn",
 	Scenes.SWAMP_TOPPLED_TREE_MUSHROOMS: "res://src/scenes/swamp/toppled_tree_mushrooms/toppled_tree_mushrooms.tscn",

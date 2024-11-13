@@ -170,6 +170,15 @@
 	  "Mushroom_Look_Orange": "It's a bright orange color.",
 	  "Mushroom_Interact_Glow": "You touch the mushroom and it begins to glow...",
 	  "Mushroom_Interact_Glow_Final": "You touch the mushroom and it begins to glow. Now all of the colored mushrooms on the log are glowing.\n\nA faint glimmer appears in the air nearby.",
+	},
+	"Dead_Tree": {
+	  "Tree_Look": "The tree is totally dead and leafless. Its boney, contorted branches twist strangely upward. The brackish swampwater is all it's had to drink for a long, long time and it has stained the wood black. It's slick with mold and rot.",
+	  "Tree_Take": "Even if you could, you wouldn't want to."
+	},
+	"Standing_Water": {
+	  "Water_Look": "It's a large pool of reeking standing water. It would almost be more of a lake--that is, if it was any deeper than a couple feet. The water has a film of algae across its surface. Strange, white plants that look like large puffballs grow sparsely on the surface of the pool.",
+	  "Puffball_Near_Shore": "One of the weird puffball things is growing in the water near the shore here.",
+	  "Puffball_Look": "It's is an off-white color like bone and about a foot in diameter. The surface isn't smooth, but instead it looks like it grows multitudinous little white spikes all over. There's an umbilical-like stem of the same color that snakes from its underside down into the putrid depths of the water."
 	}
   },
   "Game_Overs": {
