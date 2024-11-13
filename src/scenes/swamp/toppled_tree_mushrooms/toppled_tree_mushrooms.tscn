@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq763cnjb6a3h"]
+[gd_scene load_steps=13 format=3 uid="uid://cq763cnjb6a3h"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_momlb"]
 [ext_resource type="Texture2D" uid="uid://8x0x1hgrodtk" path="res://art/backgrounds/swamp/Toppled Tree Mushrooms.png" id="2_2gqu2"]
@@ -9,7 +9,26 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igvoq"]
 size = Vector2(99, 109)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqq7s"]
+size = Vector2(101, 103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyhb"]
+size = Vector2(112, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dynml"]
+size = Vector2(59, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xng2h"]
+size = Vector2(69, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r75sg"]
+size = Vector2(92, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2vgd"]
+size = Vector2(101, 135)
+
 [node name="ToppledTreeMushrooms" type="Node2D"]
+metadata/_edit_lock_ = true
 
 [node name="SceneBG" parent="." instance=ExtResource("1_momlb")]
 texture = ExtResource("2_2gqu2")
@@ -18,16 +37,98 @@ area = 6
 bg_images = Array[Texture2D]([ExtResource("2_2gqu2")])
 use_collision_frame = true
 bgm_stream = ExtResource("3_mcier")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="BackArrow" parent="." instance=ExtResource("4_0fga4")]
 
-[node name="GreenMushroom" parent="." instance=ExtResource("5_x7hrn")]
+[node name="Green" parent="." instance=ExtResource("5_x7hrn")]
 position = Vector2(83, 274)
 color = "Green"
 
-[node name="CollisionShape2D" parent="GreenMushroom/GameEvent" index="0"]
+[node name="CollisionShape2D" parent="Green/GameEvent" index="0"]
 position = Vector2(-2.5, 16.5)
 shape = SubResource("RectangleShape2D_igvoq")
 
-[editable path="GreenMushroom"]
-[editable path="GreenMushroom/GameEvent"]
+[node name="Yellow" parent="." instance=ExtResource("5_x7hrn")]
+position = Vector2(210, 260)
+color = "Yellow"
+
+[node name="GameEvent" parent="Yellow" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Yellow/GameEvent" index="0"]
+position = Vector2(-3.5, 13.5)
+shape = SubResource("RectangleShape2D_oqq7s")
+
+[node name="Indigo" parent="." instance=ExtResource("5_x7hrn")]
+position = Vector2(333, 265)
+color = "Indigo"
+
+[node name="GameEvent" parent="Indigo" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Indigo/GameEvent" index="0"]
+position = Vector2(-2, 20)
+shape = SubResource("RectangleShape2D_xbyhb")
+
+[node name="Red" parent="." instance=ExtResource("5_x7hrn")]
+position = Vector2(433, 265)
+color = "Red"
+
+[node name="GameEvent" parent="Red" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Red/GameEvent" index="0"]
+position = Vector2(-10.5, 20)
+shape = SubResource("RectangleShape2D_dynml")
+metadata/_edit_lock_ = true
+
+[node name="Purple" parent="." instance=ExtResource("5_x7hrn")]
+position = Vector2(523, 255)
+color = "Purple"
+
+[node name="GameEvent" parent="Purple" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Purple/GameEvent" index="0"]
+position = Vector2(-10.5, 19.5)
+shape = SubResource("RectangleShape2D_xng2h")
+metadata/_edit_lock_ = true
+
+[node name="Blue" parent="." instance=ExtResource("5_x7hrn")]
+position = Vector2(619, 267)
+color = "Blue"
+
+[node name="GameEvent" parent="Blue" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Blue/GameEvent" index="0"]
+position = Vector2(-1, 17)
+shape = SubResource("RectangleShape2D_r75sg")
+
+[node name="Orange" parent="." instance=ExtResource("5_x7hrn")]
+position = Vector2(723, 265)
+color = "Orange"
+
+[node name="GameEvent" parent="Orange" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="Orange/GameEvent" index="0"]
+position = Vector2(-1.5, 3.5)
+shape = SubResource("RectangleShape2D_p2vgd")
+
+[editable path="Green"]
+[editable path="Green/GameEvent"]
+[editable path="Yellow"]
+[editable path="Yellow/GameEvent"]
+[editable path="Indigo"]
+[editable path="Indigo/GameEvent"]
+[editable path="Red"]
+[editable path="Red/GameEvent"]
+[editable path="Purple"]
+[editable path="Purple/GameEvent"]
+[editable path="Blue"]
+[editable path="Blue/GameEvent"]
+[editable path="Orange"]
+[editable path="Orange/GameEvent"]

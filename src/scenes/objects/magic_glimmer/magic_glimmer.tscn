@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5rf1qx1bbed3"]
+
+[ext_resource type="Texture2D" uid="uid://b5ds4xjixf6my" path="res://art/actors/magic-glimmer.png" id="1_gyb8o"]
+[ext_resource type="Script" path="res://src/scenes/objects/magic_glimmer/opacity_shifter.gd" id="2_jcnhy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dubm"]
+atlas = ExtResource("1_gyb8o")
+region = Rect2(0, 0, 60, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej1i7"]
+atlas = ExtResource("1_gyb8o")
+region = Rect2(60, 0, 60, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5jpe"]
+atlas = ExtResource("1_gyb8o")
+region = Rect2(120, 0, 60, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd8gn"]
+atlas = ExtResource("1_gyb8o")
+region = Rect2(0, 25, 60, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvbwr"]
+atlas = ExtResource("1_gyb8o")
+region = Rect2(60, 25, 60, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0raf"]
+atlas = ExtResource("1_gyb8o")
+region = Rect2(120, 25, 60, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tkcti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dubm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej1i7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5jpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd8gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvbwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0raf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MagicGlimmer" type="AnimatedSprite2D"]
+self_modulate = Color(1, 1, 1, 0.313726)
+sprite_frames = SubResource("SpriteFrames_tkcti")
+autoplay = "default"
+frame_progress = 0.206599
+
+[node name="OpacityShifter" type="Node2D" parent="."]
+process_mode = 3
+script = ExtResource("2_jcnhy")
+
+[node name="OpacityTimer" type="Timer" parent="OpacityShifter"]
+one_shot = true
+autostart = true
+
+[node name="FlipHTimer" type="Timer" parent="OpacityShifter"]
+one_shot = true
+autostart = true
+
+[node name="FlipVTimer" type="Timer" parent="OpacityShifter"]
+one_shot = true
+autostart = true

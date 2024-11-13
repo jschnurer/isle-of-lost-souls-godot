@@ -29,6 +29,7 @@ size = Vector2(230, 22)
 
 [node name="ToppledTree" type="Node2D"]
 y_sort_enabled = true
+metadata/_edit_lock_ = true
 
 [node name="SceneBG" parent="." instance=ExtResource("1_easly")]
 y_sort_enabled = true
@@ -515,6 +516,7 @@ flip_h = true
 y_sort_enabled = true
 position = Vector2(198, 341)
 script = ExtResource("14_m17nf")
+metadata/_edit_lock_ = true
 
 [node name="TreeSprite" type="Sprite2D" parent="ToppledTree"]
 y_sort_enabled = true
