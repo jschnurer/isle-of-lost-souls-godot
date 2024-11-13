@@ -157,6 +157,12 @@
 	}
   },
   "Swamp": {
+	"Shared": {
+	  "Tree_Look": "It's a sickly looking, dead tree. It's covered in fungus and slick with rot.",
+	  "Tree_Take": "Carrying a rot-slicked tree seems problematic. And you have no way of felling it anyway.",
+	  "Cattail_Look": "It's a cattail. They look more like corn dogs than cat tails to you, though.",
+	  "Cattail_Take": "You can't imagine a use for them so you decide to leave them alone."
+	},
 	"Toppled_Tree": {
 	  "Log_Look": "A toppled tree rests here, infested with moss, lichen, and rot. An array of seven colorful mushrooms grow in a neat row.",
 	  "Mushroom_Touch_Moves": "You reach out to touch the mushroom but before you can quite reach it, it shudders and and suddenly shuffles across the log, avoiding your touch. You've never heard of moving mushrooms before!",

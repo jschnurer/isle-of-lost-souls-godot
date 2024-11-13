@@ -1,14 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://duyi2dghibnak"]
+[gd_scene load_steps=4 format=3 uid="uid://duyi2dghibnak"]
 
 [ext_resource type="Texture2D" uid="uid://gsdehb166o5m" path="res://art/actors/swamp_tree.png" id="1_0reow"]
+[ext_resource type="Script" path="res://src/scenes/objects/tree/swamp_tree.gd" id="2_yonxm"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="3_rmkom"]
 
 [node name="SwampTree" type="Sprite2D"]
 y_sort_enabled = true
 texture = ExtResource("1_0reow")
 offset = Vector2(0, -55)
+script = ExtResource("2_yonxm")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, -54)
+polygon = PackedVector2Array(-56, 65, -39, 51, -24, 43, -4, 40, 14, 43, 25, 51, 46, 64, 29, 67, 17, 74, 22, 83, 3, 78, -10, 65, -29, 68)
+
+[node name="GameEvent" parent="." instance=ExtResource("3_rmkom")]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="GameEvent"]
 position = Vector2(0, -54)
 polygon = PackedVector2Array(-56, 65, -39, 51, -24, 43, -4, 40, 14, 43, 25, 51, 46, 64, 29, 67, 17, 74, 22, 83, 3, 78, -10, 65, -29, 68)

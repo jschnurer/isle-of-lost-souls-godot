@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1bqlc4yseggt"]
+[gd_scene load_steps=5 format=3 uid="uid://c1bqlc4yseggt"]
 
 [ext_resource type="Texture2D" uid="uid://cvkqpmpskx371" path="res://art/actors/cattails.png" id="1_q2dnd"]
+[ext_resource type="Script" path="res://src/scenes/objects/cattails/cattails.gd" id="2_7qnqp"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="3_mpiu8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yt08s"]
 size = Vector2(43, 16.5)
@@ -10,9 +12,16 @@ y_sort_enabled = true
 texture_filter = 1
 texture = ExtResource("1_q2dnd")
 offset = Vector2(0, -23.595)
+script = ExtResource("2_7qnqp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_yt08s")
+
+[node name="GameEvent" parent="." instance=ExtResource("3_mpiu8")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GameEvent"]
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_yt08s")
