@@ -207,6 +207,7 @@ enum Scenes {
 	RUINS_TEMPLE_NORTH = 96,
 	SWAMP_TOPPLED_TREE_MUSHROOMS = 97,
 	GAME_OVER_MUSHROOM = 98,
+	GAME_OVER_PUFFBALL = 99,
 }
 
 var ScenePaths = {
@@ -314,6 +315,7 @@ var ScenePaths = {
 	Scenes.GAME_OVER_FISH: "res://src/scenes/game_overs/fish/fish_game_over.tscn",
 	Scenes.GAME_OVER_GRUE: "res://src/scenes/game_overs/grue/grue_game_over.tscn",
 	Scenes.GAME_OVER_MUSHROOM: "res://src/scenes/game_overs/mushroom/mushroom_game_over.tscn",
+	Scenes.GAME_OVER_PUFFBALL: "res://src/scenes/game_overs/puffball/puffball_game_over.tscn",
 	
 	Scenes.TITLE_SCREEN: "res://src/scenes/title/title_screen.tscn",
 }

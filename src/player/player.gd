@@ -106,8 +106,6 @@ func _on_game_event_entered_range(game_event: GameEvent):
 	all_game_events_in_range.append(game_event)
 	all_game_events_in_range.sort_custom(func sort_ascending(a, b): return a.parent_node_index > b.parent_node_index)
 	
-	print(all_game_events_in_range)
-	
 	if (game_event_in_range == null):
 		game_event_in_range = game_event
 	elif (game_event.parent_node_index > game_event_in_range.parent_node_index):
@@ -125,8 +123,6 @@ func _on_game_event_exited_range(game_event: GameEvent):
 		game_event_in_range = null
 		if (all_game_events_in_range.size() > 0):
 			game_event_in_range = all_game_events_in_range[0]
-	
-	print(all_game_events_in_range)
 
 func _on_memorize_player_info():
 	var info = PlayerInfo.new()

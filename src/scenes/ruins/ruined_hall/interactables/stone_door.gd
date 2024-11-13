@@ -22,7 +22,6 @@ func _on_game_var_set(var_name: Enums.Vars, _value):
 	update_state()
 
 func investigate():
-	print("?")
 	if (GameVars.get_var(Enums.Vars.RUIN_HALL_DOOR_OPEN) == true):
 		Utility.show_message(GameScript.get_entry("Ruins.Hall.Door_Open_Look"))
 	else:

@@ -1,221 +1,230 @@
 {
-  "Global": {
-	"You_Cant": "You can't do that.",
-	"No_Effect": "No effect.",
-	"Uninteresting": "It's not very interesting.",
-	"Dont_Take": "You can't take that.",
-	"No_Mechanism_To_Interact": "It has no mechanism to interact with.",
-	"Cairn_Take": "Somehow, like a half-remembered memory, you feel that moving the cairn would be detrimental to your progress.",
-	"Cairn_Look": "The cairn stands about 3 feet fall. The stones are covered in runic markings.",
-	"Cairn_Interact": "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK.",
-	"Yes": "Yes",
-	"No": "No",
-	"Take": "Take",
-	"Investigate": "Investigate",
-	"Interact": "Interact",
-	"Cancel": "Cancel",
-	"Use_Item": "Use Item",
-	"Save_Canceled": "You pull your hand back from the cairn.",
-	"Save_Complete": "A new runic symbol slowly etches itself onto one of the stones.",
-	"SaveToSlot1": "Save to Slot 1",
-	"SaveToSlot2": "Save to Slot 2",
-	"SaveToSlot3": "Save to Slot 3",
-	"Empty": "Empty",
-	"Continue": "Continue",
-	"New_Game": "New Game",
-	"Load": "Load Game",
-	"Quit": "Quit"
-  },
-  "Forest": {
-	"Clearing": {
-	  "Hole_Look": "It's a small hole in the dirt.",
-	  "Hole_Take": "It's a hole. By definition, you cannot take it.",
-	  "Hole_Stone_Look": "It's a small, smooth stone.",
-	  "Hole_Stone_Take": "You take the stone.",
-	  "Dirt_Look": "It's a little pile of soft soil. It must be from the hole next to it.",
-	  "Dirt_Take": "Thinking it over, you decide the dirt would be pointless to take."
+	"Global": {
+		"You_Cant": "You can't do that.",
+		"No_Effect": "No effect.",
+		"Uninteresting": "It's not very interesting.",
+		"Dont_Take": "You can't take that.",
+		"No_Mechanism_To_Interact": "It has no mechanism to interact with.",
+		"Cairn_Take": "Somehow, like a half-remembered memory, you feel that moving the cairn would be detrimental to your progress.",
+		"Cairn_Look": "The cairn stands about 3 feet fall. The stones are covered in runic markings.",
+		"Cairn_Interact": "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK.",
+		"Yes": "Yes",
+		"No": "No",
+		"Take": "Take",
+		"Investigate": "Investigate",
+		"Interact": "Interact",
+		"Cancel": "Cancel",
+		"Use_Item": "Use Item",
+		"Save_Canceled": "You pull your hand back from the cairn.",
+		"Save_Complete": "A new runic symbol slowly etches itself onto one of the stones.",
+		"SaveToSlot1": "Save to Slot 1",
+		"SaveToSlot2": "Save to Slot 2",
+		"SaveToSlot3": "Save to Slot 3",
+		"Empty": "Empty",
+		"Continue": "Continue",
+		"New_Game": "New Game",
+		"Load": "Load Game",
+		"Quit": "Quit"
 	},
-	"Bridge_South": {
-	  "Bridge_Look": "A mighty stone bridge once spanned the river but has since mostly collapsed. Part of it still juts out from either side of the river.",
-	  "Bridge_Take": "Thinking about carrying this entire bridge away makes your back hurt.",
-	  "River_Look": "The rushing water is a little murky. You can see dark shapes moving around in it.",
-	  "River_Look_No_Fish": "The rushing water is a little murky.",
-	  "River_Take": "Holding an entire river in your hands seems problematic.",
-	  "River_Use_Stone": "You throw the stone into the river. Dark shapes beneath the murky water quickly dart downstream to where the stone splashed.",
-	  "Rod_Look": "A cylindrical, rusty metal rod sticks out of the water about 5 feet from the shore.",
-	  "Rod_Take_Successful": "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You work it back and forth until it's free and then make your way back to the bank."
+	"Forest": {
+		"Clearing": {
+			"Hole_Look": "It's a small hole in the dirt.",
+			"Hole_Take": "It's a hole. By definition, you cannot take it.",
+			"Hole_Stone_Look": "It's a small, smooth stone.",
+			"Hole_Stone_Take": "You take the stone.",
+			"Dirt_Look": "It's a little pile of soft soil. It must be from the hole next to it.",
+			"Dirt_Take": "Thinking it over, you decide the dirt would be pointless to take."
+		},
+		"Bridge_South": {
+			"Bridge_Look": "A mighty stone bridge once spanned the river but has since mostly collapsed. Part of it still juts out from either side of the river.",
+			"Bridge_Take": "Thinking about carrying this entire bridge away makes your back hurt.",
+			"River_Look": "The rushing water is a little murky. You can see dark shapes moving around in it.",
+			"River_Look_No_Fish": "The rushing water is a little murky.",
+			"River_Take": "Holding an entire river in your hands seems problematic.",
+			"River_Use_Stone": "You throw the stone into the river. Dark shapes beneath the murky water quickly dart downstream to where the stone splashed.",
+			"Rod_Look": "A cylindrical, rusty metal rod sticks out of the water about 5 feet from the shore.",
+			"Rod_Take_Successful": "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You work it back and forth until it's free and then make your way back to the bank."
+		},
+		"Quiet_Fork": {
+			"Signpost_Look_With_Nail": "A rotting chunk of wood that must have once been a signpost decays in the long grass. It's been rotting away for a long, long time. The single nail that holds it together is rusty but still doing its job.",
+			"Signpost_Look_Without_Nail": "A rotting chunk of wood that must have once been a signpost decays in the long grass. It's been rotting away for a long, long time.",
+			"Signpost_Take": "You have no need of an armload of rotten planks.",
+			"Nail_Look": "It's a rusty old nail. The hole it's in is rotting away and it looks quite loose.",
+			"Nail_Take": "You get your fingernails under the head of the nail and give it a good couple tugs. Eventually, you work it out of the signpost and take it with you."
+		},
+		"Cabin_Exterior": {
+			"Garden_Look": "The garden is well kept and has lots of different things growing in it. You can see carrots, cabbage, peas, tomatoes, and some others you don't recognize.",
+			"Garden_Take": "You're not hungry enough to steal someone else's crops.",
+			"Cabin_Look": "It's a roughly built log cabin but it seems sturdy enough. There's a door and some shuttered windows around the side.",
+			"Door_Look": "It's a sturdy door constructed of rough lumber.",
+			"Fence_Look": "It's a simple wooden fence. It completely surrounds the cabin, yard, and garden.",
+			"Arden_Look": "He's an older man with graying hair and a crudely trimmed gray beard. He's wearing a ratty old brown jacket. With one hand he's holding a new board up to the fence and in the other he's holding a hammer.",
+			"Arden_Look_2": "The new board is only attached to the fence on one end. He's grumbling to himself. \"How does this sort of thing always happen? One single nail short of finishing the job.\"",
+			"Arden_Take": "T-that would be kidnapping!",
+			"Arden_Interact": "The man turns toward you. \"Oh, hello there! The name's Arden. We haven't seen any new arrivals in a long, long time. Sorry, but I can't talk now, I have to finish mending this fence. You wouldn't happen to have any nails on you, would you?\"",
+			"Arden_No_Nail": "\"Well that's a shame. If you find any, I'd really appreciate one.\"",
+			"Arden_Lie_About_Nail": "\"Now listen here, young'un! I've known many a man to carry a nail or few and I've even done it myself. I can tell quite plainly that you don't have any on you. I don't appreciate this kind of tomfoolery!\""
+		},
+		"Swamp_Path": {
+			"Rotten_Log_Look": "There's an old, toppled tree sticking out of the reeking muck. It's covered in grime and mildew."
+		},
+		"Old_Well": {
+			"Well_Look_Pail_Up": "It's an old well made of bricks. It has a little roof and a crank. The rope is retracted and it's attached to a pail sitting on the edge of the well.",
+			"Well_Look_Pail_Down": "It's an old well made of bricks. It has a little roof and a crank. The rope hangs down into the darkness below.",
+			"Well_Drop_Pail": "You grab the pail and drop it down into the well. It falls all the way to the bottom and you can hear a splash from down in the darkness.",
+			"Well_Raise_Pail": "You turn the crank on the side of the well over and over. Eventually the pail returns to the surface. You grab it and set it on the edge of the well.",
+			"Well_Look_Pail_Empty": "The pail is full of crystal-clear water.",
+			"Well_Look_Pail_Item": "The pail is full of crystal-clear water. The #ITEMNAME# sits at the bottom of the pail.",
+			"Well_Look_Pail_Etavoner": "The pail is full of crystal-clear water. The etavoner rune sits in the pail, glimmering with magic.",
+			"Well_Take_Charged_Etavoner_1": "You take the rune from the pail. The glimmering surrounding the rune grows in intensity and you watch as the rune dissolves into nothingness before your very eyes!",
+			"Well_Take_Charged_Etavoner_2": "Suddenly, something pops into your head. A vague memory, half formed. You can now incant etavoner, the Charm of Repairing!",
+			"Well_Take_Pail_Item": "You retrieve the #ITEMNAME# from the pail. It's soggy but should be okay.",
+			"Well_Take_Pail_Down": "You can't take whatever's in the pail because it's at the bottom of the well!",
+			"Well_Take_Empty": "There's nothing in the pail to take!",
+			"Well_Use_Item_Pail_Down": "You can't put anything in the pail when it's at the bottom of the well!",
+			"Well_Use_Item_Pail_Full": "There's already something in the pail. It can't hold anymore items.",
+			"Well_Use_Item_Put_Into_Pail": "You put the #ITEMNAME# into the pail."
+		}
 	},
-	"Quiet_Fork": {
-	  "Signpost_Look_With_Nail": "A rotting chunk of wood that must have once been a signpost decays in the long grass. It's been rotting away for a long, long time. The single nail that holds it together is rusty but still doing its job.",
-	  "Signpost_Look_Without_Nail": "A rotting chunk of wood that must have once been a signpost decays in the long grass. It's been rotting away for a long, long time.",
-	  "Signpost_Take": "You have no need of an armload of rotten planks.",
-	  "Nail_Look": "It's a rusty old nail. The hole it's in is rotting away and it looks quite loose.",
-	  "Nail_Take": "You get your fingernails under the head of the nail and give it a good couple tugs. Eventually, you work it out of the signpost and take it with you."
+	"Ruins": {
+		"Hall": {
+			"Altar_Look": "The altar is a large piece of white stone. Engraved on its surface is a large, runic symbol: ᛞ.",
+			"Door_Closed_Look": "The stone door is large and solid. It's made out of a different material than the rest of the walls.",
+			"Door_Open_Look": "The door has slid down into the floor and out of the way, granting access to the passage beyond.",
+			"Device_Look": "It's a metal base for some sort of device affixed to the wall. It's rounded and looks like it must pivot up and down.",
+			"Device_Pointed_Up": "It's currently pointed up.",
+			"Device_Pointed_Down": "It's currently pointed down.",
+			"Device_Opening_Look": "There's a round opening in the front of it that is about an inch and a half in diameter.",
+			"Device_Has_Rod": "There's a rusty metal rod sticking out of it. You could probably interact with the device now.",
+			"Device_Interact_No_Rod": "There's no way to use the device in its current state. It seems like there's something missing.",
+			"Device_Use_Rod": "You slot the metal rod into the opening in the device. It fits perfectly!",
+			"Device_Door_Opens": "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides down into the floor, unsealing the passage.",
+			"Device_Door_Closes": "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides up, out of the floor, unsealing the passage.",
+			"Device_Take_Rod": "You pull the metal rod out of the device and take it."
+		},
+		"Square_South": {
+			"Rubble_Look": "A small city has been reduced to stone and concrete rubble. The remains fill the area.",
+			"Wall_Look": "This building is sealed shut by a much newer brick wall. It's covered in fractures and looks pretty weak. You'll have to deal with that first if you want to go inside.",
+			"Wall_Destroy": "You take the sledgehammer in hand and swing with all your might. You shatter a brick in the center of the wall, bowing the entire wall inward slightly. After another few strong strikes, the wall gives out and collapses into a heap of bricks. The way is open.",
+			"Cairn_Look": "Small bits of rubble have been stacked, forming a cairn about 3 feet tall. Each piece is inscribed with small runes."
+		},
+		"Square_North": {
+			"Rubble_Look": "An ocean of rubble fills the area. The ancient bones of a lost civilization.",
+			"Temple_Look": "It's a large building supported by pillars. Unlike the rest of the buildings, the temple is still mostly intact. It has long, tattered banners hanging from its walls.",
+			"Banner_Look": "The banner is long and tattered. It depicts a yellow griffin clutching a dozen red roses in its talons.",
+			"Hatch_Lid_Look": "It's a large, metal hatch set into the ground. It's got a red handle on the top.",
+			"Hatch_Lid_Open": "You turn the handle and lift with all your strength, opening the hatch.",
+			"Hatch_Lid_Close": "You take hold of the heavy hatch door and slowly lower it closed. Then you turn the handle for good measure.",
+			"Hatch_Hole_Look": "A dark, metallic shaft leads downward into the Earth. A sturdy metal ladder is affixed to the shaft wall.",
+			"Hatch_Hole_Go": "You mount the ladder and begin making your way down into darkness."
+		},
+		"Hatch_Interior": {
+			"Ladder_Go": "You mount the ladder and begin making your way up into daylight.",
+			"Note_Look": "There's a dust-covered, handwritten note laying on the floor.\n\n\"Lowered into darkness, far and out of sight\nPlunged into clear waters, etavoner regains its might.\"",
+			"Note_Take": "You dust off the note and take it.",
+			"Etavoner_Look": "The magical rune represents etavoner. You have no idea how you know this.",
+			"Etavoner_Take": "You take the etavoner rune from the floor."
+		},
+		"House": {
+			"Chest_Closed_Look": "It's a metal storage chest. It's badly dented and scuffed but somehow still in one piece. It's shut tight.",
+			"Chest_Open_Look": "It's a metal storage chest. It's badly dented and scuffed but still in one piece.",
+			"Rubble_Look": "Debris and rubble fill the small home. You can see daylight through the shattered walls. It's a miracle the building's still standing.",
+			"Chest_Open": "You clear some rubble off the top of the metal chest and open it.",
+			"Chest_Close": "You shut the metal chest.",
+			"Flashlight_Look": "It's a heavy-duty, blue and yellow metal flashlight.",
+			"Flashlight_Take": "You take the flashlight from the metal chest. It's surprisingly heavy and sturdy-feeling."
+		},
+		"Lab": {
+			"Rug_Look": "It's a very plain brown rug. It sags downward into the floor in the middle.",
+			"Rug_Interact": "You roll the rug up and out of the way, revealing stone steps that lead down into darkness.",
+			"Rug_Moved_Look": "It's a very plain brown rug. You rolled it up but it's still plain.",
+			"Rug_Moved_Interact": "It wouldn't be very useful unrolled and covering the steps again. You decide to leave it alone.",
+			"Rug_Take": "You bend down to take the rug and pause for a moment. Why would you need a ratty, dusty old rug? You decide to leave it.",
+			"Science_Gear_Look": "You don't really know what any of this stuff is. It just looks rather sciencey. There are many glass bottles of every shape and size. Some are broken but most remain intact.",
+			"Science_Gear_Take": "You don't even know what it is! Plus it seems too unwieldy to carry.",
+			"Potion_Look": "There's a bottle stoppered with a cork with a red liquid inside. It's got a label that reads \"potion of healing\".",
+			"Potion_Take": "You take the bottle labeled \"potion of healing\". If the label's correct, it sounds like it could be useful.",
+			"Poster_Look": "The anatomical poster depicts a dissected giant hornet, pointing out what each of the internal organs is. The picture depicting a purple-ish sac is circled with red marker. It's labeled \"pheromone sac\".",
+			"Poster_Take": "It looks like it's ready to crumble to dust at any moment. You decide not to disturb it."
+		},
+		"Temple_North": {
+			"Altar_Look": "It's a large altar made from some type of white stone. It's incredibly sturdy.",
+			"Marek_Look_1": "Sitting on the edge of the altar is... well, a knight. He's wearing dented and dirty plate armor and has a helmet sitting next to him. He carries no weapon or shield. The tattered remains of a red cloak hang across his back.",
+			"Marek_Look_2": "He's just sitting there staring off into space. It's like he hasn't even noticed you even though you're basically right in front of him. He occasionally mumbles to himself.",
+			"Marek_Take": "You consider taking the his possessions but decide that, not only have you no use of them, you'd also rather not anger a knight.",
+			"Device_Altar_Opens": "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts forward, revealing steps leading down to darkness. The knight didn't seem to notice at all.",
+			"Device_Altar_Closes": "You grip the rusty metal rod and pull the lever downward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts back, sealing the stairway that leads down to darkness. The knight didn't seem to notice at all.",
+		}
 	},
-	"Cabin_Exterior": {
-	  "Garden_Look": "The garden is well kept and has lots of different things growing in it. You can see carrots, cabbage, peas, tomatoes, and some others you don't recognize.",
-	  "Garden_Take": "You're not hungry enough to steal someone else's crops.",
-	  "Cabin_Look": "It's a roughly built log cabin but it seems sturdy enough. There's a door and some shuttered windows around the side.",
-	  "Door_Look": "It's a sturdy door constructed of rough lumber.",
-	  "Fence_Look": "It's a simple wooden fence. It completely surrounds the cabin, yard, and garden.",
-	  "Arden_Look": "He's an older man with graying hair and a crudely trimmed gray beard. He's wearing a ratty old brown jacket. With one hand he's holding a new board up to the fence and in the other he's holding a hammer.",
-	  "Arden_Look_2": "The new board is only attached to the fence on one end. He's grumbling to himself. \"How does this sort of thing always happen? One single nail short of finishing the job.\"",
-	  "Arden_Take": "T-that would be kidnapping!",
-	  "Arden_Interact": "The man turns toward you. \"Oh, hello there! The name's Arden. We haven't seen any new arrivals in a long, long time. Sorry, but I can't talk now, I have to finish mending this fence. You wouldn't happen to have any nails on you, would you?\"",
-	  "Arden_No_Nail": "\"Well that's a shame. If you find any, I'd really appreciate one.\"",
-	  "Arden_Lie_About_Nail": "\"Now listen here, young'un! I've known many a man to carry a nail or few and I've even done it myself. I can tell quite plainly that you don't have any on you. I don't appreciate this kind of tomfoolery!\""
+	"Swamp": {
+		"Shared": {
+			"Tree_Look": "It's a sickly looking, dead tree. It's covered in fungus and slick with rot.",
+			"Tree_Take": "Carrying a rot-slicked tree seems problematic. And you have no way of felling it anyway.",
+			"Cattail_Look": "It's a cattail. They look more like corn dogs than cat tails to you, though.",
+			"Cattail_Take": "You can't imagine a use for them so you decide to leave them alone."
+		},
+		"Toppled_Tree": {
+			"Log_Look": "A toppled tree rests here, infested with moss, lichen, and rot. An array of seven colorful mushrooms grow in a neat row.",
+			"Mushroom_Touch_Moves": "You reach out to touch the mushroom but before you can quite reach it, it shudders and and suddenly shuffles across the log, avoiding your touch. You've never heard of moving mushrooms before!",
+			"Mushroom_Hint": "You might be able to touch them if you had some way of preventing them from moving.",
+			"Mushroom_Look_Green": "It's a bright green color.",
+			"Mushroom_Look_Yellow": "It's a bright yellow color.",
+			"Mushroom_Look_Indigo": "It's a bright indigo color.",
+			"Mushroom_Look_Red": "It's a bright red color.",
+			"Mushroom_Look_Purple": "It's a bright purple color.",
+			"Mushroom_Look_Blue": "It's a bright blue color.",
+			"Mushroom_Look_Orange": "It's a bright orange color.",
+			"Mushroom_Interact_Glow": "You touch the mushroom and it begins to glow...",
+			"Mushroom_Interact_Glow_Final": "You touch the mushroom and it begins to glow. Now all of the colored mushrooms on the log are glowing.\n\nA faint glimmer appears in the air nearby.",
+		},
+		"Dead_Tree": {
+			"Tree_Look": "The tree is totally dead and leafless. Its boney, contorted branches twist strangely upward. The brackish swampwater is all it's had to drink for a long, long time and it has stained the wood black. It's slick with mold and rot.",
+			"Tree_Take": "Even if you could, you wouldn't want to."
+		},
+		"Standing_Water": {
+			"Water_Look": "It's a large pool of reeking standing water. It would almost be more of a lake--that is, if it was any deeper than a couple feet. The water has a film of algae across its surface. Strange, white plants that look like large puffballs grow sparsely on the surface of the pool.",
+			"Puffball_Near_Shore": "One of the weird puffball things is growing in the water near the shore here.",
+			"Puffball_Look": "It's is an off-white color like bone and about a foot in diameter. The surface isn't smooth, but instead it looks like it grows multitudinous little white spikes all over. There's an umbilical-like stem of the same color that snakes from its underside down into the putrid depths of the water."
+		}
 	},
-	"Swamp_Path": {
-	  "Rotten_Log_Look": "There's an old, toppled tree sticking out of the reeking muck. It's covered in grime and mildew."
+	"Game_Overs": {
+		"Fish": {
+			"Fish_1": "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks.",
+			"Fish_2": "You start working it back and forth to free it when you feel a stabbing pain in your leg! It's quickly followed by another and another and another!",
+			"Fish_3": "The murky water begins to roil as the river reddens with your blood. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky river.",
+			"Fish_4": "You flee back to the bank of the river but it's too late.",
+			"Fish_5": "Your head begins spinning. As everything fades to black, you have one, final thought...",
+			"Fish_6": "If only you had done something to distract the fish..."
+		},
+		"Grue": {
+			"Grue_1": "You fumble around in the dark for a few moments. You think you hear something so you immediately stop what you're doing, ears attuned to the silence all around you. Did you really hear something or are your ears playing tricks on you? Your question is answered only a few seconds later.",
+			"Grue_2": "The sound of slapping feet approaches, its direction indeterminate! Claws dig into your flesh and something large and leathery wraps long, spindly arms around you. You struggle to free yourself but its strength far, far, surpasses your own. You let out a scream as it bites down on your neck.",
+			"Grue_3": "You should fear the dark..."
+		},
+		"Mushroom": {
+			"Mushroom_1": "As soon as you touch the mushroom you feel a jolt of pain fire down your arm and into your chest. You drop to your knees in the muck. The pain still in your chest, you begin retching violently. At some point you realize that you're laying on your side in the stagnant water.",
+			"Mushroom_2": "You can't seem to move your body. It's raining and you feel like you're on fire...",
+			"Mushroom_3": "You can hear the buzzing of giant mosquitos as they land on you. You can feel their needle-like proboscises pierce into your skin. You'd wince if you could. The monsters are so thirsty you can feel your blood being drained away.",
+			"Mushroom_4": "You close your eyes...",
+			"Mushroom_5": "     ... ...just for a moment... ..."
+		},
+		"Puffball": {
+			"Puffball_1": "You wade out into the pool of standing water, plowing a small path through the algae. You swat yet another mosquito away as you reach the nearest puffball. You examine it for a moment before finally reaching down and gently grabbing it.",
+			"Puffball_2": "The little spikes growing on its surface aren't sharp enough to harm you. They do, however, pierce the puffball itself, causing it to explode and send a cloud of white spores and dust into the air all around you. You cough violently as they make their way into your lungs.",
+			"Puffball_3": "A few moments later, your coughing fit ends but... you can't quite remember what you were just doing. You look around stupefied by your surroundings. What are you doing out here? What's the cold, wet feeling in your legs?",
+			"Puffball_4": "You look down and see murky water but your brain just can't seem to identify what it is. You see your own distorted reflection in the rot-infested waters and lock eyes with it. You have no idea what that thing is. You quickly forget your own name or even how to breathe.",
+			"Puffball_5": "Standing in the pool of stagnant water paralyzed, you start to suffocate. A cloud of giant mosquitoes descends on you. As your lungs begin to burn, lusting for air, you start to feel cold, very cold...",
+			"Puffball_6": "When you finally lose consciousness you don't even fall prone. For a while, at least, your remains stand out in the pool as a warning to any others that might chance by.",
+			"Puffball_7": "If only you had known the proper technique for handling puffballs..."
+		}
 	},
-	"Old_Well": {
-	  "Well_Look_Pail_Up": "It's an old well made of bricks. It has a little roof and a crank. The rope is retracted and it's attached to a pail sitting on the edge of the well.",
-	  "Well_Look_Pail_Down": "It's an old well made of bricks. It has a little roof and a crank. The rope hangs down into the darkness below.",
-	  "Well_Drop_Pail": "You grab the pail and drop it down into the well. It falls all the way to the bottom and you can hear a splash from down in the darkness.",
-	  "Well_Raise_Pail": "You turn the crank on the side of the well over and over. Eventually the pail returns to the surface. You grab it and set it on the edge of the well.",
-	  "Well_Look_Pail_Empty": "The pail is full of crystal-clear water.",
-	  "Well_Look_Pail_Item": "The pail is full of crystal-clear water. The #ITEMNAME# sits at the bottom of the pail.",
-	  "Well_Look_Pail_Etavoner": "The pail is full of crystal-clear water. The etavoner rune sits in the pail, glimmering with magic.",
-	  "Well_Take_Charged_Etavoner_1": "You take the rune from the pail. The glimmering surrounding the rune grows in intensity and you watch as the rune dissolves into nothingness before your very eyes!",
-	  "Well_Take_Charged_Etavoner_2": "Suddenly, something pops into your head. A vague memory, half formed. You can now incant etavoner, the Charm of Repairing!",
-	  "Well_Take_Pail_Item": "You retrieve the #ITEMNAME# from the pail. It's soggy but should be okay.",
-	  "Well_Take_Pail_Down": "You can't take whatever's in the pail because it's at the bottom of the well!",
-	  "Well_Take_Empty": "There's nothing in the pail to take!",
-	  "Well_Use_Item_Pail_Down": "You can't put anything in the pail when it's at the bottom of the well!",
-	  "Well_Use_Item_Pail_Full": "There's already something in the pail. It can't hold anymore items.",
-	  "Well_Use_Item_Put_Into_Pail": "You put the #ITEMNAME# into the pail."
+	"Topics": {
+		"Who_Are_You": "Who are you?",
+		"Goodbye": "goodbye",
+		"My_Past": "my past",
+		"Island_Arrival": "island arrival",
+		"Merek": "Merek",
+		"Totems": "totems",
+		"Fair_Haired_Woman": "fair-haired woman"
 	}
-  },
-  "Ruins": {
-	"Hall": {
-	  "Altar_Look": "The altar is a large piece of white stone. Engraved on its surface is a large, runic symbol: ᛞ.",
-	  "Door_Closed_Look": "The stone door is large and solid. It's made out of a different material than the rest of the walls.",
-	  "Door_Open_Look": "The door has slid down into the floor and out of the way, granting access to the passage beyond.",
-	  "Device_Look": "It's a metal base for some sort of device affixed to the wall. It's rounded and looks like it must pivot up and down.",
-	  "Device_Pointed_Up": "It's currently pointed up.",
-	  "Device_Pointed_Down": "It's currently pointed down.",
-	  "Device_Opening_Look": "There's a round opening in the front of it that is about an inch and a half in diameter.",
-	  "Device_Has_Rod": "There's a rusty metal rod sticking out of it. You could probably interact with the device now.",
-	  "Device_Interact_No_Rod": "There's no way to use the device in its current state. It seems like there's something missing.",
-	  "Device_Use_Rod": "You slot the metal rod into the opening in the device. It fits perfectly!",
-	  "Device_Door_Opens": "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides down into the floor, unsealing the passage.",
-	  "Device_Door_Closes": "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides up, out of the floor, unsealing the passage.",
-	  "Device_Take_Rod": "You pull the metal rod out of the device and take it."
-	},
-	"Square_South": {
-	  "Rubble_Look": "A small city has been reduced to stone and concrete rubble. The remains fill the area.",
-	  "Wall_Look": "This building is sealed shut by a much newer brick wall. It's covered in fractures and looks pretty weak. You'll have to deal with that first if you want to go inside.",
-	  "Wall_Destroy": "You take the sledgehammer in hand and swing with all your might. You shatter a brick in the center of the wall, bowing the entire wall inward slightly. After another few strong strikes, the wall gives out and collapses into a heap of bricks. The way is open.",
-	  "Cairn_Look": "Small bits of rubble have been stacked, forming a cairn about 3 feet tall. Each piece is inscribed with small runes."
-	},
-	"Square_North": {
-	  "Rubble_Look": "An ocean of rubble fills the area. The ancient bones of a lost civilization.",
-	  "Temple_Look": "It's a large building supported by pillars. Unlike the rest of the buildings, the temple is still mostly intact. It has long, tattered banners hanging from its walls.",
-	  "Banner_Look": "The banner is long and tattered. It depicts a yellow griffin clutching a dozen red roses in its talons.",
-	  "Hatch_Lid_Look": "It's a large, metal hatch set into the ground. It's got a red handle on the top.",
-	  "Hatch_Lid_Open": "You turn the handle and lift with all your strength, opening the hatch.",
-	  "Hatch_Lid_Close": "You take hold of the heavy hatch door and slowly lower it closed. Then you turn the handle for good measure.",
-	  "Hatch_Hole_Look": "A dark, metallic shaft leads downward into the Earth. A sturdy metal ladder is affixed to the shaft wall.",
-	  "Hatch_Hole_Go": "You mount the ladder and begin making your way down into darkness."
-	},
-	"Hatch_Interior": {
-	  "Ladder_Go": "You mount the ladder and begin making your way up into daylight.",
-	  "Note_Look": "There's a dust-covered, handwritten note laying on the floor.\n\n\"Lowered into darkness, far and out of sight\nPlunged into clear waters, etavoner regains its might.\"",
-	  "Note_Take": "You dust off the note and take it.",
-	  "Etavoner_Look": "The magical rune represents etavoner. You have no idea how you know this.",
-	  "Etavoner_Take": "You take the etavoner rune from the floor."
-	},
-	"House": {
-	  "Chest_Closed_Look": "It's a metal storage chest. It's badly dented and scuffed but somehow still in one piece. It's shut tight.",
-	  "Chest_Open_Look": "It's a metal storage chest. It's badly dented and scuffed but still in one piece.",
-	  "Rubble_Look": "Debris and rubble fill the small home. You can see daylight through the shattered walls. It's a miracle the building's still standing.",
-	  "Chest_Open": "You clear some rubble off the top of the metal chest and open it.",
-	  "Chest_Close": "You shut the metal chest.",
-	  "Flashlight_Look": "It's a heavy-duty, blue and yellow metal flashlight.",
-	  "Flashlight_Take": "You take the flashlight from the metal chest. It's surprisingly heavy and sturdy-feeling."
-	},
-	"Lab": {
-	  "Rug_Look": "It's a very plain brown rug. It sags downward into the floor in the middle.",
-	  "Rug_Interact": "You roll the rug up and out of the way, revealing stone steps that lead down into darkness.",
-	  "Rug_Moved_Look": "It's a very plain brown rug. You rolled it up but it's still plain.",
-	  "Rug_Moved_Interact": "It wouldn't be very useful unrolled and covering the steps again. You decide to leave it alone.",
-	  "Rug_Take": "You bend down to take the rug and pause for a moment. Why would you need a ratty, dusty old rug? You decide to leave it.",
-	  "Science_Gear_Look": "You don't really know what any of this stuff is. It just looks rather sciencey. There are many glass bottles of every shape and size. Some are broken but most remain intact.",
-	  "Science_Gear_Take": "You don't even know what it is! Plus it seems too unwieldy to carry.",
-	  "Potion_Look": "There's a bottle stoppered with a cork with a red liquid inside. It's got a label that reads \"potion of healing\".",
-	  "Potion_Take": "You take the bottle labeled \"potion of healing\". If the label's correct, it sounds like it could be useful.",
-	  "Poster_Look": "The anatomical poster depicts a dissected giant hornet, pointing out what each of the internal organs is. The picture depicting a purple-ish sac is circled with red marker. It's labeled \"pheromone sac\".",
-	  "Poster_Take": "It looks like it's ready to crumble to dust at any moment. You decide not to disturb it."
-	},
-	"Temple_North": {
-	  "Altar_Look": "It's a large altar made from some type of white stone. It's incredibly sturdy.",
-	  "Marek_Look_1": "Sitting on the edge of the altar is... well, a knight. He's wearing dented and dirty plate armor and has a helmet sitting next to him. He carries no weapon or shield. The tattered remains of a red cloak hang across his back.",
-	  "Marek_Look_2": "He's just sitting there staring off into space. It's like he hasn't even noticed you even though you're basically right in front of him. He occasionally mumbles to himself.",
-	  "Marek_Take": "You consider taking the his possessions but decide that, not only have you no use of them, you'd also rather not anger a knight.",
-	  "Device_Altar_Opens": "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts forward, revealing steps leading down to darkness. The knight didn't seem to notice at all.",
-	  "Device_Altar_Closes": "You grip the rusty metal rod and pull the lever downward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts back, sealing the stairway that leads down to darkness. The knight didn't seem to notice at all.",
-	}
-  },
-  "Swamp": {
-	"Shared": {
-	  "Tree_Look": "It's a sickly looking, dead tree. It's covered in fungus and slick with rot.",
-	  "Tree_Take": "Carrying a rot-slicked tree seems problematic. And you have no way of felling it anyway.",
-	  "Cattail_Look": "It's a cattail. They look more like corn dogs than cat tails to you, though.",
-	  "Cattail_Take": "You can't imagine a use for them so you decide to leave them alone."
-	},
-	"Toppled_Tree": {
-	  "Log_Look": "A toppled tree rests here, infested with moss, lichen, and rot. An array of seven colorful mushrooms grow in a neat row.",
-	  "Mushroom_Touch_Moves": "You reach out to touch the mushroom but before you can quite reach it, it shudders and and suddenly shuffles across the log, avoiding your touch. You've never heard of moving mushrooms before!",
-	  "Mushroom_Hint": "You might be able to touch them if you had some way of preventing them from moving.",
-	  "Mushroom_Look_Green": "It's a bright green color.",
-	  "Mushroom_Look_Yellow": "It's a bright yellow color.",
-	  "Mushroom_Look_Indigo": "It's a bright indigo color.",
-	  "Mushroom_Look_Red": "It's a bright red color.",
-	  "Mushroom_Look_Purple": "It's a bright purple color.",
-	  "Mushroom_Look_Blue": "It's a bright blue color.",
-	  "Mushroom_Look_Orange": "It's a bright orange color.",
-	  "Mushroom_Interact_Glow": "You touch the mushroom and it begins to glow...",
-	  "Mushroom_Interact_Glow_Final": "You touch the mushroom and it begins to glow. Now all of the colored mushrooms on the log are glowing.\n\nA faint glimmer appears in the air nearby.",
-	},
-	"Dead_Tree": {
-	  "Tree_Look": "The tree is totally dead and leafless. Its boney, contorted branches twist strangely upward. The brackish swampwater is all it's had to drink for a long, long time and it has stained the wood black. It's slick with mold and rot.",
-	  "Tree_Take": "Even if you could, you wouldn't want to."
-	},
-	"Standing_Water": {
-	  "Water_Look": "It's a large pool of reeking standing water. It would almost be more of a lake--that is, if it was any deeper than a couple feet. The water has a film of algae across its surface. Strange, white plants that look like large puffballs grow sparsely on the surface of the pool.",
-	  "Puffball_Near_Shore": "One of the weird puffball things is growing in the water near the shore here.",
-	  "Puffball_Look": "It's is an off-white color like bone and about a foot in diameter. The surface isn't smooth, but instead it looks like it grows multitudinous little white spikes all over. There's an umbilical-like stem of the same color that snakes from its underside down into the putrid depths of the water."
-	}
-  },
-  "Game_Overs": {
-	"Fish": {
-	  "Fish_1": "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks.",
-	  "Fish_2": "You start working it back and forth to free it when you feel a stabbing pain in your leg! It's quickly followed by another and another and another!",
-	  "Fish_3": "The murky water begins to roil as the river reddens with your blood. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky river.",
-	  "Fish_4": "You flee back to the bank of the river but it's too late.",
-	  "Fish_5": "Your head begins spinning. As everything fades to black, you have one, final thought...",
-	  "Fish_6": "If only you had done something to distract the fish..."
-	},
-	"Grue": {
-	  "Grue_1": "You fumble around in the dark for a few moments. You think you hear something so you immediately stop what you're doing, ears attuned to the silence all around you. Did you really hear something or are your ears playing tricks on you? Your question is answered only a few seconds later.",
-	  "Grue_2": "The sound of slapping feet approaches, its direction indeterminate! Claws dig into your flesh and something large and leathery wraps long, spindly arms around you. You struggle to free yourself but its strength far, far, surpasses your own. You let out a scream as it bites down on your neck.",
-	  "Grue_3": "You should fear the dark..."
-	},
-	"Mushroom": {
-	  "Mushroom_1": "As soon as you touch the mushroom you feel a jolt of pain fire down your arm and into your chest. You drop to your knees in the muck. The pain still in your chest, you begin retching violently. At some point you realize that you're laying on your side in the stagnant water.",
-	  "Mushroom_2": "You can't seem to move your body. It's raining and you feel like you're on fire...",
-	  "Mushroom_3": "You can hear the buzzing of giant mosquitos as they land on you. You can feel their needle-like proboscises pierce into your skin. You'd wince if you could. The monsters are so thirsty you can feel your blood being drained away.",
-	  "Mushroom_4": "You close your eyes...",
-	  "Mushroom_5": "     ... ...just for a moment... ..."
-	}
-  },
-  "Topics": {
-	"Who_Are_You": "Who are you?",
-	"Goodbye": "goodbye",
-	"My_Past": "my past",
-	"Island_Arrival": "island arrival",
-	"Merek": "Merek",
-	"Totems": "totems",
-	"Fair_Haired_Woman": "fair-haired woman"
-  }
 }

@@ -6,5 +6,4 @@ func investigate():
 	Utility.msg("Swamp.Standing_Water.Puffball_Look")
 
 func take():
-	# TODO: DIE
-	pass
+	Utility.initiate_game_over(Enums.Scenes.GAME_OVER_PUFFBALL)

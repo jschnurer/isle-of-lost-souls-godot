@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://db7tehub5xtyq"]
+
+[ext_resource type="Script" path="res://src/scenes/game_overs/puffball/puffball_game_over.gd" id="1_0gsd5"]
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_j1rbp"]
+[ext_resource type="Texture2D" uid="uid://cvv7dwr2rcbpb" path="res://art/backgrounds/game_over/game_over.png" id="2_5fo60"]
+[ext_resource type="AudioStream" uid="uid://c24ddpye4f68b" path="res://audio/bgm/game_over.mp3" id="3_el4o6"]
+
+[node name="PuffballGameOver" type="Node2D"]
+script = ExtResource("1_0gsd5")
+
+[node name="SceneBG" parent="." instance=ExtResource("1_j1rbp")]
+texture = ExtResource("2_5fo60")
+scene = 98
+bg_images = Array[Texture2D]([ExtResource("2_5fo60")])
+use_collision_frame = true
+hide_collider = true
+bgm_stream = ExtResource("3_el4o6")
