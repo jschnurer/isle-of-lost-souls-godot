@@ -587,7 +587,7 @@ position = Vector2(682, 191)
 [node name="Puffballs" type="Node2D" parent="Vegetation"]
 
 [node name="Puffball" type="Sprite2D" parent="Vegetation/Puffballs"]
-position = Vector2(718, 124)
+position = Vector2(558, 138)
 texture = ExtResource("11_tuv8o")
 
 [node name="Puffball2" type="Sprite2D" parent="Vegetation/Puffballs"]
@@ -595,7 +595,7 @@ position = Vector2(807, 247)
 texture = ExtResource("11_tuv8o")
 
 [node name="Puffball3" type="Sprite2D" parent="Vegetation/Puffballs"]
-position = Vector2(636, 186)
+position = Vector2(715, 162)
 texture = ExtResource("11_tuv8o")
 
 [node name="Puffball5" type="Sprite2D" parent="Vegetation/Puffballs"]

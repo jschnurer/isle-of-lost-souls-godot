@@ -3,7 +3,8 @@ extends Node
 var known_topics: Dictionary = {
 	Enums.TopicGroups.GLOBAL: [Enums.Topics.WHO_ARE_YOU, Enums.Topics.GOODBYE],
 	Enums.TopicGroups.ARDEN: [],
-	Enums.TopicGroups.RHODE: [Enums.Topics.TOTEMS],
+	Enums.TopicGroups.RHODE: [],
+	Enums.TopicGroups.MEREK: []
 }
 
 var enum_keys = Enums.Topics.keys()
@@ -12,7 +13,7 @@ func _ready():
 	SignalBus.learn_topic.connect(_on_learn_topic)
 
 func get_topic_text(var_name: Enums.Topics):
-	return GameScript.get_entry(Utility.enum_str_to_title_case(enum_keys[var_name]))
+	return GameScript.get_entry("Topics." + str(enum_keys[var_name]))
 
 func get_item_index(group: Enums.TopicGroups, topic: Enums.Topics):
 	for index in known_topics[group].size():

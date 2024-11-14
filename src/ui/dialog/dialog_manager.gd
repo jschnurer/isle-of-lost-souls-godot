@@ -47,6 +47,7 @@ func _on_open_dialog_manager(dialog: BaseDialog):
 	set_focus(FocusedArea.TOPICS)
 	loaded_dialog.on_greet()
 	delay_event_time = 0
+	portrait.flip_h = dialog.flip_portrait_h
 	
 func _on_close_dialog_manager():
 	loaded_dialog = null

@@ -87,6 +87,10 @@
 		}
 	},
 	"Ruins": {
+		"Shared": {
+			"Column_Look": "The brick-work column supports the ceiling high overhead. Even though some of the bricks are crumbling, it's still sturdy.",
+			"Column_Take": "You prefer that the ceiling stay above you so you decide not to dismantle the column"
+		},
 		"Hall": {
 			"Altar_Look": "The altar is a large piece of white stone. Engraved on its surface is a large, runic symbol: ᛞ.",
 			"Door_Closed_Look": "The stone door is large and solid. It's made out of a different material than the rest of the walls.",
@@ -219,12 +223,39 @@
 		}
 	},
 	"Topics": {
-		"Who_Are_You": "Who are you?",
-		"Goodbye": "goodbye",
-		"My_Past": "my past",
-		"Island_Arrival": "island arrival",
-		"Merek": "Merek",
-		"Totems": "totems",
-		"Fair_Haired_Woman": "fair-haired woman"
+		"WHO_ARE_YOU": "Who are you?",
+		"GOODBYE": "goodbye",
+		"MY_PAST": "my past",
+		"ISLAND_ARRIVAL": "island arrival",
+		"TOTEMS": "totems",
+		"FAIR_HAIRED_WOMAN": "fair-haired woman",
+		"MEREK": "Merek",
+		"MEREDITH": "Meredith",
+		"ARDEN": "Arden",
+		"EDRA": "Edra",
+		"RHODE": "Rhode",
+		"OPHELIA": "Ophelia",
+		"STANLEY": "Stanley",
+		"ORDER_OF_THE_GRIFFIN": "Order of the Griffin",
+		"TEMPLE": "Temple",
+		"ISLAND": "Island",
+		"IT": "It"
+	},
+	"Dialog": {
+		"Merek": {
+			"Greet": "He doesn't seem to notice you but mumbles something. \"...hunt them down... ...cleanse their souls...\"",
+			"Who_Are_You": "\"...\"\n\nHe silently stares into the distance for a long while.\n\n\"...foolish...\"",
+			"Meredith": "\"...hunter with golden hair... ...the brothers... ... ...it doth feed...\"",
+			"Arden": "\"...elder brother... ...innocent... ... ...it doth watch...\"",
+			"Edra": "\"...younger brother... ...the hunted... ... ...it doth wait...\"",
+			"Rhode": "\"...my prey... ...nay... ...she alone... ...I could trust... ... ...it doth plan...\"",
+			"Ophelia": "\"...the ambassador... ...the hunted... ...atop the black mountain... ...not what she doth appear... ... ...it doth fight...\"",
+			"Stanley": "\"...hunter... ...doth pursue his prey... ...even still... ...atop the black mountain... ... ...it doth control...\"",
+			"Merek": "\"...\" He is silent for a long while. \"...Merek... ...'Tis I?... ...a fool...\"",
+			"Order_of_the_Griffin": "\"...hunters... ...hunting the wicked... ...nay... ...'twas a ruse... ...the hunters misled... ...it lied...\"",
+			"Temple": "\"...not real... ...'tis naught... ...but a memory... ...mine?... ...and others'...\"",
+			"Island": "\"...not real... ...made not of stone... ...but of shadows... ...shadows of memories... ...it keeps us here...\"",
+			"It": "\"...the warden... ...feeds on memories... ...memories of its prisoners...\""
+		}
 	}
 }

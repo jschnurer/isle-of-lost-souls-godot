@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cvnypdhvfnomi"]
+[gd_scene load_steps=27 format=3 uid="uid://cvnypdhvfnomi"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_pu6mp"]
 [ext_resource type="Texture2D" uid="uid://dtevgep1doogc" path="res://art/backgrounds/ruins/Grand Temple North.png" id="2_32l1b"]
@@ -9,14 +9,16 @@
 [ext_resource type="Script" path="res://src/scenes/ruins/grand_temple_north/interactables/stairs.gd" id="5_5478i"]
 [ext_resource type="Script" path="res://src/scenes/ruins/grand_temple_north/interactables/altar.gd" id="5_hnv1u"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="7_1grwk"]
-[ext_resource type="Texture2D" uid="uid://dqbaq1c0e65jd" path="res://art/actors/marek.png" id="9_0v4l2"]
-[ext_resource type="Script" path="res://src/scenes/ruins/grand_temple_north/interactables/marek.gd" id="9_8kyxy"]
+[ext_resource type="Texture2D" uid="uid://dqbaq1c0e65jd" path="res://art/actors/merek.png" id="9_0v4l2"]
+[ext_resource type="Script" path="res://src/scenes/ruins/grand_temple_north/interactables/merek.gd" id="9_8kyxy"]
 [ext_resource type="Texture2D" uid="uid://co8qqtd0jqpn6" path="res://art/actors/helmet.png" id="11_atsan"]
 [ext_resource type="Texture2D" uid="uid://dpbmgtia45aey" path="res://art/actors/device.png" id="12_1uwwp"]
 [ext_resource type="Script" path="res://src/scenes/ruins/grand_temple_north/interactables/device.gd" id="12_xjhrx"]
+[ext_resource type="Script" path="res://src/dialogs/merek_dialog.gd" id="13_1oyv1"]
 [ext_resource type="Texture2D" uid="uid://c22jg6c2qwsqb" path="res://art/actors/device_rod.png" id="14_yo8gj"]
 [ext_resource type="Texture2D" uid="uid://cjxw5pcfrqxg1" path="res://art/actors/device_front.png" id="15_pctkc"]
 [ext_resource type="PackedScene" uid="uid://d2m1pp5vbivfi" path="res://src/scenes/ruins/square_north/interactables/banner.tscn" id="16_1i2rx"]
+[ext_resource type="PackedScene" uid="uid://owk0dfdkakfv" path="res://src/scenes/objects/column/column.tscn" id="19_k735c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62ek0"]
 size = Vector2(820, 20)
@@ -27,18 +29,19 @@ size = Vector2(820, 20)
 size = Vector2(105, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yemg"]
-size = Vector2(105, 60)
+size = Vector2(105, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gk1jr"]
-size = Vector2(28, 64)
+size = Vector2(16, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lf6y8"]
-size = Vector2(15, 57)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mxnu"]
+size = Vector2(25, 17)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oswx"]
-size = Vector2(15, 57)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm1ts"]
+size = Vector2(8, 40)
 
 [node name="GrandTempleNorth" type="Node2D"]
+y_sort_enabled = true
 
 [node name="SceneBG" parent="." instance=ExtResource("1_pu6mp")]
 texture = ExtResource("2_32l1b")
@@ -46,7 +49,6 @@ scene = 96
 area = 5
 bg_images = Array[Texture2D]([ExtResource("2_32l1b")])
 collision_image = ExtResource("3_r3ym8")
-hide_collider = true
 bgm_stream = ExtResource("4_npwwr")
 bgm_volume = -5.0
 metadata/_edit_lock_ = true
@@ -75,11 +77,15 @@ event_area = SubResource("RectangleShape2D_csg6b")
 polygon = PackedVector2Array(-22, -15, 24, -15, 24, 16, -22, 16, -22, 14, 23, 14, 23, -13, -22, -13)
 
 [node name="Altar" type="Node2D" parent="."]
+y_sort_enabled = true
 position = Vector2(408, 170)
 script = ExtResource("5_hnv1u")
 
 [node name="Sprite2D" type="Sprite2D" parent="Altar"]
+y_sort_enabled = true
+position = Vector2(0, 12)
 texture = ExtResource("5_3uyb8")
+offset = Vector2(0, -12)
 
 [node name="GameEvent" parent="Altar" instance=ExtResource("7_1grwk")]
 visible = false
@@ -89,119 +95,173 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_wwpy0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Altar"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Altar/StaticBody2D"]
-position = Vector2(-0.5, 0)
+position = Vector2(-0.5, 6)
 shape = SubResource("RectangleShape2D_1yemg")
 
-[node name="Marek" type="Node2D" parent="Altar"]
-position = Vector2(50, -19)
+[node name="Merek" type="Node2D" parent="Altar" node_paths=PackedStringArray("dialog")]
+y_sort_enabled = true
+position = Vector2(50, -0.92)
 script = ExtResource("9_8kyxy")
+dialog = NodePath("Dialog")
 
-[node name="Sprite2D" type="Sprite2D" parent="Altar/Marek"]
+[node name="MerekSprite" type="Sprite2D" parent="Altar/Merek"]
+y_sort_enabled = true
+position = Vector2(0, 13)
 texture = ExtResource("9_0v4l2")
+offset = Vector2(0, -33)
 flip_h = true
 
-[node name="GameEvent" parent="Altar/Marek" instance=ExtResource("7_1grwk")]
-visible = false
+[node name="Helmet" type="Sprite2D" parent="Altar/Merek"]
+position = Vector2(-10, 13.07)
+texture = ExtResource("11_atsan")
+offset = Vector2(0, -16.9)
+flip_h = true
+
+[node name="GameEvent" parent="Altar/Merek" instance=ExtResource("7_1grwk")]
 parent_node_index = 10
 
-[node name="CollisionShape2D" parent="Altar/Marek/GameEvent" index="0"]
+[node name="CollisionShape2D" parent="Altar/Merek/GameEvent" index="0"]
+position = Vector2(-6, 6.92)
 shape = SubResource("RectangleShape2D_gk1jr")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Altar/Marek/GameEvent"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Altar/Merek/GameEvent"]
+position = Vector2(2.5, 4.42)
+shape = SubResource("RectangleShape2D_0mxnu")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Altar/Marek"]
-position = Vector2(-10, 19)
-texture = ExtResource("11_atsan")
-flip_h = true
+[node name="Dialog" type="Node2D" parent="Altar/Merek"]
+script = ExtResource("13_1oyv1")
+portrait_texture = ExtResource("9_0v4l2")
+flip_portrait_h = true
+topic_group = 4
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Altar/Marek"]
-visible = false
+[node name="StaticBody2D" type="StaticBody2D" parent="Altar/Merek"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Altar/Marek/StaticBody2D"]
-polygon = PackedVector2Array(-11, -32, -1, -32, 1, -20, 3, 2, 10, 4, 15, 31, 4, 32, -4, 27, -16, 28, -16, 12, -14, -12, -12, -17)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Altar/Merek/StaticBody2D"]
+position = Vector2(2, 3.92)
+shape = SubResource("RectangleShape2D_0mxnu")
 
-[node name="Device" type="Node2D" parent="."]
-position = Vector2(195, 243)
-script = ExtResource("12_xjhrx")
+[node name="Clutter" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="GameEvent" parent="Device" instance=ExtResource("7_1grwk")]
-metadata/_edit_lock_ = true
+[node name="Banners" type="Node2D" parent="Clutter"]
+y_sort_enabled = true
+position = Vector2(0, 43.5)
 
-[node name="CollisionShape2D" parent="Device/GameEvent" index="0"]
-position = Vector2(-1.5, 16.5)
-shape = SubResource("RectangleShape2D_lf6y8")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Device"]
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Device/StaticBody2D"]
-position = Vector2(-1.5, 16.5)
-shape = SubResource("RectangleShape2D_4oswx")
-
-[node name="DeviceBack" type="Sprite2D" parent="Device"]
-texture = ExtResource("12_1uwwp")
-metadata/_edit_lock_ = true
-
-[node name="RodSprite" type="Sprite2D" parent="Device"]
-position = Vector2(5, 1)
-rotation = -2.44346
-texture = ExtResource("14_yo8gj")
-offset = Vector2(-5, -16)
-metadata/_edit_lock_ = true
-
-[node name="DeviceFront" type="Sprite2D" parent="Device"]
-texture = ExtResource("15_pctkc")
-metadata/_edit_lock_ = true
-
-[node name="Banner" parent="." instance=ExtResource("16_1i2rx")]
-position = Vector2(601, 416)
-
-[node name="Banner3" parent="." instance=ExtResource("16_1i2rx")]
-position = Vector2(601, 607)
-
-[node name="Banner2" parent="." instance=ExtResource("16_1i2rx")]
-position = Vector2(601, 226)
-
-[node name="Banner4" parent="." instance=ExtResource("16_1i2rx")]
-position = Vector2(216, 417)
-
-[node name="Banner5" parent="." instance=ExtResource("16_1i2rx")]
-position = Vector2(216, 608)
-
-[node name="Banner6" parent="." instance=ExtResource("16_1i2rx")]
-position = Vector2(216, 227)
-
-[node name="Banner7" parent="." instance=ExtResource("16_1i2rx")]
+[node name="Banner7" parent="Clutter/Banners" instance=ExtResource("16_1i2rx")]
 position = Vector2(107, 59.5)
 
-[node name="Banner8" parent="." instance=ExtResource("16_1i2rx")]
+[node name="Banner8" parent="Clutter/Banners" instance=ExtResource("16_1i2rx")]
 position = Vector2(172, 59.5)
 
-[node name="Banner9" parent="." instance=ExtResource("16_1i2rx")]
+[node name="Banner9" parent="Clutter/Banners" instance=ExtResource("16_1i2rx")]
 position = Vector2(237, 59.5)
 
-[node name="Banner10" parent="." instance=ExtResource("16_1i2rx")]
+[node name="Banner10" parent="Clutter/Banners" instance=ExtResource("16_1i2rx")]
 position = Vector2(302, 59.5)
 
-[node name="Banner11" parent="." instance=ExtResource("16_1i2rx")]
+[node name="Banner11" parent="Clutter/Banners" instance=ExtResource("16_1i2rx")]
 position = Vector2(499, 61)
 
-[node name="Banner15" parent="." instance=ExtResource("16_1i2rx")]
+[node name="Banner15" parent="Clutter/Banners" instance=ExtResource("16_1i2rx")]
 position = Vector2(404, 61)
 
-[node name="Banner12" parent="." instance=ExtResource("16_1i2rx")]
+[node name="Banner12" parent="Clutter/Banners" instance=ExtResource("16_1i2rx")]
 position = Vector2(564, 61)
 
-[node name="Banner13" parent="." instance=ExtResource("16_1i2rx")]
+[node name="Banner13" parent="Clutter/Banners" instance=ExtResource("16_1i2rx")]
 position = Vector2(629, 61)
 
-[node name="Banner14" parent="." instance=ExtResource("16_1i2rx")]
+[node name="Banner14" parent="Clutter/Banners" instance=ExtResource("16_1i2rx")]
 position = Vector2(694, 61)
 
+[node name="ColumnBanners" type="Node2D" parent="Clutter"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, 287.5)
+
+[node name="Banner" parent="Clutter/ColumnBanners" instance=ExtResource("16_1i2rx")]
+position = Vector2(217, -16)
+
+[node name="Banner2" parent="Clutter/ColumnBanners" instance=ExtResource("16_1i2rx")]
+position = Vector2(601, -16)
+
+[node name="Banner3" parent="Clutter/ColumnBanners" instance=ExtResource("16_1i2rx")]
+position = Vector2(217, 173)
+
+[node name="Banner4" parent="Clutter/ColumnBanners" instance=ExtResource("16_1i2rx")]
+position = Vector2(601, 173)
+
+[node name="Banner5" parent="Clutter/ColumnBanners" instance=ExtResource("16_1i2rx")]
+position = Vector2(217, 363)
+
+[node name="Banner6" parent="Clutter/ColumnBanners" instance=ExtResource("16_1i2rx")]
+position = Vector2(601, 363)
+
+[node name="Columns" type="Node2D" parent="Clutter"]
+y_sort_enabled = true
+
+[node name="Column" parent="Clutter/Columns" instance=ExtResource("19_k735c")]
+position = Vector2(216.5, 458.5)
+
+[node name="Column3" parent="Clutter/Columns" instance=ExtResource("19_k735c")]
+position = Vector2(600.5, 458)
+
+[node name="Column5" parent="Clutter/Columns" instance=ExtResource("19_k735c")]
+position = Vector2(600.5, 648)
+
+[node name="Column6" parent="Clutter/Columns" instance=ExtResource("19_k735c")]
+position = Vector2(216.5, 648)
+
+[node name="Column4" parent="Clutter/Columns" instance=ExtResource("19_k735c")]
+position = Vector2(600.5, 268)
+
+[node name="Column2" parent="Clutter/Columns" instance=ExtResource("19_k735c")]
+position = Vector2(216.5, 268)
+
+[node name="Device2" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(196, 237)
+script = ExtResource("12_xjhrx")
+
+[node name="GameEvent" parent="Device2" instance=ExtResource("7_1grwk")]
+y_sort_enabled = true
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" parent="Device2/GameEvent" index="0"]
+position = Vector2(-5, 34)
+shape = SubResource("RectangleShape2D_tm1ts")
+
+[node name="DeviceBack" type="Sprite2D" parent="Device2"]
+y_sort_enabled = true
+position = Vector2(0, 33.305)
+texture = ExtResource("12_1uwwp")
+offset = Vector2(0, -33)
+metadata/_edit_lock_ = true
+
+[node name="RodUp" type="Sprite2D" parent="Device2"]
+y_sort_enabled = true
+position = Vector2(6, 35)
+texture = ExtResource("14_yo8gj")
+offset = Vector2(-5, -49)
+metadata/_edit_lock_ = true
+
+[node name="RodDown" type="Sprite2D" parent="Device2"]
+y_sort_enabled = true
+position = Vector2(6, 35)
+texture = ExtResource("14_yo8gj")
+offset = Vector2(-5, -18)
+flip_v = true
+metadata/_edit_lock_ = true
+
+[node name="DeviceFront" type="Sprite2D" parent="Device2"]
+y_sort_enabled = true
+position = Vector2(0, 35.33)
+texture = ExtResource("15_pctkc")
+offset = Vector2(0, -35)
+metadata/_edit_lock_ = true
+
 [editable path="Altar/GameEvent"]
-[editable path="Altar/Marek/GameEvent"]
-[editable path="Device/GameEvent"]
+[editable path="Altar/Merek/GameEvent"]
+[editable path="Device2/GameEvent"]

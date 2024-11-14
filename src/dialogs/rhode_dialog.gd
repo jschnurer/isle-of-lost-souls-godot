@@ -1,4 +1,4 @@
-extends "res://src/dialogs/base_dialog.gd"
+extends BaseDialog
 
 func ask_about(topic: Enums.Topics):
 	if (topic == Enums.Topics.WHO_ARE_YOU):

@@ -16,6 +16,19 @@ func msg(msg_key: String, has_more: bool = false):
 	SignalBus.show_message.emit(GameScript.get_entry(msg_key), has_more)
 	await SignalBus.message_closed
 
+func open_dialog(dialog: BaseDialog):
+	SignalBus.open_dialog_manager.emit(dialog)
+
+func dialog_msg(msg_key: String, has_more: bool = false):
+	SignalBus.show_dialog_message.emit(GameScript.get_entry(msg_key), has_more)
+	await SignalBus.dialog_message_closed
+
+func close_dialog():
+	SignalBus.close_dialog_manager.emit()
+
+func learn_topic(group: Enums.TopicGroups, topic: Enums.Topics):
+	SignalBus.learn_topic.emit(group, topic)
+
 func show_choice(choices: Array[String], cancel_index: int, choice_location: Enums.ChoiceLocation = Enums.ChoiceLocation.CENTER) -> Choice:
 	SignalBus.show_choice.emit(choices, cancel_index, choice_location)
 	return await SignalBus.choice_chosen

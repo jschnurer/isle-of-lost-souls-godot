@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dt78de4j06a4m"]
+[gd_scene load_steps=10 format=3 uid="uid://dt78de4j06a4m"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_tsnuy"]
 [ext_resource type="Texture2D" uid="uid://berfwpp6trpqy" path="res://art/backgrounds/ruins/Grand Temple South.png" id="2_wqucr"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bilox2ipgetn5" path="res://audio/bgm/ruins-loop.ogg" id="4_k5uui"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="4_rgcfg"]
 [ext_resource type="PackedScene" uid="uid://d2m1pp5vbivfi" path="res://src/scenes/ruins/square_north/interactables/banner.tscn" id="5_27gb4"]
+[ext_resource type="PackedScene" uid="uid://owk0dfdkakfv" path="res://src/scenes/objects/column/column.tscn" id="7_mv483"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1wgg"]
 size = Vector2(40, 20)
@@ -14,8 +15,11 @@ size = Vector2(40, 20)
 size = Vector2(820, 20)
 
 [node name="GrandTempleSouth" type="Node2D"]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
 
 [node name="SceneBG" parent="." instance=ExtResource("1_tsnuy")]
+y_sort_enabled = true
 texture = ExtResource("2_wqucr")
 area = 5
 bg_images = Array[Texture2D]([ExtResource("2_wqucr")])
@@ -40,20 +44,50 @@ event_area = SubResource("RectangleShape2D_ncxpv")
 to_north = true
 preserve_x = true
 
-[node name="Banner" parent="." instance=ExtResource("5_27gb4")]
+[node name="Clutter" type="Node2D" parent="."]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="Banners" type="Node2D" parent="Clutter"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, 43.5)
+
+[node name="Banner" parent="Clutter/Banners" instance=ExtResource("5_27gb4")]
 position = Vector2(217, -16)
 
-[node name="Banner2" parent="." instance=ExtResource("5_27gb4")]
+[node name="Banner2" parent="Clutter/Banners" instance=ExtResource("5_27gb4")]
 position = Vector2(601, -16)
 
-[node name="Banner3" parent="." instance=ExtResource("5_27gb4")]
+[node name="Banner3" parent="Clutter/Banners" instance=ExtResource("5_27gb4")]
 position = Vector2(217, 173)
 
-[node name="Banner4" parent="." instance=ExtResource("5_27gb4")]
+[node name="Banner4" parent="Clutter/Banners" instance=ExtResource("5_27gb4")]
 position = Vector2(601, 173)
 
-[node name="Banner5" parent="." instance=ExtResource("5_27gb4")]
+[node name="Banner5" parent="Clutter/Banners" instance=ExtResource("5_27gb4")]
 position = Vector2(217, 363)
 
-[node name="Banner6" parent="." instance=ExtResource("5_27gb4")]
+[node name="Banner6" parent="Clutter/Banners" instance=ExtResource("5_27gb4")]
 position = Vector2(601, 363)
+
+[node name="Columns" type="Node2D" parent="Clutter"]
+y_sort_enabled = true
+
+[node name="Column" parent="Clutter/Columns" instance=ExtResource("7_mv483")]
+position = Vector2(216.5, 214)
+
+[node name="Column3" parent="Clutter/Columns" instance=ExtResource("7_mv483")]
+position = Vector2(216.5, 404)
+
+[node name="Column2" parent="Clutter/Columns" instance=ExtResource("7_mv483")]
+position = Vector2(216.5, 24)
+
+[node name="Column4" parent="Clutter/Columns" instance=ExtResource("7_mv483")]
+position = Vector2(600.5, 214)
+
+[node name="Column5" parent="Clutter/Columns" instance=ExtResource("7_mv483")]
+position = Vector2(600.5, 404)
+
+[node name="Column6" parent="Clutter/Columns" instance=ExtResource("7_mv483")]
+position = Vector2(600.5, 24)

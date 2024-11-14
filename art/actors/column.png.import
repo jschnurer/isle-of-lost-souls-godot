@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqbaq1c0e65jd"
-path="res://.godot/imported/marek.png-5b6e2d8b03c8a7667e781c98b8e898c9.ctex"
+uid="uid://12s04nbtohux"
+path="res://.godot/imported/column.png-fe7916514cb99a64cd2fd846a5fc3a64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/actors/marek.png"
-dest_files=["res://.godot/imported/marek.png-5b6e2d8b03c8a7667e781c98b8e898c9.ctex"]
+source_file="res://art/actors/column.png"
+dest_files=["res://.godot/imported/column.png-fe7916514cb99a64cd2fd846a5fc3a64.ctex"]
 
 [params]
 
