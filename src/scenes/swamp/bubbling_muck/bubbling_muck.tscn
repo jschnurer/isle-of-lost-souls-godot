@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://jdnhdavcxdg"]
+[gd_scene load_steps=17 format=3 uid="uid://jdnhdavcxdg"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_jef77"]
+[ext_resource type="Script" path="res://src/scenes/swamp/bubbling_muck/bubbling_muck.gd" id="1_y5vkp"]
 [ext_resource type="Texture2D" uid="uid://hngubpyohjij" path="res://art/backgrounds/swamp/Bubbling Muck.png" id="2_ix5i8"]
 [ext_resource type="Texture2D" uid="uid://8rtoysjiptfc" path="res://art/backgrounds/swamp/Bubbling Muck Collision.png" id="3_4vuao"]
 [ext_resource type="AudioStream" uid="uid://buk1w58pspprj" path="res://audio/bgm/bubbling-swamp-loop.ogg" id="4_2or7e"]
@@ -20,6 +21,7 @@ size = Vector2(200, 20)
 
 [node name="BubblingMuck" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_y5vkp")
 metadata/_edit_lock_ = true
 
 [node name="SceneBG" parent="." instance=ExtResource("1_jef77")]
