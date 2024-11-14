@@ -308,7 +308,7 @@ var ScenePaths = {
 	Scenes.RUINS_TEMPLE_SOUTH: "res://src/scenes/ruins/grand_temple_south/grand_temple_south.tscn",
 	Scenes.RUINS_TEMPLE_NORTH: "res://src/scenes/ruins/grand_temple_north/grand_temple_north.tscn",
 
-	Scenes.SWAMP_BUBBLING_MUCK: "res://src/scenes/swamp/",
+	Scenes.SWAMP_BUBBLING_MUCK: "res://src/scenes/swamp/bubbling_muck/bubbling_muck.tscn",
 	Scenes.SWAMP_CAMPSITE: "res://src/scenes/swamp/",
 	Scenes.SWAMP_DEAD_TREE: "res://src/scenes/swamp/dead_tree/dead_tree.tscn",
 	Scenes.SWAMP_DRY_TRAIL: "res://src/scenes/swamp/",

@@ -21,7 +21,7 @@ func _ready():
 	SignalBus.toggle_player.emit(args)
 	
 	var tele_args = TeleportArgs.new()
-	tele_args.to_scene = Enums.Scenes.RUINS_SQUARE_NORTH
+	tele_args.to_scene = Enums.Scenes.SWAMP_BUBBLING_MUCK
 	tele_args.to_location = Vector2(417, 338)
 	SignalBus.transfer_player_to_scene.emit(tele_args)
 	

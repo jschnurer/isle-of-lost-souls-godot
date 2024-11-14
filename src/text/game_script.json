@@ -89,7 +89,7 @@
 	"Ruins": {
 		"Shared": {
 			"Column_Look": "The brick-work column supports the ceiling high overhead. Even though some of the bricks are crumbling, it's still sturdy.",
-			"Column_Take": "You prefer that the ceiling stay above you so you decide not to dismantle the column"
+			"Column_Take": "You prefer that the ceiling stay above you so you decide not to dismantle the column."
 		},
 		"Hall": {
 			"Altar_Look": "The altar is a large piece of white stone. Engraved on its surface is a large, runic symbol: ᛞ.",
