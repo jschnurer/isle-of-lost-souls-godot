@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://8rj10odb1kth"]
+
+[ext_resource type="Texture2D" uid="uid://d0v3td8wbb4d5" path="res://art/actors/swamp_geyser.png" id="1_t8i0s"]
+[ext_resource type="Script" path="res://src/scenes/objects/swamp_geyser/swamp_geyser.gd" id="2_x13kh"]
+
+[sub_resource type="Animation" id="Animation_rcfe4"]
+resource_name = "geyser"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 54, 75), Rect2(54, 0, 54, 75), Rect2(108, 0, 54, 75), Rect2(0, 75, 54, 75), Rect2(54, 75, 54, 75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_anim_done"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_fbkq2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 54, 75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_seft7"]
+_data = {
+"RESET": SubResource("Animation_fbkq2"),
+"geyser": SubResource("Animation_rcfe4")
+}
+
+[node name="SwampGeyser" type="Sprite2D"]
+process_mode = 3
+texture = ExtResource("1_t8i0s")
+offset = Vector2(0, -33)
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 54, 75)
+script = ExtResource("2_x13kh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_seft7")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="FlipTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="FlipTimer" to="." method="_on_flip_timer_timeout"]

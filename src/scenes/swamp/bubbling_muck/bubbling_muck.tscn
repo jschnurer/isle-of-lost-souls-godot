@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://jdnhdavcxdg"]
+[gd_scene load_steps=16 format=3 uid="uid://jdnhdavcxdg"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_jef77"]
 [ext_resource type="Texture2D" uid="uid://hngubpyohjij" path="res://art/backgrounds/swamp/Bubbling Muck.png" id="2_ix5i8"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ry7shhhnxge" path="res://src/scenes/objects/lilypads/lily_pads_2.tscn" id="11_507ym"]
 [ext_resource type="PackedScene" uid="uid://e7q0ncmypwue" path="res://src/scenes/objects/lilypads/lily_pads_3.tscn" id="12_0r0i1"]
 [ext_resource type="PackedScene" uid="uid://cmwl1kgq7fk1" path="res://src/scenes/objects/swamp_bubble/swamp_bubble.tscn" id="13_e1vru"]
+[ext_resource type="PackedScene" uid="uid://8rj10odb1kth" path="res://src/scenes/objects/swamp_geyser/swamp_geyser.tscn" id="14_yvv0l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8we1"]
 size = Vector2(200, 20)
@@ -597,3 +598,29 @@ position = Vector2(151, 520)
 
 [node name="SwampBubble21" parent="Vegetation/Bubbles" instance=ExtResource("13_e1vru")]
 position = Vector2(55, 559)
+
+[node name="Geysers" type="Node2D" parent="Vegetation"]
+
+[node name="SwampGeyser" parent="Vegetation/Geysers" instance=ExtResource("14_yvv0l")]
+position = Vector2(536, 406)
+
+[node name="SwampGeyser2" parent="Vegetation/Geysers" instance=ExtResource("14_yvv0l")]
+position = Vector2(564, 487)
+
+[node name="SwampGeyser3" parent="Vegetation/Geysers" instance=ExtResource("14_yvv0l")]
+position = Vector2(151, 489)
+
+[node name="SwampGeyser4" parent="Vegetation/Geysers" instance=ExtResource("14_yvv0l")]
+position = Vector2(36, 577)
+
+[node name="SwampGeyser5" parent="Vegetation/Geysers" instance=ExtResource("14_yvv0l")]
+position = Vector2(618, 323)
+
+[node name="SwampGeyser6" parent="Vegetation/Geysers" instance=ExtResource("14_yvv0l")]
+position = Vector2(747, 261)
+
+[node name="SwampGeyser7" parent="Vegetation/Geysers" instance=ExtResource("14_yvv0l")]
+position = Vector2(126, 133)
+
+[node name="SwampGeyser8" parent="Vegetation/Geysers" instance=ExtResource("14_yvv0l")]
+position = Vector2(314, 97)
