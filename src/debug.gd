@@ -11,6 +11,10 @@ func _ready():
 	Inventory.add_item(Enums.ItemSlugs.RUINS_ROD)
 	Inventory.add_item(Enums.ItemSlugs.SLEDGE)
 	Inventory.add_item(Enums.ItemSlugs.FLASHLIGHT)
+	Inventory.add_item(Enums.ItemSlugs.POTION)
+	Inventory.add_item(Enums.ItemSlugs.OPHELIAS_JOURNAL1)
+	Inventory.add_item(Enums.ItemSlugs.HATCH_NOTE)
+	Inventory.add_item(Enums.ItemSlugs.ETAVONER_RUNE)
 	GameVars.set_var(Enums.Vars.RUIN_HALL_DOOR_OPEN, true)
 	
 	await Utility.wait(.1)
@@ -21,7 +25,7 @@ func _ready():
 	SignalBus.toggle_player.emit(args)
 	
 	var tele_args = TeleportArgs.new()
-	tele_args.to_scene = Enums.Scenes.SWAMP_BUBBLING_MUCK
+	tele_args.to_scene = Enums.Scenes.SWAMP_CAMPSITE
 	tele_args.to_location = Vector2(417, 338)
 	SignalBus.transfer_player_to_scene.emit(tele_args)
 	

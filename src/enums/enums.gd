@@ -7,6 +7,7 @@ enum PlayerMode { PERSON, POINTER }
 enum ActivationMode { ACTIVATE, COLLIDE, }
 enum EventType { DIALOG, TELEPORT }
 enum ChoiceLocation { CENTER, BOTTOM, TOP }
+enum InventoryMode { ITEM_CHOOSER, INVENTORY }
 
 enum Areas {
 	CAVES,
@@ -43,6 +44,8 @@ enum Vars {
 	DROPPED_ETAVONER_IN_WELL,
 	MUSHROOMS_ANCHORED,
 	MUSHROOM_TOUCH_SEQUENCE,
+	TOOK_FLAG,
+	TOOK_WATERLOGGED_NOTEBOOK,
 }
 
 enum EngineEvents {
@@ -219,6 +222,7 @@ enum Scenes {
 	SWAMP_TOPPLED_TREE_MUSHROOMS = 97,
 	GAME_OVER_MUSHROOM = 98,
 	GAME_OVER_PUFFBALL = 99,
+	SWAMP_CAMPSITE_TENT = 100,
 }
 
 var ScenePaths = {
@@ -309,13 +313,14 @@ var ScenePaths = {
 	Scenes.RUINS_TEMPLE_NORTH: "res://src/scenes/ruins/grand_temple_north/grand_temple_north.tscn",
 
 	Scenes.SWAMP_BUBBLING_MUCK: "res://src/scenes/swamp/bubbling_muck/bubbling_muck.tscn",
-	Scenes.SWAMP_CAMPSITE: "res://src/scenes/swamp/",
+	Scenes.SWAMP_CAMPSITE: "res://src/scenes/swamp/abandoned_campsite/abandoned_campsite.tscn",
+	Scenes.SWAMP_CAMPSITE_TENT: "res://src/scenes/swamp/abandoned_campsite/sub_areas/abandoned_campsite_tent.tscn",
 	Scenes.SWAMP_DEAD_TREE: "res://src/scenes/swamp/dead_tree/dead_tree.tscn",
 	Scenes.SWAMP_DRY_TRAIL: "res://src/scenes/swamp/",
 	Scenes.SWAMP_FOREST_ENTRANCE: "res://src/scenes/swamp/near_forest/near_forest.tscn",
 	Scenes.SWAMP_HUT_INTERIOR: "res://src/scenes/swamp/",
 	Scenes.SWAMP_HUT_EXTERIOR: "res://src/scenes/swamp/",
-	Scenes.SWAMP_MAMMOTH_SKULL: "res://src/scenes/swamp/",
+	Scenes.SWAMP_MAMMOTH_SKULL: "res://src/scenes/swamp/muck_skull/muck_skull.tscn",
 	Scenes.SWAMP_MOSQUITO_SPAWN: "res://src/scenes/swamp/",
 	Scenes.SWAMP_RIDGE: "res://src/scenes/swamp/",
 	Scenes.SWAMP_STANDING_WATER: "res://src/scenes/swamp/standing_water/standing_water.tscn",

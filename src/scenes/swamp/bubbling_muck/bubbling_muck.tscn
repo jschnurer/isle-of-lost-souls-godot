@@ -36,13 +36,20 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="ToStandingWater" parent="." instance=ExtResource("4_fnwh6")]
-position = Vector2(740, 5)
+position = Vector2(742, 1)
 to_scene = "SWAMP_STANDING_WATER"
 scene_name_valid = true
 event_area = SubResource("RectangleShape2D_r8we1")
 to_north = true
 preserve_x = true
-metadata/_edit_lock_ = true
+
+[node name="ToMuckSkull" parent="." instance=ExtResource("4_fnwh6")]
+position = Vector2(426, 623)
+to_scene = "SWAMP_MAMMOTH_SKULL"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_r8we1")
+to_south = true
+preserve_x = true
 
 [node name="Vegetation" type="Node2D" parent="."]
 y_sort_enabled = true

@@ -94,10 +94,13 @@ signal show_choice(choices: Array[String], cancel_index: int, choice_location: E
 signal choice_chosen(choice: Choice)
 
 @warning_ignore("unused_signal")
-signal open_inventory()
+signal open_inventory(mode: Enums.InventoryMode)
 
 @warning_ignore("unused_signal")
 signal inventory_closed(item: Item)
+
+@warning_ignore("unused_signal")
+signal global_use_item(item: Item)
 
 @warning_ignore("unused_signal")
 signal save_game(slot: int)

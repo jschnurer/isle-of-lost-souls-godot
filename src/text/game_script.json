@@ -5,6 +5,7 @@
 		"Uninteresting": "It's not very interesting.",
 		"Dont_Take": "You can't take that.",
 		"No_Mechanism_To_Interact": "It has no mechanism to interact with.",
+		"Not_Usable_Alone": "It's not usable by itself. Maybe try using it on something else.",
 		"Cairn_Take": "Somehow, like a half-remembered memory, you feel that moving the cairn would be detrimental to your progress.",
 		"Cairn_Look": "The cairn stands about 3 feet fall. The stones are covered in runic markings.",
 		"Cairn_Interact": "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK.",
@@ -24,7 +25,28 @@
 		"Continue": "Continue",
 		"New_Game": "New Game",
 		"Load": "Load Game",
-		"Quit": "Quit"
+		"Quit": "Quit",
+		"Hours_Abbr": "h",
+		"Minutes_Abbr": "m"
+	},
+	"Items": {
+		"Ophelias_Journal": {
+			"Cover": "The cover says \"__HELI_'S JOUR__L\". It's badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible.",
+			"Passage1": "_er__ _eft w_thou_ us in _he mid_le of the n____. We f_llow__ _fter _t dawn. It'_ be_n _eeks _n_ the_e's no sig_ of h__. It se_ms li_e _hen pe__le spl__ u_ here t_ey just... disa__ear. We ma_e a flagpo__ a__ us_d a str_p of hi_ fav__it_ clo_k as t__ fl_g. __ybe he'_l se_ it an_ ret__n.",
+			"Passage2": "You find one other legible passage:\nTo travers_ ou_ ___or__s wh__e av__ding h___, touc_ o_r in___e colo_s th_n i__a_t __e charms: _dr_, Mine!, Merek, Rh_d_, Ar__n, M___d_t_, _ta_le_"
+		},
+		"Flashlight": {
+			"Auto_Use": "No need. You'll use it automatically if you find yourself in a dark place."
+		},
+		"Potion": {
+			"Save_For_Later": "You're not injured. Drinking it now would be a waste!"
+		},
+		"Hatch_Note": {
+			"Read": "\"Lowered into darkness, far and out of sight\nPlunged into clear waters, etavoner regains its might.\""
+		},
+		"Rune": {
+			"Cant_Use": "It's not usable as a rune. It requires a trick to change. Wait... what? How do you know that? ...And what does it mean?"
+		}
 	},
 	"Forest": {
 		"Clearing": {
@@ -192,6 +214,25 @@
 		},
 		"Bubbling_Muck": {
 			"On_Enter": "This place is putrid! Foul-smelling gas bubbles up through the endless expanse of black muck. Occasionally, a jet of yellow-green gas vents out of the ground nearby. The air here reeks and burns the lungs. You don't want to stay here long."
+		},
+		"Muck_Skull": {
+			"Skull_Look": "It's a massive animal skull with long tusks. You're pretty sure you know the name of the animal but you can't quite remember it... It's half-buried in the black, reeking muck and there's mildew covering most of it.",
+			"Cairn_Look": "Stacked atop the giant skull is a small cairn of stones. The stones are covered in runic markings."
+		},
+		"Abandoned_Campsite": {
+			"Campfire_Look": "There's a circle of stones and the ground is slightly the color of ash. There are a couple of burnt sticks too. It's been a long time since this campsite's been used.",
+			"Campfire_Take": "Mildew-slicked stones and ash doesn't seem useful. You decide not to take it.",
+			"Tent_Look": "The tent is tattered and full of holes. The edges are frayed. It collapsed a long time ago and the swamp has slowly been rotting it away.",
+			"Tent_Take": "You can't think of a use for soggy, rotten fabric that's sure to disintegrate as soon as you touch it so you leave it.",
+			"Flagpole_Look": "A long stick's been driven into the terrain like a flagpole. It's a little crooked but you're impressed that it's survived for so long. Tied to the top of the stick is a tattered strip of red cloth.",
+			"Flagpole_No_Flag_Look": "The makeshift flagpole lies on the ground where you discarded it.",
+			"Flag_Take": "You grab hold of the stick and yank it back and forth until it's loose enough to uproot. You pull it down and untie the fabric from its end. You take the fabric."
+		},
+		"Abandoned_Campsite_Tent": {
+			"Pack_Look": "There's a pack inside the tent, though it's mostly rotted away. You manage to carefully open it and find fungus, mildew and a waterlogged notebook. The notebook's badly water damaged.",
+			"Pack_Look_No_Notebook": "There's a pack inside the tent, though it's mostly rotted away. You manage to carefully open it and find nothing but fungus and mildew.",
+			"Pack_Take": "The pack's too far gone to be of any use.",
+			"Notebook_Take": "The pack's too far gone to be of any use. Instead, you carefully extract the waterlogged notebook and take it with you."
 		}
 	},
 	"Game_Overs": {

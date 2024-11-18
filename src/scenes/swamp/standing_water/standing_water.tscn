@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ylarurj3sp32"]
+[gd_scene load_steps=21 format=3 uid="uid://ylarurj3sp32"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_epgex"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="1_hh388"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="12_i2p0x"]
 [ext_resource type="Script" path="res://src/scenes/swamp/standing_water/interactables/puffball.gd" id="12_m2sau"]
 [ext_resource type="Script" path="res://src/scenes/swamp/standing_water/interactables/water_pool.gd" id="13_f15hf"]
+[ext_resource type="PackedScene" uid="uid://cmwl1kgq7fk1" path="res://src/scenes/objects/swamp_bubble/swamp_bubble.tscn" id="14_dxv41"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17uta"]
 size = Vector2(20, 250)
@@ -625,6 +626,9 @@ texture = ExtResource("11_tuv8o")
 [node name="Puffball5" type="Sprite2D" parent="Vegetation/Puffballs"]
 position = Vector2(824, 71)
 texture = ExtResource("11_tuv8o")
+
+[node name="SwampBubble" parent="Vegetation" instance=ExtResource("14_dxv41")]
+position = Vector2(548, 619)
 
 [node name="WaterPool" type="Node2D" parent="."]
 position = Vector2(663, 139)

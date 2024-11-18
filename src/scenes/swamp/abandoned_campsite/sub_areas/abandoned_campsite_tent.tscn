@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://3c1t1m12x5uc"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_4g012"]
+[ext_resource type="Texture2D" uid="uid://c1ap7yo1svl58" path="res://art/backgrounds/swamp/Abandoned Campsite Tent.png" id="2_r01dj"]
+[ext_resource type="AudioStream" uid="uid://cfti2ptvnjkxv" path="res://audio/bgm/swamp-loop.ogg" id="3_5vu4p"]
+[ext_resource type="PackedScene" uid="uid://d3oqcmtd837nj" path="res://src/interactables/back_arrow.tscn" id="4_2c6cs"]
+[ext_resource type="Script" path="res://src/scenes/swamp/abandoned_campsite/sub_areas/interactables/pack.gd" id="5_bedw1"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="5_pbfv6"]
+[ext_resource type="Script" path="res://src/scenes/swamp/abandoned_campsite/sub_areas/interactables/tent.gd" id="7_pec1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shnl8"]
+size = Vector2(134, 76)
+
+[node name="AbandonedCampsiteTent" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_4g012")]
+texture = ExtResource("2_r01dj")
+bg_images = Array[Texture2D]([ExtResource("2_r01dj")])
+use_collision_frame = true
+bgm_stream = ExtResource("3_5vu4p")
+
+[node name="BackArrow" parent="." instance=ExtResource("4_2c6cs")]
+
+[node name="Tent" type="Node2D" parent="."]
+script = ExtResource("7_pec1t")
+
+[node name="GameEvent" parent="Tent" instance=ExtResource("5_pbfv6")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tent/GameEvent"]
+polygon = PackedVector2Array(-1, 185, 203, 59, 302, 131, 456, 105, 584, 52, 763, 126, 765, 575, 491, 500, 254, 514, 105, 538, 89, 517, -1, 549)
+
+[node name="Pack" type="Node2D" parent="."]
+position = Vector2(577, 221)
+script = ExtResource("5_bedw1")
+
+[node name="GameEvent" parent="Pack" instance=ExtResource("5_pbfv6")]
+
+[node name="CollisionShape2D" parent="Pack/GameEvent" index="0"]
+position = Vector2(-4, 3)
+shape = SubResource("RectangleShape2D_shnl8")
+
+[editable path="Pack/GameEvent"]

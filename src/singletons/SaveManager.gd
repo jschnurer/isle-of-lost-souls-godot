@@ -81,3 +81,28 @@ func save_most_recent_slot_meta(slot_number: int):
 	var meta_file = FileAccess.open("user://meta.save", FileAccess.WRITE)
 	var json_string = JSON.stringify(meta_dict)
 	meta_file.store_line(json_string)
+
+func get_game_time_from_slot(slot_number: int) -> String:
+	var file_name = "user://savegame" + str(slot_number) + ".save"
+	if (!FileAccess.file_exists(file_name)):
+		return GameScript.get_entry("Global.Empty")
+	
+	# Load the save file.
+	var save_game_text = FileAccess.get_file_as_string(file_name)
+	var save_dict = JSON.parse_string(save_game_text)
+	
+	return format_time(float(save_dict.game_time))
+
+func format_time(time_in_sec):
+	var iseconds = int(time_in_sec)
+	
+	@warning_ignore("integer_division")
+	var minutes = (iseconds / 60) % 60
+	
+	@warning_ignore("integer_division")
+	var hours = (iseconds / 60) / 60
+	
+	var h = GameScript.get_entry("Global.Hours_Abbr")
+	var m = GameScript.get_entry("Global.Minutes_Abbr")
+	
+	return str(hours) + h + " " + (("%02d" + m) % [minutes])

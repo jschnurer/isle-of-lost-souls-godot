@@ -37,6 +37,7 @@ SaveManager="*res://src/singletons/SaveManager.gd"
 GameTimer="*res://src/singletons/GameTimer.gd"
 World="*res://src/scenes/world.tscn"
 ScreenFader="*res://src/ui/screen_fader/ScreenFader.tscn"
+ItemUsage="*res://src/singletons/item_usage/item_usage.tscn"
 Debug="*res://src/debug.gd"
 
 [display]

@@ -24,7 +24,7 @@ func _on_activate(input_action: Enums.InputAction):
 	elif (input_action == Enums.InputAction.TAKE):
 		take()
 	elif (input_action == Enums.InputAction.USE_ITEM):
-		SignalBus.open_inventory.emit()
+		SignalBus.open_inventory.emit(Enums.InventoryMode.ITEM_CHOOSER)
 		var item = await SignalBus.inventory_closed
 		use_item(item as Item)
 	elif (input_action == Enums.InputAction.COLLIDE):

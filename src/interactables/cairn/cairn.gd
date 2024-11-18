@@ -53,5 +53,5 @@ func interact():
 	SignalBus.save_game.emit(choice.index + 1)
 
 func get_slot_choice_text(slot: int) -> String:
-	return GameScript.get_entry("Global.SaveToSlot" + str(slot)) + ": " + GameScript.get_entry("Global.Empty")
+	return GameScript.get_entry("Global.SaveToSlot" + str(slot)) + ": " + SaveManager.get_game_time_from_slot(slot)
 	

@@ -3,6 +3,7 @@ extends CanvasLayer
 var is_open = false
 var delay_event_time = 0
 var delay_before_can_choose = .1
+var mode: Enums.InventoryMode = Enums.InventoryMode.INVENTORY
 @onready var grid_container = $MarginContainer/VBoxContainer/Items/MarginContainer/GridContainer
 @onready var item_description_lbl = $MarginContainer/VBoxContainer/Description/MarginContainer/Label
 
@@ -21,7 +22,8 @@ func _input(event: InputEvent):
 	if (event.is_action_pressed("ui_cancel")):
 		toggle(false)
 
-func _on_open_inventory():
+func _on_open_inventory(new_mode: Enums.InventoryMode):
+	mode = new_mode
 	toggle(true)
 
 func toggle(is_active):
@@ -60,6 +62,9 @@ func populate_grid():
 func _on_item_chosen(item: Item):
 	toggle(false)
 	SignalBus.inventory_closed.emit(item)
+	
+	if (mode == Enums.InventoryMode.INVENTORY):
+		SignalBus.global_use_item.emit(item)
 
 func _on_item_focused(item: Item):
 	item_description_lbl.text = item.description

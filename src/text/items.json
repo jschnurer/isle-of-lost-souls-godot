@@ -38,5 +38,15 @@
 		"slug": "ETAVONER_RUNE",
 		"name": "etavoner rune",
 		"description": "You don't know how you know this, but the rune represents the etavoner charm."
+	},
+	{
+		"slug": "RED_FABRIC",
+		"name": "red fabric",
+		"description": "The strip of red fabric is faded and tattered."
+	},
+	{
+		"slug": "OPHELIAS_JOURNAL1",
+		"name": "waterlogged journal",
+		"description": "The cover reads \"__HELI_'S JOU__L\". It's badly water damaged."
 	}
 ]
