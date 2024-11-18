@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://c0y5762ypn3ey"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_5k4ni"]
+[ext_resource type="Texture2D" uid="uid://ctw00a8n76x03" path="res://art/backgrounds/swamp/Statue Area Statue Top.png" id="2_e3kmk"]
+[ext_resource type="AudioStream" uid="uid://cfti2ptvnjkxv" path="res://audio/bgm/swamp-loop.ogg" id="3_ojxlx"]
+[ext_resource type="PackedScene" uid="uid://d3oqcmtd837nj" path="res://src/interactables/back_arrow.tscn" id="4_p6ac1"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="5_bckkg"]
+[ext_resource type="Script" path="res://src/scenes/swamp/sinking_statue/sub_areas/interactables/message.gd" id="5_ic4fb"]
+[ext_resource type="Script" path="res://src/scenes/swamp/sinking_statue/sub_areas/interactables/look_northeast.gd" id="7_qemcs"]
+[ext_resource type="PackedScene" uid="uid://b4030ratk3mbj" path="res://src/scenes/objects/sparkle/sparkle.tscn" id="7_ym7n6"]
+[ext_resource type="Script" path="res://src/scenes/swamp/sinking_statue/sub_areas/interactables/look_north.gd" id="9_8injw"]
+[ext_resource type="Script" path="res://src/scenes/swamp/sinking_statue/sub_areas/interactables/look_east.gd" id="10_o2ewu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko0f1"]
+size = Vector2(47, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ajpp"]
+size = Vector2(43.5, 47)
+
+[node name="SinkingStatueTop" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_5k4ni")]
+texture = ExtResource("2_e3kmk")
+scene = 101
+area = 6
+bg_images = Array[Texture2D]([ExtResource("2_e3kmk")])
+bgm_stream = ExtResource("3_ojxlx")
+
+[node name="BackArrow" parent="." instance=ExtResource("4_p6ac1")]
+
+[node name="Message" type="Node2D" parent="."]
+position = Vector2(498, 268)
+script = ExtResource("5_ic4fb")
+
+[node name="GameEvent" parent="Message" instance=ExtResource("5_bckkg")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Message/GameEvent"]
+visible = false
+polygon = PackedVector2Array(-140, -207, -57, -130, -260, 25, -228, 75, -125, 21, 134, 277, 206, 215, 82, 56, 122, 0, 179, -47, 42, -150, 48, -225)
+
+[node name="LookNortheast" type="Node2D" parent="."]
+position = Vector2(742, 72)
+script = ExtResource("7_qemcs")
+
+[node name="Sparkle" parent="LookNortheast" instance=ExtResource("7_ym7n6")]
+
+[node name="GameEvent" parent="LookNortheast" instance=ExtResource("5_bckkg")]
+
+[node name="CollisionShape2D" parent="LookNortheast/GameEvent" index="0"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_ko0f1")
+
+[node name="LookNorth" type="Node2D" parent="."]
+position = Vector2(300, 63)
+script = ExtResource("9_8injw")
+
+[node name="Sparkle2" parent="LookNorth" instance=ExtResource("7_ym7n6")]
+
+[node name="GameEvent" parent="LookNorth" instance=ExtResource("5_bckkg")]
+
+[node name="CollisionShape2D" parent="LookNorth/GameEvent" index="0"]
+position = Vector2(-1.75, 0.5)
+shape = SubResource("RectangleShape2D_1ajpp")
+
+[node name="LookEast" type="Node2D" parent="."]
+position = Vector2(749, 321)
+script = ExtResource("10_o2ewu")
+
+[node name="Sparkle2" parent="LookEast" instance=ExtResource("7_ym7n6")]
+
+[node name="GameEvent" parent="LookEast" instance=ExtResource("5_bckkg")]
+
+[node name="CollisionShape2D" parent="LookEast/GameEvent" index="0"]
+position = Vector2(-2, 0.5)
+shape = SubResource("RectangleShape2D_1ajpp")
+
+[editable path="LookNortheast/GameEvent"]
+[editable path="LookNorth/GameEvent"]
+[editable path="LookEast/GameEvent"]

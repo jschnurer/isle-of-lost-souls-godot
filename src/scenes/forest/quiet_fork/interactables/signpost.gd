@@ -11,13 +11,7 @@ func investigate():
 	else:
 		await Utility.show_message(GameScript.get_entry("Forest.Quiet_Fork.Signpost_Look_With_Nail"))
 		
-	SignalBus.memorize_player_info.emit()
-	SignalBus.set_player_mode.emit(Enums.PlayerMode.POINTER)
-	
-	var teleport_args = TeleportArgs.new()
-	teleport_args.to_scene = Enums.Scenes.FOREST_QUIET_FORK_SIGNPOST
-	teleport_args.to_screen_center = true
-	SignalBus.transfer_player_to_scene.emit(teleport_args)
+	Utility.go_to_sub_area(Enums.Scenes.FOREST_QUIET_FORK_SIGNPOST)
 	
 func take():
 	Utility.show_message(GameScript.get_entry("Forest.Quiet_Fork.Signpost_Take"))

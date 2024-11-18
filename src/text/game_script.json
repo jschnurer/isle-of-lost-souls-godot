@@ -233,6 +233,15 @@
 			"Pack_Look_No_Notebook": "There's a pack inside the tent, though it's mostly rotted away. You manage to carefully open it and find nothing but fungus and mildew.",
 			"Pack_Take": "The pack's too far gone to be of any use.",
 			"Notebook_Take": "The pack's too far gone to be of any use. Instead, you carefully extract the waterlogged notebook and take it with you."
+		},
+		"Sinking_Statue": {
+			"Statue_Look": "It's a huge statue made of black stone, depicting a grimacing face. Mold grows up from the waters around its base. It lists forward, slowly sinking into the muck. Someday it might be swallowed by the land completely. Looking at it makes you uncomfortable, almost like it's looking back.",
+			"Statue_Ladder_Look": "The back of the statue has handholds carved into it, almost like a ladder.",
+			"Statue_Ladder_Interact": "From the back of the statue, you grab onto the mildew-slicked handholds and climb up. You almost lose your grip a fre times but manage to make it to the top.",
+			"Message_Look": "On the top of the statue's head someone has painted a message in some sort of red paint. It's amazing it hasn't been completely washed away.",
+			"Statue_Top_Look_North": "From up here you can see what's in the distance. To the north you can see black clouds of mosquitoes.",
+			"Statue_Top_Look_Northeast": "From up here you can see what's in the distance. To the northeast there's a stagnant lake with a peninsula reaching out in to the center where there's a hut.",
+			"Statue_Top_Look_East": "From up here you can see what's in the distance. To the east you can see a hill barely rise above the muck.",
 		}
 	},
 	"Game_Overs": {

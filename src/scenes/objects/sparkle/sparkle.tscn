@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://b4030ratk3mbj"]
+
+[ext_resource type="Texture2D" uid="uid://cxvnurfleenfu" path="res://art/actors/sparkle_blue1.png" id="1_rnukw"]
+[ext_resource type="Script" path="res://src/scenes/objects/sparkle/sparkle.gd" id="1_ycn1w"]
+[ext_resource type="Texture2D" uid="uid://cqcve4qbh84m3" path="res://art/actors/sparkle_blue2.png" id="2_wlrjb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh87u"]
+atlas = ExtResource("1_rnukw")
+region = Rect2(0, 0, 40, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16dek"]
+atlas = ExtResource("1_rnukw")
+region = Rect2(40, 0, 40, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmxdf"]
+atlas = ExtResource("1_rnukw")
+region = Rect2(80, 0, 40, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gii66"]
+atlas = ExtResource("1_rnukw")
+region = Rect2(120, 0, 40, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni4ev"]
+atlas = ExtResource("2_wlrjb")
+region = Rect2(0, 0, 39, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y64pl"]
+atlas = ExtResource("2_wlrjb")
+region = Rect2(39, 0, 39, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hnni"]
+atlas = ExtResource("2_wlrjb")
+region = Rect2(78, 0, 39, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjiqo"]
+atlas = ExtResource("2_wlrjb")
+region = Rect2(117, 0, 39, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vu8yp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh87u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16dek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmxdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gii66")
+}],
+"loop": true,
+"name": &"blue1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni4ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y64pl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hnni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjiqo")
+}],
+"loop": true,
+"name": &"blue2",
+"speed": 5.0
+}]
+
+[node name="Sparkle" type="Node2D"]
+script = ExtResource("1_ycn1w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+sprite_frames = SubResource("SpriteFrames_vu8yp")
+animation = &"blue1"
+autoplay = "blue1"
+frame_progress = 0.488715

@@ -89,3 +89,12 @@ func initiate_game_over(game_over_scene: Enums.Scenes, fade_speed_scale: float =
 	var teleport_args = TeleportArgs.new()
 	teleport_args.to_scene = game_over_scene
 	SignalBus.transfer_player_to_scene.emit(teleport_args)
+
+func go_to_sub_area(sub_area: Enums.Scenes):
+	SignalBus.memorize_player_info.emit()
+	SignalBus.set_player_mode.emit(Enums.PlayerMode.POINTER)
+	
+	var tele_args = TeleportArgs.new()
+	tele_args.to_scene = sub_area
+	tele_args.to_screen_center = true
+	SignalBus.transfer_player_to_scene.emit(tele_args)

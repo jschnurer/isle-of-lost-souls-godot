@@ -223,6 +223,7 @@ enum Scenes {
 	GAME_OVER_MUSHROOM = 98,
 	GAME_OVER_PUFFBALL = 99,
 	SWAMP_CAMPSITE_TENT = 100,
+	SWAMP_STATUE_TOP = 101,
 }
 
 var ScenePaths = {
@@ -324,7 +325,8 @@ var ScenePaths = {
 	Scenes.SWAMP_MOSQUITO_SPAWN: "res://src/scenes/swamp/",
 	Scenes.SWAMP_RIDGE: "res://src/scenes/swamp/",
 	Scenes.SWAMP_STANDING_WATER: "res://src/scenes/swamp/standing_water/standing_water.tscn",
-	Scenes.SWAMP_STATUE: "res://src/scenes/swamp/",
+	Scenes.SWAMP_STATUE: "res://src/scenes/swamp/sinking_statue/sinking_statue.tscn",
+	Scenes.SWAMP_STATUE_TOP: "res://src/scenes/swamp/sinking_statue/sub_areas/sinking_statue_top.tscn",
 	Scenes.SWAMP_TOPPLED_LOG: "res://src/scenes/swamp/toppled_tree/toppled_tree.tscn",
 	Scenes.SWAMP_TOPPLED_TREE_MUSHROOMS: "res://src/scenes/swamp/toppled_tree_mushrooms/toppled_tree_mushrooms.tscn",
 	
