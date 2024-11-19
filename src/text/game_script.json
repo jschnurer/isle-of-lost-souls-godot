@@ -248,6 +248,15 @@
 			"Egg_Take_No_Reason": "You have absolutely no reason why you'd ever want to. Ugh.",
 			"Egg_Take": "You kneel down into the brackish water and dig the egg out of the muck. It jiggles and throbs as the unborn life within writhes. You shudder.",
 			"Egg_Already_Took": "You gag at the thought of handing another one.",
+		},
+		"Hut_Exterior": {
+			"Enter": "The area is utterly quiet. There aren't even any mosquitoes here.\nOut of the corner of your eye you see movement. When you turn to look there's nothing there. It must have been your imagination",
+			"Hut_Look": "This is probably one of the creepiest thing you've ever seen. It's a ramshackle wood hut that's barely standing. Large cracks between the wood planks allow eerie purplish light to spill out from its interior. You hear nothing from inside.",
+			"Hut_Take": "Even if you could, you wouldn't want to.",
+			"Hut_Interact": "You carefully approach the front door of the dilapidated hut. You take a moment to muster your courage before cautiously placing your hand on the rickety front door and pushing it inward to enter the hut.",
+			"Totem_Look": "Each of these totems is a stick between two and three feet long driven into the mushy ground. They all have dreamcatchers or runic talismans hanging from them. Some even have skulls on them...",
+			"Totem_Take": "That might be a really, REALLY bad idea. You're not sure why you feel so, but you decide to leave it for now.",
+			"Totem_Interact": "You're not sure why, but you know that you don't have the means to interact with these. Strange...",
 		}
 	},
 	"Game_Overs": {

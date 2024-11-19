@@ -12,7 +12,7 @@ func _ready():
 			return
 		else:
 			SignalBus.on_game_var_set.connect(_on_game_var_set)
-		
+	
 	if (auto_connect_child_game_event):
 		$GameEvent.on_activate.connect(_on_activate)
 

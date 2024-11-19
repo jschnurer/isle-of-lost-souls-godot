@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://xfueqnlw305i"]
+
+[ext_resource type="Script" path="res://src/scenes/swamp/hut_exterior/interactables/totem.gd" id="1_u8lrg"]
+[ext_resource type="Texture2D" uid="uid://cq0lunpf8al1j" path="res://art/actors/totem1.png" id="2_q33vn"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="3_k5xau"]
+[ext_resource type="Texture2D" uid="uid://toh073ph5ffc" path="res://art/actors/totem2.png" id="3_msfri"]
+[ext_resource type="Texture2D" uid="uid://cw0jst7guud54" path="res://art/actors/totem3.png" id="4_p4nvh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg7hi"]
+size = Vector2(23, 17)
+
+[node name="Totem" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_u8lrg")
+totem_textures = Array[Texture2D]([ExtResource("2_q33vn"), ExtResource("3_msfri"), ExtResource("4_p4nvh")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q33vn")
+offset = Vector2(0, -13.575)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.5, -2.5)
+shape = SubResource("RectangleShape2D_gg7hi")
+
+[node name="GameEvent" parent="." instance=ExtResource("3_k5xau")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GameEvent"]
+position = Vector2(1.5, -2.5)
+shape = SubResource("RectangleShape2D_gg7hi")

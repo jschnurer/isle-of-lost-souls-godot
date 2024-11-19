@@ -322,7 +322,7 @@ var ScenePaths = {
 	Scenes.SWAMP_DRY_TRAIL: "res://src/scenes/swamp/",
 	Scenes.SWAMP_FOREST_ENTRANCE: "res://src/scenes/swamp/near_forest/near_forest.tscn",
 	Scenes.SWAMP_HUT_INTERIOR: "res://src/scenes/swamp/",
-	Scenes.SWAMP_HUT_EXTERIOR: "res://src/scenes/swamp/",
+	Scenes.SWAMP_HUT_EXTERIOR: "res://src/scenes/swamp/hut_exterior/hut_exterior.tscn",
 	Scenes.SWAMP_MAMMOTH_SKULL: "res://src/scenes/swamp/muck_skull/muck_skull.tscn",
 	Scenes.SWAMP_MOSQUITO_SPAWN: "res://src/scenes/swamp/mosquito_spawn/mosquito_spawn.tscn",
 	Scenes.SWAMP_RIDGE: "res://src/scenes/swamp/",

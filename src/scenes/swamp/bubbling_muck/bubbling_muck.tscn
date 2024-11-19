@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://jdnhdavcxdg"]
+[gd_scene load_steps=18 format=3 uid="uid://jdnhdavcxdg"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_jef77"]
 [ext_resource type="Script" path="res://src/scenes/swamp/bubbling_muck/bubbling_muck.gd" id="1_y5vkp"]
@@ -18,6 +18,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8we1"]
 size = Vector2(200, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76gij"]
+size = Vector2(20, 200)
 
 [node name="BubblingMuck" type="Node2D"]
 y_sort_enabled = true
@@ -42,6 +45,14 @@ scene_name_valid = true
 event_area = SubResource("RectangleShape2D_r8we1")
 to_north = true
 preserve_x = true
+
+[node name="ToHutExterior" parent="." instance=ExtResource("4_fnwh6")]
+position = Vector2(0, 297)
+to_scene = "SWAMP_HUT_EXTERIOR"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_76gij")
+to_west = true
+preserve_y = true
 
 [node name="ToMuckSkull" parent="." instance=ExtResource("4_fnwh6")]
 position = Vector2(426, 623)
