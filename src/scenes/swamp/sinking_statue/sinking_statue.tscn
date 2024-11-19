@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c0qp421b7ubfe"]
+[gd_scene load_steps=20 format=3 uid="uid://c0qp421b7ubfe"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_mu5io"]
 [ext_resource type="Texture2D" uid="uid://baffh7f7taaae" path="res://art/backgrounds/swamp/Statue Area.png" id="2_r068m"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://b2ovnve1k5fpv" path="res://src/scenes/objects/grass/swamp_grass_small.tscn" id="9_3omce"]
 [ext_resource type="PackedScene" uid="uid://ry7shhhnxge" path="res://src/scenes/objects/lilypads/lily_pads_2.tscn" id="10_xh8xo"]
 [ext_resource type="PackedScene" uid="uid://e7q0ncmypwue" path="res://src/scenes/objects/lilypads/lily_pads_3.tscn" id="11_olkwg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wfqg"]
+size = Vector2(500, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kh5i"]
 size = Vector2(20, 600)
@@ -38,7 +41,15 @@ hide_collider = true
 bgm_stream = ExtResource("4_ej1f1")
 metadata/_edit_use_anchors_ = true
 
-[node name="ToCampsite2" parent="." instance=ExtResource("5_pf75y")]
+[node name="ToMosquitoSpawn" parent="." instance=ExtResource("5_pf75y")]
+position = Vector2(433, 0)
+to_scene = "SWAMP_MOSQUITO_SPAWN"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_6wfqg")
+to_north = true
+preserve_x = true
+
+[node name="ToCampsite" parent="." instance=ExtResource("5_pf75y")]
 position = Vector2(816, 355)
 to_scene = "SWAMP_CAMPSITE"
 scene_name_valid = true

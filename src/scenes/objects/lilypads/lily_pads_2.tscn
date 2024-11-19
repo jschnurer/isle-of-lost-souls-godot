@@ -2,6 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bat80qf2kfxtm" path="res://art/actors/lilypads2.png" id="1_2bdex"]
 
-[node name="LilyPads4" type="Sprite2D"]
+[node name="LilyPads2Leaves" type="Sprite2D"]
 y_sort_enabled = true
 texture = ExtResource("1_2bdex")

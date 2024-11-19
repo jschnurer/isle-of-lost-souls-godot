@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://pcmhcov2pqm4"]
+
+[ext_resource type="PackedScene" uid="uid://b6ntjqkrxal62" path="res://src/scenes/objects/mosquito_egg/mosquito_egg.tscn" id="1_j1coj"]
+
+[node name="EggCluster" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Egg" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(-10, 1)
+
+[node name="Egg2" parent="." instance=ExtResource("1_j1coj")]
+
+[node name="Egg3" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(10, -1)
+
+[node name="Egg4" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(-4, 8)
+
+[node name="Egg5" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(6, 7)
+
+[node name="Egg6" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(-14, 9)
+
+[node name="Egg7" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(16, 6)
+
+[node name="Egg8" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(-9, 15)
+
+[node name="Egg9" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(1, 14)
+
+[node name="Egg10" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(12, 14)
+
+[node name="Egg11" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(7, 20)
+
+[node name="Egg12" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(-4, 22)
+
+[node name="Egg13" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(-5, -6)
+
+[node name="Egg14" parent="." instance=ExtResource("1_j1coj")]
+position = Vector2(4, -7)

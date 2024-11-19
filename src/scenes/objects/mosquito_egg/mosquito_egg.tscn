@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6ntjqkrxal62"]
+
+[ext_resource type="Script" path="res://src/scenes/objects/mosquito_egg/mosquito_egg.gd" id="1_l8qx1"]
+[ext_resource type="Texture2D" uid="uid://qw4f3oqfv1ba" path="res://art/actors/mosquito_egg_anim.png" id="3_g6jb6"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="3_x106h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2p4f"]
+atlas = ExtResource("3_g6jb6")
+region = Rect2(0, 0, 11, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn5pq"]
+atlas = ExtResource("3_g6jb6")
+region = Rect2(11, 0, 11, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rhik"]
+atlas = ExtResource("3_g6jb6")
+region = Rect2(22, 0, 11, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2dvn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2p4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn5pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rhik")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2frh0"]
+size = Vector2(12, 9.33334)
+
+[node name="MosquitoEgg" type="Node2D"]
+process_mode = 3
+y_sort_enabled = true
+script = ExtResource("1_l8qx1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_f2dvn")
+frame_progress = 0.114503
+offset = Vector2(0, -13)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.666687, 2)
+shape = SubResource("RectangleShape2D_2frh0")
+
+[node name="GameEvent" parent="." instance=ExtResource("3_x106h")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GameEvent"]
+position = Vector2(0.500015, 1.5)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_2frh0")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

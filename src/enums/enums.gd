@@ -46,6 +46,8 @@ enum Vars {
 	MUSHROOM_TOUCH_SEQUENCE,
 	TOOK_FLAG,
 	TOOK_WATERLOGGED_NOTEBOOK,
+	WANT_MOSQUITO_EGG,
+	TOOK_MOSQUITO_EGG,
 }
 
 enum EngineEvents {
@@ -322,7 +324,7 @@ var ScenePaths = {
 	Scenes.SWAMP_HUT_INTERIOR: "res://src/scenes/swamp/",
 	Scenes.SWAMP_HUT_EXTERIOR: "res://src/scenes/swamp/",
 	Scenes.SWAMP_MAMMOTH_SKULL: "res://src/scenes/swamp/muck_skull/muck_skull.tscn",
-	Scenes.SWAMP_MOSQUITO_SPAWN: "res://src/scenes/swamp/",
+	Scenes.SWAMP_MOSQUITO_SPAWN: "res://src/scenes/swamp/mosquito_spawn/mosquito_spawn.tscn",
 	Scenes.SWAMP_RIDGE: "res://src/scenes/swamp/",
 	Scenes.SWAMP_STANDING_WATER: "res://src/scenes/swamp/standing_water/standing_water.tscn",
 	Scenes.SWAMP_STATUE: "res://src/scenes/swamp/sinking_statue/sinking_statue.tscn",

@@ -242,6 +242,12 @@
 			"Statue_Top_Look_North": "From up here you can see what's in the distance. To the north you can see black clouds of mosquitoes.",
 			"Statue_Top_Look_Northeast": "From up here you can see what's in the distance. To the northeast there's a stagnant lake with a peninsula reaching out in to the center where there's a hut.",
 			"Statue_Top_Look_East": "From up here you can see what's in the distance. To the east you can see a hill barely rise above the muck.",
+		},
+		"Mosquito_Spawn": {
+			"Egg_Look": "The area is choked by endless clusters of round, gelatinous eggs that shake and quiver of their own volition. They're a whitish color and squirm and shake. They hold life within. Horrible, horrible life. Occasionally, one rips open and a newborn giant mosquito emerges.",
+			"Egg_Take_No_Reason": "You have absolutely no reason why you'd ever want to. Ugh.",
+			"Egg_Take": "You kneel down into the brackish water and dig the egg out of the muck. It jiggles and throbs as the unborn life within writhes. You shudder.",
+			"Egg_Already_Took": "You gag at the thought of handing another one.",
 		}
 	},
 	"Game_Overs": {

@@ -24,11 +24,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ib7kc"]
 size = Vector2(800, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6i4yq"]
-size = Vector2(230, 22)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vypcq"]
 size = Vector2(20, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6i4yq"]
+size = Vector2(230, 22)
 
 [node name="ToppledTree" type="Node2D"]
 y_sort_enabled = true
@@ -52,6 +52,22 @@ to_scene = "SWAMP_FOREST_ENTRANCE"
 scene_name_valid = true
 event_area = SubResource("RectangleShape2D_ib7kc")
 to_north = true
+preserve_x = true
+
+[node name="ToDeadTree" parent="." instance=ExtResource("5_ahme3")]
+position = Vector2(813, 352)
+to_scene = "SWAMP_DEAD_TREE"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_vypcq")
+to_east = true
+preserve_y = true
+
+[node name="ToMosquitoSpawn" parent="." instance=ExtResource("5_ahme3")]
+position = Vector2(351, 623)
+to_scene = "SWAMP_MOSQUITO_SPAWN"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_ib7kc")
+to_south = true
 preserve_x = true
 
 [node name="Vegetation" type="Node2D" parent="."]
@@ -563,11 +579,3 @@ offset = Vector2(0, -38.9)
 position = Vector2(-48, 3)
 texture = ExtResource("19_4p2wk")
 offset = Vector2(0, -12.99)
-
-[node name="ToDeadTree" parent="." instance=ExtResource("5_ahme3")]
-position = Vector2(813, 352)
-to_scene = "SWAMP_DEAD_TREE"
-scene_name_valid = true
-event_area = SubResource("RectangleShape2D_vypcq")
-to_east = true
-preserve_y = true
