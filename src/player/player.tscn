@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdhtoyqehrt80"]
+[gd_scene load_steps=12 format=3 uid="uid://bdhtoyqehrt80"]
 
 [ext_resource type="Texture2D" uid="uid://kkr38elv0h5g" path="res://art/actors/player.png" id="1_gdqck"]
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_i00hy"]
 [ext_resource type="Texture2D" uid="uid://cjucjbv51empc" path="res://art/actors/player_up.png" id="3_4clwk"]
 [ext_resource type="Texture2D" uid="uid://bs0onc7gn3hj0" path="res://art/actors/player_down.png" id="4_aabnl"]
 [ext_resource type="Texture2D" uid="uid://c4dh4ptjqjsrj" path="res://art/actors/pointer.png" id="5_40aju"]
+[ext_resource type="Theme" uid="uid://v1piyp7jwkvp" path="res://styles/base_theme.tres" id="6_thw6d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xr0b"]
 size = Vector2(39, 12)
@@ -30,7 +31,7 @@ pointer_sprite = ExtResource("5_40aju")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("5_40aju")
+texture = ExtResource("1_gdqck")
 offset = Vector2(0, -47)
 
 [node name="FeetCollision" type="CollisionShape2D" parent="."]
@@ -86,3 +87,18 @@ shape = SubResource("RectangleShape2D_7c387")
 [node name="PointerCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-12.1212, -71.2121)
 shape = SubResource("RectangleShape2D_1vjpk")
+
+[node name="ActiveEvent" type="Label" parent="."]
+visible = false
+z_index = 1
+offset_left = -18.0
+offset_top = -140.0
+offset_right = 22.0
+offset_bottom = -95.0
+theme = ExtResource("6_thw6d")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "?"
+horizontal_alignment = 1

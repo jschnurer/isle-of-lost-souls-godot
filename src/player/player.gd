@@ -15,6 +15,7 @@ var all_game_events_in_range: Array[GameEvent] = []
 var game_event_in_range: GameEvent
 @export var mode: Enums.PlayerMode = Enums.PlayerMode.PERSON
 var is_controllable: bool = true
+@onready var active_event_indicator: Label = $ActiveEvent
 
 func _ready():
 	$Sprite.texture = normal_sprite
@@ -111,6 +112,9 @@ func _on_game_event_entered_range(game_event: GameEvent):
 	elif (game_event.parent_node_index > game_event_in_range.parent_node_index):
 		game_event_in_range = game_event
 	
+	if mode == Enums.PlayerMode.PERSON:
+		active_event_indicator.visible = true
+	
 func _on_game_event_exited_range(game_event: GameEvent):
 	var item_ix = -1
 	for ge in all_game_events_in_range:
@@ -123,6 +127,11 @@ func _on_game_event_exited_range(game_event: GameEvent):
 		game_event_in_range = null
 		if (all_game_events_in_range.size() > 0):
 			game_event_in_range = all_game_events_in_range[0]
+	
+	if mode == Enums.PlayerMode.PERSON:
+		active_event_indicator.visible = game_event_in_range != null
+	else:
+		active_event_indicator.visible = false
 
 func _on_memorize_player_info():
 	var info = PlayerInfo.new()
@@ -150,7 +159,9 @@ func _on_set_player_mode(new_mode: Enums.PlayerMode):
 		$Sprite.texture = pointer_sprite
 		$Sprite.flip_h = false
 		SPEED = POINTER_SPEED
+		active_event_indicator.visible = false
 	else:
+		active_event_indicator.visible = game_event_in_range != null
 		SPEED = PERSON_SPEED
 		update_sprite()
 	

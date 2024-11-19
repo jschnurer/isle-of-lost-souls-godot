@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ylarurj3sp32"]
+[gd_scene load_steps=22 format=3 uid="uid://ylarurj3sp32"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_epgex"]
 [ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="1_hh388"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://src/scenes/swamp/standing_water/interactables/puffball.gd" id="12_m2sau"]
 [ext_resource type="Script" path="res://src/scenes/swamp/standing_water/interactables/water_pool.gd" id="13_f15hf"]
 [ext_resource type="PackedScene" uid="uid://cmwl1kgq7fk1" path="res://src/scenes/objects/swamp_bubble/swamp_bubble.tscn" id="14_dxv41"]
+[ext_resource type="PackedScene" uid="uid://b4030ratk3mbj" path="res://src/scenes/objects/sparkle/sparkle.tscn" id="18_3b6ea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17uta"]
 size = Vector2(20, 250)
@@ -653,5 +654,8 @@ texture = ExtResource("11_tuv8o")
 [node name="CollisionShape2D" parent="Puffball/GameEvent" index="0"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_ulv4q")
+
+[node name="Sparkle" parent="." instance=ExtResource("18_3b6ea")]
+position = Vector2(637, 220)
 
 [editable path="Puffball/GameEvent"]
