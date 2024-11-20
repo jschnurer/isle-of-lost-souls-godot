@@ -10,7 +10,7 @@ script = ExtResource("1_0gsd5")
 
 [node name="SceneBG" parent="." instance=ExtResource("1_j1rbp")]
 texture = ExtResource("2_5fo60")
-scene = 98
+scene = 99
 bg_images = Array[Texture2D]([ExtResource("2_5fo60")])
 use_collision_frame = true
 hide_collider = true

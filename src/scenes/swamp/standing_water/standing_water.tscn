@@ -656,7 +656,7 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_ulv4q")
 
 [node name="Sparkle" parent="." instance=ExtResource("18_3b6ea")]
-modulate = Color(1, 1, 1, 0.347323)
+modulate = Color(1, 1, 1, 0.34921)
 position = Vector2(637, 220)
 
 [editable path="Puffball/GameEvent"]

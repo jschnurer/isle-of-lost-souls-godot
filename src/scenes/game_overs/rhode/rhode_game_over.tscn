@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwi4btt4x8j5b"]
+
+[ext_resource type="Script" path="res://src/scenes/game_overs/rhode/rhode_game_over.gd" id="1_6driu"]
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_oncwi"]
+[ext_resource type="Texture2D" uid="uid://cvv7dwr2rcbpb" path="res://art/backgrounds/game_over/game_over.png" id="2_ffan3"]
+[ext_resource type="AudioStream" uid="uid://c24ddpye4f68b" path="res://audio/bgm/game_over.mp3" id="3_y1lnj"]
+
+[node name="RhodeGameOver" type="Node2D"]
+script = ExtResource("1_6driu")
+
+[node name="SceneBG" parent="." instance=ExtResource("1_oncwi")]
+texture = ExtResource("2_ffan3")
+scene = 102
+bg_images = Array[Texture2D]([ExtResource("2_ffan3")])
+use_collision_frame = true
+hide_collider = true
+bgm_stream = ExtResource("3_y1lnj")

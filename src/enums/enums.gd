@@ -48,6 +48,7 @@ enum Vars {
 	TOOK_WATERLOGGED_NOTEBOOK,
 	WANT_MOSQUITO_EGG,
 	TOOK_MOSQUITO_EGG,
+	TRAPDOOR_WARNED,
 }
 
 enum EngineEvents {
@@ -226,6 +227,7 @@ enum Scenes {
 	GAME_OVER_PUFFBALL = 99,
 	SWAMP_CAMPSITE_TENT = 100,
 	SWAMP_STATUE_TOP = 101,
+	GAME_OVER_RHODE = 102,
 }
 
 var ScenePaths = {
@@ -336,6 +338,7 @@ var ScenePaths = {
 	Scenes.GAME_OVER_GRUE: "res://src/scenes/game_overs/grue/grue_game_over.tscn",
 	Scenes.GAME_OVER_MUSHROOM: "res://src/scenes/game_overs/mushroom/mushroom_game_over.tscn",
 	Scenes.GAME_OVER_PUFFBALL: "res://src/scenes/game_overs/puffball/puffball_game_over.tscn",
+	Scenes.GAME_OVER_RHODE: "res://src/scenes/game_overs/rhode/rhode_game_over.tscn",
 	
 	Scenes.TITLE_SCREEN: "res://src/scenes/title/title_screen.tscn",
 }
