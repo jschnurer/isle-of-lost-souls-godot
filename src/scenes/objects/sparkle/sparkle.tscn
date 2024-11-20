@@ -70,15 +70,28 @@ animations = [{
 }],
 "loop": true,
 "name": &"blue2",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [node name="Sparkle" type="Node2D"]
-script = ExtResource("1_ycn1w")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 process_mode = 3
+modulate = Color(1, 1, 1, 0.610182)
+script = ExtResource("1_ycn1w")
+rotate_speed = 60.0
+throb_speed = 0.5
+
+[node name="Sprite1" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+rotation = 0.236497
 sprite_frames = SubResource("SpriteFrames_vu8yp")
 animation = &"blue1"
 autoplay = "blue1"
-frame_progress = 0.488715
+frame_progress = 0.793236
+
+[node name="Sprite2" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+rotation = -0.236497
+sprite_frames = SubResource("SpriteFrames_vu8yp")
+animation = &"blue2"
+autoplay = "blue2"
+frame_progress = 0.867214

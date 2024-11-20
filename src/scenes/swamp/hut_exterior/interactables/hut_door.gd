@@ -8,4 +8,8 @@ func take():
 
 func interact():
 	await Utility.msg("Swamp.Hut_Exterior.Hut_Interact")
-	# TODO: GO INSIDE HUT
+	
+	var args = TeleportArgs.new()
+	args.to_scene = Enums.Scenes.SWAMP_HUT_INTERIOR
+	args.to_location = Vector2(396, 443)
+	SignalBus.transfer_player_to_scene.emit(args)

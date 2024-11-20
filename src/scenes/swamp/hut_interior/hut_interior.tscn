@@ -1,0 +1,152 @@
+[gd_scene load_steps=15 format=3 uid="uid://bcnc5e7cq5hi"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_wmmeh"]
+[ext_resource type="Texture2D" uid="uid://lg3onsaxqa8u" path="res://art/backgrounds/swamp/Hut Interior.png" id="2_0j0vb"]
+[ext_resource type="Texture2D" uid="uid://ocs0re7n6nms" path="res://art/backgrounds/swamp/Hut Interior Collision.png" id="3_k1ybs"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="4_v7v7m"]
+[ext_resource type="Texture2D" uid="uid://clobw04fsiabh" path="res://art/actors/hut_table2.png" id="5_0rxo4"]
+[ext_resource type="Script" path="res://src/scenes/swamp/hut_interior/interactables/table.gd" id="5_fjk8p"]
+[ext_resource type="Texture2D" uid="uid://d2co7sf8ivuq8" path="res://art/actors/hut_table.png" id="6_ibpsj"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="6_v1hcq"]
+[ext_resource type="Script" path="res://src/scenes/swamp/hut_interior/interactables/crystal_ball.gd" id="9_aywr0"]
+[ext_resource type="Texture2D" uid="uid://g73xxdyio15d" path="res://art/actors/hut_crystal_ball.png" id="9_n1ox0"]
+[ext_resource type="PackedScene" uid="uid://b4030ratk3mbj" path="res://src/scenes/objects/sparkle/sparkle.tscn" id="10_vjorn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k4qw"]
+size = Vector2(100, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vlt0"]
+size = Vector2(40, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7k81"]
+size = Vector2(19, 42)
+
+[node name="HutInterior" type="Node2D"]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="SceneBG" parent="." instance=ExtResource("1_wmmeh")]
+y_sort_enabled = true
+texture = ExtResource("2_0j0vb")
+scene = 83
+area = 6
+bg_images = Array[Texture2D]([ExtResource("2_0j0vb")])
+collision_image = ExtResource("3_k1ybs")
+hide_collider = true
+metadata/_edit_lock_ = true
+
+[node name="ToHutExterior" parent="." instance=ExtResource("4_v7v7m")]
+position = Vector2(397, 471)
+to_scene = "SWAMP_HUT_EXTERIOR"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_7k4qw")
+to_location = Vector2(335, 270)
+metadata/_edit_lock_ = true
+
+[node name="Table" type="Node2D" parent="."]
+position = Vector2(228, 255)
+script = ExtResource("5_fjk8p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Table"]
+texture = ExtResource("5_0rxo4")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Table"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_8vlt0")
+metadata/_edit_lock_ = true
+
+[node name="GameEvent" parent="Table" instance=ExtResource("6_v1hcq")]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Table/GameEvent"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_8vlt0")
+metadata/_edit_lock_ = true
+
+[node name="RoundTable" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(395, 337)
+script = ExtResource("5_fjk8p")
+
+[node name="Sprite2D" type="Sprite2D" parent="RoundTable"]
+y_sort_enabled = true
+texture = ExtResource("6_ibpsj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoundTable"]
+y_sort_enabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoundTable/StaticBody2D"]
+y_sort_enabled = true
+polygon = PackedVector2Array(-36, -9, -34, 17, -20, 20, 0, 22, 19, 21, 34, 17, 35, -9, 24, -14, -27, -14)
+
+[node name="GameEvent" parent="RoundTable" instance=ExtResource("6_v1hcq")]
+y_sort_enabled = true
+position = Vector2(-395, -337)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RoundTable/GameEvent"]
+y_sort_enabled = true
+position = Vector2(395, 337)
+polygon = PackedVector2Array(-36, -9, -34, 17, -20, 20, 0, 22, 19, 21, 34, 17, 35, -9, 24, -14, -27, -14)
+
+[node name="Crystal Ball" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(395, 349)
+script = ExtResource("9_aywr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crystal Ball"]
+y_sort_enabled = true
+texture = ExtResource("9_n1ox0")
+offset = Vector2(0, -24.55)
+
+[node name="Sparkle" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
+modulate = Color(1, 0.490196, 1, 0.523639)
+z_index = 1
+position = Vector2(0, -26.47)
+rotate_speed = 175.0
+throb_speed = 0.12
+min_opacity = 0.4
+
+[node name="Sparkle4" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
+modulate = Color(1, 0.490196, 1, 0.266725)
+z_index = 1
+position = Vector2(0, -26.47)
+rotation = 1.309
+scale = Vector2(3, 3)
+rotate_speed = -125.0
+throb_speed = 0.25
+min_opacity = 0.1
+max_opacity = 0.5
+
+[node name="Sparkle2" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
+modulate = Color(1, 0.490196, 1, 0.157015)
+z_index = 1
+position = Vector2(0, -26.47)
+rotation = -2.53073
+scale = Vector2(10, 10)
+rotate_speed = -95.0
+throb_speed = 0.3
+min_opacity = 0.1
+max_opacity = 0.2
+
+[node name="Sparkle3" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
+modulate = Color(1, 0.490196, 1, 0.0862384)
+z_index = 1
+position = Vector2(0, -26.47)
+scale = Vector2(40, 40)
+rotate_speed = 100.0
+throb_speed = 0.05
+min_opacity = 0.05
+max_opacity = 0.1
+
+[node name="GameEvent" parent="Crystal Ball" instance=ExtResource("6_v1hcq")]
+visible = false
+
+[node name="CollisionShape2D" parent="Crystal Ball/GameEvent" index="0"]
+position = Vector2(0.5, -11)
+shape = SubResource("RectangleShape2D_d7k81")
+
+[editable path="Crystal Ball/GameEvent"]

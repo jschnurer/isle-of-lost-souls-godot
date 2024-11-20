@@ -186,7 +186,7 @@
 		"Shared": {
 			"Tree_Look": "It's a sickly looking, dead tree. It's covered in fungus and slick with rot.",
 			"Tree_Take": "Carrying a rot-slicked tree seems problematic. And you have no way of felling it anyway.",
-			"Cattail_Look": "It's a cattail. They look more like corn dogs than cat tails to you, though.",
+			"Cattail_Look": "They're cattails. They look more like corn dogs than cat tails to you, though.",
 			"Cattail_Take": "You can't imagine a use for them so you decide to leave them alone."
 		},
 		"Toppled_Tree": {
@@ -257,7 +257,13 @@
 			"Totem_Look": "Each of these totems is a stick between two and three feet long driven into the mushy ground. They all have dreamcatchers or runic talismans hanging from them. Some even have skulls on them...",
 			"Totem_Take": "That might be a really, REALLY bad idea. You're not sure why you feel so, but you decide to leave it for now.",
 			"Totem_Interact": "You're not sure why, but you know that you don't have the means to interact with these. Strange...",
-		}
+		},
+		"Hut_Interior": {
+			"Take_No_Permission": "You probably shouldn't try to take anything without permission. It could be hazardous to your health.",
+			"Table_Look": "The table was clearly made by an amateur with a severe lack of proper tools or materials. It's terribly uneven and has a bit of swamp mud packed underneath one of the legs to try to level it out.",
+			"Shelves_Look": "The shelves are crudely made. They're a little crooked and the wood is roughly hewn. You can see axe-marks scored into the wood. They hold countless, random small objects.",
+			"Crystal_Ball_Look": "It's a crystal ball emitting scintillating purple light. There's a thick crack that nearly bisects it. You can only glance at it for a moment before having to avert your gaze or shield your eyes. You have no idea how the woman can stand to stare at it like that!",
+		},
 	},
 	"Game_Overs": {
 		"Fish": {
