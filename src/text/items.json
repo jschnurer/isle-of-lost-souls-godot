@@ -48,5 +48,10 @@
 		"slug": "OPHELIAS_JOURNAL1",
 		"name": "waterlogged journal",
 		"description": "The cover reads \"__HELI_'S JOU__L\". It's badly water damaged."
+	},
+	{
+		"slug": "SCISSORS",
+		"name": "glass scissors",
+		"description": "They're a pair of scissors. They're the size you would expect except they're made of clear glass."
 	}
 ]

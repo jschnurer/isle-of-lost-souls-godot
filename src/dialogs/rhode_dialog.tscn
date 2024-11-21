@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dei2bio0otr6d"]
 
 [ext_resource type="Script" path="res://src/dialogs/rhode_dialog.gd" id="1_i18ed"]
-[ext_resource type="Texture2D" uid="uid://bm66g614sqsb6" path="res://art/portraits/rhode.png" id="2_udqg5"]
+[ext_resource type="Texture2D" uid="uid://brfnrwvipvsf" path="res://art/actors/rhode.png" id="2_bheay"]
 
 [node name="RhodeDialog" type="Node2D"]
 script = ExtResource("1_i18ed")
-portrait_texture = ExtResource("2_udqg5")
+portrait_texture = ExtResource("2_bheay")
 topic_group = 3

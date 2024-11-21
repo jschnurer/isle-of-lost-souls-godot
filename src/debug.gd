@@ -17,6 +17,8 @@ func _ready():
 	Inventory.add_item(Enums.ItemSlugs.ETAVONER_RUNE)
 	GameVars.set_var(Enums.Vars.RUIN_HALL_DOOR_OPEN, true)
 	
+	Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.CURE)
+	
 	await Utility.wait(.1)
 	
 	var args = TogglePlayerArgs.new()

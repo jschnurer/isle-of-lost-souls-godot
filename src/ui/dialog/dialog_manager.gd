@@ -114,6 +114,8 @@ func load_topics():
 		btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		btn.pressed.connect(_on_topic_chosen.bind(dialog_topic.slug))
 		btn.focus_entered.connect(_on_topic_focused.bind(dialog_topic.slug))
+		if (dialog_topic.slug == Enums.Topics.GOODBYE):
+			btn.add_theme_color_override("font_color", Color.DARK_RED)
 		topics_container.add_child(btn)
 		if (selected_topic_slug == dialog_topic.slug):
 			btn.grab_focus()

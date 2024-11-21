@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bcnc5e7cq5hi"]
+[gd_scene load_steps=48 format=3 uid="uid://bcnc5e7cq5hi"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_wmmeh"]
 [ext_resource type="Texture2D" uid="uid://lg3onsaxqa8u" path="res://art/backgrounds/swamp/Hut Interior.png" id="2_0j0vb"]
@@ -8,8 +8,11 @@
 [ext_resource type="Script" path="res://src/scenes/swamp/hut_interior/interactables/table.gd" id="5_fjk8p"]
 [ext_resource type="Texture2D" uid="uid://d2co7sf8ivuq8" path="res://art/actors/hut_table.png" id="6_ibpsj"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="6_v1hcq"]
+[ext_resource type="Texture2D" uid="uid://bctv6uheenrrj" path="res://art/actors/rhode_upper.png" id="8_ro4r3"]
 [ext_resource type="Script" path="res://src/scenes/swamp/hut_interior/interactables/crystal_ball.gd" id="9_aywr0"]
+[ext_resource type="Script" path="res://src/scenes/swamp/hut_interior/interactables/rhode.gd" id="9_ec583"]
 [ext_resource type="Texture2D" uid="uid://g73xxdyio15d" path="res://art/actors/hut_crystal_ball.png" id="9_n1ox0"]
+[ext_resource type="Texture2D" uid="uid://7a7s4k3cwgkc" path="res://art/actors/rhode_lower.png" id="10_q1hd1"]
 [ext_resource type="PackedScene" uid="uid://b4030ratk3mbj" path="res://src/scenes/objects/sparkle/sparkle.tscn" id="10_vjorn"]
 [ext_resource type="Texture2D" uid="uid://dlcyr073oflsv" path="res://art/actors/hut_shelf.png" id="12_vppv5"]
 [ext_resource type="Script" path="res://src/scenes/swamp/hut_interior/interactables/shelf.gd" id="13_2md5y"]
@@ -17,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://m34mj70kg8nu" path="res://art/actors/clutter_dreamcatcher.png" id="14_2l7dp"]
 [ext_resource type="Texture2D" uid="uid://cx5uulj0k43ff" path="res://art/actors/clutter_crystal.png" id="14_lh0yi"]
 [ext_resource type="Texture2D" uid="uid://824vx7y0xu1q" path="res://art/actors/clutter_gourd.png" id="15_b5s74"]
+[ext_resource type="PackedScene" uid="uid://dei2bio0otr6d" path="res://src/dialogs/rhode_dialog.tscn" id="15_k7cp0"]
 [ext_resource type="Texture2D" uid="uid://s3scb5uj3gus" path="res://art/actors/clutter_skull.png" id="16_y6c07"]
 [ext_resource type="Texture2D" uid="uid://dg35g8x5k0sef" path="res://art/actors/clutter_stick.png" id="17_fk312"]
 [ext_resource type="Texture2D" uid="uid://7jioqxcsnfe7" path="res://art/actors/clutter_sticks.png" id="18_45ew4"]
@@ -42,6 +46,9 @@ size = Vector2(40, 104)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7k81"]
 size = Vector2(19, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_risio"]
+size = Vector2(28.75, 23.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ixxu"]
 size = Vector2(191, 46)
@@ -124,7 +131,7 @@ y_sort_enabled = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoundTable/StaticBody2D"]
 y_sort_enabled = true
-polygon = PackedVector2Array(-36, -9, -34, 17, -20, 20, 0, 22, 19, 21, 34, 17, 35, -9, 24, -14, -27, -14)
+polygon = PackedVector2Array(-36, -9, -34, 17, -20, 20, 0, 22, 19, 21, 34, 17, 35, -9, 23, -11, -26, -11)
 
 [node name="GameEvent" parent="RoundTable" instance=ExtResource("6_v1hcq")]
 visible = false
@@ -134,7 +141,7 @@ position = Vector2(-395, -337)
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RoundTable/GameEvent"]
 y_sort_enabled = true
 position = Vector2(395, 337)
-polygon = PackedVector2Array(-36, -9, -34, 17, -20, 20, 0, 22, 19, 21, 34, 17, 35, -9, 24, -14, -27, -14)
+polygon = PackedVector2Array(-36, -9, -34, 17, -20, 20, 0, 22, 19, 21, 34, 17, 35, -9, 23, -11, -26, -11)
 
 [node name="Crystal Ball" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -148,8 +155,9 @@ offset = Vector2(0, -24.55)
 metadata/_edit_lock_ = true
 
 [node name="Sparkle" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
-modulate = Color(1, 0.490196, 1, 0.543333)
+modulate = Color(1, 0.490196, 1, 0.600606)
 z_index = 1
+y_sort_enabled = true
 position = Vector2(0, -26.47)
 rotate_speed = 175.0
 throb_speed = 0.12
@@ -157,8 +165,9 @@ min_opacity = 0.4
 metadata/_edit_lock_ = true
 
 [node name="Sparkle4" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
-modulate = Color(1, 0.490196, 1, 0.252777)
+modulate = Color(1, 0.490196, 1, 0.207807)
 z_index = 1
+y_sort_enabled = true
 position = Vector2(0, -26.47)
 rotation = 1.309
 scale = Vector2(3, 3)
@@ -169,8 +178,9 @@ max_opacity = 0.5
 metadata/_edit_lock_ = true
 
 [node name="Sparkle2" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
-modulate = Color(1, 0.490196, 1, 0.122917)
+modulate = Color(1, 0.490196, 1, 0.148448)
 z_index = 1
+y_sort_enabled = true
 position = Vector2(0, -26.47)
 rotation = -2.53073
 scale = Vector2(10, 10)
@@ -181,8 +191,9 @@ max_opacity = 0.2
 metadata/_edit_lock_ = true
 
 [node name="Sparkle3" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
-modulate = Color(1, 0.490196, 1, 0.065625)
+modulate = Color(1, 0.490196, 1, 0.0704581)
 z_index = 1
+y_sort_enabled = true
 position = Vector2(0, -26.47)
 scale = Vector2(40, 40)
 rotate_speed = 100.0
@@ -198,6 +209,36 @@ visible = false
 visible = false
 position = Vector2(0.5, -11)
 shape = SubResource("RectangleShape2D_d7k81")
+
+[node name="Rhode" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(395.5, 322)
+script = ExtResource("9_ec583")
+
+[node name="Upper" type="Sprite2D" parent="Rhode"]
+y_sort_enabled = true
+position = Vector2(0, 15)
+texture = ExtResource("8_ro4r3")
+offset = Vector2(-0.5, -32)
+
+[node name="Lower" type="Sprite2D" parent="Rhode"]
+position = Vector2(1, 12)
+texture = ExtResource("10_q1hd1")
+offset = Vector2(0, -3)
+
+[node name="GameEvent" parent="Rhode" instance=ExtResource("6_v1hcq")]
+
+[node name="CollisionShape2D" parent="Rhode/GameEvent" index="0"]
+position = Vector2(-0.5, 0.75)
+shape = SubResource("RectangleShape2D_risio")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rhode"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Rhode/StaticBody2D"]
+position = Vector2(-0.5, 0.75)
+shape = SubResource("RectangleShape2D_risio")
+
+[node name="RhodeDialog" parent="Rhode" instance=ExtResource("15_k7cp0")]
 
 [node name="Shelf1" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -341,6 +382,7 @@ y_sort_enabled = true
 position = Vector2(504, 203)
 texture = ExtResource("24_jhxn5")
 script = ExtResource("27_r1ffs")
+auto_destroy_flag = 33
 
 [node name="GameEvent" parent="Clutter/Scissors" instance=ExtResource("6_v1hcq")]
 
@@ -385,6 +427,7 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_5n3dn")
 
 [editable path="Crystal Ball/GameEvent"]
+[editable path="Rhode/GameEvent"]
 [editable path="Clutter/Cellphone/GameEvent"]
 [editable path="Clutter/Map/GameEvent"]
 [editable path="Clutter/Scissors/GameEvent"]

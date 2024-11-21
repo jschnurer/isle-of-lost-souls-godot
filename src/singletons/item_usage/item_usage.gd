@@ -6,7 +6,7 @@ func _ready():
 	SignalBus.global_use_item.connect(_on_global_use_item)
 
 func _on_global_use_item(item: Item):
-	var item_node = get_node(item_slug_strings[item.slug])
+	var item_node = get_node_or_null(item_slug_strings[item.slug])
 	
 	if (not item_node):
 		Utility.msg("Global.Not_Usable_Alone")

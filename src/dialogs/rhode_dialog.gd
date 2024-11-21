@@ -1,63 +1,86 @@
 extends BaseDialog
 
+func on_greet():
+	if (not GameVars.get_var(Enums.Vars.GREETED_RHODE)):
+		Utility.dialog_msg("Dialog.Rhode.Greet_First_Time")
+		GameVars.set_var(Enums.Vars.GREETED_RHODE, true)
+	else:
+		Utility.dialog_msg("Dialog.Rhode.Greet_Again")
+
 func ask_about(topic: Enums.Topics):
 	if (topic == Enums.Topics.WHO_ARE_YOU):
-		SignalBus.show_dialog_message.emit("\"My name is Rhode and thou art the first person that I have laid eyes upon in a long time.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"Doest thou have any specific questions or wouldst thou like to hear about my past?\"", false)
+		await Utility.dialog_msg("Dialog.Rhode.Who_Are_You_1", true)
+		Utility.dialog_msg("Dialog.Rhode.Who_Are_You_2")
 		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.MY_PAST)
 	
 	elif (topic == Enums.Topics.MY_PAST):
-		SignalBus.show_dialog_message.emit("\"'Tis true, as thou might have guessed, that I am a witch. An occultist. A thaumaturge. It doth not matter what name others give unto me, 'tis all the same.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"I harness powers from the great beyond to shape reality.\" She pauses and smiles. \"In other words, I use magic.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"I once lived near a small village; Its name doth escape me now. 'Twas there that I worked my trade. Under my care, the sick were cured, crops flourished, and healthy babies were born.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"'Tis true that most in the village believed that I performed the black arts of the devil and such nonsense, but there were some that were grateful. I lived unmolested there for many years.\"", true) 
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("She shifts uncomfortably. \"Then one day a witch hunter came from the Order of...\" She pauses. \"Hmm. I seem to have forgotten. Anyway, a witch hunter had come for me.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"He invaded my home with hate and fear and murder in his eyes. He ran his cold steel through my belly with naught a word.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"But as I lay upon the floor with my humours spreading out about me, he finally spake.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"He said to me 'Thy soul shalt be condemned to that faraway place, the island of the lost'.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("She takes a deep breath.\n\n\"And then I woke up on this island.\"", false)
+		await Utility.dialog_msg("Dialog.Rhode.My_Past_1", true)
+		await Utility.dialog_msg("Dialog.Rhode.My_Past_2", true)
+		await Utility.dialog_msg("Dialog.Rhode.My_Past_3", true)
+		await Utility.dialog_msg("Dialog.Rhode.My_Past_4", true)
+		await Utility.dialog_msg("Dialog.Rhode.My_Past_5", true)
+		await Utility.dialog_msg("Dialog.Rhode.My_Past_6", true)
+		await Utility.dialog_msg("Dialog.Rhode.My_Past_7", true)
+		await Utility.dialog_msg("Dialog.Rhode.My_Past_8", true)
+		Utility.dialog_msg("Dialog.Rhode.My_Past_9")
 		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.ISLAND_ARRIVAL)
 		
 	elif (topic == Enums.Topics.ISLAND_ARRIVAL):
-		SignalBus.show_dialog_message.emit("\"I recall waking on this island with naught but vague memories of before and no worse for wear. I wandered for a bit, searching for others.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"Wouldst thou believe it? The first person I met was none other than the man who had tried to slay me! He took up his arms against me but he had not the will to slay me.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"For we were the only ones on the island as far as we knew and the prospect of being alone was the greater spectre in his eyes.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"We explored together and slowly a... bond formed. I learned his name was Merek. He was a young recruit of his Order and was eager to prove himself. How we ended up here, neither of us knew.\"", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"Eventually we met another. A woman of fair hair and stoic demeanor.\" She pauses again, scrunching her brow, trying to recall distant memories.", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"I'm sorry. This story of mine is at its end, for I can recall no more.\"", false)
+		await Utility.dialog_msg("Dialog.Rhode.Island_Arrival_1", true)
+		await Utility.dialog_msg("Dialog.Rhode.Island_Arrival_2", true)
+		await Utility.dialog_msg("Dialog.Rhode.Island_Arrival_3", true)
+		await Utility.dialog_msg("Dialog.Rhode.Island_Arrival_4", true)
+		await Utility.dialog_msg("Dialog.Rhode.Island_Arrival_5", true)
+		Utility.dialog_msg("Dialog.Rhode.Island_Arrival_6")
 		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.MEREK)
 		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.FAIR_HAIRED_WOMAN)
 	
 	elif (topic == Enums.Topics.TOTEMS):
-		SignalBus.show_dialog_message.emit("\"Those are creations of mine. They take the required shape to house various enchantments and charms. Mostly they doth protect and enhance my memories. Mostly.\" She narrows her eyes at you briefly.", false)
+		Utility.dialog_msg("Dialog.Rhode.Totems")
 	
 	elif (topic == Enums.Topics.MEREK):
-		SignalBus.show_dialog_message.emit("\"Merek...\" She trails off before she even begins her sentence.", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"I can recall... some things,\" she says as a smirk slowly spreads across her face. She dismisses it quickly. She returns from her reverie.", true)
-		await SignalBus.dialog_message_closed
-		SignalBus.show_dialog_message.emit("\"We were... acquainted before we came here. He was a witch hunter. Clearly not a good one, as thou canst tell.\"", false)
+		await Utility.dialog_msg("Dialog.Rhode.Merek_1", true)
+		await Utility.dialog_msg("Dialog.Rhode.Merek_2", true)
+		Utility.dialog_msg("Dialog.Rhode.Merek_3")
 	
 	elif (topic == Enums.Topics.FAIR_HAIRED_WOMAN):
-		SignalBus.show_dialog_message.emit("\"Merek and I met her while exploring the island. I recall naught but her stoic demeanor.\"", false)
+		Utility.dialog_msg("Dialog.Rhode.Fair_Haired_Woman")
 		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.MEREK)
+	
+	elif (topic == Enums.Topics.CURE):
+		await Utility.dialog_msg("Dialog.Rhode.Cure_1", true)
+		Utility.dialog_msg("Dialog.Rhode.Cure_2")
+		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENTS)
+		
+	elif (topic == Enums.Topics.CURE_INGREDIENTS):
+		Utility.dialog_msg("Dialog.Rhode.Ingredients")
+		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_EGG)
+		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_PUFFBALL)
+		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_TARNROOT)
+		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_RAINBOW_SHELL)
+		GameVars.set_var(Enums.Vars.LEARNED_INGREDIENTS, true)
+	
+	elif (topic == Enums.Topics.CURE_INGREDIENT_EGG):
+		Utility.dialog_msg("Dialog.Rhode.Egg")
+	
+	elif (topic == Enums.Topics.CURE_INGREDIENT_PUFFBALL):
+		await Utility.dialog_msg("Dialog.Rhode.Puffball_1", true)
+		await Utility.dialog_msg("Dialog.Rhode.Puffball_2", true)
+		Utility.dialog_msg("Dialog.Rhode.Puffball_3")
+		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.GLASS_SCISSORS)
+	
+	elif (topic == Enums.Topics.CURE_INGREDIENT_TARNROOT):
+		Utility.dialog_msg("Dialog.Rhode.Tarnroot")
+		
+	elif (topic == Enums.Topics.CURE_INGREDIENT_RAINBOW_SHELL):
+		Utility.dialog_msg("Dialog.Rhode.Rainbow_Shell")
+	
+	elif (topic == Enums.Topics.GLASS_SCISSORS):
+		if (GameVars.get_var(Enums.Vars.LEARNED_INGREDIENTS)):
+			Utility.dialog_msg("Dialog.Rhode.Scissors_Remember")
+			GameVars.set_var(Enums.Vars.TAKE_SCISSORS_PERMISSION, true)
+		else:
+			Utility.dialog_msg("Dialog.Rhode.Scissors_Forgot")
 	
 	else:
 		super.ask_about(topic)
-	
-func on_greet():
-	SignalBus.show_dialog_message.emit("Yes? What doest thou want?", false)
