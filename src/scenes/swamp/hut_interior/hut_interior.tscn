@@ -155,7 +155,7 @@ offset = Vector2(0, -24.55)
 metadata/_edit_lock_ = true
 
 [node name="Sparkle" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
-modulate = Color(1, 0.490196, 1, 0.600606)
+modulate = Color(1, 0.490196, 1, 0.435681)
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -26.47)
@@ -165,7 +165,7 @@ min_opacity = 0.4
 metadata/_edit_lock_ = true
 
 [node name="Sparkle4" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
-modulate = Color(1, 0.490196, 1, 0.207807)
+modulate = Color(1, 0.490196, 1, 0.166001)
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -26.47)
@@ -178,7 +178,7 @@ max_opacity = 0.5
 metadata/_edit_lock_ = true
 
 [node name="Sparkle2" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
-modulate = Color(1, 0.490196, 1, 0.148448)
+modulate = Color(1, 0.490196, 1, 0.175172)
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -26.47)
@@ -191,7 +191,7 @@ max_opacity = 0.2
 metadata/_edit_lock_ = true
 
 [node name="Sparkle3" parent="Crystal Ball" instance=ExtResource("10_vjorn")]
-modulate = Color(1, 0.490196, 1, 0.0704581)
+modulate = Color(1, 0.490196, 1, 0.0682431)
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -26.47)

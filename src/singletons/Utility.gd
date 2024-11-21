@@ -98,3 +98,49 @@ func go_to_sub_area(sub_area: Enums.Scenes):
 	tele_args.to_scene = sub_area
 	tele_args.to_screen_center = true
 	SignalBus.transfer_player_to_scene.emit(tele_args)
+
+func parse_colors(message: String) -> String:
+	var new_msg = ""
+	
+	var color_queue: Array[String] = []
+	var curr_color = null
+	var dialog_color = "white"
+	var important_color = "yellow"
+	
+	for c in message:
+		var did_color_end = false
+		
+		if c == '"':
+			if curr_color != dialog_color:
+				color_queue.append(dialog_color)
+				new_msg += "[color=%s]\"" % dialog_color
+				curr_color = color_queue[color_queue.size() - 1]
+			elif curr_color == dialog_color:
+				color_queue.pop_back()
+				if color_queue.size() > 0:
+					curr_color = color_queue[color_queue.size() - 1]
+				else:
+					curr_color = null
+				new_msg += '"[/color]'
+				did_color_end = true
+		elif c == "[":
+			if curr_color != important_color:
+				color_queue.append(important_color)
+				new_msg += "[color=%s]" % important_color
+				curr_color = color_queue[color_queue.size() - 1]
+		elif c == "]" and curr_color == important_color:
+				color_queue.pop_back()
+				if color_queue.size() > 0:
+					curr_color = color_queue[color_queue.size() - 1]
+				else:
+					curr_color = null
+				new_msg += '[/color]'
+				did_color_end = true
+		else:
+			new_msg += c
+		
+		if did_color_end and curr_color != null:
+			new_msg += "[color=%s]" % curr_color
+			
+			
+	return new_msg

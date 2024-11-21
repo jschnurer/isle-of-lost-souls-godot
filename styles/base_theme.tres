@@ -36,3 +36,5 @@ Button/styles/hover = ExtResource("1_x563t")
 Button/styles/normal = SubResource("StyleBoxFlat_hgn2q")
 Button/styles/pressed = ExtResource("1_x563t")
 Panel/styles/panel = SubResource("StyleBoxFlat_pytrn")
+RichTextLabel/colors/default_color = Color(0.666667, 0.666667, 0.666667, 1)
+RichTextLabel/font_sizes/normal_font_size = 25

@@ -76,7 +76,7 @@ func set_focus(new_focus: FocusedArea):
 		$MessageBox.add_theme_stylebox_override("panel", active_panel_stylebox)
 
 func _on_show_dialog_message(message: String, has_more: bool):
-	message_text.text = message
+	message_text.text = Utility.parse_colors(message)
 	current_msg_has_more = has_more
 	if (has_more):
 		set_focus(FocusedArea.MESSAGE)

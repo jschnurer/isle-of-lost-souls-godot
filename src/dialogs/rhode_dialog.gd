@@ -11,7 +11,7 @@ func ask_about(topic: Enums.Topics):
 	if (topic == Enums.Topics.WHO_ARE_YOU):
 		await Utility.dialog_msg("Dialog.Rhode.Who_Are_You_1", true)
 		Utility.dialog_msg("Dialog.Rhode.Who_Are_You_2")
-		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.MY_PAST)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.MY_PAST)
 	
 	elif (topic == Enums.Topics.MY_PAST):
 		await Utility.dialog_msg("Dialog.Rhode.My_Past_1", true)
@@ -67,7 +67,7 @@ func ask_about(topic: Enums.Topics):
 		await Utility.dialog_msg("Dialog.Rhode.Puffball_1", true)
 		await Utility.dialog_msg("Dialog.Rhode.Puffball_2", true)
 		Utility.dialog_msg("Dialog.Rhode.Puffball_3")
-		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.GLASS_SCISSORS)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.GLASS_SCISSORS)
 	
 	elif (topic == Enums.Topics.CURE_INGREDIENT_TARNROOT):
 		Utility.dialog_msg("Dialog.Rhode.Tarnroot")
@@ -81,6 +81,36 @@ func ask_about(topic: Enums.Topics):
 			GameVars.set_var(Enums.Vars.TAKE_SCISSORS_PERMISSION, true)
 		else:
 			Utility.dialog_msg("Dialog.Rhode.Scissors_Forgot")
+	
+	elif (topic == Enums.Topics.SWORD):
+		Utility.dialog_msg("Dialog.Rhode.Sword")
+		
+	elif (topic == Enums.Topics.SHIELD):
+		Utility.dialog_msg("Dialog.Rhode.Shield")
+		
+	elif (topic == Enums.Topics.CELLPHONE):
+		Utility.dialog_msg("Dialog.Rhode.Cellphone")
+		
+	elif (topic == Enums.Topics.MAP):
+		await Utility.dialog_msg("Dialog.Rhode.Map", true)
+		Utility.dialog_msg("Dialog.Rhode.Map_2")
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.SILVER_BOX)
+		
+	elif (topic == Enums.Topics.SILVER_BOX):
+		Utility.dialog_msg("Dialog.Rhode.Silver_Box")
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.MAP)
+	
+	elif (topic == Enums.Topics.RHODE):
+		Utility.dialog_msg("Dialog.Rhode.Rhode")
+		
+	elif (topic == Enums.Topics.OPHELIA):
+		Utility.dialog_msg("Dialog.Rhode.Ophelia")
+		
+	elif (topic == Enums.Topics.ARDEN
+		or topic == Enums.Topics.EDRA
+		or topic == Enums.Topics.MEREDITH
+		or topic == Enums.Topics.STANLEY):
+		Utility.dialog_msg("Dialog.Rhode.Unknown_Name")
 	
 	else:
 		super.ask_about(topic)

@@ -15,6 +15,7 @@ func _ready():
 	Inventory.add_item(Enums.ItemSlugs.OPHELIAS_JOURNAL1)
 	Inventory.add_item(Enums.ItemSlugs.HATCH_NOTE)
 	Inventory.add_item(Enums.ItemSlugs.ETAVONER_RUNE)
+	Inventory.add_item(Enums.ItemSlugs.RED_FABRIC)
 	GameVars.set_var(Enums.Vars.RUIN_HALL_DOOR_OPEN, true)
 	
 	Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.CURE)

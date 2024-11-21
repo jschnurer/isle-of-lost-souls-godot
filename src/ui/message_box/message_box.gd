@@ -18,7 +18,7 @@ func _ready():
 	
 func _on_show_message(message: String, has_more: bool):
 	Utility.pause()
-	text_label.text = message
+	text_label.text = Utility.parse_colors(message)
 	text_label.visible_characters = 0
 	stay_open = has_more
 	

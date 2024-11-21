@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbg5lrchiq5v2"]
+[gd_scene load_steps=8 format=3 uid="uid://bbg5lrchiq5v2"]
 
 [ext_resource type="Script" path="res://src/ui/message_box/message_box.gd" id="1_u5epf"]
 [ext_resource type="Theme" uid="uid://v1piyp7jwkvp" path="res://styles/base_theme.tres" id="2_ejo7c"]
-[ext_resource type="LabelSettings" uid="uid://4wsvigqxxrfw" path="res://styles/message_box_font_settings.tres" id="3_sem4o"]
 
 [sub_resource type="Animation" id="Animation_m2g17"]
 length = 0.001
@@ -155,7 +154,7 @@ pivot_offset = Vector2(418, 117)
 size_flags_vertical = 8
 theme = ExtResource("2_ejo7c")
 
-[node name="Text" type="Label" parent="Panel"]
+[node name="Text" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -167,8 +166,10 @@ offset_right = -26.0
 offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 0
-label_settings = ExtResource("3_sem4o")
+theme = ExtResource("2_ejo7c")
+bbcode_enabled = true
 autowrap_mode = 2
+shortcut_keys_enabled = false
 
 [node name="OK" type="Label" parent="Panel"]
 layout_mode = 1
