@@ -50,8 +50,8 @@ func use_item(item: Item):
 
 func do_greeting():
 	await Utility.msg("Swamp.Hut_Interior.Rhode_Greet_1", true)
-	await Utility.msg("Swamp.Hut_Interior.Rhode_Greet_2")
-	var choice: Choice = await Utility.show_yes_no_choice()
+	
+	var choice: Choice = await Utility.yes_no_choice_msg("Swamp.Hut_Interior.Rhode_Greet_2", true)
 	
 	if (choice.index == 0):
 		# The player wants to harm Rhode!

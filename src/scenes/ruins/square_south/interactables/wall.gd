@@ -12,7 +12,7 @@ func _ready():
 		super._ready()
 
 func investigate():
-	Utility.show_message(GameScript.get_entry("Ruins.Square_South.Wall_Look"))
+	Utility.msg("Ruins.Square_South.Wall_Look")
 
 func use_item(item: Item):
 	if (item.slug == Enums.ItemSlugs.SLEDGE):
@@ -24,7 +24,7 @@ func use_item(item: Item):
 		
 		GameVars.set_var(Enums.Vars.RUINED_HOUSE_OPEN, true)
 		
-		await Utility.show_message(GameScript.get_entry("Ruins.Square_South.Wall_Destroy"))
+		await Utility.msg("Ruins.Square_South.Wall_Destroy")
 		
 		remove_wall()
 	else:

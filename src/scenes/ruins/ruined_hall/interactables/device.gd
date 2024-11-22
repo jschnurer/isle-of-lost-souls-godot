@@ -35,13 +35,13 @@ func investigate():
 
 func interact():
 	if (GameVars.get_var(Enums.Vars.ROD_IN_DEVICE) != true):
-		Utility.show_message(GameScript.get_entry("Ruins.Hall.Device_Interact_No_Rod"))
+		Utility.msg("Ruins.Hall.Device_Interact_No_Rod")
 	else:
 		if (GameVars.get_var(Enums.Vars.RUIN_HALL_DOOR_OPEN)):
-			Utility.show_message(GameScript.get_entry("Ruins.Hall.Device_Door_Closes"))
+			Utility.msg("Ruins.Hall.Device_Door_Closes")
 			GameVars.set_var(Enums.Vars.RUIN_HALL_DOOR_OPEN, false)
 		else:
-			Utility.show_message(GameScript.get_entry("Ruins.Hall.Device_Door_Opens"))
+			Utility.msg("Ruins.Hall.Device_Door_Opens")
 			GameVars.set_var(Enums.Vars.RUIN_HALL_DOOR_OPEN, true)
 		update_sprite()
 
@@ -49,14 +49,14 @@ func take():
 	if (GameVars.get_var(Enums.Vars.ROD_IN_DEVICE) != true):
 		super.take()
 	else:
-		Utility.show_message(GameScript.get_entry("Ruins.Hall.Device_Take_Rod"))
+		Utility.msg("Ruins.Hall.Device_Take_Rod")
 		Inventory.add_item(Enums.ItemSlugs.RUINS_ROD)
 		GameVars.set_var(Enums.Vars.ROD_IN_DEVICE, false)
 		update_sprite()
 	
 func use_item(item: Item):
 	if (item.slug == Enums.ItemSlugs.RUINS_ROD):
-		Utility.show_message(GameScript.get_entry("Ruins.Hall.Device_Use_Rod"))
+		Utility.msg("Ruins.Hall.Device_Use_Rod")
 		Inventory.remove_item(Enums.ItemSlugs.RUINS_ROD)
 		GameVars.set_var(Enums.Vars.ROD_IN_DEVICE, true)
 		update_sprite()

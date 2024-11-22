@@ -16,17 +16,17 @@ func update_sprite():
 
 func investigate():
 	if (GameVars.get_var(Enums.Vars.HOUSE_CHEST_OPEN)):
-		await Utility.show_message(GameScript.get_entry("Ruins.House.Chest_Open_Look"))
+		await Utility.msg("Ruins.House.Chest_Open_Look")
 		Utility.go_to_sub_area(Enums.Scenes.RUINS_HOUSE_CHEST)
 	else:
-		Utility.show_message(GameScript.get_entry("Ruins.House.Chest_Closed_Look"))
+		Utility.msg("Ruins.House.Chest_Closed_Look")
 
 func interact():
 	if (GameVars.get_var(Enums.Vars.HOUSE_CHEST_OPEN)):
 		GameVars.set_var(Enums.Vars.HOUSE_CHEST_OPEN, false)
 		update_sprite()
-		Utility.show_message(GameScript.get_entry("Ruins.House.Chest_Close"))
+		Utility.msg("Ruins.House.Chest_Close")
 	else:
 		GameVars.set_var(Enums.Vars.HOUSE_CHEST_OPEN, true)
 		update_sprite()
-		Utility.show_message(GameScript.get_entry("Ruins.House.Chest_Open"))
+		Utility.msg("Ruins.House.Chest_Open")

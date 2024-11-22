@@ -15,10 +15,10 @@ func update_state():
 	game_event_collision.disabled = not is_open
 
 func investigate():
-	Utility.show_message(GameScript.get_entry("Ruins.Square_North.Hatch_Hole_Look"))
+	Utility.msg("Ruins.Square_North.Hatch_Hole_Look")
 
 func interact():
-	await Utility.show_message(GameScript.get_entry("Ruins.Square_North.Hatch_Hole_Go"))
+	await Utility.msg("Ruins.Square_North.Hatch_Hole_Go")
 	
 	var tele_args = TeleportArgs.new()
 	tele_args.to_location = Vector2(164, 393)

@@ -16,7 +16,7 @@ func update_state():
 		position = Vector2(initial_x, position.y)
 
 func investigate():
-	Utility.show_message(GameScript.get_entry("Ruins.Temple_North.Altar_Look"))
+	Utility.msg("Ruins.Temple_North.Altar_Look")
 
 func _on_game_var_set(var_name: Enums.Vars, _value):
 	if (var_name == Enums.Vars.MOVED_TEMPLE_ALTAR):

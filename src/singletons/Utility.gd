@@ -12,6 +12,20 @@ func show_message(message: String, has_more: bool = false):
 	SignalBus.show_message.emit(message, has_more)
 	await SignalBus.message_closed
 
+func yes_no_choice_msg(msg_key: String, has_more: bool = false) -> Choice:
+	SignalBus.show_message.emit(GameScript.get_entry(msg_key), has_more)
+	SignalBus.show_choice.emit([GameScript.get_entry("Global.Yes"), GameScript.get_entry("Global.No")] as Array[String], 1, Enums.ChoiceLocation.CENTER, true)
+	var choice = await SignalBus.choice_chosen
+	await SignalBus.message_closed
+	return choice
+	
+func choice_msg(msg_key: String, has_more: bool, choices: Array[String], cancel_index: int):
+	SignalBus.show_message.emit(GameScript.get_entry(msg_key), has_more)
+	SignalBus.show_choice.emit(choices, cancel_index, Enums.ChoiceLocation.CENTER, true)
+	var choice = await SignalBus.choice_chosen
+	await SignalBus.message_closed
+	return choice
+	
 func msg(msg_key: String, has_more: bool = false):
 	SignalBus.show_message.emit(GameScript.get_entry(msg_key), has_more)
 	await SignalBus.message_closed
@@ -29,12 +43,12 @@ func close_dialog():
 func learn_topic(group: Enums.TopicGroups, topic: Enums.Topics):
 	SignalBus.learn_topic.emit(group, topic)
 
-func show_choice(choices: Array[String], cancel_index: int, choice_location: Enums.ChoiceLocation = Enums.ChoiceLocation.CENTER) -> Choice:
-	SignalBus.show_choice.emit(choices, cancel_index, choice_location)
+func show_choice(choices: Array[String], cancel_index: int, choice_location: Enums.ChoiceLocation = Enums.ChoiceLocation.CENTER, has_simultaneous_message: bool = false) -> Choice:
+	SignalBus.show_choice.emit(choices, cancel_index, choice_location, false)
 	return await SignalBus.choice_chosen
 
-func show_yes_no_choice(choice_location: Enums.ChoiceLocation = Enums.ChoiceLocation.CENTER) -> Choice:
-	SignalBus.show_choice.emit([GameScript.get_entry("Global.Yes"), GameScript.get_entry("Global.No")] as Array[String], 1, choice_location)
+func show_yes_no_choice(choice_location: Enums.ChoiceLocation = Enums.ChoiceLocation.CENTER, has_simultaneous_message: bool = false) -> Choice:
+	SignalBus.show_choice.emit([GameScript.get_entry("Global.Yes"), GameScript.get_entry("Global.No")] as Array[String], 1, choice_location, has_simultaneous_message)
 	return await SignalBus.choice_chosen
 
 func pause():

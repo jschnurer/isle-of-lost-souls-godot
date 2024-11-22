@@ -7,11 +7,11 @@ func _ready():
 		super._ready()
 
 func investigate():
-	Utility.show_message(GameScript.get_entry("Forest.Clearing.Hole_Stone_Look"))
+	Utility.msg("Forest.Clearing.Hole_Stone_Look")
 
 func take():
 	Inventory.add_item(Enums.ItemSlugs.FISH_STONE)
 	$Sprite.queue_free()
-	await Utility.show_message(GameScript.get_entry("Forest.Clearing.Hole_Stone_Take"))
+	await Utility.msg("Forest.Clearing.Hole_Stone_Take")
 	GameVars.set_var(Enums.Vars.TOOK_STONE, true)
 	call_deferred("queue_free")

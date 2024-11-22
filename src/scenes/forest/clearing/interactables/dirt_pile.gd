@@ -1,7 +1,7 @@
-extends "res://src/events/game_event/base_event.gd"
+extends BaseEvent
 
 func investigate():
-	Utility.show_message(GameScript.get_entry("Forest.Clearing.Dirt_Look"))
+	Utility.msg("Forest.Clearing.Dirt_Look")
 
 func take():
-	Utility.show_message(GameScript.get_entry("Forest.Clearing.Dirt_Take"))
+	Utility.msg("Forest.Clearing.Dirt_Take")

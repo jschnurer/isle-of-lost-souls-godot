@@ -27,8 +27,7 @@ func _on_open_pause_menu():
 		Utility.unpause()
 
 func confirm_quit(to_main_menu: bool):
-	await Utility.msg("Global.Quit_Prompt")
-	var choice = await Utility.show_yes_no_choice()
+	var choice = await Utility.yes_no_choice_msg("Global.Quit_Prompt")
 	
 	if (choice.index == 0):
 		if (to_main_menu):

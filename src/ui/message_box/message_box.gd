@@ -32,46 +32,47 @@ func _on_show_message(message: String, has_more: bool):
 	panel.visible = true
 	
 	if (state == MessageBoxState.CLOSED):
-		state = MessageBoxState.OPENING
+		set_state(MessageBoxState.OPENING)
 		$AnimationPlayer.play("opening")
 	elif (state == MessageBoxState.SHOWN):
-		state = MessageBoxState.TYPING
+		set_state(MessageBoxState.TYPING)
 
 func _process(delta):
 	if (state == MessageBoxState.TYPING):
 		process_typing(delta)
 	elif (state == MessageBoxState.SHOWN):
-		process_closable()
+		if (not ChoiceManager.visible):
+			process_closable()
 
 func process_typing(delta: float):
 	typing_time_elapsed += delta
 	text_label.visible_characters = typing_time_elapsed * characters_per_second
 	
 	if (text_label.visible_characters >= text_label.text.length()):
-		state = MessageBoxState.SHOWN
+		set_state(MessageBoxState.SHOWN)
 		
 	if (Input.is_action_just_pressed("ui_accept")):
 		text_label.visible_characters = text_label.text.length()
-		state = MessageBoxState.SHOWN
+		set_state(MessageBoxState.SHOWN)
 
 func process_closable():
 	if (Input.is_action_just_pressed("ui_accept")):
 		if (stay_open):
 			finish_message()
 		else:
-			state = MessageBoxState.CLOSING
+			set_state(MessageBoxState.CLOSING)
 			$AnimationPlayer.play("closing")
 
 func _opening_anim_done():
-	state = MessageBoxState.TYPING
+	set_state(MessageBoxState.TYPING)
 	
 func _closing_anim_done():
-	state = MessageBoxState.CLOSED
+	set_state(MessageBoxState.CLOSED)
 	panel.visible = false
 	finish_message()
 	
 func _typing_anim_done():
-	state = MessageBoxState.SHOWN
+	set_state(MessageBoxState.SHOWN)
 
 func finish_message():
 	text_label.text = ""
@@ -79,3 +80,19 @@ func finish_message():
 	appearance_time = 0
 	Utility.unpause()
 	SignalBus.message_closed.emit()
+
+func set_state(new_state: MessageBoxState):
+	state = new_state
+	
+	if (new_state == MessageBoxState.SHOWN):
+		if (ChoiceManager.waiting_for_message):
+			# Reveal the waiting choice.
+			ChoiceManager.waiting_message_shown()
+
+func _on_choice_chosen():
+	Utility.pause()
+	if (stay_open):
+		finish_message()
+	else:
+		set_state(MessageBoxState.CLOSING)
+		$AnimationPlayer.play("closing")

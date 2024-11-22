@@ -9,14 +9,14 @@ func _ready():
 		super._ready()
 
 func investigate():
-	Utility.show_message(GameScript.get_entry("Forest.Bridge_South.Rod_Look"))
+	Utility.msg("Forest.Bridge_South.Rod_Look")
 
 func take():
 	if (!GameVars.get_var(Enums.Vars.DISTRACTED_FISH)):
 		Utility.initiate_game_over(Enums.Scenes.GAME_OVER_FISH, 3, death_sound)
 	else:
 		$AnimatedSprite2D.queue_free()
-		await Utility.show_message(GameScript.get_entry("Forest.Bridge_South.Rod_Take_Successful"))
+		await Utility.msg("Forest.Bridge_South.Rod_Take_Successful")
 		Inventory.add_item(Enums.ItemSlugs.RUINS_ROD)
 		GameVars.set_var(Enums.Vars.TOOK_RIVER_ROD, true)
 		queue_free()

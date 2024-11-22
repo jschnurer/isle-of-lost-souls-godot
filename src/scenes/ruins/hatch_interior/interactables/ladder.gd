@@ -1,7 +1,7 @@
 extends BaseEvent
 
 func interact():
-	await Utility.show_message(GameScript.get_entry("Ruins.Hatch_Interior.Ladder_Go"))
+	await Utility.msg("Ruins.Hatch_Interior.Ladder_Go")
 	
 	var tele_args = TeleportArgs.new()
 	tele_args.to_location = Vector2(456, 330)

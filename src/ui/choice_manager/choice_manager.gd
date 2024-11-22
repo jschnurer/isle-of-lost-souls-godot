@@ -6,6 +6,8 @@ var is_open = false
 var delay_event_time = 0
 var delay_before_can_choose = .1
 var cancel_choice_index = 0
+var waiting_for_message = false
+var must_close_message = false
 
 func _ready():
 	SignalBus.show_choice.connect(_on_show_choice)
@@ -26,7 +28,6 @@ func _input(event: InputEvent) -> void:
 func toggle(open: bool):
 	delay_event_time = 0
 	is_open = open
-	clear_container()
 	
 	if (open):
 		show()
@@ -35,8 +36,13 @@ func toggle(open: bool):
 		hide()
 		Utility.unpause()
 
-func _on_show_choice(choices: Array[String], cancel_index: int, choice_location: Enums.ChoiceLocation):
-	toggle(true)
+func _on_show_choice(choices: Array[String], cancel_index: int, choice_location: Enums.ChoiceLocation, has_simultaneous_message: bool):
+	waiting_for_message = has_simultaneous_message
+	
+	if (not waiting_for_message):
+		toggle(true)
+	
+	clear_container()
 	
 	if (choice_location == Enums.ChoiceLocation.CENTER):
 		center_container.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -74,4 +80,14 @@ func _on_choice_made(text: String, choice_index: int):
 func _on_choose(choice: Choice):
 	if (delay_event_time >= delay_before_can_choose):
 		toggle(false)
+		clear_container()
 		SignalBus.choice_chosen.emit(choice)
+		if (must_close_message):
+			MessageBox._on_choice_chosen()
+
+func waiting_message_shown():
+	waiting_for_message = false
+	must_close_message = true
+	toggle(true)
+	if (container.get_child_count() > 0):
+		container.get_child(0).grab_focus()

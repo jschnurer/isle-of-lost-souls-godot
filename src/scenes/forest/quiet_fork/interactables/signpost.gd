@@ -7,14 +7,14 @@ func _ready():
 
 func investigate():
 	if (GameVars.get_var(Enums.Vars.TOOK_NAIL)):
-		await Utility.show_message(GameScript.get_entry("Forest.Quiet_Fork.Signpost_Look_Without_Nail"))
+		await Utility.msg("Forest.Quiet_Fork.Signpost_Look_Without_Nail")
 	else:
-		await Utility.show_message(GameScript.get_entry("Forest.Quiet_Fork.Signpost_Look_With_Nail"))
+		await Utility.msg("Forest.Quiet_Fork.Signpost_Look_With_Nail")
 		
 	Utility.go_to_sub_area(Enums.Scenes.FOREST_QUIET_FORK_SIGNPOST)
 	
 func take():
-	Utility.show_message(GameScript.get_entry("Forest.Quiet_Fork.Signpost_Take"))
+	Utility.msg("Forest.Quiet_Fork.Signpost_Take")
 
 func use_item(_item: Item):
 	pass

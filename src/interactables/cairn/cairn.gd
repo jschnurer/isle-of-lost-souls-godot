@@ -30,27 +30,24 @@ func variant_changed():
 	$StaticBody2D/ShortCollisionShape.disabled = _variant != SpriteVariant.SHORT
 
 func investigate():
-	Utility.show_message(GameScript.get_entry(investigate_game_script_key))
+	Utility.msg(investigate_game_script_key)
 
 func take():
-	Utility.show_message(GameScript.get_entry("Global.Cairn_Take"))
+	Utility.msg("Global.Cairn_Take")
 
 func interact():
-	await Utility.show_message(GameScript.get_entry("Global.Cairn_Interact"))
-	
 	var choices: Array[String] = [
 		get_slot_choice_text(1),
 		get_slot_choice_text(2),
 		get_slot_choice_text(3),
 		GameScript.get_entry("Global.Cancel")
 	]
-	var choice = await Utility.show_choice(choices, 3)
+	var choice = await Utility.choice_msg("Global.Cairn_Interact", false, choices, 3)
 	
 	if (choice.index == 3):
-		Utility.show_message(GameScript.get_entry("Global.Save_Canceled"))
-		return
-	
-	SignalBus.save_game.emit(choice.index + 1)
+		Utility.msg("Global.Save_Canceled")
+	else:
+		SignalBus.save_game.emit(choice.index + 1)
 
 func get_slot_choice_text(slot: int) -> String:
 	return GameScript.get_entry("Global.SaveToSlot" + str(slot)) + ": " + SaveManager.get_game_time_from_slot(slot)

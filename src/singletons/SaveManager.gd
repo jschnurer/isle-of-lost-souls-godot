@@ -36,7 +36,7 @@ func _on_save_game(slot: int):
 	save_most_recent_slot_meta(slot)
 	
 	# Show the save complete message.
-	Utility.show_message(GameScript.get_entry("Global.Save_Complete"))
+	Utility.msg("Global.Save_Complete")
 
 func _on_load_game(slot: int):
 	var file_name = "user://savegame" + str(slot) + ".save"
