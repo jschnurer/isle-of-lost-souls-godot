@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bn4snnfuj2s7m"]
+[gd_scene load_steps=22 format=3 uid="uid://bn4snnfuj2s7m"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_1qaiv"]
 [ext_resource type="Texture2D" uid="uid://dl35mksd2xq0" path="res://art/backgrounds/swamp/Muck Skull.png" id="2_ny66y"]
@@ -20,6 +20,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ya6ti"]
 size = Vector2(200, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbg6f"]
+size = Vector2(20, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mw4oq"]
 size = Vector2(20, 400)
@@ -49,6 +52,14 @@ scene_name_valid = true
 event_area = SubResource("RectangleShape2D_ya6ti")
 to_north = true
 preserve_x = true
+
+[node name="ToTrailOnSolidGround" parent="." instance=ExtResource("5_awf6g")]
+position = Vector2(816, 467)
+to_scene = "SWAMP_DRY_TRAIL"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_pbg6f")
+to_east = true
+preserve_y = true
 
 [node name="ToAbandonedCampsite" parent="." instance=ExtResource("5_awf6g")]
 position = Vector2(0, 333)

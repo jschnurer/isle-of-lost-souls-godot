@@ -1,0 +1,587 @@
+[gd_scene load_steps=19 format=3 uid="uid://dpcoyy1gq664e"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_ef5ok"]
+[ext_resource type="Texture2D" uid="uid://bi8gtm20wlsi7" path="res://art/backgrounds/swamp/Trail on Solid Ground.png" id="2_cnus2"]
+[ext_resource type="Texture2D" uid="uid://co1o8irt7c05n" path="res://art/backgrounds/swamp/Trail on Solid Ground Collision.png" id="3_le1cl"]
+[ext_resource type="AudioStream" uid="uid://cfti2ptvnjkxv" path="res://audio/bgm/swamp-loop.ogg" id="4_ler2y"]
+[ext_resource type="PackedScene" uid="uid://c1bqlc4yseggt" path="res://src/scenes/objects/cattails/cattails.tscn" id="5_8sptp"]
+[ext_resource type="PackedScene" uid="uid://c0bedbsnj460f" path="res://src/scenes/objects/ground/swampy_ground.tscn" id="5_65m87"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="5_dse8l"]
+[ext_resource type="Texture2D" uid="uid://bmp2o1e0egcf8" path="res://art/actors/swamp_grass_short2.png" id="6_314qn"]
+[ext_resource type="PackedScene" uid="uid://d1d2xjqgr7ipg" path="res://src/scenes/objects/grass/swamp_grass_big.tscn" id="8_oqjl1"]
+[ext_resource type="PackedScene" uid="uid://b2ovnve1k5fpv" path="res://src/scenes/objects/grass/swamp_grass_small.tscn" id="9_4kddb"]
+[ext_resource type="PackedScene" uid="uid://ry7shhhnxge" path="res://src/scenes/objects/lilypads/lily_pads_2.tscn" id="10_wdna4"]
+[ext_resource type="PackedScene" uid="uid://e7q0ncmypwue" path="res://src/scenes/objects/lilypads/lily_pads_3.tscn" id="11_y5ljw"]
+[ext_resource type="PackedScene" uid="uid://dqyvpikwrqf5g" path="res://src/scenes/objects/beach_grass/beach_grasses.tscn" id="13_4tx0r"]
+[ext_resource type="PackedScene" uid="uid://ewksaupfvks1" path="res://src/scenes/objects/beach_grass/beach_grass.tscn" id="14_nog36"]
+[ext_resource type="Texture2D" uid="uid://djopx8uml6e7g" path="res://art/actors/beach_grass_1.png" id="15_0sgfo"]
+[ext_resource type="Texture2D" uid="uid://c1cl56bpjbc0c" path="res://art/actors/beach_grass_2.png" id="16_6v7a6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nvtv"]
+size = Vector2(20, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwnma"]
+size = Vector2(400, 20)
+
+[node name="TrailOnSolidGround" type="Node2D"]
+y_sort_enabled = true
+
+[node name="SceneBG" parent="." instance=ExtResource("1_ef5ok")]
+texture = ExtResource("2_cnus2")
+scene = 81
+area = 6
+bg_images = Array[Texture2D]([ExtResource("2_cnus2")])
+collision_image = ExtResource("3_le1cl")
+hide_collider = true
+bgm_stream = ExtResource("4_ler2y")
+metadata/_edit_lock_ = true
+
+[node name="ToMuckSkull" parent="." instance=ExtResource("5_dse8l")]
+position = Vector2(0, 470)
+to_scene = "SWAMP_MAMMOTH_SKULL"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_3nvtv")
+to_west = true
+preserve_y = true
+
+[node name="ToBrambleRidge" parent="." instance=ExtResource("5_dse8l")]
+position = Vector2(353, 623)
+to_scene = "SWAMP_RIDGE"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_rwnma")
+to_south = true
+preserve_x = true
+
+[node name="Vegetation" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Ground" type="Node2D" parent="Vegetation"]
+y_sort_enabled = true
+
+[node name="SwampyGround" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(25, 420)
+texture = ExtResource("6_314qn")
+flip_h = true
+variant = 1
+
+[node name="SwampyGround2" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(204, 401)
+
+[node name="SwampyGround3" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(103, 500)
+texture = ExtResource("6_314qn")
+flip_h = true
+variant = 1
+
+[node name="SwampyGround4" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(518, 365)
+
+[node name="SwampyGround5" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(640, 354)
+texture = ExtResource("6_314qn")
+variant = 1
+
+[node name="SwampyGround6" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(774, 398)
+texture = ExtResource("6_314qn")
+flip_h = true
+variant = 1
+
+[node name="SwampyGround7" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(625, 459)
+
+[node name="SwampyGround8" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(752, 516)
+texture = ExtResource("6_314qn")
+flip_h = true
+variant = 1
+
+[node name="SwampyGround9" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(675, 564)
+
+[node name="SwampyGround10" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(814, 591)
+texture = ExtResource("6_314qn")
+variant = 1
+
+[node name="SwampyGround11" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(814, 454)
+flip_h = true
+
+[node name="SwampyGround12" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(626, 579)
+texture = ExtResource("6_314qn")
+flip_h = true
+variant = 1
+
+[node name="Cattails" type="Node2D" parent="Vegetation"]
+y_sort_enabled = true
+
+[node name="Cattails" parent="Vegetation/Cattails" instance=ExtResource("5_8sptp")]
+position = Vector2(135, 368)
+
+[node name="Cattails2" parent="Vegetation/Cattails" instance=ExtResource("5_8sptp")]
+position = Vector2(204, 364)
+flip_h = true
+
+[node name="Cattails3" parent="Vegetation/Cattails" instance=ExtResource("5_8sptp")]
+position = Vector2(558, 313)
+
+[node name="Cattails4" parent="Vegetation/Cattails" instance=ExtResource("5_8sptp")]
+position = Vector2(676, 306)
+flip_h = true
+
+[node name="Cattails5" parent="Vegetation/Cattails" instance=ExtResource("5_8sptp")]
+position = Vector2(705, 319)
+
+[node name="Cattails6" parent="Vegetation/Cattails" instance=ExtResource("5_8sptp")]
+position = Vector2(406, 390)
+
+[node name="Cattails7" parent="Vegetation/Cattails" instance=ExtResource("5_8sptp")]
+position = Vector2(80, 551)
+flip_h = true
+
+[node name="Cattails8" parent="Vegetation/Cattails" instance=ExtResource("5_8sptp")]
+position = Vector2(143, 548)
+
+[node name="Cattails9" parent="Vegetation/Cattails" instance=ExtResource("5_8sptp")]
+position = Vector2(521, 333)
+flip_h = true
+
+[node name="Grass" type="Node2D" parent="Vegetation"]
+y_sort_enabled = true
+
+[node name="SwampGrassBig" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(569, 338)
+flip_h = true
+
+[node name="SwampGrassBig2" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(689, 457)
+
+[node name="SwampGrassBig3" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(572.5, 487)
+
+[node name="SwampGrassBig4" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(617, 390)
+flip_h = true
+
+[node name="SwampGrassBig5" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(569.5, 398)
+
+[node name="SwampGrassBig6" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(545, 353)
+flip_h = true
+
+[node name="SwampGrassBig7" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(572.5, 563)
+
+[node name="SwampGrassBig8" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(596, 641)
+
+[node name="SwampGrassBig9" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(557, 634)
+flip_h = true
+
+[node name="SwampGrassBig10" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(585, 609)
+
+[node name="SwampGrassBig11" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(565, 582)
+flip_h = true
+
+[node name="SwampGrassBig12" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(686, 519)
+
+[node name="SwampGrassBig13" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(763, 571)
+
+[node name="SwampGrassBig14" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(679, 591)
+flip_h = true
+
+[node name="SwampGrassBig15" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(628, 539)
+
+[node name="SwampGrassBig16" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(656, 465)
+flip_h = true
+
+[node name="SwampGrassBig17" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(582, 436)
+
+[node name="SwampGrassBig18" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(637, 421)
+
+[node name="SwampGrassBig19" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(709, 368)
+flip_h = true
+
+[node name="SwampGrassBig20" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(642, 342)
+
+[node name="SwampGrassBig21" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(752, 341)
+flip_h = true
+
+[node name="SwampGrassBig22" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(792, 333)
+
+[node name="SwampGrassBig23" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(775, 400)
+
+[node name="SwampGrassBig24" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(810, 479)
+flip_h = true
+
+[node name="SwampGrassBig25" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(821, 570)
+flip_h = true
+
+[node name="SwampGrassBig26" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(770, 619)
+
+[node name="SwampGrassBig27" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(706, 637)
+flip_h = true
+
+[node name="SwampGrassBig28" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(632, 623)
+
+[node name="SwampGrassBig29" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(812, 641)
+flip_h = true
+
+[node name="SwampGrassBig30" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(801, 592)
+flip_h = true
+
+[node name="SwampGrassBig31" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(728, 484)
+flip_h = true
+
+[node name="SwampGrassBig32" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(770, 435)
+flip_h = true
+
+[node name="SwampGrassBig33" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(710, 405)
+
+[node name="SwampGrassBig34" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(600, 305)
+flip_h = true
+
+[node name="SwampGrassBig35" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(250, 372)
+flip_h = true
+
+[node name="SwampGrassBig36" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(168, 371)
+flip_h = true
+
+[node name="SwampGrassBig39" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(46, 550)
+
+[node name="SwampGrassBig43" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(495, 346)
+flip_h = true
+
+[node name="SwampGrassBig45" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(822, 373)
+flip_h = true
+
+[node name="SwampGrassBig37" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(24, 391)
+flip_h = true
+
+[node name="SwampGrassBig38" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(73, 378)
+
+[node name="SwampGrassBig40" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(185, 558)
+flip_h = true
+
+[node name="SwampGrassBig41" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(207, 576)
+
+[node name="SwampGrassBig42" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(441, 379)
+
+[node name="SwampGrassBig44" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(722, 326)
+flip_h = true
+
+[node name="SwampGrassSmall" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(284, 376)
+
+[node name="SwampGrassSmall2" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(476, 365)
+
+[node name="SwampGrassSmall3" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(111, 550)
+flip_h = true
+
+[node name="SwampGrassSmall4" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(125, 539)
+
+[node name="SwampGrassSmall5" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(596, 463)
+
+[node name="SwampGrassSmall6" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(568.5, 530)
+flip_h = true
+
+[node name="SwampGrassSmall7" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(567.5, 459)
+
+[node name="SwampGrassSmall8" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(570.5, 418)
+flip_h = true
+
+[node name="SwampGrassSmall9" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(570, 370)
+
+[node name="SwampGrassSmall10" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(636, 308)
+
+[node name="SwampGrassSmall11" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(604, 346)
+flip_h = true
+
+[node name="SwampGrassSmall12" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(667, 385)
+
+[node name="SwampGrassSmall13" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(622, 454)
+
+[node name="SwampGrassSmall14" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(604, 518)
+flip_h = true
+
+[node name="SwampGrassSmall15" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(628, 576)
+
+[node name="SwampGrassSmall16" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(598, 561)
+flip_h = true
+
+[node name="SwampGrassSmall17" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(696, 554)
+
+[node name="SwampGrassSmall18" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(738, 592)
+flip_h = true
+
+[node name="SwampGrassSmall19" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(674, 615)
+flip_h = true
+
+[node name="SwampGrassSmall20" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(654, 643)
+
+[node name="SwampGrassSmall21" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(738, 631)
+flip_h = true
+
+[node name="SwampGrassSmall22" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(709, 592)
+
+[node name="SwampGrassSmall23" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(800, 523)
+flip_h = true
+
+[node name="SwampGrassSmall24" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(818, 538)
+
+[node name="SwampGrassSmall25" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(730, 532)
+flip_h = true
+
+[node name="SwampGrassSmall26" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(768, 492)
+
+[node name="SwampGrassSmall27" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(725, 441)
+flip_h = true
+
+[node name="SwampGrassSmall28" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(816, 423)
+flip_h = true
+
+[node name="SwampGrassSmall29" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(758, 382)
+
+[node name="SwampGrassSmall30" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(669, 413)
+flip_h = true
+
+[node name="SwampGrassSmall31" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(633, 478)
+
+[node name="SwampGrassSmall32" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(611, 502)
+flip_h = true
+
+[node name="SwampGrassSmall33" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(660, 511)
+
+[node name="SwampGrassSmall34" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(675, 492)
+
+[node name="SwampGrassSmall35" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
+position = Vector2(675, 492)
+flip_h = true
+
+[node name="Lilypads" type="Node2D" parent="Vegetation"]
+y_sort_enabled = true
+
+[node name="LilyPads2Leaves" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(122, 3)
+
+[node name="LilyPads2Leaves2" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(710, 159.5)
+
+[node name="LilyPads2Leaves19" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(710, 159.5)
+
+[node name="LilyPads2Leaves9" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(60, 240)
+
+[node name="LilyPads2Leaves10" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(80, 282)
+
+[node name="LilyPads2Leaves11" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(239, 138)
+
+[node name="LilyPads2Leaves12" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(679, -4)
+
+[node name="LilyPads2Leaves4" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(405, 224)
+
+[node name="LilyPads2Leaves5" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(418, 260)
+
+[node name="LilyPads2Leaves6" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(459, 235)
+
+[node name="LilyPads2Leaves3" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(732, 176)
+flip_h = true
+
+[node name="LilyPads2Leaves16" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(774, 145)
+flip_h = true
+
+[node name="LilyPads2Leaves13" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(668, 16)
+flip_h = true
+
+[node name="LilyPads2Leaves14" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(676, 30)
+flip_h = true
+
+[node name="LilyPads2Leaves15" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(439, 37)
+flip_h = true
+
+[node name="LilyPads2Leaves7" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(447, 214)
+flip_h = true
+
+[node name="LilyPads2Leaves8" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(382, 265)
+flip_h = true
+
+[node name="LilyPads3Leaves" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(743, 153.5)
+
+[node name="LilyPads3Leaves16" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(459, 67)
+
+[node name="LilyPads3Leaves14" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(702, 11)
+
+[node name="LilyPads3Leaves7" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(400, 275)
+
+[node name="LilyPads3Leaves8" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(479, 218)
+
+[node name="LilyPads3Leaves9" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(415, 206)
+
+[node name="LilyPads3Leaves10" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(453, 257)
+
+[node name="LilyPads3Leaves11" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(371, 217)
+
+[node name="LilyPads3Leaves12" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(47, 263)
+
+[node name="LilyPads3Leaves13" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(79, 260)
+
+[node name="LilyPads3Leaves2" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(825, 260)
+flip_h = true
+
+[node name="LilyPads3Leaves17" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(767, 180)
+flip_h = true
+
+[node name="LilyPads3Leaves20" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(766, 127)
+flip_h = true
+
+[node name="LilyPads3Leaves3" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(119, 21)
+flip_h = true
+
+[node name="LilyPads3Leaves4" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(87, 7)
+flip_h = true
+
+[node name="LilyPads3Leaves5" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(398, 241)
+flip_h = true
+
+[node name="LilyPads3Leaves6" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(436, 240)
+flip_h = true
+
+[node name="LilyPads2Leaves17" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(414.5, 23.5)
+
+[node name="LilyPads2Leaves18" parent="Vegetation/Lilypads" instance=ExtResource("10_wdna4")]
+position = Vector2(378.5, 28.5)
+flip_h = true
+
+[node name="LilyPads3Leaves15" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(396.5, 38.5)
+
+[node name="LilyPads3Leaves18" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(394.5, 4.5)
+flip_h = true
+
+[node name="LilyPads3Leaves19" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
+position = Vector2(432.5, 3.5)
+flip_h = true
+
+[node name="BeachGrasses" parent="." instance=ExtResource("13_4tx0r")]
+randomize_grass = true
+
+[node name="BeachGrass" parent="BeachGrasses" instance=ExtResource("14_nog36")]
+position = Vector2(282, 618)
+texture = ExtResource("15_0sgfo")
+
+[node name="BeachGrass2" parent="BeachGrasses" instance=ExtResource("14_nog36")]
+position = Vector2(359, 534)
+flip_h = true
+
+[node name="BeachGrass3" parent="BeachGrasses" instance=ExtResource("14_nog36")]
+position = Vector2(463, 581)
+
+[node name="BeachGrass4" parent="BeachGrasses" instance=ExtResource("14_nog36")]
+position = Vector2(418, 632)
+texture = ExtResource("16_6v7a6")

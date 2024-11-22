@@ -1,0 +1,12 @@
+[gd_scene load_steps=5 format=3 uid="uid://ewksaupfvks1"]
+
+[ext_resource type="Texture2D" uid="uid://djopx8uml6e7g" path="res://art/actors/beach_grass_1.png" id="1_6uub5"]
+[ext_resource type="Script" path="res://src/scenes/objects/beach_grass/beach_grass.gd" id="1_y23pv"]
+[ext_resource type="Texture2D" uid="uid://c1cl56bpjbc0c" path="res://art/actors/beach_grass_2.png" id="3_uaveg"]
+[ext_resource type="Texture2D" uid="uid://dwxto0mbghgmw" path="res://art/actors/beach_grass_3.png" id="4_f0gg5"]
+
+[node name="BeachGrass" type="Sprite2D"]
+texture = ExtResource("4_f0gg5")
+offset = Vector2(0, -8.82)
+script = ExtResource("1_y23pv")
+grasses = Array[Texture2D]([ExtResource("1_6uub5"), ExtResource("3_uaveg"), ExtResource("4_f0gg5")])

@@ -24,6 +24,7 @@ func ask_about(topic: Enums.Topics):
 		await Utility.dialog_msg("Dialog.Rhode.My_Past_8", true)
 		Utility.dialog_msg("Dialog.Rhode.My_Past_9")
 		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.ISLAND_ARRIVAL)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.ISLAND)
 		
 	elif (topic == Enums.Topics.ISLAND_ARRIVAL):
 		await Utility.dialog_msg("Dialog.Rhode.Island_Arrival_1", true)

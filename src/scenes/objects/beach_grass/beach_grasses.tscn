@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqyvpikwrqf5g"]
+
+[ext_resource type="Script" path="res://src/scenes/objects/beach_grass/beach_grasses.gd" id="1_dmt3l"]
+
+[node name="BeachGrasses" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_dmt3l")
