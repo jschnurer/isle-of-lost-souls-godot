@@ -67,4 +67,4 @@ func _on_item_chosen(item: Item):
 		SignalBus.global_use_item.emit(item)
 
 func _on_item_focused(item: Item):
-	item_description_lbl.text = item.description
+	item_description_lbl.text = Utility.parse_colors(item.description)

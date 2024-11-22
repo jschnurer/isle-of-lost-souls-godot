@@ -32,8 +32,6 @@ func handle_fade(args: ScreenFadeArgs, type: FadeType):
 			_on_fade_out_complete()
 	else:
 		if (type == FadeType.IN):
-			color_rect.modulate.a = 1
 			anim_player.play("fade_in", -1, args.speed_scale)
 		elif (type == FadeType.OUT):
-			color_rect.modulate.a = 0
 			anim_player.play("fade_out", -1, args.speed_scale)

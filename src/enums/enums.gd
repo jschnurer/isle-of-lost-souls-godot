@@ -54,6 +54,9 @@ enum Vars {
 	LEARNED_INGREDIENTS,
 	TAKE_SCISSORS_PERMISSION,
 	TOOK_SCISSORS,
+	RHODE_REMEMBERS_OPHELIA,
+	TOOK_COIN,
+	MAZE_STEP,
 }
 
 enum EngineEvents {
@@ -65,7 +68,7 @@ enum ItemSlugs {
 	BLIGHT_CURE,
 	BOTTLE,
 	BOTTLE_OF_WATER,
-	BROKENBOX,
+	BROKEN_BOX,
 	COIN,
 	COMPASS,
 	ELTNAMSID_RUNE,
@@ -91,10 +94,9 @@ enum ItemSlugs {
 	RUINS_ROD,
 	SAC,
 	SCISSORS,
-	SILVERBOX,
+	SILVER_BOX,
 	SLEDGE,
 	TARNROOT,
-	LEARNED_INGREDIENTS,
 }
 
 enum TopicGroups {
@@ -246,6 +248,7 @@ enum Scenes {
 	SWAMP_CAMPSITE_TENT = 100,
 	SWAMP_STATUE_TOP = 101,
 	GAME_OVER_RHODE = 102,
+	FOREST_BEND_SACK = 103,
 }
 
 var ScenePaths = {
@@ -282,6 +285,7 @@ var ScenePaths = {
 	
 	Scenes.FOREST_ABRUPT_TURN: "res://src/scenes/forest/abrupt_turn/AbruptTurn.tscn",
 	Scenes.FOREST_BEND: "res://src/scenes/forest/bend/Bend.tscn",
+	Scenes.FOREST_BEND_SACK: "res://src/scenes/forest/bend/sub_areas/forest_bend_sack.tscn",
 	Scenes.FOREST_BRIDGE_NORTH: "res://src/scenes/forest/",
 	Scenes.FOREST_BRIDGE_SOUTH: "res://src/scenes/forest/bridge_south/BridgeSouth.tscn",
 	Scenes.FOREST_CABIN_EXTERIOR: "res://src/scenes/forest/cabin_exterior/CabinExterior.tscn",

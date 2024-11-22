@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccul4ponrxk86"]
+
+[ext_resource type="Script" path="res://src/debug/message_tester.gd" id="1_4h2pc"]
+[ext_resource type="PackedScene" uid="uid://bbg5lrchiq5v2" path="res://src/ui/message_box/MessageBox.tscn" id="1_85rfx"]
+
+[node name="MessageTester" type="CanvasLayer"]
+script = ExtResource("1_4h2pc")
+
+[node name="MessageBox" parent="." instance=ExtResource("1_85rfx")]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 814.0
+offset_bottom = 159.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 336.0
+offset_top = 166.0
+offset_right = 457.0
+offset_bottom = 197.0
+text = "Show Message"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqfdhtm4lcl17"]
+[gd_scene load_steps=12 format=3 uid="uid://bqfdhtm4lcl17"]
 
 [ext_resource type="Script" path="res://src/singletons/item_usage/item_usage.gd" id="1_cfgvq"]
 [ext_resource type="Script" path="res://src/singletons/item_usage/items/ophelias_journal_1.gd.gd" id="2_1hb2q"]
 [ext_resource type="Script" path="res://src/singletons/item_usage/items/flashlight.gd" id="3_sh248"]
+[ext_resource type="Script" path="res://src/singletons/item_usage/items/ophelias_journal_2.gd" id="3_trkuj"]
 [ext_resource type="Script" path="res://src/singletons/item_usage/items/potion.gd" id="4_oaf4m"]
 [ext_resource type="Script" path="res://src/singletons/item_usage/items/hatch_note.gd" id="5_dwg2n"]
 [ext_resource type="Script" path="res://src/singletons/item_usage/items/rune.gd" id="6_bsblo"]
+[ext_resource type="Script" path="res://src/singletons/item_usage/items/map.gd" id="8_g8q3w"]
+[ext_resource type="Script" path="res://src/singletons/item_usage/items/parchment.gd" id="9_yxo7e"]
+[ext_resource type="Script" path="res://src/singletons/item_usage/items/folded_note.gd" id="10_j33bg"]
+[ext_resource type="Script" path="res://src/singletons/item_usage/items/crumpled_note.gd" id="11_k446i"]
 
 [node name="ItemUsage" type="Node2D"]
 script = ExtResource("1_cfgvq")
@@ -13,6 +18,9 @@ script = ExtResource("1_cfgvq")
 [node name="OPHELIAS_JOURNAL1" type="Node2D" parent="."]
 script = ExtResource("2_1hb2q")
 item_slug = 19
+
+[node name="OPHELIAS_JOURNAL2" type="Node2D" parent="."]
+script = ExtResource("3_trkuj")
 
 [node name="FLASHLIGHT" type="Node2D" parent="."]
 script = ExtResource("3_sh248")
@@ -25,3 +33,15 @@ script = ExtResource("5_dwg2n")
 
 [node name="ETAVONER_RUNE" type="Node2D" parent="."]
 script = ExtResource("6_bsblo")
+
+[node name="MAP" type="Node2D" parent="."]
+script = ExtResource("8_g8q3w")
+
+[node name="PARCHMENT" type="Node2D" parent="."]
+script = ExtResource("9_yxo7e")
+
+[node name="FOLDED_NOTE" type="Node2D" parent="."]
+script = ExtResource("10_j33bg")
+
+[node name="CRUMPLED_NOTE" type="Node2D" parent="."]
+script = ExtResource("11_k446i")

@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://bp5vr3c2vpbjj"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_4f3vj"]
+[ext_resource type="Texture2D" uid="uid://dwy62dabwb3uy" path="res://art/backgrounds/forest/Forest Bend Sack.png" id="2_l5j0d"]
+[ext_resource type="AudioStream" uid="uid://dew108n6x52bl" path="res://audio/bgm/birds-isaiah658.ogg" id="3_jpobu"]
+[ext_resource type="Texture2D" uid="uid://hqhc0yr080y" path="res://art/actors/silver_coin.png" id="4_c4vxh"]
+[ext_resource type="PackedScene" uid="uid://d3oqcmtd837nj" path="res://src/interactables/back_arrow.tscn" id="4_cpjfj"]
+[ext_resource type="Script" path="res://src/scenes/forest/bend/sub_areas/interactables/silver_coin.gd" id="4_rjf2m"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="5_6plu4"]
+[ext_resource type="Script" path="res://src/scenes/forest/bend/sub_areas/interactables/sack.gd" id="5_pjp7x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd5q2"]
+size = Vector2(30, 23)
+
+[node name="ForestBendSack" type="Node2D"]
+
+[node name="SceneBG" parent="." instance=ExtResource("1_4f3vj")]
+texture = ExtResource("2_l5j0d")
+scene = 8
+area = 2
+bg_images = Array[Texture2D]([ExtResource("2_l5j0d")])
+bgm_stream = ExtResource("3_jpobu")
+
+[node name="BackArrow" parent="." instance=ExtResource("4_cpjfj")]
+
+[node name="Sack" type="Node2D" parent="."]
+script = ExtResource("5_pjp7x")
+
+[node name="GameEvent" parent="Sack" instance=ExtResource("5_6plu4")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sack/GameEvent"]
+polygon = PackedVector2Array(249, 177, 319, 118, 474, 114, 528, 181, 525, 407, 550, 456, 462, 501, 387, 498, 246, 269)
+
+[node name="SilverCoin" type="Node2D" parent="."]
+position = Vector2(486, 448)
+script = ExtResource("4_rjf2m")
+auto_destroy_flag = 35
+
+[node name="Sprite2D" type="Sprite2D" parent="SilverCoin"]
+texture = ExtResource("4_c4vxh")
+
+[node name="GameEvent" parent="SilverCoin" instance=ExtResource("5_6plu4")]
+
+[node name="CollisionShape2D" parent="SilverCoin/GameEvent" index="0"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_sd5q2")
+
+[editable path="SilverCoin/GameEvent"]

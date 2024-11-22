@@ -25,6 +25,28 @@ func use_item(item: Item):
 			await Utility.msg("Swamp.Hut_Interior.Rhode_Red_Fabric_5", true)
 			Utility.msg("Swamp.Hut_Interior.Rhode_Red_Fabric_6")
 			Utility.learn_topic(Enums.TopicGroups.GLOBAL, Enums.Topics.OPHELIA)
+		elif (item.slug == Enums.ItemSlugs.OPHELIAS_JOURNAL1):
+			Inventory.remove_item(Enums.ItemSlugs.OPHELIAS_JOURNAL1)
+			Inventory.add_item(Enums.ItemSlugs.OPHELIAS_JOURNAL2)
+			await Utility.msg("Swamp.Hut_Interior.Ophelias_Journal_1", true)
+			await Utility.msg("Swamp.Hut_Interior.Ophelias_Journal_2", true)
+			await Utility.msg("Swamp.Hut_Interior.Ophelias_Journal_3", true)
+			await Utility.msg("Swamp.Hut_Interior.Ophelias_Journal_4", true)
+			await Utility.msg("Swamp.Hut_Interior.Ophelias_Journal_5", true)
+			await Utility.msg("Swamp.Hut_Interior.Ophelias_Journal_6", true)
+			await Utility.msg("Swamp.Hut_Interior.Ophelias_Journal_7", true)
+			await Utility.msg("Swamp.Hut_Interior.Ophelias_Journal_8", true)
+			await Utility.msg("Dialog.Rhode.Ophelia_Info_1", true)
+			await Utility.msg("Dialog.Rhode.Ophelia_Info_2", true)
+			await Utility.msg("Dialog.Rhode.Ophelia_Info_3", true)
+			await Utility.msg("Dialog.Rhode.Ophelia_Info_4", true)
+			Utility.msg("Dialog.Rhode.Ophelia_Info_5")
+			GameVars.set_var(Enums.Vars.RHODE_REMEMBERS_OPHELIA, true)
+			Utility.learn_topic(Enums.TopicGroups.GLOBAL, Enums.Topics.OPHELIA)
+			Utility.learn_topic(Enums.TopicGroups.GLOBAL, Enums.Topics.MEREK)
+		else:
+			Utility.msg("Swamp.Hut_Interior.Dont_Want_Item")
+			
 
 func do_greeting():
 	await Utility.msg("Swamp.Hut_Interior.Rhode_Greet_1", true)

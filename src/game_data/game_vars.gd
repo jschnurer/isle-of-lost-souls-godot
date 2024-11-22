@@ -6,9 +6,14 @@ func set_var(var_name: Enums.Vars, value):
 	vars[var_name] = value
 	SignalBus.on_game_var_set.emit(var_name, value)
 
-func get_var(var_name: Enums.Vars):
+func get_var(var_name: Enums.Vars, default_value = null):
 	if (vars.has(var_name)):
-		return vars[var_name]
+		var val = vars[var_name]
+		
+		if val == null:
+			return default_value
+		else:
+			return val
 	else:
 		return null
 

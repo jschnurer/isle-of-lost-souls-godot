@@ -107,3 +107,6 @@ signal save_game(slot: int)
 
 @warning_ignore("unused_signal")
 signal load_game(slot_number: int)
+
+@warning_ignore("unused_signal")
+signal open_pause_menu()

@@ -43,7 +43,7 @@ func  _input(event):
 		else:
 			game_event_in_range.activate(Enums.InputAction.INTERACT)
 	elif (event.is_action_pressed("ui_cancel")):
-		SignalBus.open_inventory.emit(Enums.InventoryMode.INVENTORY)
+		SignalBus.open_pause_menu.emit()
 
 func _physics_process(_delta: float) -> void:
 	if (!is_controllable):

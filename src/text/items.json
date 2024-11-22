@@ -30,6 +30,16 @@
 		"description": "It's a glass bottle with a cork stopper. It has red liquid inside and a label that reads \"potion of healing\"."
 	},
 	{
+		"slug": "BOTTLE",
+		"name": "empty bottle",
+		"description": "It's an empty glass bottle with a cork stopper. It's labeled \"potion of healing\"."
+	},
+	{
+		"slug": "BOTTLE_OF_WATER",
+		"name": "bottle of water",
+		"description": "It's an glass bottle with a cork stopper filled with water. It's labeled \"potion of healing\"."
+	},
+	{
 		"slug": "HATCH_NOTE",
 		"name": "dusty note",
 		"description": "\"Lowered into darkness, far and out of sight\nPlunged into clear waters, etavoner regains its might.\""
@@ -40,6 +50,16 @@
 		"description": "You don't know how you know this, but the rune represents the etavoner charm."
 	},
 	{
+		"slug": "ELTNAMSID_RUNE",
+		"name": "eltnamsid rune",
+		"description": "You don't know how you know this, but the rune represents the eltnamsid charm."
+	},
+	{
+		"slug": "LIEVNU_RUNE",
+		"name": "lievnu rune",
+		"description": "You don't know how you know this, but the rune represents the lievnu charm."
+	},
+	{
 		"slug": "RED_FABRIC",
 		"name": "red fabric",
 		"description": "The strip of red fabric is faded and tattered."
@@ -47,11 +67,96 @@
 	{
 		"slug": "OPHELIAS_JOURNAL1",
 		"name": "waterlogged journal",
-		"description": "The cover reads \"__HELI_'S JOU__L\". It's badly water damaged."
+		"description": "The cover reads \"__HELI_'S JOU___L\". It's badly water damaged."
+	},
+	{
+		"slug": "OPHELIAS_JOURNAL2",
+		"name": "ophelia's journal",
+		"description": "The cover reads \"OPHELIA'S JOURNAL\". It's badly water damaged."
 	},
 	{
 		"slug": "SCISSORS",
 		"name": "glass scissors",
 		"description": "They're a pair of scissors. They're the size you would expect except they're made of clear glass."
+	},
+	{
+		"slug": "MOSQUITO_EGG",
+		"name": "giant mosquito egg",
+		"description": "It's a whitish color and throbs and shakes. It holds life within. Horrible, horrible life."
+	},
+	{
+		"slug": "BLIGHT_CURE",
+		"name": "blight cure",
+		"description": "It's a small glass vial with a cork stopper. The liquid within shimmers."
+	},
+	{
+		"slug": "COIN",
+		"name": "silver coin",
+		"description": "It's an ancient silver coin. It's so old that it's been rubbed smooth. Maybe it's lucky."
+	},
+	{
+		"slug": "PUFFBALL",
+		"name": "puffball",
+		"description": "It's an rough sphere the color of bone, about a foot in diameter and covered in dozens of little spikes. It's got an umbilical-like stem with blue veins visible just beneath the surface."
+	},
+	{
+		"slug": "LIGHTHOUSE_KEY",
+		"name": "iron key",
+		"description": "It's an iron key."
+	},
+	{
+		"slug": "RAINBOW_SHELL",
+		"name": "rainbow shell",
+		"description": "It's a large rainbow-colored shell, probably six inches in diameter, reflecting all the colors of the rainbow. It's one of the most beautiful things you've ever seen."
+	},
+	{
+		"slug": "SAC",
+		"name": "pheromone sac",
+		"description": "It's a purplish-ish lumpy sac. It was once inside a giant hornet but it's yours now."
+	},
+	{
+		"slug": "BROKEN_BOX",
+		"name": "broken silver box",
+		"description": "It's a small silver box about 4 inches square and 2 inches deep. It's broken into two pieces. The hinges are completely destroyed and the top and bottom are separated."
+	},
+	{
+		"slug": "SILVER_BOX",
+		"name": "silver box",
+		"description": "It's a small silver box about 4 inches square and 2 inches deep. The outside of the box is very ornamental but the inside is empty and devoid of any filligree."
+	},
+	{
+		"slug": "MAP",
+		"name": "map",
+		"description": "It's a piece of parchment, yellowed with age, depicting a labyrinthine area. Many passages lead to question marks but someone's drawn a line through it, showing the way."
+	},
+	{
+		"slug": "MEREDITH_NOTE1",
+		"name": "crumpled note",
+		"description": "It's a crumpled, handwritten note."
+	},
+	{
+		"slug": "MOLDY_NOTE",
+		"name": "moldy note",
+		"description": "It's a little blue from the mold but you can read it just fine."
+	},
+	{
+		"slug": "FOLDED_NOTE",
+		"name": "folded note",
+		"description": "It's a paper note, folded in half."
+	},
+	{
+		"slug": "TARNROOT",
+		"name": "root",
+		"description": "It's a plant with white leaves and a thick, brown, two-pronged root."
+	},
+	{
+		"slug": "PARCHMENT",
+		"name": "parchment",
+		"description": "It's crinkly, faded parchment. There's something written on it..."
+	},
+	{
+		"slug": "COMPASS",
+		"name": "compass",
+		"description": "It's a compass but the needle doesn't move. Instead, two rings around the outside of its face rotate. The rings spin to a new configuration whenever you move to a new area."
 	}
 ]

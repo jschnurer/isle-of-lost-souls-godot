@@ -27,13 +27,21 @@
 		"Load": "Load Game",
 		"Quit": "Quit",
 		"Hours_Abbr": "h",
-		"Minutes_Abbr": "m"
+		"Minutes_Abbr": "m",
+		"Inventory": "Inventory",
+		"Return_Main_Menu": "Return to Main Menu",
+		"Quit_Prompt": "Are you sure? All unsaved progress will be lost."
 	},
 	"Items": {
 		"Ophelias_Journal": {
 			"Cover": "The cover says \"__HELI_'S JOUR__L\". It's badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible.",
-			"Passage1": "_er__ _eft w_thou_ us in _he mid_le of the n____. We f_llow__ _fter _t dawn. It'_ be_n _eeks _n_ the_e's no sig_ of h__. It se_ms li_e _hen pe__le spl__ u_ here t_ey just... disa__ear. We ma_e a flagpo__ a__ us_d a str_p of hi_ fav__it_ clo_k as t__ fl_g. __ybe he'_l se_ it an_ ret__n.",
-			"Passage2": "You find one other legible passage:\nTo travers_ ou_ ___or__s wh__e av__ding h___, touc_ o_r in___e colo_s th_n i__a_t __e charms: _dr_, Mine!, Merek, Rh_d_, Ar__n, M___d_t_, _ta_le_"
+			"Passage1": "\"_er__ _eft w_thou_ us in _he mid_le of the n____. We f_llow__ _fter _t dawn. It'_ be_n _eeks _n_ the_e's no sig_ of h__. It se_ms li_e _hen pe__le spl__ u_ here t_ey just... disa__ear. We ma_e a flagpo__ a__ us_d a str_p of hi_ fav__it_ clo_k as t__ fl_g. __ybe he'_l se_ it an_ ret__n.\"",
+			"Passage2": "You find one other legible passage:\n\"To travers_ ou_ ___or__s wh__e av__ding h___, touc_ o_r in___e colo_s th_n i__a_t __e charms: _dr_, Mine!, Merek, Rh_d_, Ar__n, M___d_t_, _ta_le_.\"",
+		},
+		"Ophelias_Journal_2": {
+			"Cover": "The cover says \"OPHELIA'S JOURNAL\". It's badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible:",
+			"Passage1": "\"Merek left without us in the middle of the night. We followed after at dawn. It's been weeks and there's no sign of him. It seems like when people split up here they just... disappear. We made a flagpole and used a strip of his favorite cloak as the flag. Maybe he'll see it and return.\"",
+			"Passage2": "\"You find one other legible passage:\nTo traverse our memories while avoiding harm, touch our innate colors then incant the charms:\\Edra\\Mine!\\Merek\\Rhode\\Arden\\Meredith\\Stanley.\"",
 		},
 		"Flashlight": {
 			"Auto_Use": "No need. You'll use it automatically if you find yourself in a dark place."
@@ -46,6 +54,25 @@
 		},
 		"Rune": {
 			"Cant_Use": "It's not usable as a rune. It requires a trick to change. Wait... what? How do you know that? ...And what does it mean?"
+		},
+		"Map": {
+			"Use_Wrong_Area": "Hmm... It doesn't seem like you're anywhere on the map right now.",
+			"Red_X": "You reference the map... Oh! Now there's a red \"X\" on the map labeled \"You are here\". That's convenient.",
+			"Go_East": "You reference the map... Oh! Now there's a red \"X\" on the map labeled \"You are here\". That's convenient. The map indicates you should head east.",
+			"Go_West": "You reference the map... Oh! Now there's a red \"X\" on the map labeled \"You are here\". That's convenient. The map indicates you should head west.",
+			"Go_North": "You reference the map... Oh! Now there's a red \"X\" on the map labeled \"You are here\". That's convenient. The map indicates you should head north.",
+			"Go_South": "You reference the map... Oh! Now there's a red \"X\" on the map labeled \"You are here\". That's convenient. The map indicates you should head south.",
+		},
+		"Parchment": {
+			"Read": "\"To the fortress underground, where their queen has been crowned. To her highness present it, to unlock the truth of eltnamsid.\""
+		},
+		"Folded_Note": {
+			"Read": "It's a note folded in half.\n\"To the brothers whose names I've forgotten,\nI'm sorry.\n-Meredith"
+		},
+		"Crumpled_Note": {
+			"Read_1": "\"Stanley said to hide the box somewhere dark and out of the way. He told me to find a small chamber in the caves somewhere and stash it inside and that {It} would handle the rest. I did as I was told. I've ALWAYS done as I was told.\"",
+			"Read_2": "\"I spent my whole life in service to the Order, hunting who they said to hunt. I believed in the cause. But they never said anything about {It}. Whatever {It} is. Was the whole Order a lie? Was it all just a tool that {It} used throughout history to bring people here?\"",
+			"Read_3": "\"But I did what I was told and hid the box. So why am I being punished? I can feel {It} inside me, draining my memories. Soon there will be nothing left...\n\n-Meredith\"",
 		}
 	},
 	"Forest": {
@@ -73,6 +100,14 @@
 			"Signpost_Take": "You have no need of an armload of rotten planks.",
 			"Nail_Look": "It's a rusty old nail. The hole it's in is rotting away and it looks quite loose.",
 			"Nail_Take": "You get your fingernails under the head of the nail and give it a good couple tugs. Eventually, you work it out of the signpost and take it with you."
+		},
+		"Bend": {
+			"Sack_Look": "The rotting sack is full of holes.",
+			"Sack_Take": "The rotting sack is full of holes and doesn't look like it will be useful. You decide to leave it.",
+		},
+		"Bend_Sack": {
+			"Coin_Look": "It's a silver coin. It looks really old.",
+			"Coin_Take": "You take the silver coin from the rotten sack.",
 		},
 		"Cabin_Exterior": {
 			"Garden_Look": "The garden is well kept and has lots of different things growing in it. You can see carrots, cabbage, peas, tomatoes, and some others you don't recognize.",
@@ -287,6 +322,15 @@
 			"Rhode_Red_Fabric_4": "\"I used my conjury where possible, and he his strong sword arm. Eventually, he renounced his holy quest and abandoned the Order. Though I forgave him for his attempt on my life, I know he always carried his remorse inside him. 'Twas a shadow upon his soul.\"",
 			"Rhode_Red_Fabric_5": "\"We met and traveled with Ophelia for a while. But one night, Merek simply left in the night, leaving his equipment behind. I've not seen him since.\"",
 			"Rhode_Red_Fabric_6": "She holds the tattered scrap fabric in silence for a while before returning it to you.",
+			"Ophelias_Journal_1": "You produce the journal and hand it to Rhode. \"What, praytell, is this?\"\nShe considers the text on the cover for a few minutes before opening it and flipping through the pages.",
+			"Ophelias_Journal_2": "\"'Tis quite damaged. I shall attempt to repair it.\" She sets the journal down on the table next to the cracked crystal ball. She places one hand onto the surface of the journal, palm down.",
+			"Ophelias_Journal_3": "With her other hand she plucks a long, black hair from her disheveled head and holds it dangling over the hand she has on the journal.",
+			"Ophelias_Journal_4": "She begins reciting words, or at least you think they're words. They're sounds you didn't think a human throat could make. As she incants, she lowers the long black hair until it touches her hand.",
+			"Ophelias_Journal_5": "Before your very eyes the bottom of the hair penetrates through her hand as though it wasn't there, the only evidence is its passing a faint light. She lowers it until the entire strand is gone, absorbed by her other hand.",
+			"Ophelias_Journal_6": "With a final syllable there is a flash of light and she removes her hands.",
+			"Ophelias_Journal_7": "The journal is still badly damaged. \"This place doth dampen my magic. 'Tis all I can do simply to repair the passages that were still mostly intact.\" She opens the notebook again and reads the legible passages.",
+			"Ophelias_Journal_8": "She finishes reading and hands the journal back to you.",
+			"Dont_Want_Item": "\"Wherefore does thou present such a thing to me? I desire it not.\"",
 		},
 	},
 	"Game_Overs": {
@@ -417,6 +461,12 @@
 			"Ophelia": "\"This name thou speakest, it is familiar to me, though only a shadow doth remains. The totems that I have erected in the environs about my home have allowed me that at least. If thou hast something that couldst spark the flame of memory, perhaps I couldst remember more.\"",
 			"Rhode": "\"'Tis I.\"",
 			"Unknown_Name": "\"This name thou speakest, it means nothing to me.\"",
+			"Color": "\"What a strange question thou asketh. I have always considered purple to be my favorite,\" she says, a sparkle in her purple eyes.",
+			"Ophelia_Info_1": "\"I remember. 'Twas Ophelia that I first met on the island, after Merek of course. 'Twas strange. She told me that I came to the island long before her but that she hadst been here longer. Time doth flows in strange ways on the island.\"",
+			"Ophelia_Info_2": "She thinks for a moment. \"I cannot recall much. She was a diplomat of some kind, and very pensive. Her theory was that all of us here doth share a link with another. She said that those on the island were either hunters... or prey.\"",
+			"Ophelia_Info_3": "\"Ophelia was adamant about finding a way to escape the island. I traveled with her for a long while. Merek, Ophelia and I climbed the black mountain. We doth found something there. Something that shook my resolve, though I cannot recall what.\"",
+			"Ophelia_Info_4": "\"Afterward, we traveled the island for a spell. Eventually, we went our separate ways.\"",
+			"Ophelia_Info_5": "She closes her eyes and sighs. \"I've not dreamt of escape in a long, long time.\"",
 		},
 	}
 }

@@ -106,6 +106,7 @@ func parse_colors(message: String) -> String:
 	var curr_color = null
 	var dialog_color = "white"
 	var important_color = "yellow"
+	var curly_color = "red"
 	
 	for c in message:
 		var did_color_end = false
@@ -136,6 +137,19 @@ func parse_colors(message: String) -> String:
 					curr_color = null
 				new_msg += '[/color]'
 				did_color_end = true
+		elif c == "{":
+			if curr_color != curly_color:
+				color_queue.append(curly_color)
+				new_msg += "[color=%s]" % curly_color
+				curr_color = color_queue[color_queue.size() - 1]
+		elif c == "}" and curr_color == curly_color:
+				color_queue.pop_back()
+				if color_queue.size() > 0:
+					curr_color = color_queue[color_queue.size() - 1]
+				else:
+					curr_color = null
+				new_msg += '[/color]'
+				did_color_end = true
 		else:
 			new_msg += c
 		
@@ -144,3 +158,6 @@ func parse_colors(message: String) -> String:
 			
 			
 	return new_msg
+
+func get_curr_area():
+	return SceneManager.current_scene

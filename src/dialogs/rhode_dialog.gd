@@ -23,7 +23,7 @@ func ask_about(topic: Enums.Topics):
 		await Utility.dialog_msg("Dialog.Rhode.My_Past_7", true)
 		await Utility.dialog_msg("Dialog.Rhode.My_Past_8", true)
 		Utility.dialog_msg("Dialog.Rhode.My_Past_9")
-		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.ISLAND_ARRIVAL)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.ISLAND_ARRIVAL)
 		
 	elif (topic == Enums.Topics.ISLAND_ARRIVAL):
 		await Utility.dialog_msg("Dialog.Rhode.Island_Arrival_1", true)
@@ -32,8 +32,8 @@ func ask_about(topic: Enums.Topics):
 		await Utility.dialog_msg("Dialog.Rhode.Island_Arrival_4", true)
 		await Utility.dialog_msg("Dialog.Rhode.Island_Arrival_5", true)
 		Utility.dialog_msg("Dialog.Rhode.Island_Arrival_6")
-		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.MEREK)
-		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.FAIR_HAIRED_WOMAN)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.MEREK)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.FAIR_HAIRED_WOMAN)
 	
 	elif (topic == Enums.Topics.TOTEMS):
 		Utility.dialog_msg("Dialog.Rhode.Totems")
@@ -44,20 +44,23 @@ func ask_about(topic: Enums.Topics):
 		Utility.dialog_msg("Dialog.Rhode.Merek_3")
 	
 	elif (topic == Enums.Topics.FAIR_HAIRED_WOMAN):
-		Utility.dialog_msg("Dialog.Rhode.Fair_Haired_Woman")
-		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.MEREK)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.MEREK)
+		if (GameVars.get_var(Enums.Vars.RHODE_REMEMBERS_OPHELIA)):
+			say_ophelia_info()
+		else:
+			Utility.dialog_msg("Dialog.Rhode.Fair_Haired_Woman")
 	
 	elif (topic == Enums.Topics.CURE):
 		await Utility.dialog_msg("Dialog.Rhode.Cure_1", true)
 		Utility.dialog_msg("Dialog.Rhode.Cure_2")
-		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENTS)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENTS)
 		
 	elif (topic == Enums.Topics.CURE_INGREDIENTS):
 		Utility.dialog_msg("Dialog.Rhode.Ingredients")
-		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_EGG)
-		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_PUFFBALL)
-		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_TARNROOT)
-		SignalBus.learn_topic.emit(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_RAINBOW_SHELL)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_EGG)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_PUFFBALL)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_TARNROOT)
+		Utility.learn_topic(Enums.TopicGroups.RHODE, Enums.Topics.CURE_INGREDIENT_RAINBOW_SHELL)
 		GameVars.set_var(Enums.Vars.LEARNED_INGREDIENTS, true)
 	
 	elif (topic == Enums.Topics.CURE_INGREDIENT_EGG):
@@ -104,7 +107,10 @@ func ask_about(topic: Enums.Topics):
 		Utility.dialog_msg("Dialog.Rhode.Rhode")
 		
 	elif (topic == Enums.Topics.OPHELIA):
-		Utility.dialog_msg("Dialog.Rhode.Ophelia")
+		if (GameVars.get_var(Enums.Vars.RHODE_REMEMBERS_OPHELIA)):
+			say_ophelia_info()
+		else:
+			Utility.dialog_msg("Dialog.Rhode.Ophelia")
 		
 	elif (topic == Enums.Topics.ARDEN
 		or topic == Enums.Topics.EDRA
@@ -114,3 +120,10 @@ func ask_about(topic: Enums.Topics):
 	
 	else:
 		super.ask_about(topic)
+
+func say_ophelia_info():
+	await Utility.dialog_msg("Dialog.Rhode.Ophelia_Info_1", true)
+	await Utility.dialog_msg("Dialog.Rhode.Ophelia_Info_2", true)
+	await Utility.dialog_msg("Dialog.Rhode.Ophelia_Info_3", true)
+	await Utility.dialog_msg("Dialog.Rhode.Ophelia_Info_4", true)
+	Utility.dialog_msg("Dialog.Rhode.Ophelia_Info_5")

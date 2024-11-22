@@ -38,6 +38,7 @@ GameTimer="*res://src/singletons/GameTimer.gd"
 World="*res://src/scenes/world.tscn"
 ScreenFader="*res://src/ui/screen_fader/ScreenFader.tscn"
 ItemUsage="*res://src/singletons/item_usage/item_usage.tscn"
+PauseMenu="*res://src/ui/pause_menu/pause_menu.tscn"
 Debug="*res://src/debug.gd"
 
 [display]
