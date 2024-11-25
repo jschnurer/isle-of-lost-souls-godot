@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvkkaqn8jtrg4"]
+[gd_scene load_steps=4 format=3 uid="uid://bvkkaqn8jtrg4"]
 
 [ext_resource type="Script" path="res://src/scenes/scene_bg.gd" id="2_2hmeu"]
-[ext_resource type="PackedScene" uid="uid://q8utkk2fjnvn" path="res://src/events/bgm_player/BGMPlayer.tscn" id="2_d8xiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kbprl"]
 size = Vector2(50, 625)
@@ -17,10 +16,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 stretch_mode = 2
 script = ExtResource("2_2hmeu")
+bgm_volume_db = null
 
 [node name="CollisionFromImage" type="StaticBody2D" parent="."]
-
-[node name="BgmPlayer" parent="." instance=ExtResource("2_d8xiw")]
 
 [node name="CollisionFromFrame" type="StaticBody2D" parent="."]
 

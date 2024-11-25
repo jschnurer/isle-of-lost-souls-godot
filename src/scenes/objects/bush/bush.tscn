@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://dy56ne0u86mj5"]
+
+[ext_resource type="Script" path="res://src/scenes/objects/bush/bush.gd" id="1_dyn1n"]
+[ext_resource type="Texture2D" uid="uid://bkuttpmi7m2t3" path="res://art/actors/bush.png" id="2_t14qx"]
+[ext_resource type="Texture2D" uid="uid://cagudr4p7nmqh" path="res://art/actors/brambles.png" id="3_t1fj8"]
+[ext_resource type="Script" path="res://src/scenes/objects/bush/bush_activator.gd" id="4_ctyjc"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="4_d21ry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkyu8"]
+size = Vector2(78, 37.5)
+
+[node name="Bush" type="Node2D"]
+script = ExtResource("1_dyn1n")
+bush_texture = ExtResource("2_t14qx")
+bramble_texture = ExtResource("3_t1fj8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+texture = ExtResource("2_t14qx")
+offset = Vector2(0, -15)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0, -2.75)
+shape = SubResource("RectangleShape2D_lkyu8")
+
+[node name="Activator" type="Node2D" parent="."]
+script = ExtResource("4_ctyjc")
+
+[node name="GameEvent" parent="Activator" instance=ExtResource("4_d21ry")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Activator/GameEvent"]
+position = Vector2(0, -2.75)
+shape = SubResource("RectangleShape2D_lkyu8")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://caoxpore250sm"]
+[gd_scene load_steps=17 format=3 uid="uid://caoxpore250sm"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_8l3di"]
 [ext_resource type="Texture2D" uid="uid://ql68xodypyj4" path="res://art/backgrounds/swamp/Bramble Ridge.png" id="2_bltg8"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://d1d2xjqgr7ipg" path="res://src/scenes/objects/grass/swamp_grass_big.tscn" id="10_dtuhg"]
 [ext_resource type="PackedScene" uid="uid://b2ovnve1k5fpv" path="res://src/scenes/objects/grass/swamp_grass_small.tscn" id="11_hd8qk"]
 [ext_resource type="PackedScene" uid="uid://c1bqlc4yseggt" path="res://src/scenes/objects/cattails/cattails.tscn" id="12_s074n"]
+[ext_resource type="PackedScene" uid="uid://dy56ne0u86mj5" path="res://src/scenes/objects/bush/bush.tscn" id="13_u0ffg"]
+[ext_resource type="PackedScene" uid="uid://c0bedbsnj460f" path="res://src/scenes/objects/ground/swampy_ground.tscn" id="14_6bo3k"]
+[ext_resource type="Texture2D" uid="uid://bmp2o1e0egcf8" path="res://art/actors/swamp_grass_short2.png" id="15_723d6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trvdg"]
 size = Vector2(500, 20)
@@ -27,7 +30,7 @@ area = 6
 bg_images = Array[Texture2D]([ExtResource("2_bltg8")])
 collision_image = ExtResource("3_tn733")
 bgm_stream = ExtResource("4_htn82")
-bgm_volume = -3.0
+bgm_volume_db = -15.0
 metadata/_edit_lock_ = true
 
 [node name="ToTrailOnSolidGround" parent="." instance=ExtResource("5_b7vxo")]
@@ -39,293 +42,35 @@ to_north = true
 preserve_x = true
 metadata/_edit_lock_ = true
 
+[node name="ToSandDunes" parent="." instance=ExtResource("5_b7vxo")]
+position = Vector2(546, 625)
+to_scene = "COAST_DUNES"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_trvdg")
+to_south = true
+preserve_x = true
+
 [node name="BeachGrasses" parent="." instance=ExtResource("6_5hfcc")]
 randomize_grass = true
-
-[node name="BeachGrass" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(224, 252)
-
-[node name="BeachGrass2" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(279, 278)
-texture = ExtResource("8_yo7mn")
 
 [node name="BeachGrass3" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
 position = Vector2(176, 326)
 texture = ExtResource("8_yo7mn")
 flip_h = true
 
-[node name="BeachGrass4" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(295, 381)
-texture = ExtResource("8_yo7mn")
-
 [node name="BeachGrass5" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
 position = Vector2(425, 468)
 texture = ExtResource("9_rqdfv")
 flip_h = true
 
-[node name="BeachGrass6" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(306, 498)
-texture = ExtResource("8_yo7mn")
-flip_h = true
-
-[node name="BeachGrass7" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(156, 507)
-flip_h = true
-
-[node name="BeachGrass8" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(93, 430)
-texture = ExtResource("9_rqdfv")
-flip_h = true
-
-[node name="BeachGrass9" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(209, 443)
-texture = ExtResource("9_rqdfv")
-
-[node name="BeachGrass10" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(300, 571)
-texture = ExtResource("9_rqdfv")
-flip_h = true
-
-[node name="BeachGrass11" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(120, 576)
-texture = ExtResource("8_yo7mn")
-flip_h = true
-
-[node name="BeachGrass12" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(219, 537)
-texture = ExtResource("9_rqdfv")
-
-[node name="BeachGrass13" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(116, 329)
-texture = ExtResource("9_rqdfv")
-
-[node name="BeachGrass14" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(135, 183)
-texture = ExtResource("8_yo7mn")
-flip_h = true
-
-[node name="BeachGrass15" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(202, 133)
-texture = ExtResource("8_yo7mn")
-flip_h = true
-
-[node name="BeachGrass16" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(209, 62)
-texture = ExtResource("9_rqdfv")
-flip_h = true
-
-[node name="BeachGrass17" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(59, 83)
-
-[node name="BeachGrass18" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(8, 114)
-texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass19" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(-1, 294)
-
-[node name="BeachGrass20" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(57, 361)
-flip_h = true
-
-[node name="BeachGrass21" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(44, 201)
-flip_h = true
-
-[node name="BeachGrass22" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(22, 488)
-texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass23" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(-4, 433)
-texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass24" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(17, 603)
-texture = ExtResource("9_rqdfv")
-
 [node name="BeachGrass25" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
 position = Vector2(458, 596)
 flip_h = true
 
-[node name="BeachGrass26" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(204, 637)
-texture = ExtResource("9_rqdfv")
-flip_h = true
-
-[node name="BeachGrass27" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(384, 399)
-texture = ExtResource("9_rqdfv")
-flip_h = true
-
-[node name="BeachGrass28" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(410, 195)
-texture = ExtResource("8_yo7mn")
-flip_h = true
-
-[node name="BeachGrass29" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(313, 136)
-texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass30" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(421, 43)
-texture = ExtResource("9_rqdfv")
-flip_h = true
-
-[node name="BeachGrass31" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(275, 19)
-texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass32" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(516, 106)
-flip_h = true
-
-[node name="BeachGrass33" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(666, 166)
-flip_h = true
-
-[node name="BeachGrass34" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(751, 65)
-texture = ExtResource("9_rqdfv")
-
-[node name="BeachGrass35" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(631, 46)
-texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass36" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(593, 127)
-texture = ExtResource("8_yo7mn")
-flip_h = true
-
-[node name="BeachGrass37" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(529, 236)
-texture = ExtResource("9_rqdfv")
-
-[node name="BeachGrass38" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(610, 245)
-texture = ExtResource("8_yo7mn")
-flip_h = true
-
-[node name="BeachGrass39" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(673, 280)
-
-[node name="BeachGrass40" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(626, 189)
-texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass41" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(703, 208)
-flip_h = true
-
-[node name="BeachGrass42" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(752, 131)
-
-[node name="BeachGrass43" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(818, 216)
-texture = ExtResource("9_rqdfv")
-
-[node name="BeachGrass44" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(811, 88)
-texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass45" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(816, 36)
-flip_h = true
-
-[node name="BeachGrass46" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(691, 15)
-texture = ExtResource("9_rqdfv")
-
-[node name="BeachGrass47" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(770, 258)
-texture = ExtResource("8_yo7mn")
-flip_h = true
-
-[node name="BeachGrass48" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(684, 94)
-texture = ExtResource("9_rqdfv")
-flip_h = true
-
-[node name="BeachGrass49" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(599, 331)
-texture = ExtResource("8_yo7mn")
-flip_h = true
-
-[node name="BeachGrass50" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(658, 402)
-flip_h = true
-
-[node name="BeachGrass51" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(567, 409)
-
-[node name="BeachGrass52" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(614, 481)
-texture = ExtResource("9_rqdfv")
-
-[node name="BeachGrass53" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(653, 540)
-flip_h = true
-
-[node name="BeachGrass54" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(600, 563)
-texture = ExtResource("9_rqdfv")
-
 [node name="BeachGrass55" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(658, 593)
+position = Vector2(658, 600)
 texture = ExtResource("9_rqdfv")
 flip_h = true
-
-[node name="BeachGrass56" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(753, 566)
-texture = ExtResource("9_rqdfv")
-
-[node name="BeachGrass57" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(812, 513)
-flip_h = true
-
-[node name="BeachGrass58" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(699, 458)
-flip_h = true
-
-[node name="BeachGrass59" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(745, 377)
-texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass60" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(786, 418)
-flip_h = true
-
-[node name="BeachGrass61" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(771, 287)
-texture = ExtResource("9_rqdfv")
-flip_h = true
-
-[node name="BeachGrass62" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(672, 340)
-texture = ExtResource("8_yo7mn")
-flip_h = true
-
-[node name="BeachGrass63" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(699, 300)
-flip_h = true
-
-[node name="BeachGrass64" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(748, 199)
-flip_h = true
-
-[node name="BeachGrass65" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(712, 148)
-
-[node name="BeachGrass66" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(738, 501)
-texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass67" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(818, 580)
-texture = ExtResource("9_rqdfv")
-
-[node name="BeachGrass68" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(765, 628)
 
 [node name="BeachGrass69" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
 position = Vector2(595, 634)
@@ -334,22 +79,6 @@ flip_h = true
 [node name="BeachGrass70" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
 position = Vector2(542, 573)
 texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass71" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(550, 466)
-texture = ExtResource("8_yo7mn")
-
-[node name="BeachGrass72" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(487, 332)
-texture = ExtResource("9_rqdfv")
-
-[node name="BeachGrass73" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(378, 307)
-texture = ExtResource("9_rqdfv")
-flip_h = true
-
-[node name="BeachGrass74" parent="BeachGrasses" instance=ExtResource("6_wuuxi")]
-position = Vector2(380, 623)
 
 [node name="SwampGrass" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -485,3 +214,293 @@ position = Vector2(716, 8)
 
 [node name="Cattails" parent="." instance=ExtResource("12_s074n")]
 position = Vector2(20, 43)
+
+[node name="Brambles" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Bush" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(798, 628)
+type = 1
+
+[node name="Bush2" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(779, 595)
+type = 1
+
+[node name="Bush3" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(727, 615)
+type = 1
+
+[node name="Bush4" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(811, 571)
+type = 1
+
+[node name="Bush5" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(739, 575)
+type = 1
+
+[node name="Bush6" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(755, 548)
+type = 1
+
+[node name="Bush7" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(712, 526)
+type = 1
+
+[node name="Bush8" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(783, 520)
+type = 1
+
+[node name="Bush9" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(735, 502)
+type = 1
+
+[node name="Bush10" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(722, 471)
+type = 1
+
+[node name="Bush11" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(786, 450)
+type = 1
+
+[node name="Bush12" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(801, 486)
+type = 1
+
+[node name="Bush13" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(825, 414)
+type = 1
+
+[node name="Bush14" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(809, 383)
+type = 1
+
+[node name="Bush15" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(835, 357)
+type = 1
+
+[node name="Bush16" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(777, 333)
+type = 1
+
+[node name="Bush17" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(811, 229)
+type = 1
+
+[node name="Bush18" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(844, 266)
+type = 1
+
+[node name="Bush19" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(829, 305)
+type = 1
+
+[node name="Bush20" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(745, 363)
+type = 1
+
+[node name="Bush21" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(752, 410)
+type = 1
+
+[node name="Bush22" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(23, 79)
+type = 1
+
+[node name="Bush23" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(10, 116)
+type = 1
+
+[node name="Bush24" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(23, 146)
+type = 1
+
+[node name="Bush25" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(-1, 183)
+type = 1
+
+[node name="Bush26" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(30, 216)
+type = 1
+
+[node name="Bush27" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(62, 242)
+type = 1
+
+[node name="Bush28" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(97, 275)
+type = 1
+
+[node name="Bush29" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(85, 312)
+type = 1
+
+[node name="Bush30" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(4, 291)
+type = 1
+
+[node name="Bush31" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(24, 321)
+type = 1
+
+[node name="Bush32" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(77, 356)
+type = 1
+
+[node name="Bush33" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(134, 391)
+type = 1
+
+[node name="Bush34" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(180, 427)
+type = 1
+
+[node name="Bush35" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(242, 462)
+type = 1
+
+[node name="Bush36" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(233, 502)
+type = 1
+
+[node name="Bush37" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(304, 533)
+type = 1
+
+[node name="Bush38" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(361, 574)
+type = 1
+
+[node name="Bush39" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(349, 610)
+type = 1
+
+[node name="Bush40" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(284, 640)
+type = 1
+
+[node name="Bush41" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(294, 600)
+type = 1
+
+[node name="Bush42" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(279, 565)
+type = 1
+
+[node name="Bush43" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(227, 536)
+type = 1
+
+[node name="Bush44" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(168, 463)
+type = 1
+
+[node name="Bush45" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(113, 432)
+type = 1
+
+[node name="Bush46" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(60, 389)
+type = 1
+
+[node name="Bush47" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(5, 422)
+type = 1
+
+[node name="Bush48" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(54, 451)
+type = 1
+
+[node name="Bush49" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(102, 485)
+type = 1
+
+[node name="Bush50" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(170, 506)
+type = 1
+
+[node name="Bush51" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(153, 541)
+type = 1
+
+[node name="Bush52" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(215, 576)
+type = 1
+
+[node name="Bush53" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(223, 617)
+type = 1
+
+[node name="Bush54" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(165, 639)
+type = 1
+
+[node name="Bush55" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(151, 581)
+type = 1
+
+[node name="Bush56" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(92, 526)
+type = 1
+
+[node name="Bush57" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(24, 488)
+type = 1
+
+[node name="Bush58" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(19, 526)
+type = 1
+
+[node name="Bush59" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(74, 557)
+type = 1
+
+[node name="Bush60" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(92, 602)
+type = 1
+
+[node name="Bush61" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(38, 625)
+type = 1
+
+[node name="Bush62" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(6, 576)
+type = 1
+
+[node name="Bush63" parent="Brambles" instance=ExtResource("13_u0ffg")]
+position = Vector2(194, 327)
+type = 1
+
+[node name="Ground" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="SwampyGround" parent="Ground" instance=ExtResource("14_6bo3k")]
+position = Vector2(240, 33)
+texture = ExtResource("15_723d6")
+variant = 1
+
+[node name="SwampyGround2" parent="Ground" instance=ExtResource("14_6bo3k")]
+position = Vector2(498, 83)
+flip_h = true
+
+[node name="SwampyGround3" parent="Ground" instance=ExtResource("14_6bo3k")]
+position = Vector2(639, 180)
+
+[node name="SwampyGround4" parent="Ground" instance=ExtResource("14_6bo3k")]
+position = Vector2(525, 183)
+texture = ExtResource("15_723d6")
+flip_h = true
+variant = 1
+
+[node name="SwampyGround5" parent="Ground" instance=ExtResource("14_6bo3k")]
+position = Vector2(688, 235)
+
+[node name="SwampyGround6" parent="Ground" instance=ExtResource("14_6bo3k")]
+position = Vector2(121, 104)
+texture = ExtResource("15_723d6")
+flip_h = true
+variant = 1
+
+[node name="SwampyGround7" parent="Ground" instance=ExtResource("14_6bo3k")]
+position = Vector2(339, 135)
+texture = ExtResource("15_723d6")
+variant = 1

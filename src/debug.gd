@@ -29,7 +29,7 @@ func _ready():
 		SignalBus.toggle_player.emit(args)
 		
 		var tele_args = TeleportArgs.new()
-		tele_args.to_scene = Enums.Scenes.SWAMP_MAMMOTH_SKULL
+		tele_args.to_scene = Enums.Scenes.COAST_BEACH_CENTRAL
 		tele_args.to_location = Vector2(417, 338)
 		SignalBus.transfer_player_to_scene.emit(tele_args)
 		

@@ -30,7 +30,16 @@
 		"Minutes_Abbr": "m",
 		"Inventory": "Inventory",
 		"Return_Main_Menu": "Return to Main Menu",
-		"Quit_Prompt": "Are you sure? All unsaved progress will be lost."
+		"Quit_Prompt": "Are you sure? All unsaved progress will be lost.",
+		"You_Dont_Want_To": "You really don't want to."
+	},
+	"Common_Objects": {
+		"Bushes_Look": "It's a thick bush. Your way forward is blocked.",
+		"Bushes_Take": "You don't see any need for it.",
+		"Brambles_Look": "Thick brambles grow throughout the bushes, covered in sharp little spikes. Your way forward is blocked.",
+		"Brambles_Take": "They look really painful. You don't want to try to take them.",
+		"Ocean_Look": "It's a sparkling blue ocean. It stretches off to the horizon.",
+		"Sand_Dunes_Look": "The sand dunes make rolling hills of sand. Long, stiff grass grows in patches in places where it could take root. Various bugs skitter to and fro, leaving tiny little paths in the sand. It might actually be fun to play around here if, you know, you weren't in constant danger.",
 	},
 	"Items": {
 		"Ophelias_Journal": {

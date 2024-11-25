@@ -1,5 +1,6 @@
 extends Node
 
+enum BushTypes { BUSH, BRAMBLES }
 enum InputMethod { PC, XBOX, }
 enum InputAction { COLLIDE, INVESTIGATE, INTERACT, TAKE, USE_ITEM, }
 enum Direction { UNSET = 0, UP = 1, DOWN = 2, LEFT = 3, RIGHT = 4, }
@@ -268,11 +269,11 @@ var ScenePaths = {
 	Scenes.CAVES_TEMPLE_EXIT: "res://src/scenes/caves/",
 	Scenes.CAVES_WEIGHT_PUZZLE: "res://src/scenes/caves/",
 
-	Scenes.COAST_BEACH_CENTRAL: "res://src/scenes/coast/",
+	Scenes.COAST_BEACH_CENTRAL: "res://src/scenes/coast/white_sand_beaches/white_sand_beaches.tscn",
 	Scenes.COAST_BEACH_EAST: "res://src/scenes/coast/",
 	Scenes.COAST_BEACH_WEST: "res://src/scenes/coast/",
 	Scenes.COAST_BIRD_NEST: "res://src/scenes/coast/",
-	Scenes.COAST_DUNES: "res://src/scenes/coast/",
+	Scenes.COAST_DUNES: "res://src/scenes/coast/sand_dunes/sand_dunes.tscn",
 	Scenes.COAST_LIGHTHOUSE_1F: "res://src/scenes/coast/",
 	Scenes.COAST_LIGHTHOUSE_2F: "res://src/scenes/coast/",
 	Scenes.COAST_LIGHTHOUSE_EXTERIOR: "res://src/scenes/coast/",

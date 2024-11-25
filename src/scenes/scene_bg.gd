@@ -41,16 +41,14 @@ var _use_collision_frame: bool
 		$CollisionFromImage.visible = not value
 	get:
 		return _hide_collider
-@export var bgm_stream: AudioStream :
-	set(value):
-		$BgmPlayer.stream = value
-	get:
-		return $BgmPlayer.stream
-@export var bgm_volume: float = 1:
-	set(value):
-		$BgmPlayer.volume_db = value
-	get:
-		return $BgmPlayer.volume_db
+@export var bgm_stream: AudioStream
+@export var bgm_volume_db: float = 1
+
+func _ready():
+	if (bgm_stream):
+		SignalBus.play_bgm.emit(bgm_stream, bgm_volume_db)
+	else:
+		SignalBus.stop_bgm.emit()
 
 func _process(delta):
 	_bg_anim_elapsed += delta

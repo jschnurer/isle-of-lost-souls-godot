@@ -1,0 +1,118 @@
+[gd_scene load_steps=12 format=3 uid="uid://cokv8383ljp21"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_jhqfc"]
+[ext_resource type="Texture2D" uid="uid://hbx0k6sh0mky" path="res://art/backgrounds/coast/White Sand Beaches.png" id="2_gh8ld"]
+[ext_resource type="Texture2D" uid="uid://vftvl43upjtm" path="res://art/backgrounds/coast/White Sand Beaches Collision.png" id="3_x4fnq"]
+[ext_resource type="AudioStream" uid="uid://gejug47nbxfu" path="res://audio/bgm/waves-breaking-263889.ogg" id="4_yekif"]
+[ext_resource type="PackedScene" uid="uid://3htidhrfkm8j" path="res://src/events/teleporter/Teleporter.tscn" id="4_ynhpb"]
+[ext_resource type="PackedScene" uid="uid://dt702tqr4hjmd" path="res://src/scenes/objects/waves/ocean_waves.tscn" id="5_yj5xe"]
+[ext_resource type="PackedScene" uid="uid://dqyvpikwrqf5g" path="res://src/scenes/objects/beach_grass/beach_grasses.tscn" id="6_73dcp"]
+[ext_resource type="PackedScene" uid="uid://ewksaupfvks1" path="res://src/scenes/objects/beach_grass/beach_grass.tscn" id="7_d16he"]
+[ext_resource type="Texture2D" uid="uid://djopx8uml6e7g" path="res://art/actors/beach_grass_1.png" id="8_tx3ji"]
+[ext_resource type="Texture2D" uid="uid://c1cl56bpjbc0c" path="res://art/actors/beach_grass_2.png" id="9_f4tu7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2s7s"]
+size = Vector2(400, 20)
+
+[node name="WhiteSandBeaches" type="Node2D"]
+y_sort_enabled = true
+texture_filter = 1
+
+[node name="SceneBG" parent="." instance=ExtResource("1_jhqfc")]
+texture = ExtResource("2_gh8ld")
+scene = 28
+area = 1
+bg_images = Array[Texture2D]([ExtResource("2_gh8ld")])
+collision_image = ExtResource("3_x4fnq")
+hide_collider = true
+bgm_stream = ExtResource("4_yekif")
+bgm_volume_db = 1.0
+metadata/_edit_lock_ = true
+
+[node name="OceanWaves" parent="." instance=ExtResource("5_yj5xe")]
+metadata/_edit_lock_ = true
+
+[node name="BeachGrasses" parent="." instance=ExtResource("6_73dcp")]
+randomize_grass = true
+metadata/_edit_lock_ = true
+
+[node name="BeachGrass" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(67, 33)
+flip_h = true
+
+[node name="BeachGrass2" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(105, 39)
+
+[node name="BeachGrass3" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(296, 61)
+flip_h = true
+
+[node name="BeachGrass4" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(182, 82)
+
+[node name="BeachGrass5" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(702, 25)
+texture = ExtResource("9_f4tu7")
+
+[node name="BeachGrass6" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(769, 30)
+texture = ExtResource("8_tx3ji")
+flip_h = true
+
+[node name="BeachGrass7" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(710, 93)
+texture = ExtResource("8_tx3ji")
+
+[node name="BeachGrass8" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(415, 46)
+texture = ExtResource("8_tx3ji")
+flip_h = true
+
+[node name="BeachGrass9" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(571, 176)
+flip_h = true
+
+[node name="BeachGrass10" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(393, 111)
+texture = ExtResource("8_tx3ji")
+
+[node name="BeachGrass11" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(191, 150)
+texture = ExtResource("8_tx3ji")
+
+[node name="BeachGrass12" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(53, 138)
+
+[node name="BeachGrass13" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(77, 149)
+texture = ExtResource("8_tx3ji")
+flip_h = true
+
+[node name="BeachGrass14" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(87, 123)
+flip_h = true
+
+[node name="BeachGrass15" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(745, 172)
+flip_h = true
+
+[node name="BeachGrass16" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(773, 141)
+texture = ExtResource("9_f4tu7")
+flip_h = true
+
+[node name="BeachGrass17" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(813, 122)
+texture = ExtResource("9_f4tu7")
+flip_h = true
+
+[node name="BeachGrass18" parent="BeachGrasses" instance=ExtResource("7_d16he")]
+position = Vector2(592, 92)
+
+[node name="Teleporter" parent="." instance=ExtResource("4_ynhpb")]
+position = Vector2(466, 0)
+to_scene = "COAST_DUNES"
+scene_name_valid = true
+event_area = SubResource("RectangleShape2D_l2s7s")
+to_north = true
+preserve_x = true

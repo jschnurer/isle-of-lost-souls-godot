@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dpcoyy1gq664e"]
+[gd_scene load_steps=15 format=3 uid="uid://dpcoyy1gq664e"]
 
 [ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_ef5ok"]
 [ext_resource type="Texture2D" uid="uid://bi8gtm20wlsi7" path="res://art/backgrounds/swamp/Trail on Solid Ground.png" id="2_cnus2"]
@@ -12,10 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://b2ovnve1k5fpv" path="res://src/scenes/objects/grass/swamp_grass_small.tscn" id="9_4kddb"]
 [ext_resource type="PackedScene" uid="uid://ry7shhhnxge" path="res://src/scenes/objects/lilypads/lily_pads_2.tscn" id="10_wdna4"]
 [ext_resource type="PackedScene" uid="uid://e7q0ncmypwue" path="res://src/scenes/objects/lilypads/lily_pads_3.tscn" id="11_y5ljw"]
-[ext_resource type="PackedScene" uid="uid://dqyvpikwrqf5g" path="res://src/scenes/objects/beach_grass/beach_grasses.tscn" id="13_4tx0r"]
-[ext_resource type="PackedScene" uid="uid://ewksaupfvks1" path="res://src/scenes/objects/beach_grass/beach_grass.tscn" id="14_nog36"]
-[ext_resource type="Texture2D" uid="uid://djopx8uml6e7g" path="res://art/actors/beach_grass_1.png" id="15_0sgfo"]
-[ext_resource type="Texture2D" uid="uid://c1cl56bpjbc0c" path="res://art/actors/beach_grass_2.png" id="16_6v7a6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nvtv"]
 size = Vector2(20, 200)
@@ -34,6 +30,7 @@ bg_images = Array[Texture2D]([ExtResource("2_cnus2")])
 collision_image = ExtResource("3_le1cl")
 hide_collider = true
 bgm_stream = ExtResource("4_ler2y")
+bgm_volume_db = 1.0
 metadata/_edit_lock_ = true
 
 [node name="ToMuckSkull" parent="." instance=ExtResource("5_dse8l")]
@@ -60,6 +57,32 @@ y_sort_enabled = true
 
 [node name="SwampyGround" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
 position = Vector2(25, 420)
+texture = ExtResource("6_314qn")
+flip_h = true
+variant = 1
+
+[node name="SwampyGround13" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(302, 599)
+texture = ExtResource("6_314qn")
+flip_h = true
+variant = 1
+
+[node name="SwampyGround14" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(460, 587)
+flip_h = true
+
+[node name="SwampyGround15" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(435, 484)
+texture = ExtResource("6_314qn")
+flip_h = true
+variant = 1
+
+[node name="SwampyGround16" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(517, 444)
+flip_h = true
+
+[node name="SwampyGround17" parent="Vegetation/Ground" instance=ExtResource("5_65m87")]
+position = Vector2(335, 421)
 texture = ExtResource("6_314qn")
 flip_h = true
 variant = 1
@@ -567,21 +590,3 @@ flip_h = true
 [node name="LilyPads3Leaves19" parent="Vegetation/Lilypads" instance=ExtResource("11_y5ljw")]
 position = Vector2(432.5, 3.5)
 flip_h = true
-
-[node name="BeachGrasses" parent="." instance=ExtResource("13_4tx0r")]
-randomize_grass = true
-
-[node name="BeachGrass" parent="BeachGrasses" instance=ExtResource("14_nog36")]
-position = Vector2(282, 618)
-texture = ExtResource("15_0sgfo")
-
-[node name="BeachGrass2" parent="BeachGrasses" instance=ExtResource("14_nog36")]
-position = Vector2(359, 534)
-flip_h = true
-
-[node name="BeachGrass3" parent="BeachGrasses" instance=ExtResource("14_nog36")]
-position = Vector2(463, 581)
-
-[node name="BeachGrass4" parent="BeachGrasses" instance=ExtResource("14_nog36")]
-position = Vector2(418, 632)
-texture = ExtResource("16_6v7a6")
