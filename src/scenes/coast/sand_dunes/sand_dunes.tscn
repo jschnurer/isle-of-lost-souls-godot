@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://ewksaupfvks1" path="res://src/scenes/objects/beach_grass/beach_grass.tscn" id="7_mhcud"]
 [ext_resource type="Texture2D" uid="uid://c1cl56bpjbc0c" path="res://art/actors/beach_grass_2.png" id="8_w02od"]
 [ext_resource type="Texture2D" uid="uid://djopx8uml6e7g" path="res://art/actors/beach_grass_1.png" id="9_yx8mt"]
+[ext_resource type="Script" path="res://src/scenes/objects/sand_dunes/sand_dunes.gd" id="11_6l7e2"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="11_6sqvh"]
-[ext_resource type="Script" path="res://src/scenes/coast/sand_dunes/interactables/sand_dunes.gd" id="11_rvwrj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdruo"]
 size = Vector2(900, 20)
@@ -378,15 +378,15 @@ flip_h = true
 position = Vector2(505, 103)
 texture = ExtResource("8_w02od")
 
-[node name="TheDunes" type="Node2D" parent="."]
-script = ExtResource("11_rvwrj")
+[node name="SandDunes" type="Node2D" parent="."]
+script = ExtResource("11_6l7e2")
 
-[node name="GameEvent" parent="TheDunes" instance=ExtResource("11_6sqvh")]
+[node name="GameEvent" parent="SandDunes" instance=ExtResource("11_6sqvh")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TheDunes/GameEvent"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SandDunes/GameEvent"]
 visible = false
 polygon = PackedVector2Array(-1, 195, 43, 204, 151, 188, 314, 179, 474, 146, 541, 153, 580, 175, 587, 210, 543, 248, 433, 280, 322, 314, 226, 316, 176, 311, 57, 313, 1, 332, 101, 344, 176, 376, 279, 357, 352, 362, 393, 398, 406, 434, 365, 456, 283, 467, 215, 467, 161, 462, 91, 474, 0, 475, 89, 497, 154, 508, 203, 527, 237, 574, 303, 602, 323, 624, -1, 625, -25, 409)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TheDunes/GameEvent"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SandDunes/GameEvent"]
 visible = false
 polygon = PackedVector2Array(817, 140, 698, 163, 660, 184, 638, 235, 656, 250, 752, 264, 712, 305, 693, 345, 778, 383, 807, 386, 763, 416, 739, 446, 700, 421, 616, 401, 542, 407, 497, 430, 481, 466, 499, 484, 612, 515, 681, 517, 734, 514, 744, 509, 772, 513, 713, 530, 617, 531, 557, 546, 504, 586, 509, 597, 565, 625, 817, 624)

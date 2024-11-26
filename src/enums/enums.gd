@@ -58,6 +58,7 @@ enum Vars {
 	RHODE_REMEMBERS_OPHELIA,
 	TOOK_COIN,
 	MAZE_STEP,
+	TOOK_SLEDGEHAMMER,
 }
 
 enum EngineEvents {
@@ -250,6 +251,7 @@ enum Scenes {
 	SWAMP_STATUE_TOP = 101,
 	GAME_OVER_RHODE = 102,
 	FOREST_BEND_SACK = 103,
+	COAST_CANOE = 104,
 }
 
 var ScenePaths = {
@@ -270,7 +272,8 @@ var ScenePaths = {
 	Scenes.CAVES_WEIGHT_PUZZLE: "res://src/scenes/caves/",
 
 	Scenes.COAST_BEACH_CENTRAL: "res://src/scenes/coast/white_sand_beaches/white_sand_beaches.tscn",
-	Scenes.COAST_BEACH_EAST: "res://src/scenes/coast/",
+	Scenes.COAST_BEACH_EAST: "res://src/scenes/coast/white_sand_beaches_east/white_sand_beaches_east.tscn",
+	Scenes.COAST_CANOE: "res://src/scenes/coast/canoe/canoe.tscn",
 	Scenes.COAST_BEACH_WEST: "res://src/scenes/coast/",
 	Scenes.COAST_BIRD_NEST: "res://src/scenes/coast/",
 	Scenes.COAST_DUNES: "res://src/scenes/coast/sand_dunes/sand_dunes.tscn",

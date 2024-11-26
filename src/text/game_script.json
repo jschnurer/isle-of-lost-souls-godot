@@ -40,6 +40,7 @@
 		"Brambles_Take": "They look really painful. You don't want to try to take them.",
 		"Ocean_Look": "It's a sparkling blue ocean. It stretches off to the horizon.",
 		"Sand_Dunes_Look": "The sand dunes make rolling hills of sand. Long, stiff grass grows in patches in places where it could take root. Various bugs skitter to and fro, leaving tiny little paths in the sand. It might actually be fun to play around here if, you know, you weren't in constant danger.",
+		"Shells_Look": "There are shells of all different shapes and sizes scattered across the beach. They've been smoothed by the ocean waves. None of them are particularly impressive, though.",
 	},
 	"Items": {
 		"Ophelias_Journal": {
@@ -340,6 +341,18 @@
 			"Ophelias_Journal_7": "The journal is still badly damaged. \"This place doth dampen my magic. 'Tis all I can do simply to repair the passages that were still mostly intact.\" She opens the notebook again and reads the legible passages.",
 			"Ophelias_Journal_8": "She finishes reading and hands the journal back to you.",
 			"Dont_Want_Item": "\"Wherefore does thou present such a thing to me? I desire it not.\"",
+		},
+	},
+	"Coast": {
+		"Beach_East": {
+			"Canoe_Look": "It's a small boat. There are holes smashed through the hull all over the place.",
+			"Canoe_Take": "It's way too heavy.",
+		},
+		"Canoe": {
+			"Oar_Look": "It's an oar that's been smashed into pieces.",
+			"Oar_Take": "It's totally useless.",
+			"Sledgehammer_Look": "It's a somewhat rusty sledgehammer. It looks like it could really do a lot of damage. ",
+			"Sledgehammer_Take": "You drag the sledgehammer out of the boat and take it with you. Wow! It's really got some heft to it!",
 		},
 	},
 	"Game_Overs": {

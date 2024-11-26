@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dwxto0mbghgmw" path="res://art/actors/beach_grass_3.png" id="4_f0gg5"]
 
 [node name="BeachGrass" type="Sprite2D"]
+y_sort_enabled = true
 texture = ExtResource("4_f0gg5")
 offset = Vector2(0, -8.82)
 script = ExtResource("1_y23pv")

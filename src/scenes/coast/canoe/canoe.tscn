@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://clt21hn1fm20l"]
+
+[ext_resource type="PackedScene" uid="uid://bvkkaqn8jtrg4" path="res://src/scenes/SceneBG.tscn" id="1_ls1c2"]
+[ext_resource type="Texture2D" uid="uid://eequnugm20nd" path="res://art/backgrounds/coast/Canoe.png" id="2_7kdbn"]
+[ext_resource type="AudioStream" uid="uid://gejug47nbxfu" path="res://audio/bgm/waves-breaking-263889.ogg" id="3_na327"]
+[ext_resource type="Texture2D" uid="uid://d4nqlgq350rlj" path="res://art/actors/oar_broken.png" id="3_niy4v"]
+[ext_resource type="Texture2D" uid="uid://c36iy3t6sn5sj" path="res://art/actors/sledgehammer.png" id="4_jm0h4"]
+[ext_resource type="Script" path="res://src/scenes/coast/canoe/interactables/oar.gd" id="4_w7erv"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="5_6s4iv"]
+[ext_resource type="Script" path="res://src/scenes/coast/canoe/interactables/sledgehammer.gd" id="5_7u3ho"]
+[ext_resource type="PackedScene" uid="uid://d3oqcmtd837nj" path="res://src/interactables/back_arrow.tscn" id="8_12cik"]
+
+[node name="Canoe" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="SceneBG" parent="." instance=ExtResource("1_ls1c2")]
+texture = ExtResource("2_7kdbn")
+scene = 103
+area = 1
+bg_images = Array[Texture2D]([ExtResource("2_7kdbn")])
+use_collision_frame = true
+hide_collider = true
+bgm_stream = ExtResource("3_na327")
+bgm_volume_db = 1.0
+metadata/_edit_lock_ = true
+
+[node name="Oar" type="Sprite2D" parent="."]
+position = Vector2(407, 176)
+texture = ExtResource("3_niy4v")
+script = ExtResource("4_w7erv")
+metadata/_edit_lock_ = true
+
+[node name="GameEvent" parent="Oar" instance=ExtResource("5_6s4iv")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Oar/GameEvent"]
+polygon = PackedVector2Array(-408, -93, -72, -66, -68, -33, 155, -28, 158, 45, -75, 27, -88, 60, -409, 31)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Oar/GameEvent"]
+polygon = PackedVector2Array(148, -84, 196, -124, 411, 51, 409, 133)
+
+[node name="Sledgehammer" type="Sprite2D" parent="."]
+position = Vector2(293, 347)
+texture = ExtResource("4_jm0h4")
+script = ExtResource("5_7u3ho")
+auto_destroy_flag = 37
+metadata/_edit_lock_ = true
+
+[node name="GameEvent" parent="Sledgehammer" instance=ExtResource("5_6s4iv")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sledgehammer/GameEvent"]
+polygon = PackedVector2Array(-296, 38, 151, -13, 136, -120, 244, -138, 292, 116, 177, 140, 157, 36, -296, 98)
+
+[node name="BackArrow" parent="." instance=ExtResource("8_12cik")]

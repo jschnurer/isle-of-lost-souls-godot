@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt702tqr4hjmd"]
+[gd_scene load_steps=7 format=3 uid="uid://dt702tqr4hjmd"]
 
 [ext_resource type="PackedScene" uid="uid://bofqicshwpko1" path="res://src/scenes/objects/waves/wave.tscn" id="1_b34ip"]
 [ext_resource type="Script" path="res://src/scenes/objects/waves/ocean_waves.gd" id="1_n21xs"]
 [ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="3_pv0bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8omm"]
-size = Vector2(912, 201)
+size = Vector2(1750, 201)
+
+[sub_resource type="Gradient" id="Gradient_rgr2u"]
+offsets = PackedFloat32Array(0.465909, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h65k7"]
+gradient = SubResource("Gradient_rgr2u")
 
 [node name="Waves" type="Node2D"]
 process_mode = 3
@@ -17,6 +24,14 @@ position = Vector2(408, 624)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(33, -90.5)
 shape = SubResource("RectangleShape2D_d8omm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -522.0
+offset_top = 624.0
+offset_right = -266.0
+offset_bottom = 2607.0
+rotation = -1.5708
+texture = SubResource("GradientTexture1D_h65k7")
 
 [node name="WaveSpriteAnimation" parent="." instance=ExtResource("1_b34ip")]
 position = Vector2(407, 731)
@@ -30,5 +45,5 @@ anim_start_time = 1.0
 [node name="GameEvent" parent="." instance=ExtResource("3_pv0bh")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="GameEvent"]
-position = Vector2(441, 533.5)
+position = Vector2(448, 533.5)
 shape = SubResource("RectangleShape2D_d8omm")

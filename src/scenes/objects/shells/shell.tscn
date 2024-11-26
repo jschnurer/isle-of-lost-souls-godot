@@ -1,0 +1,24 @@
+[gd_scene load_steps=9 format=3 uid="uid://dn13ta1h2h214"]
+
+[ext_resource type="Texture2D" uid="uid://d150xu4lxdob1" path="res://art/actors/shell1.png" id="1_cp5ee"]
+[ext_resource type="Script" path="res://src/scenes/objects/shells/shell.gd" id="2_pqs38"]
+[ext_resource type="Texture2D" uid="uid://bfprplfscfojj" path="res://art/actors/shell2.png" id="3_6ppe2"]
+[ext_resource type="Texture2D" uid="uid://b4hd4y3ofv5w2" path="res://art/actors/shell3.png" id="4_nxb3b"]
+[ext_resource type="Texture2D" uid="uid://dqj50geh16tqc" path="res://art/actors/shell4.png" id="5_pgfxu"]
+[ext_resource type="Texture2D" uid="uid://uf2ed6elrk34" path="res://art/actors/shell5.png" id="6_mqhpj"]
+[ext_resource type="PackedScene" uid="uid://jq86y8xhq3cm" path="res://src/events/game_event/game_event.tscn" id="7_7duch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26vr6"]
+
+[node name="ShellSprite" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_cp5ee")
+script = ExtResource("2_pqs38")
+textures = Array[Texture2D]([ExtResource("1_cp5ee"), ExtResource("3_6ppe2"), ExtResource("4_nxb3b"), ExtResource("5_pgfxu"), ExtResource("6_mqhpj")])
+
+[node name="GameEvent" parent="." instance=ExtResource("7_7duch")]
+
+[node name="CollisionShape2D" parent="GameEvent" index="0"]
+shape = SubResource("RectangleShape2D_26vr6")
+
+[editable path="GameEvent"]
