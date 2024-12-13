@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://blws5b8wm1dyr"]
+[gd_scene load_steps=15 format=3 uid="uid://blws5b8wm1dyr"]
 
 [ext_resource type="Texture2D" uid="uid://bcl5i0l534pgp" path="res://art/backgrounds/forest/Forest Clearing.png" id="1_i6pxq"]
 [ext_resource type="Texture2D" uid="uid://b7sih1cnrsrm6" path="res://art/backgrounds/forest/Forest Clearing Collision.png" id="3_4p7yf"]
@@ -18,10 +18,16 @@ size = Vector2(20, 200)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vvn8"]
 size = Vector2(39, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_farch"]
+size = Vector2(39, 20)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7k7k"]
 size = Vector2(25, 20)
 
-[node name="SceneRoot" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5xur"]
+size = Vector2(25, 20)
+
+[node name="ForestClearing" type="Node2D"]
 
 [node name="SceneBG" parent="." instance=ExtResource("5_mt6oq")]
 offset_right = 816.0
@@ -59,6 +65,12 @@ script = ExtResource("7_8soah")
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_6vvn8")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Hole"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole/StaticBody2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_farch")
+
 [node name="DirtPile" type="Node2D" parent="."]
 script = ExtResource("8_kyqw8")
 
@@ -67,6 +79,12 @@ script = ExtResource("8_kyqw8")
 [node name="CollisionShape2D" parent="DirtPile/GameEvent" index="0"]
 position = Vector2(457, 407)
 shape = SubResource("RectangleShape2D_h7k7k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DirtPile"]
+position = Vector2(457, 407)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DirtPile/StaticBody2D"]
+shape = SubResource("RectangleShape2D_n5xur")
 
 [editable path="Hole/GameEvent"]
 [editable path="DirtPile/GameEvent"]

@@ -5,3 +5,6 @@ extends BaseEvent
 
 func investigate():
 	Utility.msg("Common_Objects.Shells_Look")
+
+func take():
+	Utility.msg("Common_Objects.Shells_Take")

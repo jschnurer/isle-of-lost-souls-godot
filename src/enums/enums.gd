@@ -274,7 +274,7 @@ var ScenePaths = {
 	Scenes.COAST_BEACH_CENTRAL: "res://src/scenes/coast/white_sand_beaches/white_sand_beaches.tscn",
 	Scenes.COAST_BEACH_EAST: "res://src/scenes/coast/white_sand_beaches_east/white_sand_beaches_east.tscn",
 	Scenes.COAST_CANOE: "res://src/scenes/coast/canoe/canoe.tscn",
-	Scenes.COAST_BEACH_WEST: "res://src/scenes/coast/",
+	Scenes.COAST_BEACH_WEST: "res://src/scenes/coast/white_sand_beaches_west/white_sand_beaches_west.tscn",
 	Scenes.COAST_BIRD_NEST: "res://src/scenes/coast/",
 	Scenes.COAST_DUNES: "res://src/scenes/coast/sand_dunes/sand_dunes.tscn",
 	Scenes.COAST_LIGHTHOUSE_1F: "res://src/scenes/coast/",
@@ -285,7 +285,7 @@ var ScenePaths = {
 	Scenes.COAST_ROCKY_CLIFFSIDE: "res://src/scenes/coast/",
 	Scenes.COAST_ROCKY_INCLINE: "res://src/scenes/coast/",
 	Scenes.COAST_ROCKY_TRAIL: "res://src/scenes/coast/",
-	Scenes.COAST_SHALLOW_BAY: "res://src/scenes/coast/",
+	Scenes.COAST_SHALLOW_BAY: "res://src/scenes/coast/shallow_bay/shallow_bay.tscn",
 	
 	Scenes.FOREST_ABRUPT_TURN: "res://src/scenes/forest/abrupt_turn/AbruptTurn.tscn",
 	Scenes.FOREST_BEND: "res://src/scenes/forest/bend/Bend.tscn",

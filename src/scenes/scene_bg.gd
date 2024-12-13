@@ -49,6 +49,8 @@ func _ready():
 		SignalBus.play_bgm.emit(bgm_stream, bgm_volume_db)
 	else:
 		SignalBus.stop_bgm.emit()
+	
+	parse_obstacles()
 
 func _process(delta):
 	_bg_anim_elapsed += delta
@@ -70,9 +72,9 @@ func generate_collision_shapes():
 			
 		var bitmap = BitMap.new()
 		bitmap.create_from_image_alpha(_collision_image.get_image())
-
+		
 		var polygons = bitmap.opaque_to_polygons(Rect2(Vector2(0, 0), bitmap.get_size()))
-
+		
 		for polygon in polygons:
 			var collider = CollisionPolygon2D.new()
 			collider.polygon = polygon
@@ -97,3 +99,28 @@ func on_bg_anim_timer_timeout() -> void:
 	if (_current_bg_index >= _bg_images.size()):
 		_current_bg_index = 0
 	set_bg_texture(_bg_images[_current_bg_index])
+
+func parse_obstacles():
+	var nav_region: NavigationRegion2D = $NavigationRegion2D
+	
+	if (nav_region and _collision_image):
+		# Clear existing obstacles.
+		var children = nav_region.get_children()
+		for c in children:
+			c.free()
+		
+		var col_shapes: Array[CollisionPolygon2D]
+		
+		for c in $CollisionFromImage.get_children():
+			col_shapes.append(c)
+		
+		for shape in col_shapes:
+			var obstacle = NavigationObstacle2D.new()
+			obstacle.vertices = shape.polygon
+			obstacle.avoidance_enabled = true
+			obstacle.radius = 80
+			obstacle.affect_navigation_mesh = true
+			obstacle.carve_navigation_mesh = true
+			nav_region.add_child(obstacle)
+		
+		nav_region.bake_navigation_polygon()

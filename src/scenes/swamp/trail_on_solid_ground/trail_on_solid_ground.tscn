@@ -30,7 +30,6 @@ bg_images = Array[Texture2D]([ExtResource("2_cnus2")])
 collision_image = ExtResource("3_le1cl")
 hide_collider = true
 bgm_stream = ExtResource("4_ler2y")
-bgm_volume_db = 1.0
 metadata/_edit_lock_ = true
 
 [node name="ToMuckSkull" parent="." instance=ExtResource("5_dse8l")]
@@ -453,6 +452,12 @@ position = Vector2(675, 492)
 [node name="SwampGrassSmall35" parent="Vegetation/Grass" instance=ExtResource("9_4kddb")]
 position = Vector2(675, 492)
 flip_h = true
+
+[node name="SwampGrassBig46" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(139, 621.375)
+
+[node name="SwampGrassBig47" parent="Vegetation/Grass" instance=ExtResource("8_oqjl1")]
+position = Vector2(176, 617)
 
 [node name="Lilypads" type="Node2D" parent="Vegetation"]
 y_sort_enabled = true

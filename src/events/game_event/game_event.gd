@@ -18,7 +18,6 @@ func _ready():
 				break
 			else:
 				parent_node = parent_node.get_parent()
-	
 
 func activate(input_action: Enums.InputAction):
 	on_activate.emit(input_action)

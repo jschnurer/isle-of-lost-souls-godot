@@ -16,6 +16,8 @@ var game_event_in_range: GameEvent
 @export var mode: Enums.PlayerMode = Enums.PlayerMode.PERSON
 var is_controllable: bool = true
 @onready var active_event_indicator: Label = $ActiveEvent
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+var is_navigating: bool = false
 
 func _ready():
 	$Sprite.texture = normal_sprite
@@ -44,25 +46,37 @@ func  _input(event):
 			game_event_in_range.activate(Enums.InputAction.INTERACT)
 	elif (event.is_action_pressed("ui_cancel")):
 		SignalBus.open_pause_menu.emit()
+	elif(event is InputEventMouseButton):
+		if ((event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT
+			and (event as InputEventMouseButton).pressed):
+			begin_nav((event as InputEventMouseButton).global_position)
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if (!is_controllable):
 		return
+		
+	var did_player_move = false
 		
 	var direction_x := Input.get_axis("ui_left", "ui_right")
 	if direction_x:
 		velocity.x = direction_x * SPEED
+		did_player_move = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	var direction_y := Input.get_axis("ui_up", "ui_down")
 	if direction_y:
 		velocity.y = direction_y * SPEED
+		did_player_move = true
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
-	move_and_slide()
-	
+	if (did_player_move):
+		is_navigating = false
+		move_and_slide()
+	else:
+		do_auto_nav(delta)
+		
 	if (velocity.x < 0):
 		facing_dir = Enums.Direction.LEFT
 		if (mode == Enums.PlayerMode.PERSON):
@@ -194,3 +208,20 @@ func _on_teleport_player(location: Vector2, facing: Enums.Direction):
 	if (facing != Enums.Direction.UNSET):
 		facing_dir = facing
 		update_sprite()
+
+func begin_nav(destination: Vector2):
+	is_navigating = true
+	nav_agent.target_position = destination
+
+func do_auto_nav(_delta: float):
+	if (not is_navigating):
+		return
+		
+	if (nav_agent.is_navigation_finished()):
+		is_navigating = false
+		return
+	
+	var curr_agent_position = global_position
+	var next_path_position = nav_agent.get_next_path_position()
+	velocity = SPEED * (next_path_position - curr_agent_position).normalized()
+	move_and_slide()

@@ -101,6 +101,12 @@ position = Vector2(641, 7)
 [node name="SwampGrassBig15" parent="SwampGrass" instance=ExtResource("10_dtuhg")]
 position = Vector2(74, 41)
 
+[node name="SwampGrassBig16" parent="SwampGrass" instance=ExtResource("10_dtuhg")]
+position = Vector2(139, 11)
+
+[node name="SwampGrassBig16" parent="SwampGrass/SwampGrassBig16" instance=ExtResource("10_dtuhg")]
+position = Vector2(39, -4)
+
 [node name="SwampGrassBig6" parent="SwampGrass" instance=ExtResource("10_dtuhg")]
 position = Vector2(768, 52)
 
