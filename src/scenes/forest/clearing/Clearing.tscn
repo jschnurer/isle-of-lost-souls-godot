@@ -19,13 +19,13 @@ size = Vector2(20, 200)
 size = Vector2(39, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_farch"]
-size = Vector2(39, 20)
+size = Vector2(31, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7k7k"]
 size = Vector2(25, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5xur"]
-size = Vector2(25, 20)
+size = Vector2(21, 18)
 
 [node name="ForestClearing" type="Node2D"]
 
@@ -84,6 +84,7 @@ shape = SubResource("RectangleShape2D_h7k7k")
 position = Vector2(457, 407)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DirtPile/StaticBody2D"]
+position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_n5xur")
 
 [editable path="Hole/GameEvent"]

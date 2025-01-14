@@ -78,6 +78,7 @@ func generate_collision_shapes():
 		for polygon in polygons:
 			var collider = CollisionPolygon2D.new()
 			collider.polygon = polygon
+			collider.name = "ImgColliderPolygon"
 			$CollisionFromImage.add_child(collider)
 
 func toggle_collision_shape_children(node: StaticBody2D, disabled: bool):
@@ -101,26 +102,59 @@ func on_bg_anim_timer_timeout() -> void:
 	set_bg_texture(_bg_images[_current_bg_index])
 
 func parse_obstacles():
-	var nav_region: NavigationRegion2D = $NavigationRegion2D
+	var nav_region: NavigationRegion2D = get_tree().get_first_node_in_group("World")
+	nav_region.bake_navigation_polygon()
 	
-	if (nav_region and _collision_image):
-		# Clear existing obstacles.
-		var children = nav_region.get_children()
-		for c in children:
-			c.free()
-		
-		var col_shapes: Array[CollisionPolygon2D]
-		
-		for c in $CollisionFromImage.get_children():
-			col_shapes.append(c)
-		
-		for shape in col_shapes:
-			var obstacle = NavigationObstacle2D.new()
-			obstacle.vertices = shape.polygon
-			obstacle.avoidance_enabled = true
-			obstacle.radius = 80
-			obstacle.affect_navigation_mesh = true
-			obstacle.carve_navigation_mesh = true
-			nav_region.add_child(obstacle)
-		
-		nav_region.bake_navigation_polygon()
+	pass
+	# Wait for the next frame so that all game objects can update their positions/existence.
+	#var nav_region: NavigationRegion2D = $NavigationRegion2D
+	#
+	#if (nav_region and _collision_image):
+		## Clear existing obstacles.
+		#var children = nav_region.get_children()
+		#for c in children:
+			#c.free()
+		#
+		#var col_polys: Array[CollisionPolygon2D]
+		#var col_shapes: Array
+		#
+		#var static_bodies = find_children("*", "StaticBody2D")
+		#
+		##for sb in static_bodies:
+			##var sb_children = sb.get_children()
+			##
+			##for chl in sb_children:
+				##if (chl is CollisionPolygon2D and not chl.disabled):
+					##col_polys.append(chl)
+				##elif (chl is CollisionShape2D and not chl.disabled):
+					##col_shapes.append(chl)
+		##
+		#for shape in col_polys:
+			#var obstacle: NavigationObstacle2D = NavigationObstacle2D.new()
+			#obstacle.vertices = shape.polygon
+			#obstacle.avoidance_enabled = true
+			#obstacle.radius = 40
+			#obstacle.affect_navigation_mesh = true
+			#obstacle.carve_navigation_mesh = true
+			#nav_region.add_child(obstacle)
+			#
+		#for shape in col_shapes:
+			#if shape.shape is RectangleShape2D:
+				#var glob_pos = (shape as CollisionShape2D).global_position
+				#var obstacle = NavigationObstacle2D.new()
+				#var rect = (shape.shape as RectangleShape2D).get_rect()
+				#var center = rect.get_center()
+				#
+				#obstacle.vertices = PackedVector2Array([
+					#Vector2(center.x - rect.size.x / 2 + glob_pos.x, center.y - rect.size.y / 2 + glob_pos.y),
+					#Vector2(center.x + rect.size.x / 2 + glob_pos.x, center.y - rect.size.y / 2 + glob_pos.y),
+					#Vector2(center.x + rect.size.x / 2 + glob_pos.x, center.y + rect.size.y / 2 + glob_pos.y),
+					#Vector2(center.x - rect.size.x / 2 + glob_pos.x, center.y + rect.size.y / 2 + glob_pos.y),
+				#])
+				#obstacle.avoidance_enabled = true
+				#obstacle.radius = 40
+				#obstacle.affect_navigation_mesh = true
+				#obstacle.carve_navigation_mesh = true
+				#nav_region.add_child(obstacle)
+		#
+		#nav_region.bake_navigation_polygon()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvkkaqn8jtrg4"]
+[gd_scene load_steps=4 format=3 uid="uid://bvkkaqn8jtrg4"]
 
 [ext_resource type="Script" path="res://src/scenes/scene_bg.gd" id="2_2hmeu"]
 
@@ -7,11 +7,6 @@ size = Vector2(50, 625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv6e0"]
 size = Vector2(816, 50)
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_u811j"]
-vertices = PackedVector2Array(805.977, 613.977, 10, 613.008, 10, 10, 805.023, 10)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 815, 0, 816, 624, 0, 623)])
 
 [node name="SceneBG" type="TextureRect" groups=["GameScene"]]
 process_mode = 3
@@ -41,7 +36,3 @@ shape = SubResource("RectangleShape2D_xv6e0")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionFromFrame"]
 position = Vector2(408, 25)
 shape = SubResource("RectangleShape2D_xv6e0")
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." groups=["NavRegion"]]
-visible = false
-navigation_polygon = SubResource("NavigationPolygon_u811j")

@@ -18,13 +18,14 @@ var is_controllable: bool = true
 @onready var active_event_indicator: Label = $ActiveEvent
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 var is_navigating: bool = false
+@onready var inspection_node: Node2D = $InspectionNode
+@onready var inspection_collision: CollisionShape2D = $InspectionNode/Area/CollisionShape2D
+var clicked_nav_position: Vector2
+var auto_interact_ge = false
 
 func _ready():
 	$Sprite.texture = normal_sprite
 	set_motion_mode(MotionMode.MOTION_MODE_FLOATING)
-	$DownArea/CollisionShape2D.disabled = true
-	$UpArea/CollisionShape2D.disabled = true
-	$LeftArea/CollisionShape2D.disabled = true
 	$PointerArea/CollisionShape2D.disabled = true
 	$PointerCollision.disabled = true
 	SignalBus.game_event_entered_range.connect(_on_game_event_entered_range)
@@ -34,6 +35,7 @@ func _ready():
 	SignalBus.set_player_mode.connect(_on_set_player_mode)
 	SignalBus.toggle_player.connect(_on_toggle_player)
 	SignalBus.teleport_player.connect(_on_teleport_player)
+	SignalBus.transfer_player_to_scene.connect(_on_transfer_player_to_scene)
 
 func  _input(event):
 	if (!is_controllable):
@@ -46,10 +48,18 @@ func  _input(event):
 			game_event_in_range.activate(Enums.InputAction.INTERACT)
 	elif (event.is_action_pressed("ui_cancel")):
 		SignalBus.open_pause_menu.emit()
-	elif(event is InputEventMouseButton):
+	elif (event is InputEventMouseButton):
 		if ((event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT
 			and (event as InputEventMouseButton).pressed):
-			begin_nav((event as InputEventMouseButton).global_position)
+			on_mouse_click(event)
+
+func _process(_delta):
+	if (game_event_in_range and auto_interact_ge):
+		auto_interact_ge = false
+		if (game_event_in_range.use_action_chooser):
+			show_action_chooser()
+		else:
+			game_event_in_range.activate(Enums.InputAction.INTERACT)
 
 func _physics_process(delta: float) -> void:
 	if (!is_controllable):
@@ -91,9 +101,14 @@ func _physics_process(delta: float) -> void:
 	elif (velocity.y > 0):
 		facing_dir = Enums.Direction.DOWN
 	
-	update_areas()
-	update_sprite()
+	if (velocity.x != 0 or velocity.y != 0):
+		update_inspection_rotation()
 	
+	update_sprite()
+
+func update_inspection_rotation():
+	inspection_node.look_at(transform.origin + velocity)
+
 func update_sprite():
 	if (mode != Enums.PlayerMode.PERSON):
 		return
@@ -109,13 +124,6 @@ func update_sprite():
 		$Sprite.texture = up_sprite
 	elif (facing_dir == Enums.Direction.DOWN):
 		$Sprite.texture = down_sprite
-
-func update_areas():
-	if (mode == Enums.PlayerMode.PERSON):
-		$UpArea/CollisionShape2D.disabled = facing_dir != Enums.Direction.UP
-		$RightArea/CollisionShape2D.disabled = facing_dir != Enums.Direction.RIGHT
-		$DownArea/CollisionShape2D.disabled = facing_dir != Enums.Direction.DOWN
-		$LeftArea/CollisionShape2D.disabled = facing_dir != Enums.Direction.LEFT
 
 func _on_game_event_entered_range(game_event: GameEvent):
 	all_game_events_in_range.append(game_event)
@@ -161,7 +169,6 @@ func _on_restore_player_info():
 	facing_dir = saved_info.facing_dir
 	_on_set_player_mode(saved_info.mode)
 	
-	update_areas()
 	update_sprite()
 	
 	$Sprite.flip_h = saved_info.is_sprite_flip_h
@@ -219,9 +226,22 @@ func do_auto_nav(_delta: float):
 		
 	if (nav_agent.is_navigation_finished()):
 		is_navigating = false
+		auto_interact_ge = true
+		inspection_node.look_at(clicked_nav_position)
 		return
 	
 	var curr_agent_position = global_position
 	var next_path_position = nav_agent.get_next_path_position()
 	velocity = SPEED * (next_path_position - curr_agent_position).normalized()
 	move_and_slide()
+
+func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
+	velocity = safe_velocity
+
+func _on_transfer_player_to_scene(_args: TeleportArgs):
+	velocity = Vector2.ZERO
+	is_navigating = false
+
+func on_mouse_click(event):
+	clicked_nav_position = event.global_position
+	begin_nav(clicked_nav_position)

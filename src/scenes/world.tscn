@@ -1,12 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd075t1g6tb6"]
+[gd_scene load_steps=3 format=3 uid="uid://cd075t1g6tb6"]
 
 [ext_resource type="PackedScene" uid="uid://bdhtoyqehrt80" path="res://src/player/player.tscn" id="1_utul6"]
 
-[node name="World" type="Node2D"]
-y_sort_enabled = true
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ntqkp"]
+vertices = PackedVector2Array(806, 613.969, 9.97656, 612.023, 9.02344, 10, 806, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 622, 816, 624, 816, 0, -1, 0)])
 
-[node name="SceneHolder" type="Node2D" parent="."]
+[node name="World" type="NavigationRegion2D" groups=["World"]]
 y_sort_enabled = true
+navigation_polygon = SubResource("NavigationPolygon_ntqkp")
 
 [node name="Player" parent="." instance=ExtResource("1_utul6")]
 position = Vector2(131, 325)
+
+[node name="SceneHolder" type="Node2D" parent="."]
+y_sort_enabled = true
+rotation = 0.000179822

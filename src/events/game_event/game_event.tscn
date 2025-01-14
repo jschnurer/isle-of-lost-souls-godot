@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/events/game_event/game_event.gd" id="1_lk5y5"]
 
-[node name="GameEvent" type="Area2D"]
+[node name="GameEvent" type="Area2D" groups=["GameEvent"]]
 process_mode = 3
 collision_layer = 0
 collision_mask = 2

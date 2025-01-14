@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh21a833axk4g"]
+[gd_scene load_steps=4 format=3 uid="uid://dh21a833axk4g"]
 
 [ext_resource type="Script" path="res://src/ui/action_chooser/action_chooser.gd" id="1_ssibr"]
 [ext_resource type="Theme" uid="uid://v1piyp7jwkvp" path="res://styles/base_theme.tres" id="2_bp67c"]
+[ext_resource type="Script" path="res://src/ui/action_chooser/action_chooser_button.gd" id="3_qn46i"]
 
 [node name="ActionChooser" type="CanvasLayer"]
 process_mode = 3
@@ -35,6 +36,8 @@ size_flags_horizontal = 3
 theme_override_constants/icon_max_width = 16
 text = "Interact"
 expand_icon = true
+script = ExtResource("3_qn46i")
+action = 2
 
 [node name="TopRight" type="Control" parent="VBox/TopRow"]
 layout_mode = 2
@@ -50,6 +53,8 @@ size_flags_horizontal = 3
 theme_override_constants/icon_max_width = 16
 text = "Use Item"
 expand_icon = true
+script = ExtResource("3_qn46i")
+action = 4
 
 [node name="Cancel" type="Button" parent="VBox/CenterRow"]
 layout_mode = 2
@@ -57,6 +62,8 @@ size_flags_horizontal = 3
 theme_override_constants/icon_max_width = 16
 text = "Cancel"
 expand_icon = true
+script = ExtResource("3_qn46i")
+is_cancel_button = true
 
 [node name="Take" type="Button" parent="VBox/CenterRow"]
 layout_mode = 2
@@ -64,6 +71,8 @@ size_flags_horizontal = 3
 theme_override_constants/icon_max_width = 16
 text = "Take"
 expand_icon = true
+script = ExtResource("3_qn46i")
+action = 3
 
 [node name="BottomRow" type="HBoxContainer" parent="VBox"]
 layout_mode = 2
@@ -77,6 +86,8 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Investigate"
+script = ExtResource("3_qn46i")
+action = 1
 
 [node name="TopRight" type="Control" parent="VBox/BottomRow"]
 layout_mode = 2

@@ -7,14 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://c4dh4ptjqjsrj" path="res://art/actors/pointer.png" id="5_40aju"]
 [ext_resource type="Theme" uid="uid://v1piyp7jwkvp" path="res://styles/base_theme.tres" id="6_thw6d"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e51k"]
+size = Vector2(28, 26.5)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ol3ye"]
 radius = 20.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnt5o"]
 size = Vector2(39, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e51k"]
-size = Vector2(28, 26.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7c387"]
 
@@ -34,6 +34,16 @@ texture_filter = 1
 texture = ExtResource("1_gdqck")
 offset = Vector2(0, -47)
 
+[node name="InspectionNode" type="Node2D" parent="."]
+
+[node name="Area" type="Area2D" parent="InspectionNode"]
+position = Vector2(34, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InspectionNode/Area"]
+shape = SubResource("RectangleShape2D_2e51k")
+
 [node name="FeetCollision" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CircleShape2D_ol3ye")
@@ -45,42 +55,6 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FeetArea"]
 shape = SubResource("RectangleShape2D_vnt5o")
-
-[node name="RightArea" type="Area2D" parent="."]
-visible = false
-position = Vector2(34, 0)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea"]
-shape = SubResource("RectangleShape2D_2e51k")
-
-[node name="LeftArea" type="Area2D" parent="."]
-visible = false
-position = Vector2(-34, 0)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea"]
-shape = SubResource("RectangleShape2D_2e51k")
-
-[node name="UpArea" type="Area2D" parent="."]
-visible = false
-position = Vector2(0, -20)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UpArea"]
-shape = SubResource("RectangleShape2D_2e51k")
-
-[node name="DownArea" type="Area2D" parent="."]
-visible = false
-position = Vector2(0, 20)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DownArea"]
-shape = SubResource("RectangleShape2D_2e51k")
 
 [node name="PointerArea" type="Area2D" parent="."]
 visible = false
@@ -112,5 +86,8 @@ text = "?"
 horizontal_alignment = 1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-avoidance_enabled = true
-radius = 40.0
+path_desired_distance = 10.0
+target_desired_distance = 5.0
+radius = 20.0
+
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

@@ -8,6 +8,7 @@ extends Area2D
 @export var activation_mode: Enums.ActivationMode = Enums.ActivationMode.ACTIVATE
 @export var use_action_chooser: bool = true
 signal on_activate(input_action: Enums.InputAction)
+var is_hovered: bool = false
 
 func _ready():
 	if (parent_node_index == -1):

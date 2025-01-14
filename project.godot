@@ -26,7 +26,6 @@ MessageBox="*res://src/ui/message_box/MessageBox.tscn"
 GameVars="*res://src/game_data/game_vars.gd"
 ItemDb="*res://src/game_data/item_db.gd"
 Inventory="*res://src/game_data/inventory.gd"
-ActionChooser="*res://src/ui/action_chooser/ActionChooser.tscn"
 SfxPlayer="*res://src/singletons/sfx_player/SFXPlayer.tscn"
 Utility="*res://src/singletons/Utility.gd"
 DialogTopics="*res://src/game_data/dialog_topics.gd"
@@ -40,6 +39,7 @@ ScreenFader="*res://src/ui/screen_fader/ScreenFader.tscn"
 ItemUsage="*res://src/singletons/item_usage/item_usage.tscn"
 PauseMenu="*res://src/ui/pause_menu/pause_menu.tscn"
 Debug="*res://src/debug.gd"
+ActionChooser="*res://src/ui/action_chooser/ActionChooser.tscn"
 
 [display]
 
@@ -57,6 +57,8 @@ project/assembly_name="Isle of Lost Souls"
 Player=""
 GameScene=""
 NavRegion=""
+GameEvent=""
+World=""
 
 [input]
 
