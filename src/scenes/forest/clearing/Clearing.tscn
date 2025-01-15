@@ -15,11 +15,11 @@ size = Vector2(200, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q2q4"]
 size = Vector2(20, 200)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vvn8"]
-size = Vector2(39, 20)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_farch"]
 size = Vector2(31, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vvn8"]
+size = Vector2(39, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7k7k"]
 size = Vector2(25, 20)
@@ -59,17 +59,17 @@ preserve_y = true
 position = Vector2(410, 409)
 script = ExtResource("7_8soah")
 
-[node name="GameEvent" parent="Hole" instance=ExtResource("7_jp3rn")]
-
-[node name="CollisionShape2D" parent="Hole/GameEvent" index="0"]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_6vvn8")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="Hole"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole/StaticBody2D"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_farch")
+
+[node name="GameEvent" parent="Hole" instance=ExtResource("7_jp3rn")]
+
+[node name="CollisionShape2D" parent="Hole/GameEvent" index="0"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_6vvn8")
 
 [node name="DirtPile" type="Node2D" parent="."]
 script = ExtResource("8_kyqw8")

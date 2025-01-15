@@ -54,7 +54,7 @@ func  _input(event):
 			on_mouse_click(event)
 
 func _process(_delta):
-	if (game_event_in_range and auto_interact_ge):
+	if (game_event_in_range and auto_interact_ge and not is_navigating):
 		auto_interact_ge = false
 		if (game_event_in_range.use_action_chooser):
 			show_action_chooser()
@@ -179,19 +179,18 @@ func _on_set_player_mode(new_mode: Enums.PlayerMode):
 	if (mode == Enums.PlayerMode.POINTER):
 		$Sprite.texture = pointer_sprite
 		$Sprite.flip_h = false
+		$Sprite.offset = Vector2(24, 24)
 		SPEED = POINTER_SPEED
 		active_event_indicator.visible = false
 	else:
 		active_event_indicator.visible = game_event_in_range != null
 		SPEED = PERSON_SPEED
+		$Sprite.offset = Vector2(0, -49)
 		update_sprite()
 	
 	var is_pointer = mode == Enums.PlayerMode.POINTER
 	
-	$DownArea/CollisionShape2D.disabled = is_pointer
-	$UpArea/CollisionShape2D.disabled = is_pointer
-	$LeftArea/CollisionShape2D.disabled = is_pointer
-	$RightArea/CollisionShape2D.disabled = is_pointer
+	inspection_collision.disabled = is_pointer
 	$FeetArea/CollisionShape2D.disabled = is_pointer
 	$FeetCollision.disabled = is_pointer
 	$PointerArea/CollisionShape2D.disabled = !is_pointer

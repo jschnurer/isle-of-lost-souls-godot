@@ -51,12 +51,12 @@ func process_typing(delta: float):
 	if (text_label.visible_characters >= text_label.text.length()):
 		set_state(MessageBoxState.SHOWN)
 		
-	if (Input.is_action_just_pressed("ui_accept")):
+	if (is_action_pressed()):
 		text_label.visible_characters = text_label.text.length()
 		set_state(MessageBoxState.SHOWN)
 
 func process_closable():
-	if (Input.is_action_just_pressed("ui_accept")):
+	if (is_action_pressed()):
 		if (stay_open):
 			finish_message()
 		else:
@@ -96,3 +96,6 @@ func _on_choice_chosen():
 	else:
 		set_state(MessageBoxState.CLOSING)
 		$AnimationPlayer.play("closing")
+
+func is_action_pressed():
+	return Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("click")
